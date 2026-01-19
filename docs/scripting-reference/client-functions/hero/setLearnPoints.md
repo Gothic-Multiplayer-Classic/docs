@@ -8,8 +8,11 @@ Set the player's learn points.
 
 ## Declaration
 ```cpp
-void setLearnPoints(int learn_points)
+bool setLearnPoints(int learn_points)
 ```
 
 ## Parameters
 * `int` **learn_points**: New learn points value.
+  
+## Returns `bool`
+True on success.

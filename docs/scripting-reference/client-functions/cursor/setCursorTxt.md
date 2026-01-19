@@ -8,8 +8,11 @@ Sets the cursor texture.
 
 ## Declaration
 ```cpp
-void setCursorTxt(string file)
+bool setCursorTxt(string file)
 ```
 
 ## Parameters
 * `string` **file**: Texture file name.
+  
+## Returns `bool`
+True on success.

@@ -8,12 +8,12 @@ Set a player's strength attribute.
 
 ## Declaration
 ```cpp
-boolean setPlayerStrength(int player_id, int strength)
+bool setPlayerStrength(int player_id, int strength)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
 * `int` **strength**: New strength value.
   
-## Returns `boolean`
+## Returns `bool`
 True on success.

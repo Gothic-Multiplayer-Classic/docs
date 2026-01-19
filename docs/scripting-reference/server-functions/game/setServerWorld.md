@@ -8,8 +8,11 @@ Set the server's current world name.
 
 ## Declaration
 ```cpp
-void setServerWorld(string world)
+bool setServerWorld(string world)
 ```
 
 ## Parameters
 * `string` **world**: World name to set.
+  
+## Returns `bool`
+True on success.

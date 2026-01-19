@@ -8,12 +8,12 @@ Spawn a previously created NPC into the world using an optional instance.
 
 ## Declaration
 ```cpp
-boolean spawnNpc(int npc_id, string|nil instance_name)
+bool spawnNpc(int npc_id, string|nil instance_name)
 ```
 
 ## Parameters
 * `int` **npc_id**: Internal npc id.
 * `string|nil` **instance_name**: Optional instance name (e.g., "PC_HERO").
   
-## Returns `boolean`
+## Returns `bool`
 True if spawn attached to world.

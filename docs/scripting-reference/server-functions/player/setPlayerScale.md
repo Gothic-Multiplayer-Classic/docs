@@ -8,7 +8,7 @@ Set a player's model scale.
 
 ## Declaration
 ```cpp
-boolean setPlayerScale(int player_id, float x, float y, float z)
+bool setPlayerScale(int player_id, float x, float y, float z)
 ```
 
 ## Parameters
@@ -17,5 +17,5 @@ boolean setPlayerScale(int player_id, float x, float y, float z)
 * `float` **y**: Scale factor on y axis.
 * `float` **z**: Scale factor on z axis.
   
-## Returns `boolean`
+## Returns `bool`
 True on success.

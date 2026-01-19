@@ -8,7 +8,7 @@ Equip an item for all players.
 
 ## Declaration
 ```cpp
-boolean equipItem(int player_id, string instance, int slot_id)
+bool equipItem(int player_id, string instance, int slot_id)
 ```
 
 ## Parameters
@@ -16,5 +16,5 @@ boolean equipItem(int player_id, string instance, int slot_id)
 * `string` **instance**: Item instance name from scripts.
 * `int` **slot_id**: Optional slot id. Defaults to -1 for first free slot.
   
-## Returns `boolean`
+## Returns `bool`
 True on success.

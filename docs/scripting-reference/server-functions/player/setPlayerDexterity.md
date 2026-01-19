@@ -8,12 +8,12 @@ Set a player's dexterity attribute.
 
 ## Declaration
 ```cpp
-boolean setPlayerDexterity(int player_id, int dexterity)
+bool setPlayerDexterity(int player_id, int dexterity)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
 * `int` **dexterity**: New dexterity value.
   
-## Returns `boolean`
+## Returns `bool`
 True on success.

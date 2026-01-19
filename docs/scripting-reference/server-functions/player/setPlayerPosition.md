@@ -8,7 +8,7 @@ Set a player's world position.
 
 ## Declaration
 ```cpp
-boolean setPlayerPosition(int player_id, int x, int y, int z)
+bool setPlayerPosition(int player_id, int x, int y, int z)
 ```
 
 ## Parameters
@@ -17,5 +17,5 @@ boolean setPlayerPosition(int player_id, int x, int y, int z)
 * `int` **y**: Y coordinate.
 * `int` **z**: Z coordinate.
   
-## Returns `boolean`
+## Returns `bool`
 True on success.

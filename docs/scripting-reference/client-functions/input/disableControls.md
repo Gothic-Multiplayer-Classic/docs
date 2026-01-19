@@ -8,8 +8,11 @@ This function will disable/enable default game actions that are bound to keys.
 
 ## Declaration
 ```cpp
-void disableControls(bool true)
+bool disableControls(bool true)
 ```
 
 ## Parameters
 * `bool` **true**: when you want to disable game keys, otherwise false.
+  
+## Returns `bool`
+True on success.

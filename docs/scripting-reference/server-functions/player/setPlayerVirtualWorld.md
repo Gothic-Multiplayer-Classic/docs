@@ -8,12 +8,12 @@ Set a player's virtual world id.
 
 ## Declaration
 ```cpp
-boolean setPlayerVirtualWorld(int player_id, int virtual_world)
+bool setPlayerVirtualWorld(int player_id, int virtual_world)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
 * `int` **virtual_world**: Virtual world id (0-65535).
   
-## Returns `boolean`
+## Returns `bool`
 True on success.

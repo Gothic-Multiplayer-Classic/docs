@@ -8,12 +8,12 @@ Set a player's model fatness.
 
 ## Declaration
 ```cpp
-boolean setPlayerFatness(int player_id, float fatness)
+bool setPlayerFatness(int player_id, float fatness)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
 * `float` **fatness**: Fatness value.
   
-## Returns `boolean`
+## Returns `bool`
 True on success.
