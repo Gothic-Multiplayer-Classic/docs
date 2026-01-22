@@ -1,0 +1,18 @@
+---
+title: 'isPlayerUnconscious'
+---
+# `function` isPlayerUnconscious <font size="4">(server-side)</font>
+!!! info "Available since version: 0.3.0"
+
+The function is used to check whether player is in unconscious state. The player will be unconscious, when it gets beaten up, but not killed.
+
+## Declaration
+```cpp
+bool isPlayerUnconscious(int player_id)
+```
+
+## Parameters
+* `int` **player_id**: Target player id.
+  
+## Returns `bool`
+True when player is unconscious, otherwise false.

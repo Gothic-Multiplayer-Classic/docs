@@ -4978,6 +4978,174 @@
       }
     },
     {
+      "name": "ban",
+      "doc": "This function will ban the player on the server.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "integer",
+          "doc": "Target player id."
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "doc": "Optional reason why the player was banned."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "kick",
+      "doc": "This function will kick the player from the server.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "integer",
+          "doc": "Target player id."
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "doc": "Optional reason why the player was kicked."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "isPlayerConnected",
+      "doc": "The function is used to check whether player is connected to the server.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "integer",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when player is connected, otherwise false."
+      }
+    },
+    {
+      "name": "isPlayerDead",
+      "doc": "The function is used to check whether player is dead.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "integer",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when player is dead, otherwise false."
+      }
+    },
+    {
+      "name": "isPlayerSpawned",
+      "doc": "The function is used to check whether player is spawned.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "integer",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when player is spawned, otherwise false."
+      }
+    },
+    {
+      "name": "isPlayerUnconscious",
+      "doc": "The function is used to check whether player is in unconscious state. The player will be unconscious, when it gets beaten up, but not killed.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "integer",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when player is unconscious, otherwise false."
+      }
+    },
+    {
+      "name": "respawnPlayer",
+      "doc": "This function will immediately respawn the player if it is dead.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "integer",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "setPlayerRespawnTime",
+      "doc": "This function will set the player time to respawn after death. If set to 0, respawn is disabled for selected player.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "integer",
+          "doc": "Target player id."
+        },
+        {
+          "name": "respawn_time",
+          "type": "integer",
+          "doc": "New respawn time in milliseconds."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "getPlayerRespawnTime",
+      "doc": "This function will get the player time to respawn after death.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "integer",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "int|nil",
+        "doc": "The player respawn time or nil if player isn't created."
+      }
+    },
+    {
       "name": "giveItem",
       "doc": "Give an item to a player or NPC.",
       "side": "server",
@@ -6441,6 +6609,74 @@
       "returns": {
         "type": "boolean",
         "doc": "True on success."
+      }
+    },
+    {
+      "name": "anx",
+      "doc": "This function will convert pixels to virtuals screen X dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "pixels",
+          "type": "integer",
+          "doc": "The pixels to convert."
+        }
+      ],
+      "returns": {
+        "type": "integer",
+        "doc": "The virtuals after conversion."
+      }
+    },
+    {
+      "name": "any",
+      "doc": "This function will convert pixels to virtuals on screen Y dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "pixels",
+          "type": "integer",
+          "doc": "The pixels to convert."
+        }
+      ],
+      "returns": {
+        "type": "integer",
+        "doc": "The virtuals after conversion."
+      }
+    },
+    {
+      "name": "nax",
+      "doc": "This function will convert virtuals to pixels on screen X dimension and return it as a result.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "virtuals",
+          "type": "integer",
+          "doc": "The virtuals to convert."
+        }
+      ],
+      "returns": {
+        "type": "integer",
+        "doc": "The pixels after conversion."
+      }
+    },
+    {
+      "name": "nay",
+      "doc": "This function will convert virtuals to pixels on screen Y dimension and return it as a result.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "virtuals",
+          "type": "integer",
+          "doc": "The virtuals to convert."
+        }
+      ],
+      "returns": {
+        "type": "integer",
+        "doc": "The pixels after conversion."
       }
     },
     {
