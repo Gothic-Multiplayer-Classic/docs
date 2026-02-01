@@ -2140,42 +2140,11 @@
       "side": "client",
       "category": "Game",
       "extends": null,
-      "fields": [
-        {
-          "name": "state",
-          "type": "string",
-          "doc": "Gets or sets the draw position in pixel coordinates."
-        },
-        {
-          "name": "details",
-          "type": "string",
-          "doc": "Gets or sets the draw position in pixel coordinates."
-        },
-        {
-          "name": "largeImageKey",
-          "type": "string",
-          "doc": "Gets or sets the draw position in pixel coordinates."
-        },
-        {
-          "name": "largeImageText",
-          "type": "string",
-          "doc": "Gets or sets the draw position in pixel coordinates."
-        },
-        {
-          "name": "smallImageKey",
-          "type": "string",
-          "doc": "Gets or sets the draw position in pixel coordinates."
-        },
-        {
-          "name": "smallImageText",
-          "type": "string",
-          "doc": "Gets or sets the draw position in pixel coordinates."
-        }
-      ],
+      "fields": [],
       "methods": [
         {
-          "name": "SetActivity",
-          "doc": "Updates the Discord Rich Presence activity.\n\nAll parameters are optional and should be passed via a table. Missing fields default to empty values.",
+          "name": "setActivity",
+          "doc": "Update the Discord Rich Presence activity. Missing fields keep their last-set values.",
           "params": [
             {
               "name": "Activity",
@@ -2183,6 +2152,85 @@
               "doc": "configuration table."
             }
           ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "setState",
+          "doc": "Update the activity state text.",
+          "params": [
+            {
+              "name": "state",
+              "type": "string",
+              "doc": "New activity state text."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "setDetails",
+          "doc": "Update the activity details text.",
+          "params": [
+            {
+              "name": "details",
+              "type": "string",
+              "doc": "New activity details text."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "setLargeImage",
+          "doc": "Update the large image entry for the activity.",
+          "params": [
+            {
+              "name": "key",
+              "type": "string",
+              "doc": "Asset key for the large image."
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "doc": "Optional tooltip text for the large image."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "setSmallImage",
+          "doc": "Update the small image entry for the activity.",
+          "params": [
+            {
+              "name": "key",
+              "type": "string",
+              "doc": "Asset key for the small image."
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "doc": "Optional tooltip text for the small image."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "clearActivity",
+          "doc": "Clear the current activity and stored values.",
+          "params": [],
           "returns": {
             "type": "nil",
             "doc": ""
@@ -2472,27 +2520,27 @@
         {
           "name": "file",
           "type": "string",
-          "doc": "Gets or sets the sound file path."
+          "doc": "Get or set the sound file path."
         },
         {
           "name": "playingTime",
           "type": "number",
-          "doc": "Returns the current playback time."
+          "doc": "Return the current playback time."
         },
         {
           "name": "volume",
           "type": "number",
-          "doc": "Gets or sets the playback volume."
+          "doc": "Get or set the playback volume."
         },
         {
           "name": "looping",
           "type": "boolean",
-          "doc": "Gets or sets whether the sound should loop."
+          "doc": "Get or set whether the sound should loop."
         },
         {
           "name": "balance",
           "type": "number",
-          "doc": "Gets or sets the stereo balance (pan)."
+          "doc": "Get or set the stereo balance (pan)."
         }
       ],
       "methods": [
@@ -2514,7 +2562,7 @@
         },
         {
           "name": "play",
-          "doc": "Starts sound playback.",
+          "doc": "Start sound playback.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -2523,7 +2571,7 @@
         },
         {
           "name": "stop",
-          "doc": "Stops sound playback.",
+          "doc": "Stop sound playback.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -2532,7 +2580,7 @@
         },
         {
           "name": "isPlaying",
-          "doc": "Returns whether the sound is currently playing.",
+          "doc": "Return whether the sound is currently playing.",
           "params": [],
           "returns": {
             "type": "boolean",
@@ -3122,7 +3170,7 @@
   "functions": [
     {
       "name": "getDistance2d",
-      "doc": "This function will get the 2d distance between two points.",
+      "doc": "Get the 2d distance between two points.",
       "side": "shared",
       "category": "Math",
       "params": [
@@ -3154,7 +3202,7 @@
     },
     {
       "name": "getDistance3d",
-      "doc": "This function will get the 3d distance between two points.",
+      "doc": "Get the 3d distance between two points.",
       "side": "shared",
       "category": "Math",
       "params": [
@@ -3196,7 +3244,7 @@
     },
     {
       "name": "getVectorAngle",
-      "doc": "This function will get angle on Y axis directed towards the second point.",
+      "doc": "Get angle on Y axis directed towards the second point.",
       "side": "shared",
       "category": "Math",
       "params": [
@@ -3272,7 +3320,7 @@
     },
     {
       "name": "addEventHandler",
-      "doc": "This function will bind function to specified event.",
+      "doc": "Bind function to specified event.",
       "side": "shared",
       "category": "Event",
       "params": [
@@ -3294,7 +3342,7 @@
     },
     {
       "name": "addEvent",
-      "doc": "This function will register a new custom event with specified name.",
+      "doc": "Register a new custom event with specified name.",
       "side": "shared",
       "category": "Event",
       "params": [
@@ -3316,7 +3364,7 @@
     },
     {
       "name": "callEvent",
-      "doc": "This function will notify (call) every handler bound to specified custom event.",
+      "doc": "Call every handler bound to specified custom event.",
       "side": "shared",
       "category": "Event",
       "params": [
@@ -3338,7 +3386,7 @@
     },
     {
       "name": "cancelEvent",
-      "doc": "This function will cancel the current event.",
+      "doc": "Cancel the current event.",
       "side": "shared",
       "category": "Event",
       "params": [],
@@ -3349,7 +3397,7 @@
     },
     {
       "name": "eventValue",
-      "doc": "This function will set the event value.",
+      "doc": "Set the event value.",
       "side": "shared",
       "category": "Event",
       "params": [
@@ -3366,7 +3414,7 @@
     },
     {
       "name": "isEventCancelled",
-      "doc": "This function will check if the event was cancelled.",
+      "doc": "Check if the event was cancelled.",
       "side": "shared",
       "category": "Event",
       "params": [],
@@ -3377,7 +3425,7 @@
     },
     {
       "name": "removeEvent",
-      "doc": "This function will unregister a custom event with specified name.",
+      "doc": "Unregister a custom event with specified name.",
       "side": "shared",
       "category": "Event",
       "params": [
@@ -3394,7 +3442,7 @@
     },
     {
       "name": "removeEventHandler",
-      "doc": "This function will unbind function from specified event.",
+      "doc": "Unbind function from specified event.",
       "side": "shared",
       "category": "Event",
       "params": [
@@ -3416,7 +3464,7 @@
     },
     {
       "name": "toggleEvent",
-      "doc": "This function will toggle event (enable or disable it globally).",
+      "doc": "Toggle event (enable or disable it globally).",
       "side": "shared",
       "category": "Event",
       "params": [
@@ -3445,7 +3493,7 @@
         {
           "name": "text",
           "type": "string",
-          "doc": "The message text, may contain format specifiers."
+          "doc": "Message text, may contain format specifiers."
         }
       ],
       "returns": {
@@ -3462,7 +3510,7 @@
         {
           "name": "text",
           "type": "string",
-          "doc": "The message text, may contain format specifiers."
+          "doc": "Message text, may contain format specifiers."
         }
       ],
       "returns": {
@@ -3479,7 +3527,7 @@
         {
           "name": "text",
           "type": "string",
-          "doc": "The message text, may contain format specifiers."
+          "doc": "Message text, may contain format specifiers."
         }
       ],
       "returns": {
@@ -3496,7 +3544,7 @@
         {
           "name": "text",
           "type": "string",
-          "doc": "The message text, may contain format specifiers."
+          "doc": "Message text, may contain format specifiers."
         }
       ],
       "returns": {
@@ -3513,7 +3561,7 @@
         {
           "name": "text",
           "type": "string",
-          "doc": "The message text, may contain format specifiers."
+          "doc": "Message text, may contain format specifiers."
         }
       ],
       "returns": {
@@ -3530,7 +3578,7 @@
         {
           "name": "text",
           "type": "string",
-          "doc": "The message text, may contain format specifiers."
+          "doc": "Message text, may contain format specifiers."
         }
       ],
       "returns": {
@@ -3540,106 +3588,118 @@
     },
     {
       "name": "hexToRgb",
-      "doc": "Convert hex color to rgb representation.",
+      "doc": "Convert a hex color string to an RGB table.",
       "side": "shared",
       "category": "Utility",
       "params": [
         {
           "name": "hex",
           "type": "string",
-          "doc": "hexadecimal color representation."
+          "doc": "Hex color string (e.g. \"#RRGGBB\", \"0xRRGGBB\", or \"RGB\")."
         }
       ],
       "returns": {
-        "type": "table",
-        "doc": "Table containing r, g, b components."
+        "type": "{r, g, b}|nil",
+        "doc": "Table containing r, g, b components or nil on failure."
       }
     },
     {
       "name": "rgbToHex",
-      "doc": "Convert rgb color to hex representation.",
+      "doc": "Convert RGB components to a lowercase hex color string.",
       "side": "shared",
       "category": "Utility",
       "params": [
         {
           "name": "r",
           "type": "integer",
-          "doc": "Red color component in RGB model."
+          "doc": "Red component (0-255)."
         },
         {
           "name": "g",
           "type": "integer",
-          "doc": "Green color component in RGB model."
+          "doc": "Green component (0-255)."
         },
         {
           "name": "b",
           "type": "integer",
-          "doc": "Blue color component in RGB model."
+          "doc": "Blue component (0-255)."
         }
       ],
       "returns": {
         "type": "string",
-        "doc": "Lower case hexadecimal representation of rgb color."
+        "doc": "Lowercase hexadecimal representation."
       }
     },
     {
       "name": "sscanf",
-      "doc": "Split the specified text, interprets it according to format and stores the results into array.",
+      "doc": "Split text according to a format string and return the parsed values.",
       "side": "shared",
       "category": "Utility",
       "params": [
         {
           "name": "format",
           "type": "string",
-          "doc": "Format by which the text will be splitted. Each letter in the format represents one argument in the text. If the number of letters in the format will be greater than the number of arguments in the text, then function will fail. Currently supported data formats: `d` integer, `f` float, `s` string."
+          "doc": "Format string where each specifier maps to a value. Supported specifiers: `d` (integer), `f` (float), `s` (string)."
         },
         {
           "name": "text",
           "type": "string",
-          "doc": "Text which will be splitted into parts."
+          "doc": "Input text to parse."
         }
       ],
       "returns": {
         "type": "array|nil",
-        "doc": "The array which contains splitted text, or null if text couldn't be converted."
+        "doc": "Array of parsed values, or nil on parse failure."
       }
     },
     {
       "name": "getTickCount",
-      "doc": "This function will get the amount of time that your system has been running in milliseconds. You can use this function to compare how long something would take to run.",
+      "doc": "Get the number of milliseconds since the scripting runtime started.",
       "side": "shared",
       "category": "Utility",
       "params": [],
       "returns": {
         "type": "integer",
-        "doc": "The amount of time that your system has been running in miliseconds."
+        "doc": "Milliseconds since startup."
       }
     },
     {
       "name": "sha256",
-      "doc": "This function will calculate the SHA-256 hash of the specified string and return it as hexadecimal text representation.",
+      "doc": "Calculate the SHA-256 hash of a string and return it as hex.",
       "side": "shared",
       "category": "Hash",
-      "params": [],
+      "params": [
+        {
+          "name": "input",
+          "type": "string",
+          "doc": "Input text to hash."
+        }
+      ],
       "returns": {
         "type": "string",
-        "doc": "Returns string hash as hexadecimal text representation."
+        "doc": "Hexadecimal hash string."
       }
     },
     {
       "name": "sha512",
-      "doc": "This function will calculate the SHA-512 hash of the specified string and return it as hexadecimal text representation.",
+      "doc": "Calculate the SHA-512 hash of a string and return it as hex.",
       "side": "shared",
       "category": "Hash",
-      "params": [],
+      "params": [
+        {
+          "name": "input",
+          "type": "string",
+          "doc": "Input text to hash."
+        }
+      ],
       "returns": {
         "type": "string",
-        "doc": "Returns string hash as hexadecimal text representation."
+        "doc": "Hexadecimal hash string."
       }
     },
     {
       "name": "setTimer",
-      "doc": "Creates a new timer that calls the given function at a fixed interval.\n\nThe timer passes any additional arguments to the callback when it executes.\nIf execute_times is 0 or negative, the timer repeats indefinitely.",
+      "doc": "Create a new timer that calls the given function at a fixed interval.\n\nThe timer passes any additional arguments to the callback when it executes.\nIf execute_times is 0 or negative, the timer repeats indefinitely.",
       "side": "shared",
       "category": "Timer",
       "params": [
@@ -3671,7 +3731,7 @@
     },
     {
       "name": "killTimer",
-      "doc": "Stops and removes an existing timer.",
+      "doc": "Stop and remove an existing timer.",
       "side": "shared",
       "category": "Timer",
       "params": [
@@ -3688,7 +3748,7 @@
     },
     {
       "name": "setTimerInterval",
-      "doc": "Sets the interval (in milliseconds) of an existing timer.",
+      "doc": "Set the interval (in milliseconds) of an existing timer.",
       "side": "shared",
       "category": "Timer",
       "params": [
@@ -3710,7 +3770,7 @@
     },
     {
       "name": "getTimerInterval",
-      "doc": "Returns the interval (in milliseconds) of a timer, or nil if the timer does not exist.",
+      "doc": "Return the interval (in milliseconds) of a timer, or nil if the timer does not exist.",
       "side": "shared",
       "category": "Timer",
       "params": [
@@ -3727,7 +3787,7 @@
     },
     {
       "name": "setTimerExecuteTimes",
-      "doc": "Sets how many times the timer should execute.\n\nIf execute_times is 0 or negative, the timer repeats indefinitely.",
+      "doc": "Set how many times the timer should execute.\n\nIf execute_times is 0 or negative, the timer repeats indefinitely.",
       "side": "shared",
       "category": "Timer",
       "params": [
@@ -3749,7 +3809,7 @@
     },
     {
       "name": "getTimerExecuteTimes",
-      "doc": "Returns how many times the timer will execute, or nil if the timer does not exist.\n\nA value of 0 means the timer repeats indefinitely.",
+      "doc": "Return how many times the timer will execute, or nil if the timer does not exist.\n\nA value of 0 means the timer repeats indefinitely.",
       "side": "shared",
       "category": "Timer",
       "params": [
@@ -3798,24 +3858,24 @@
     },
     {
       "name": "Log",
-      "doc": "This function will store the given text into a log file with the specified name.",
+      "doc": "Append a line of text to the specified log file.",
       "side": "server",
       "category": "Utility",
       "params": [
         {
           "name": "name",
           "type": "string",
-          "doc": "The name of the log file."
+          "doc": "Log file name or path."
         },
         {
           "name": "text",
           "type": "string",
-          "doc": "The text to log."
+          "doc": "Text to append."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "integer",
+        "doc": "Always returns 0."
       }
     },
     {
@@ -3884,7 +3944,7 @@
       ],
       "returns": {
         "type": "boolean",
-        "doc": "True on success."
+        "doc": "True on success, false if the player is missing."
       }
     },
     {
@@ -3921,7 +3981,7 @@
       ],
       "returns": {
         "type": "boolean",
-        "doc": "True on success."
+        "doc": "True on success, false if the sender is missing."
       }
     },
     {
@@ -3963,7 +4023,7 @@
       ],
       "returns": {
         "type": "boolean",
-        "doc": "True on success."
+        "doc": "True on success, false if sender or receiver is missing."
       }
     },
     {
@@ -3985,7 +4045,7 @@
       ],
       "returns": {
         "type": "boolean",
-        "doc": "True on success."
+        "doc": "True on success, false if the player is missing."
       }
     },
     {
@@ -4007,7 +4067,7 @@
       ],
       "returns": {
         "type": "boolean",
-        "doc": "True on success."
+        "doc": "True on success, false if the player is missing."
       }
     },
     {
@@ -4046,7 +4106,7 @@
       ],
       "returns": {
         "type": "boolean",
-        "doc": "True on success."
+        "doc": "True on success, false if the player is missing."
       }
     },
     {
@@ -4095,7 +4155,7 @@
       ],
       "returns": {
         "type": "boolean",
-        "doc": "True on success."
+        "doc": "True on success, false if the player is missing."
       }
     },
     {
@@ -4979,7 +5039,7 @@
     },
     {
       "name": "ban",
-      "doc": "This function will ban the player on the server.",
+      "doc": "Ban the player on the server.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5001,7 +5061,7 @@
     },
     {
       "name": "kick",
-      "doc": "This function will kick the player from the server.",
+      "doc": "Kick the player from the server.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5091,7 +5151,7 @@
     },
     {
       "name": "respawnPlayer",
-      "doc": "This function will immediately respawn the player if it is dead.",
+      "doc": "Immediately respawn the player if he is dead.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5108,7 +5168,7 @@
     },
     {
       "name": "setPlayerRespawnTime",
-      "doc": "This function will set the player time to respawn after death. If set to 0, respawn is disabled for selected player.",
+      "doc": "Set the player time to respawn after death. If set to 0, respawn is disabled for selected player.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5130,7 +5190,7 @@
     },
     {
       "name": "getPlayerRespawnTime",
-      "doc": "This function will get the player time to respawn after death.",
+      "doc": "Get the player time to respawn after death.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5432,7 +5492,7 @@
     },
     {
       "name": "setWeatherType",
-      "doc": "This method will set the desired weather type immediately.",
+      "doc": "Set the desired weather type immediately.",
       "side": "server",
       "category": "Weather",
       "params": [
@@ -5449,7 +5509,7 @@
     },
     {
       "name": "getWeatherType",
-      "doc": "This method will return the current weather type.",
+      "doc": "Return the current weather type.",
       "side": "server",
       "category": "Weather",
       "params": [],
@@ -5460,7 +5520,7 @@
     },
     {
       "name": "setRainStartTime",
-      "doc": "This method will set the sky weather time when it starts raining/snowing.",
+      "doc": "Set the sky weather time when it starts raining/snowing.",
       "side": "server",
       "category": "Weather",
       "params": [
@@ -5482,7 +5542,7 @@
     },
     {
       "name": "getRainStartTime",
-      "doc": "This method will get the sky weather time when it starts raining/snowing.",
+      "doc": "Get the sky weather time when it starts raining/snowing.",
       "side": "server",
       "category": "Weather",
       "params": [],
@@ -5493,7 +5553,7 @@
     },
     {
       "name": "setWindScale",
-      "doc": "This method will change the wind scale used during raining/snowing.",
+      "doc": "Change the wind scale used during raining/snowing.",
       "side": "server",
       "category": "Weather",
       "params": [
@@ -5510,7 +5570,7 @@
     },
     {
       "name": "getWindScale",
-      "doc": "This method returns the current wind scale.",
+      "doc": "Return the current wind scale.",
       "side": "server",
       "category": "Weather",
       "params": [],
@@ -5521,7 +5581,7 @@
     },
     {
       "name": "setDontRain",
-      "doc": "This method will enable/disable weather completely.",
+      "doc": "Enable/disable weather completely.",
       "side": "server",
       "category": "Weather",
       "params": [
@@ -6613,7 +6673,7 @@
     },
     {
       "name": "anx",
-      "doc": "This function will convert pixels to virtuals screen X dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
+      "doc": "Convert pixels to virtuals screen X dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
       "side": "client",
       "category": "Interface",
       "params": [
@@ -6630,7 +6690,7 @@
     },
     {
       "name": "any",
-      "doc": "This function will convert pixels to virtuals on screen Y dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
+      "doc": "Convert pixels to virtuals on screen Y dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
       "side": "client",
       "category": "Interface",
       "params": [
@@ -6647,7 +6707,7 @@
     },
     {
       "name": "nax",
-      "doc": "This function will convert virtuals to pixels on screen X dimension and return it as a result.",
+      "doc": "Convert virtuals to pixels on screen X dimension and return it as a result.",
       "side": "client",
       "category": "Interface",
       "params": [
@@ -6664,7 +6724,7 @@
     },
     {
       "name": "nay",
-      "doc": "This function will convert virtuals to pixels on screen Y dimension and return it as a result.",
+      "doc": "Convert virtuals to pixels on screen Y dimension and return it as a result.",
       "side": "client",
       "category": "Interface",
       "params": [
@@ -6742,7 +6802,7 @@
     },
     {
       "name": "setWeatherType",
-      "doc": "This method will set the desired weather type immediately.",
+      "doc": "Set the desired weather type immediately.",
       "side": "client",
       "category": "Weather",
       "params": [
@@ -6759,7 +6819,7 @@
     },
     {
       "name": "getWeatherType",
-      "doc": "This method will return the current weather type.",
+      "doc": "Return the current weather type.",
       "side": "client",
       "category": "Weather",
       "params": [],
@@ -6770,7 +6830,7 @@
     },
     {
       "name": "setRainStartTime",
-      "doc": "This method will set the sky weather time when it starts raining/snowing.",
+      "doc": "Set the sky weather time when it starts raining/snowing.",
       "side": "client",
       "category": "Weather",
       "params": [
@@ -6792,7 +6852,7 @@
     },
     {
       "name": "getRainStartTime",
-      "doc": "This method will get the sky weather time when it starts raining/snowing.",
+      "doc": "Get the sky weather time when it starts raining/snowing.",
       "side": "client",
       "category": "Weather",
       "params": [],
@@ -6803,7 +6863,7 @@
     },
     {
       "name": "setWindScale",
-      "doc": "This method will change the wind scale used during raining/snowing.",
+      "doc": "Change the wind scale used during raining/snowing.",
       "side": "client",
       "category": "Weather",
       "params": [
@@ -6820,7 +6880,7 @@
     },
     {
       "name": "getWindScale",
-      "doc": "This method returns the current wind scale.",
+      "doc": "Return the current wind scale.",
       "side": "client",
       "category": "Weather",
       "params": [],
@@ -6831,7 +6891,7 @@
     },
     {
       "name": "setDontRain",
-      "doc": "This method will enable/disable weather completely.",
+      "doc": "Enable/disable weather completely.",
       "side": "client",
       "category": "Weather",
       "params": [
@@ -6848,7 +6908,7 @@
     },
     {
       "name": "setFogColor",
-      "doc": "This method will set the sky fog color day variation.",
+      "doc": "Set the sky fog color day variation.",
       "side": "client",
       "category": "Sky",
       "params": [
@@ -6880,7 +6940,7 @@
     },
     {
       "name": "setCloudsColor",
-      "doc": "This method will set the sky clouds color.",
+      "doc": "Set the sky clouds color.",
       "side": "client",
       "category": "Sky",
       "params": [
@@ -6907,7 +6967,7 @@
     },
     {
       "name": "setPlanetSize",
-      "doc": "This method will set the planet size ratio.",
+      "doc": "Set the planet size ratio.",
       "side": "client",
       "category": "Sky",
       "params": [
@@ -6929,7 +6989,7 @@
     },
     {
       "name": "setPlanetColor",
-      "doc": "This method will set the planet color.",
+      "doc": "Set the planet color.",
       "side": "client",
       "category": "Sky",
       "params": [
@@ -6966,7 +7026,7 @@
     },
     {
       "name": "setPlanetTxt",
-      "doc": "This method will set the planet texture.",
+      "doc": "Set the planet texture.",
       "side": "client",
       "category": "Sky",
       "params": [
@@ -6988,7 +7048,7 @@
     },
     {
       "name": "setLightingColor",
-      "doc": "This method will set the sky lighting color.",
+      "doc": "Set the sky lighting color.",
       "side": "client",
       "category": "Sky",
       "params": [
@@ -7076,7 +7136,7 @@
     },
     {
       "name": "disableControls",
-      "doc": "This function will disable/enable default game actions that are bound to keys.",
+      "doc": "Disable/enable default game actions that are bound to keys.",
       "side": "client",
       "category": "Input",
       "params": [
@@ -7104,7 +7164,7 @@
     },
     {
       "name": "disableKey",
-      "doc": "This function will disable/enable specified keyboard key, like: ESCAPE, TAB, etc.",
+      "doc": "Disable/enable specified keyboard key, like: ESCAPE, TAB, etc.",
       "side": "client",
       "category": "Input",
       "params": [

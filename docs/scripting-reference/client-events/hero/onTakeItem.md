@@ -8,8 +8,8 @@ Triggered when the hero takes an item from the ground.
 
 ## Parameters
 ```c++
-void onTakeItem(string item, bool synchronized)
+void onTakeItem(string item, boolean synchronized)
 ```
 
 * `string` **item**: Item instance.
-* `bool` **synchronized**: True when pickup is synchronized with the server.
+* `boolean` **synchronized**: True when pickup is synchronized with the server.

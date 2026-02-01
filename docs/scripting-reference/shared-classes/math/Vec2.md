@@ -8,29 +8,29 @@ title: 'Vec2'
 
 ### Constructor
 ```cpp
-Vec2.new(number value)
+Vec2.new(float value)
 ```
 
 **Parameters:**
 
-* `number` **value**: Value assigned to x and y.
+* `float` **value**: Value assigned to x and y.
 ### Constructor
 ```cpp
-Vec2.new(number x, number y)
+Vec2.new(float x, float y)
 ```
 
 **Parameters:**
 
-* `number` **x**: X component.
-* `number` **y**: Y component.
+* `float` **x**: X component.
+* `float` **y**: Y component.
 
 ## Properties
-### `number` x 
+### `float` x 
 
 X component.
 
 ----
-### `number` y 
+### `float` y 
 
 Y component.
 
@@ -42,11 +42,11 @@ Y component.
 Returns the vector length (magnitude).
 
 ```cpp
-number len()
+float len()
 ```
 
   
-**Returns `number`:**
+**Returns `float`:**
 
 Vector length.
 
@@ -56,11 +56,11 @@ Vector length.
 Returns the squared vector length.
 
 ```cpp
-number len2()
+float len2()
 ```
 
   
-**Returns `number`:**
+**Returns `float`:**
 
 Squared vector length.
 
@@ -70,11 +70,11 @@ Squared vector length.
 Returns an approximate vector length.
 
 ```cpp
-number lenApprox()
+float lenApprox()
 ```
 
   
-**Returns `number`:**
+**Returns `float`:**
 
 Approximate vector length.
 
@@ -84,14 +84,14 @@ Approximate vector length.
 Returns the distance to another vector.
 
 ```cpp
-number distance(Vec2 vec)
+float distance(Vec2 vec)
 ```
 
 **Parameters:**
 
 * `Vec2` **vec**: Other vector.
   
-**Returns `number`:**
+**Returns `float`:**
 
 Distance between vectors.
 
@@ -147,13 +147,13 @@ This vector (normalized).
 Sets both components of the vector.
 
 ```cpp
-void set(number x, number y)
+void set(float x, float y)
 ```
 
 **Parameters:**
 
-* `number` **x**: X component.
-* `number` **y**: Y component.
+* `float` **x**: X component.
+* `float` **y**: Y component.
   
 
 ----
@@ -162,14 +162,14 @@ void set(number x, number y)
 Compares this vector with another vector using an epsilon tolerance.
 
 ```cpp
-bool isEqualEps(Vec2 vec)
+boolean isEqualEps(Vec2 vec)
 ```
 
 **Parameters:**
 
 * `Vec2` **vec**: Other vector.
   
-**Returns `bool`:**
+**Returns `boolean`:**
 
 True if both components are equal within epsilon.
 
@@ -262,7 +262,7 @@ Component-wise product.
 Returns the dot product of two vectors.
 
 ```cpp
-number dot(Vec2 vec1, Vec2 vec2)
+float dot(Vec2 vec1, Vec2 vec2)
 ```
 
 **Parameters:**
@@ -270,7 +270,7 @@ number dot(Vec2 vec1, Vec2 vec2)
 * `Vec2` **vec1**: First vector.
 * `Vec2` **vec2**: Second vector.
   
-**Returns `number`:**
+**Returns `float`:**
 
 Dot product.
 
@@ -280,12 +280,12 @@ Dot product.
 Linearly interpolates between two vectors.
 
 ```cpp
-Vec2 lerp(number t, Vec2 v1, Vec2 v2)
+Vec2 lerp(float t, Vec2 v1, Vec2 v2)
 ```
 
 **Parameters:**
 
-* `number` **t**: Interpolation factor (typically 0..1).
+* `float` **t**: Interpolation factor (typically 0..1).
 * `Vec2` **v1**: Start vector.
 * `Vec2` **v2**: End vector.
   

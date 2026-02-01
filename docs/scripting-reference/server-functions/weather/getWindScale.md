@@ -4,7 +4,7 @@ title: 'getWindScale'
 # `function` getWindScale <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This method returns the current wind scale.
+Return the current wind scale.
 
 ## Declaration
 ```cpp

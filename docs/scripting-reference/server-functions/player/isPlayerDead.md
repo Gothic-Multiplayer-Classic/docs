@@ -8,11 +8,11 @@ The function is used to check whether player is dead.
 
 ## Declaration
 ```cpp
-bool isPlayerDead(int player_id)
+boolean isPlayerDead(int player_id)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
   
-## Returns `bool`
+## Returns `boolean`
 True when player is dead, otherwise false.

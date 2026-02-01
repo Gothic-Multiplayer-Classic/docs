@@ -13,7 +13,7 @@ The first argument is always the event name.
 
 ## Declaration
 ```cpp
-bool triggerServerEvent(string eventName, int|nil sourceElement, ... ...)
+boolean triggerServerEvent(string eventName, int|nil sourceElement, ... ...)
 ```
 
 ## Parameters
@@ -21,5 +21,5 @@ bool triggerServerEvent(string eventName, int|nil sourceElement, ... ...)
 * `int|nil` **sourceElement**: Optional source element id. Use nil or omit it if not needed.
 * `...` **...**: Optional arguments passed to the server event handler.
   
-## Returns `bool`
+## Returns `boolean`
 True if the event was sent successfully, otherwise false.

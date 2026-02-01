@@ -8,11 +8,11 @@ Unspawn (remove) a client NPC from the world without destroying it.
 
 ## Declaration
 ```cpp
-bool unspawnNpc(int npc_id)
+boolean unspawnNpc(int npc_id)
 ```
 
 ## Parameters
 * `int` **npc_id**: Internal npc id.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

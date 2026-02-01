@@ -8,11 +8,11 @@ The function is used to check whether player is connected to the server.
 
 ## Declaration
 ```cpp
-bool isPlayerConnected(int player_id)
+boolean isPlayerConnected(int player_id)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
   
-## Returns `bool`
+## Returns `boolean`
 True when player is connected, otherwise false.

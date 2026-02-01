@@ -15,4 +15,4 @@ void LOG_TRACE(string text)
 ```
 
 ## Parameters
-* `string` **text**: The message text, may contain format specifiers.
+* `string` **text**: Message text, may contain format specifiers.

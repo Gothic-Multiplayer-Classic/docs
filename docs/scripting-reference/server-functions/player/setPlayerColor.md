@@ -8,7 +8,7 @@ Set a player's name color (RGB 0-255).
 
 ## Declaration
 ```cpp
-bool setPlayerColor(int player_id, int r, int g, int b)
+boolean setPlayerColor(int player_id, int r, int g, int b)
 ```
 
 ## Parameters
@@ -17,5 +17,5 @@ bool setPlayerColor(int player_id, int r, int g, int b)
 * `int` **g**: Green (0-255).
 * `int` **b**: Blue (0-255).
   
-## Returns `bool`
-True on success.
+## Returns `boolean`
+True on success, false if the player is missing.

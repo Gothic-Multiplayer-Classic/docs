@@ -8,12 +8,12 @@ Set a player's display name.
 
 ## Declaration
 ```cpp
-bool setPlayerName(int player_id, string name)
+boolean setPlayerName(int player_id, string name)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
 * `string` **name**: New player name.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

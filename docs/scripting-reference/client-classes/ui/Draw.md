@@ -56,7 +56,7 @@ Returns the current text color.
 Gets or sets the alpha (opacity).
 
 ----
-### `bool` visible 
+### `boolean` visible 
 
 Gets or sets whether the Draw object is rendered.
 
@@ -240,12 +240,12 @@ Opacity value (0-255).
 Sets whether the Draw object should render.
 
 ```cpp
-void setVisible(bool visible)
+void setVisible(boolean visible)
 ```
 
 **Parameters:**
 
-* `bool` **visible**: True to render, false to hide.
+* `boolean` **visible**: True to render, false to hide.
   
 
 ----
@@ -254,11 +254,11 @@ void setVisible(bool visible)
 Returns whether this Draw object is visible.
 
 ```cpp
-bool getVisible()
+boolean getVisible()
 ```
 
   
-**Returns `bool`:**
+**Returns `boolean`:**
 
 True if visible.
 

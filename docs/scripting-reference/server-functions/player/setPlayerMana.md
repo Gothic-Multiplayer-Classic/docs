@@ -8,12 +8,12 @@ Set a player's current mana.
 
 ## Declaration
 ```cpp
-bool setPlayerMana(int player_id, int mana)
+boolean setPlayerMana(int player_id, int mana)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
 * `int` **mana**: New mana value.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

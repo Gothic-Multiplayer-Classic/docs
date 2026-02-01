@@ -8,12 +8,12 @@ Set a player's instance.
 
 ## Declaration
 ```cpp
-bool setPlayerInstance(int player_id, string instance)
+boolean setPlayerInstance(int player_id, string instance)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
 * `string` **instance**: Instance name.
   
-## Returns `bool`
+## Returns `boolean`
 True on success, false otherwise.

@@ -23,6 +23,7 @@ markdown_extensions:
       alternate_style: true # https://github.com/squidfunk/mkdocs-material/issues/3330
   - pymdownx.highlight
   - pymdownx.superfences
+  - tables
 
 theme:
   name: material

@@ -8,7 +8,7 @@ Send a player-sourced colored message to all players (includes sender id).
 
 ## Declaration
 ```cpp
-bool sendPlayerMessageToAll(int sender_id, int r, int g, int b, string text)
+boolean sendPlayerMessageToAll(int sender_id, int r, int g, int b, string text)
 ```
 
 ## Parameters
@@ -18,5 +18,5 @@ bool sendPlayerMessageToAll(int sender_id, int r, int g, int b, string text)
 * `int` **b**: Blue component (0-255).
 * `string` **text**: Message text.
   
-## Returns `bool`
-True on success.
+## Returns `boolean`
+True on success, false if the sender is missing.

@@ -8,7 +8,7 @@ Remove an item from a player's inventory on the client.
 
 ## Declaration
 ```cpp
-bool removeItem(int player_id, string instance, int amount)
+boolean removeItem(int player_id, string instance, int amount)
 ```
 
 ## Parameters
@@ -16,5 +16,5 @@ bool removeItem(int player_id, string instance, int amount)
 * `string` **instance**: Item instance name.
 * `int` **amount**: Amount to remove.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

@@ -12,7 +12,7 @@ Triggers a custom client-side event for one or more players and optionally passe
 
 ## Declaration
 ```cpp
-bool triggerClientEvent(int|{...}|nil sendTo, string eventName, int|nil sourceElement, ... ...)
+boolean triggerClientEvent(int|{...}|nil sendTo, string eventName, int|nil sourceElement, ... ...)
 ```
 
 ## Parameters
@@ -21,5 +21,5 @@ bool triggerClientEvent(int|{...}|nil sendTo, string eventName, int|nil sourceEl
 * `int|nil` **sourceElement**: Optional source element id. If omitted or nil, defaults to 0.
 * `...` **...**: Optional arguments passed to the client event handler.
   
-## Returns `bool`
+## Returns `boolean`
 True if the event was sent successfully, otherwise false.

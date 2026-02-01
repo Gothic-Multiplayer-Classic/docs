@@ -16,12 +16,12 @@ Mat4.new()
 No parameters.
 ### Constructor
 ```cpp
-Mat4.new(number value)
+Mat4.new(float value)
 ```
 
 **Parameters:**
 
-* `number` **value**: Scalar initialization value.
+* `float` **value**: Scalar initialization value.
 ### Constructor
 ```cpp
 Mat4.new(Vec4 v0, Vec4 v1, Vec4 v2, Vec4 v3)
@@ -78,11 +78,11 @@ void makeOrthonormal()
 Returns true if the upper 3x3 basis vectors are orthonormal.
 
 ```cpp
-bool isUpper3x3Orthonormal()
+boolean isUpper3x3Orthonormal()
 ```
 
   
-**Returns `bool`:**
+**Returns `boolean`:**
 
 True if orthonormal within epsilon tolerance.
 
@@ -304,12 +304,12 @@ Scaling factors for x, y and z axes.
 Post-multiplies a rotation around the X axis (degrees).
 
 ```cpp
-void postRotateX(number angle_degrees)
+void postRotateX(float angle_degrees)
 ```
 
 **Parameters:**
 
-* `number` **angle_degrees**: Rotation angle in degrees.
+* `float` **angle_degrees**: Rotation angle in degrees.
   
 
 ----
@@ -318,12 +318,12 @@ void postRotateX(number angle_degrees)
 Post-multiplies a rotation around the Y axis (degrees).
 
 ```cpp
-void postRotateY(number angle_degrees)
+void postRotateY(float angle_degrees)
 ```
 
 **Parameters:**
 
-* `number` **angle_degrees**: Rotation angle in degrees.
+* `float` **angle_degrees**: Rotation angle in degrees.
   
 
 ----
@@ -332,12 +332,12 @@ void postRotateY(number angle_degrees)
 Post-multiplies a rotation around the Z axis (degrees).
 
 ```cpp
-void postRotateZ(number angle_degrees)
+void postRotateZ(float angle_degrees)
 ```
 
 **Parameters:**
 
-* `number` **angle_degrees**: Rotation angle in degrees.
+* `float` **angle_degrees**: Rotation angle in degrees.
   
 
 ----

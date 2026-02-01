@@ -4,13 +4,16 @@ title: 'Log'
 # `function` Log <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will store the given text into a log file with the specified name.
+Append a line of text to the specified log file.
 
 ## Declaration
 ```cpp
-void Log(string name, string text)
+int Log(string name, string text)
 ```
 
 ## Parameters
-* `string` **name**: The name of the log file.
-* `string` **text**: The text to log.
+* `string` **name**: Log file name or path.
+* `string` **text**: Text to append.
+  
+## Returns `int`
+Always returns 0.

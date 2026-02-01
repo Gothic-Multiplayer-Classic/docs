@@ -8,12 +8,12 @@ Sets the cursor size in virtual (screen-scaled) units.
 
 ## Declaration
 ```cpp
-bool setCursorSize(int width, int height)
+boolean setCursorSize(int width, int height)
 ```
 
 ## Parameters
 * `int` **width**: Cursor width.
 * `int` **height**: Cursor height.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

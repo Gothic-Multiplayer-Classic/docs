@@ -19,41 +19,41 @@ Quat.new()
 No parameters.
 ### Constructor
 ```cpp
-Quat.new(number w)
+Quat.new(float w)
 ```
 
 **Parameters:**
 
-* `number` **w**: W component.
+* `float` **w**: W component.
 ### Constructor
 ```cpp
-Quat.new(number x, number y, number z, number w)
+Quat.new(float x, float y, float z, float w)
 ```
 
 **Parameters:**
 
-* `number` **x**: X component.
-* `number` **y**: Y component.
-* `number` **z**: Z component.
-* `number` **w**: W component.
+* `float` **x**: X component.
+* `float` **y**: Y component.
+* `float` **z**: Z component.
+* `float` **w**: W component.
 
 ## Properties
-### `number` x 
+### `float` x 
 
 X component.
 
 ----
-### `number` y 
+### `float` y 
 
 Y component.
 
 ----
-### `number` z 
+### `float` z 
 
 Z component.
 
 ----
-### `number` w 
+### `float` w 
 
 W component.
 
@@ -165,13 +165,13 @@ Axis-angle as (x, y, z, angle).
 Sets this quaternion from an axis and angle.
 
 ```cpp
-void fromAxisAngle(Vec3 axis, number angle)
+void fromAxisAngle(Vec3 axis, float angle)
 ```
 
 **Parameters:**
 
 * `Vec3` **axis**: Rotation axis (typically normalized).
-* `number` **angle**: Rotation angle.
+* `float` **angle**: Rotation angle.
   
 
 ----
@@ -191,11 +191,11 @@ void makeIdentity()
 Returns true if this quaternion is identity (within epsilon tolerance).
 
 ```cpp
-bool isIdentity()
+boolean isIdentity()
 ```
 
   
-**Returns `bool`:**
+**Returns `boolean`:**
 
 True if identity.
 
@@ -205,11 +205,11 @@ True if identity.
 Returns the quaternion length.
 
 ```cpp
-number len()
+float len()
 ```
 
   
-**Returns `number`:**
+**Returns `float`:**
 
 Quaternion length.
 
@@ -219,11 +219,11 @@ Quaternion length.
 Returns the squared quaternion length.
 
 ```cpp
-number len2()
+float len2()
 ```
 
   
-**Returns `number`:**
+**Returns `float`:**
 
 Squared quaternion length.
 
@@ -233,11 +233,11 @@ Squared quaternion length.
 Returns an approximate quaternion length.
 
 ```cpp
-number lenApprox()
+float lenApprox()
 ```
 
   
-**Returns `number`:**
+**Returns `float`:**
 
 Approximate length.
 
@@ -293,15 +293,15 @@ This quaternion (normalized).
 Sets quaternion components.
 
 ```cpp
-void set(number x, number y, number z, number w)
+void set(float x, float y, float z, float w)
 ```
 
 **Parameters:**
 
-* `number` **x**: X component.
-* `number` **y**: Y component.
-* `number` **z**: Z component.
-* `number` **w**: W component.
+* `float` **x**: X component.
+* `float` **y**: Y component.
+* `float` **z**: Z component.
+* `float` **w**: W component.
   
 
 ----
@@ -340,7 +340,7 @@ Conjugated quaternion.
 Returns the dot product of two quaternions.
 
 ```cpp
-number dot(Quat quat1, Quat quat2)
+float dot(Quat quat1, Quat quat2)
 ```
 
 **Parameters:**
@@ -348,7 +348,7 @@ number dot(Quat quat1, Quat quat2)
 * `Quat` **quat1**: First quaternion.
 * `Quat` **quat2**: Second quaternion.
   
-**Returns `number`:**
+**Returns `float`:**
 
 Dot product.
 
@@ -358,12 +358,12 @@ Dot product.
 Linearly interpolates between two quaternions.
 
 ```cpp
-Quat lerp(number t, Quat q1, Quat q2)
+Quat lerp(float t, Quat q1, Quat q2)
 ```
 
 **Parameters:**
 
-* `number` **t**: Interpolation factor (typically 0..1).
+* `float` **t**: Interpolation factor (typically 0..1).
 * `Quat` **q1**: Start quaternion.
 * `Quat` **q2**: End quaternion.
   
@@ -377,12 +377,12 @@ Interpolated quaternion.
 Spherically interpolates between two quaternions.
 
 ```cpp
-Quat slerp(number t, Quat q1, Quat q2)
+Quat slerp(float t, Quat q1, Quat q2)
 ```
 
 **Parameters:**
 
-* `number` **t**: Interpolation factor (typically 0..1).
+* `float` **t**: Interpolation factor (typically 0..1).
 * `Quat` **q1**: Start quaternion.
 * `Quat` **q2**: End quaternion.
   
@@ -396,12 +396,12 @@ Spherically interpolated quaternion.
 Performs a squad-style interpolation using three quaternions.
 
 ```cpp
-Quat squad(number t, Quat q1, Quat q2, Quat q3)
+Quat squad(float t, Quat q1, Quat q2, Quat q3)
 ```
 
 **Parameters:**
 
-* `number` **t**: Interpolation factor (typically 0..1).
+* `float` **t**: Interpolation factor (typically 0..1).
 * `Quat` **q1**: First quaternion.
 * `Quat` **q2**: Second quaternion.
 * `Quat` **q3**: Third quaternion.

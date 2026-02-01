@@ -4,16 +4,16 @@ title: 'disableKey'
 # `function` disableKey <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will disable/enable specified keyboard key, like: ESCAPE, TAB, etc.
+Disable/enable specified keyboard key, like: ESCAPE, TAB, etc.
 
 ## Declaration
 ```cpp
-bool disableKey(int keyId, bool toggle)
+boolean disableKey(int keyId, boolean toggle)
 ```
 
 ## Parameters
 * `int` **keyId**: The key code to disable. For more information about key codes, see [Key Constants](../../client-constants/Key.md).
-* `bool` **toggle**: true when you want to disable specified keyboard key, otherwise false
+* `boolean` **toggle**: true when you want to disable specified keyboard key, otherwise false
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

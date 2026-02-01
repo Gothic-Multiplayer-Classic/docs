@@ -8,11 +8,11 @@ The function is used to check whether player is in unconscious state. The player
 
 ## Declaration
 ```cpp
-bool isPlayerUnconscious(int player_id)
+boolean isPlayerUnconscious(int player_id)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
   
-## Returns `bool`
+## Returns `boolean`
 True when player is unconscious, otherwise false.

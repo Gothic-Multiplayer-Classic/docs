@@ -60,7 +60,7 @@ Gets or sets the texture color.
 Gets or sets the texture alpha (opacity).
 
 ----
-### `bool` visible 
+### `boolean` visible 
 
 Gets or sets whether the texture is rendered.
 
@@ -341,12 +341,12 @@ Texture file name.
 Sets whether the texture should be rendered.
 
 ```cpp
-void setVisible(bool visible)
+void setVisible(boolean visible)
 ```
 
 **Parameters:**
 
-* `bool` **visible**: True to render, false to hide.
+* `boolean` **visible**: True to render, false to hide.
   
 
 ----
@@ -355,11 +355,11 @@ void setVisible(bool visible)
 Returns whether the texture is visible.
 
 ```cpp
-bool getVisible()
+boolean getVisible()
 ```
 
   
-**Returns `bool`:**
+**Returns `boolean`:**
 
 True if visible.
 

@@ -8,7 +8,7 @@ Set a player's weapon skill hit chance (0-100).
 
 ## Declaration
 ```cpp
-bool setPlayerSkillWeapon(int player_id, int skill_id, int percentage)
+boolean setPlayerSkillWeapon(int player_id, int skill_id, int percentage)
 ```
 
 ## Parameters
@@ -16,5 +16,5 @@ bool setPlayerSkillWeapon(int player_id, int skill_id, int percentage)
 * `int` **skill_id**: Skill identifier.
 * `int` **percentage**: Hit chance (0-100).
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

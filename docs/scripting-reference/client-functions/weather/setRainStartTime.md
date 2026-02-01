@@ -4,7 +4,7 @@ title: 'setRainStartTime'
 # `function` setRainStartTime <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This method will set the sky weather time when it starts raining/snowing.
+Set the sky weather time when it starts raining/snowing.
 
 ## Declaration
 ```cpp

@@ -4,7 +4,7 @@ title: 'setTimer'
 # `function` setTimer <font size="4">(shared-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Creates a new timer that calls the given function at a fixed interval.
+Create a new timer that calls the given function at a fixed interval.
 
 The timer passes any additional arguments to the callback when it executes.
 If execute_times is 0 or negative, the timer repeats indefinitely.

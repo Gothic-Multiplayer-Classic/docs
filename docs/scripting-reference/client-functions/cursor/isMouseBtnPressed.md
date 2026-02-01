@@ -8,11 +8,11 @@ Returns whether a mouse button is currently pressed.
 
 ## Declaration
 ```cpp
-bool isMouseBtnPressed(int button)
+boolean isMouseBtnPressed(int button)
 ```
 
 ## Parameters
 * `int` **button**: Mouse button identifier.
   
-## Returns `bool`
+## Returns `boolean`
 True if the button is pressed.

@@ -8,12 +8,12 @@ Set a player's experience points.
 
 ## Declaration
 ```cpp
-bool setPlayerExp(int player_id, int exp)
+boolean setPlayerExp(int player_id, int exp)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
 * `int` **exp**: New exp value.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

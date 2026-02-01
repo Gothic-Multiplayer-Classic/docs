@@ -4,7 +4,7 @@ title: 'getPlayerRespawnTime'
 # `function` getPlayerRespawnTime <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will get the player time to respawn after death.
+Get the player time to respawn after death.
 
 ## Declaration
 ```cpp

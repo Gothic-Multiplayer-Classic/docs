@@ -4,15 +4,15 @@ title: 'setDontRain'
 # `function` setDontRain <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This method will enable/disable weather completely.
+Enable/disable weather completely.
 
 ## Declaration
 ```cpp
-bool setDontRain(bool toggle)
+boolean setDontRain(boolean toggle)
 ```
 
 ## Parameters
-* `bool` **toggle**: True to disable weather, false to enable it.
+* `boolean` **toggle**: True to disable weather, false to enable it.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

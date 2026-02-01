@@ -4,7 +4,7 @@ title: 'setFogColor'
 # `function` setFogColor <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This method will set the sky fog color day variation.
+Set the sky fog color day variation.
 
 ## Declaration
 ```cpp

@@ -8,51 +8,91 @@ This class exposes static methods for updating the user's Discord activity from 
 
 
 ## Properties
-### `string` state 
-
-Gets or sets the draw position in pixel coordinates.
-
-----
-### `string` details 
-
-Gets or sets the draw position in pixel coordinates.
-
-----
-### `string` largeImageKey 
-
-Gets or sets the draw position in pixel coordinates.
-
-----
-### `string` largeImageText 
-
-Gets or sets the draw position in pixel coordinates.
-
-----
-### `string` smallImageKey 
-
-Gets or sets the draw position in pixel coordinates.
-
-----
-### `string` smallImageText 
-
-Gets or sets the draw position in pixel coordinates.
+No properties.
 
 ----
 
 ## Methods
-### `static` SetActivity
+### `static` setActivity
 
-Updates the Discord Rich Presence activity.
-
-All parameters are optional and should be passed via a table. Missing fields default to empty values.
+Update the Discord Rich Presence activity. Missing fields keep their last-set values.
 
 ```cpp
-void SetActivity(table Activity)
+void setActivity(table Activity)
 ```
 
 **Parameters:**
 
 * `table` **Activity**: configuration table.
+  
+
+----
+### `static` setState
+
+Update the activity state text.
+
+```cpp
+void setState(string state)
+```
+
+**Parameters:**
+
+* `string` **state**: New activity state text.
+  
+
+----
+### `static` setDetails
+
+Update the activity details text.
+
+```cpp
+void setDetails(string details)
+```
+
+**Parameters:**
+
+* `string` **details**: New activity details text.
+  
+
+----
+### `static` setLargeImage
+
+Update the large image entry for the activity.
+
+```cpp
+void setLargeImage(string key, string text)
+```
+
+**Parameters:**
+
+* `string` **key**: Asset key for the large image.
+* `string` **text**: Optional tooltip text for the large image.
+  
+
+----
+### `static` setSmallImage
+
+Update the small image entry for the activity.
+
+```cpp
+void setSmallImage(string key, string text)
+```
+
+**Parameters:**
+
+* `string` **key**: Asset key for the small image.
+* `string` **text**: Optional tooltip text for the small image.
+  
+
+----
+### `static` clearActivity
+
+Clear the current activity and stored values.
+
+```cpp
+void clearActivity()
+```
+
   
 
 ----

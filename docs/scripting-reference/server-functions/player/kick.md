@@ -6,7 +6,7 @@ title: 'kick'
 !!! note
     The reason string can't be longer than 255 characters.
 
-This function will kick the player from the server.
+Kick the player from the server.
 
 ## Declaration
 ```cpp

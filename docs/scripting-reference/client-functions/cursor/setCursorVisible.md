@@ -8,11 +8,11 @@ Sets whether the cursor is visible.
 
 ## Declaration
 ```cpp
-bool setCursorVisible(bool toggle)
+boolean setCursorVisible(boolean toggle)
 ```
 
 ## Parameters
-* `bool` **toggle**: True to show the cursor, false to hide it.
+* `boolean` **toggle**: True to show the cursor, false to hide it.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

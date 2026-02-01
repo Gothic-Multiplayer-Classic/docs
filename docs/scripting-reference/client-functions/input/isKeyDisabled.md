@@ -8,11 +8,11 @@ The function is used to check whether the specified keyboard key is disabled.
 
 ## Declaration
 ```cpp
-bool isKeyDisabled(int keyId)
+boolean isKeyDisabled(int keyId)
 ```
 
 ## Parameters
 * `int` **keyId**: The key code to check. For more information about key codes, see [Key Constants](../../client-constants/Key.md).
   
-## Returns `bool`
+## Returns `boolean`
 true when disabled, otherwise false.

@@ -8,7 +8,7 @@ Give an item to a player or NPC.
 
 ## Declaration
 ```cpp
-bool giveItem(int player_id, string instance, int amount)
+boolean giveItem(int player_id, string instance, int amount)
 ```
 
 ## Parameters
@@ -16,5 +16,5 @@ bool giveItem(int player_id, string instance, int amount)
 * `string` **instance**: Item instance name from scripts.
 * `int` **amount**: Amount to give.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

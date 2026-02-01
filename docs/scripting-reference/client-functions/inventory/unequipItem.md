@@ -8,12 +8,12 @@ Unequip an item from a player or NPC on the client.
 
 ## Declaration
 ```cpp
-bool unequipItem(int player_id, string instance)
+boolean unequipItem(int player_id, string instance)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
 * `string` **instance**: Item instance name.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

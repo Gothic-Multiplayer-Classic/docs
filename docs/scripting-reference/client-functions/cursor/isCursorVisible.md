@@ -8,11 +8,11 @@ Returns whether the cursor is currently visible.
 
 ## Declaration
 ```cpp
-bool isCursorVisible()
+boolean isCursorVisible()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `bool`
+## Returns `boolean`
 True if the cursor is visible.

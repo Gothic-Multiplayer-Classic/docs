@@ -8,11 +8,11 @@ Sets the cursor movement sensitivity.
 
 ## Declaration
 ```cpp
-bool setCursorSensitivity(number sensitivity)
+boolean setCursorSensitivity(float sensitivity)
 ```
 
 ## Parameters
-* `number` **sensitivity**: Cursor sensitivity multiplier.
+* `float` **sensitivity**: Cursor sensitivity multiplier.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

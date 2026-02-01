@@ -4,7 +4,7 @@ title: 'respawnPlayer'
 # `function` respawnPlayer <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will immediately respawn the player if it is dead.
+Immediately respawn the player if he is dead.
 
 ## Declaration
 ```cpp

@@ -39,14 +39,13 @@ A value of `0` disables custom time scaling and uses the default behavior.
 ---
 ## Server Identity
 ### `server_identity_seed`
+!!! note 
+	**Do not share this value.** Keep a backup to preserve the server's identity when moving or reinstalling. Changing this value makes the server appear as a completely new server.
+
 - **Type:** string
 - **Description:**
 Unique secret value that defines the server's identity.
 This seed is used to generate cryptographic keys that identify the server.
-- **Important notes:**
-- **Do not share this value.**
-- Keep a backup to preserve the server's identity when moving or reinstalling.
-- Changing this value makes the server appear as a completely new server.
 
 ---
 ## Gameplay

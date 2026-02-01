@@ -8,12 +8,12 @@ Set a player's maximum mana.
 
 ## Declaration
 ```cpp
-bool setPlayerMaxMana(int player_id, int max_mana)
+boolean setPlayerMaxMana(int player_id, int max_mana)
 ```
 
 ## Parameters
 * `int` **player_id**: Target player id.
 * `int` **max_mana**: New maximum mana.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

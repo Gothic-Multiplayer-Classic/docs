@@ -8,12 +8,12 @@ Sets the cursor position in pixel coordinates.
 
 ## Declaration
 ```cpp
-bool setCursorPositionPx(int x, int y)
+boolean setCursorPositionPx(int x, int y)
 ```
 
 ## Parameters
 * `int` **x**: X position in pixels.
 * `int` **y**: Y position in pixels.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

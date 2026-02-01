@@ -18,34 +18,34 @@ Sound.new(string file)
 ## Properties
 ### `string` file 
 
-Gets or sets the sound file path.
+Get or set the sound file path.
 
 ----
-### `number` playingTime <font size="2">(read-only)</font>
+### `float` playingTime <font size="2">(read-only)</font>
 
-Returns the current playback time.
-
-----
-### `number` volume 
-
-Gets or sets the playback volume.
+Return the current playback time.
 
 ----
-### `bool` looping 
+### `float` volume 
 
-Gets or sets whether the sound should loop.
+Get or set the playback volume.
 
 ----
-### `number` balance 
+### `boolean` looping 
 
-Gets or sets the stereo balance (pan).
+Get or set whether the sound should loop.
+
+----
+### `float` balance 
+
+Get or set the stereo balance (pan).
 
 ----
 
 ## Methods
 ### play
 
-Starts sound playback.
+Start sound playback.
 
 ```cpp
 void play()
@@ -56,7 +56,7 @@ void play()
 ----
 ### stop
 
-Stops sound playback.
+Stop sound playback.
 
 ```cpp
 void stop()
@@ -67,14 +67,14 @@ void stop()
 ----
 ### isPlaying
 
-Returns whether the sound is currently playing.
+Return whether the sound is currently playing.
 
 ```cpp
-bool isPlaying()
+boolean isPlaying()
 ```
 
   
-**Returns `bool`:**
+**Returns `boolean`:**
 
 True if the sound is playing.
 

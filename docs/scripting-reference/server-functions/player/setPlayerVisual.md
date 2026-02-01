@@ -8,7 +8,7 @@ Set a player's visual model and textures.
 
 ## Declaration
 ```cpp
-bool setPlayerVisual(int player_id, string body_model, int body_texture, string head_model, int head_texture)
+boolean setPlayerVisual(int player_id, string body_model, int body_texture, string head_model, int head_texture)
 ```
 
 ## Parameters
@@ -18,5 +18,5 @@ bool setPlayerVisual(int player_id, string body_model, int body_texture, string 
 * `string` **head_model**: Head model name.
 * `int` **head_texture**: Head texture index.
   
-## Returns `bool`
+## Returns `boolean`
 True on success.

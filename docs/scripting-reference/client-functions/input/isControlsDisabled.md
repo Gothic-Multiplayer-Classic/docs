@@ -8,11 +8,11 @@ The function is used to check whether default game actions are disabled.
 
 ## Declaration
 ```cpp
-bool isControlsDisabled()
+boolean isControlsDisabled()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `bool`
+## Returns `boolean`
 true when disabled, otherwise false.
