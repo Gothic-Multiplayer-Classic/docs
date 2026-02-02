@@ -8,11 +8,11 @@ Set a player's world position.
 
 ## Declaration
 ```cpp
-void setPlayerPosition(int player_id, float x, float y, float z)
+void setPlayerPosition(number player_id, number x, number y, number z)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `float` **x**: X coordinate.
-* `float` **y**: Y coordinate.
-* `float` **z**: Z coordinate.
+* `number` **player_id**: Target player id.
+* `number` **x**: X coordinate.
+* `number` **y**: Y coordinate.
+* `number` **z**: Z coordinate.

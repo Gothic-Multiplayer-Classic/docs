@@ -8,11 +8,11 @@ Get a player's active animation overlays.
 
 ## Declaration
 ```cpp
-{...}|nil getPlayerOverlays(int player_id)
+{...}|nil getPlayerOverlays(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: 
+* `number` **player_id**: 
   
 ## Returns `{...}|nil`
 Array of overlay names or nil.

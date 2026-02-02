@@ -8,7 +8,7 @@ Triggered when a player respawns after death.
 
 ## Parameters
 ```c++
-void onPlayerRespawn(int id)
+void onPlayerRespawn(number id)
 ```
 
-* `int` **id**: The id of the respawned player.
+* `number` **id**: The id of the respawned player.

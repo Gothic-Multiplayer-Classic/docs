@@ -8,8 +8,8 @@ Triggered when a player kills another player.
 
 ## Parameters
 ```c++
-void onPlayerKill(int killer_id, int victim_id)
+void onPlayerKill(number killer_id, number victim_id)
 ```
 
-* `int` **killer_id**: The id of the killer.
-* `int` **victim_id**: The id of the victim.
+* `number` **killer_id**: The id of the killer.
+* `number` **victim_id**: The id of the victim.

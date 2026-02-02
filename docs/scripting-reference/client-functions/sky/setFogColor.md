@@ -8,11 +8,11 @@ Set the sky fog color day variation.
 
 ## Declaration
 ```cpp
-void setFogColor(int id, int r, int g, int b)
+void setFogColor(number id, number r, number g, number b)
 ```
 
 ## Parameters
-* `int` **id**: The id of fog color day variation.
-* `int` **r**: The red color component in RGB model.
-* `int` **g**: The green color component in RGB model.
-* `int` **b**: The blue color component in RGB model.
+* `number` **id**: The id of fog color day variation.
+* `number` **r**: The red color component in RGB model.
+* `number` **g**: The green color component in RGB model.
+* `number` **b**: The blue color component in RGB model.

@@ -8,11 +8,11 @@ Get a player's experience points or nil if unavailable.
 
 ## Declaration
 ```cpp
-int|nil getPlayerExp(int player_id)
+number|nil getPlayerExp(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Exp value or nil.

@@ -8,11 +8,11 @@ The function is used to check whether the specified keyboard key is pressed.
 
 ## Declaration
 ```cpp
-boolean KeyPressed(int key)
+boolean KeyPressed(number key)
 ```
 
 ## Parameters
-* `int` **key**: The key code to check. For more information about key codes, see [Key Constants](../../client-constants/Key.md).
+* `number` **key**: The key code to check. For more information about key codes, see [Key Constants](../../client-constants/Key.md).
   
 ## Returns `boolean`
 True if the key is currently pressed, false otherwise.

@@ -8,10 +8,10 @@ Set a player's facing angle (radians) in world space.
 
 ## Declaration
 ```cpp
-void setPlayerAngle(int player_id, float angle, bool|nil interpolate)
+void setPlayerAngle(number player_id, number angle, bool|nil interpolate)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `float` **angle**: Angle in radians.
+* `number` **player_id**: Target player id.
+* `number` **angle**: Angle in radians.
 * `bool|nil` **interpolate**: Optional interpolation flag.

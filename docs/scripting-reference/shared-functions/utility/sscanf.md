@@ -8,12 +8,12 @@ Split text according to a format string and return the parsed values.
 
 ## Declaration
 ```cpp
-array|nil sscanf(string format, string text)
+table|nil sscanf(string format, string text)
 ```
 
 ## Parameters
-* `string` **format**: Format string where each specifier maps to a value. Supported specifiers: `d` (integer), `f` (float), `s` (string).
+* `string` **format**: Format string where each specifier maps to a value. Supported specifiers: `d` (integer), `f` (number), `s` (string).
 * `string` **text**: Input text to parse.
   
-## Returns `array|nil`
+## Returns `table|nil`
 Array of parsed values, or nil on parse failure.

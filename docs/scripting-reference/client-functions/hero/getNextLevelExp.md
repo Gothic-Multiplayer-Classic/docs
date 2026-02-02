@@ -8,11 +8,11 @@ Get the experience required for the player's next level.
 
 ## Declaration
 ```cpp
-int|nil getNextLevelExp()
+number|nil getNextLevelExp()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Next level exp or nil.

@@ -8,11 +8,11 @@ Return the interval (in milliseconds) of a timer, or nil if the timer does not e
 
 ## Declaration
 ```cpp
-int|nil getTimerInterval(int timer_id)
+number|nil getTimerInterval(number timer_id)
 ```
 
 ## Parameters
-* `int` **timer_id**: Timer ID returned by setTimer.
+* `number` **timer_id**: Timer ID returned by setTimer.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Interval in milliseconds, or nil if not found.

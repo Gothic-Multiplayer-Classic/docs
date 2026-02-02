@@ -8,8 +8,8 @@ Triggered when a player's amulet changes.
 
 ## Parameters
 ```c++
-void onPlayerAmuletChange(int player_id, int|nil instance)
+void onPlayerAmuletChange(number player_id, number|nil instance)
 ```
 
-* `int` **player_id**: Player id.
-* `int|nil` **instance**: New amulet instance id (nil if none).
+* `number` **player_id**: Player id.
+* `number|nil` **instance**: New amulet instance id (nil if none).

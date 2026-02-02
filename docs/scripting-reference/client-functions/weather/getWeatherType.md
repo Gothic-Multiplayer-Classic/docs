@@ -8,11 +8,11 @@ Return the current weather type.
 
 ## Declaration
 ```cpp
-int getWeatherType()
+number getWeatherType()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int`
+## Returns `number`
 Current weather type.

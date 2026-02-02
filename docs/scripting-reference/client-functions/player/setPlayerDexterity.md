@@ -8,9 +8,9 @@ Set a player's dexterity attribute.
 
 ## Declaration
 ```cpp
-void setPlayerDexterity(int player_id, int dexterity)
+void setPlayerDexterity(number player_id, number dexterity)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **dexterity**: Dexterity value.
+* `number` **player_id**: Target player id.
+* `number` **dexterity**: Dexterity value.

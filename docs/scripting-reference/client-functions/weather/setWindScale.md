@@ -8,8 +8,8 @@ Change the wind scale used during raining/snowing.
 
 ## Declaration
 ```cpp
-void setWindScale(float wind_scale)
+void setWindScale(number wind_scale)
 ```
 
 ## Parameters
-* `float` **wind_scale**: Wind scale value.
+* `number` **wind_scale**: Wind scale value.

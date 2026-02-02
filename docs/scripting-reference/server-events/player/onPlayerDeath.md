@@ -8,8 +8,8 @@ Triggered when a player dies.
 
 ## Parameters
 ```c++
-void onPlayerDeath(int player_id, int killer_id)
+void onPlayerDeath(number player_id, number killer_id)
 ```
 
-* `int` **player_id**: The id of the player who died.
-* `int` **killer_id**: Optional id of the killer (nil if none).
+* `number` **player_id**: The id of the player who died.
+* `number` **killer_id**: Optional id of the killer (nil if none).

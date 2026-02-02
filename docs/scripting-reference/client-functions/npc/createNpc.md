@@ -8,11 +8,11 @@ Create a client-side NPC entry and return an internal npc id (<0).
 
 ## Declaration
 ```cpp
-int createNpc(string name)
+number createNpc(string name)
 ```
 
 ## Parameters
 * `string` **name**: Name for the created NPC.
   
-## Returns `int`
+## Returns `number`
 Internal npc id (negative) or 0 on failure.

@@ -8,11 +8,11 @@ Destroy a client-side NPC previously created with `createNpc`.
 
 ## Declaration
 ```cpp
-boolean destroyNpc(int npc_id)
+boolean destroyNpc(number npc_id)
 ```
 
 ## Parameters
-* `int` **npc_id**: Internal npc id returned by `createNpc`.
+* `number` **npc_id**: Internal npc id returned by `createNpc`.
   
 ## Returns `boolean`
 True on success.

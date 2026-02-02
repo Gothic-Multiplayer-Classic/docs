@@ -8,8 +8,8 @@ Triggered when weather changes.
 
 ## Parameters
 ```c++
-void onWeatherChange(int old_weather_type, int new_weather_type)
+void onWeatherChange(number old_weather_type, number new_weather_type)
 ```
 
-* `int` **old_weather_type**: Previous weather type.
-* `int` **new_weather_type**: New weather type.
+* `number` **old_weather_type**: Previous weather type.
+* `number` **new_weather_type**: New weather type.

@@ -8,15 +8,15 @@ title: 'Texture'
 
 ### Constructor
 ```cpp
-Texture.new(int x, int y, int width, int height, string file)
+Texture.new(number x, number y, number width, number height, string file)
 ```
 
 **Parameters:**
 
-* `int` **x**: X position (virtual units).
-* `int` **y**: Y position (virtual units).
-* `int` **width**: Width (virtual units).
-* `int` **height**: Height (virtual units).
+* `number` **x**: X position (virtual units).
+* `number` **y**: Y position (virtual units).
+* `number` **width**: Width (virtual units).
+* `number` **height**: Height (virtual units).
 * `string` **file**: Texture file path.
 
 ## Properties
@@ -55,7 +55,7 @@ Gets or sets the texture rectangle in pixel coordinates.
 Gets or sets the texture color.
 
 ----
-### `int` alpha 
+### `number` alpha 
 
 Gets or sets the texture alpha (opacity).
 
@@ -77,13 +77,13 @@ Gets or sets the texture file path.
 Sets the texture position in virtual screen units.
 
 ```cpp
-void setPosition(int x, int y)
+void setPosition(number x, number y)
 ```
 
 **Parameters:**
 
-* `int` **x**: X position (virtual units).
-* `int` **y**: Y position (virtual units).
+* `number` **x**: X position (virtual units).
+* `number` **y**: Y position (virtual units).
   
 
 ----
@@ -106,13 +106,13 @@ Table containing x and y (virtual units).
 Sets the texture position in pixel coordinates.
 
 ```cpp
-void setPositionPx(int x, int y)
+void setPositionPx(number x, number y)
 ```
 
 **Parameters:**
 
-* `int` **x**: X position (pixels).
-* `int` **y**: Y position (pixels).
+* `number` **x**: X position (pixels).
+* `number` **y**: Y position (pixels).
   
 
 ----
@@ -135,13 +135,13 @@ Table containing x and y (pixels).
 Sets the texture size in virtual screen units.
 
 ```cpp
-void setSize(int width, int height)
+void setSize(number width, number height)
 ```
 
 **Parameters:**
 
-* `int` **width**: Width (virtual units).
-* `int` **height**: Height (virtual units).
+* `number` **width**: Width (virtual units).
+* `number` **height**: Height (virtual units).
   
 
 ----
@@ -164,13 +164,13 @@ Table containing width and height (virtual units).
 Sets the texture size in pixel coordinates.
 
 ```cpp
-void setSizePx(int width, int height)
+void setSizePx(number width, number height)
 ```
 
 **Parameters:**
 
-* `int` **width**: Width (pixels).
-* `int` **height**: Height (pixels).
+* `number` **width**: Width (pixels).
+* `number` **height**: Height (pixels).
   
 
 ----
@@ -193,15 +193,15 @@ Table containing width and height (pixels).
 Sets the texture rectangle in virtual screen units.
 
 ```cpp
-void setRect(int x, int y, int width, int height)
+void setRect(number x, number y, number width, number height)
 ```
 
 **Parameters:**
 
-* `int` **x**: X position (virtual units).
-* `int` **y**: Y position (virtual units).
-* `int` **width**: Width (virtual units).
-* `int` **height**: Height (virtual units).
+* `number` **x**: X position (virtual units).
+* `number` **y**: Y position (virtual units).
+* `number` **width**: Width (virtual units).
+* `number` **height**: Height (virtual units).
   
 
 ----
@@ -224,15 +224,15 @@ Table containing x,y,width,height (virtual units).
 Sets the texture rectangle in pixel coordinates.
 
 ```cpp
-void setRectPx(int x, int y, int width, int height)
+void setRectPx(number x, number y, number width, number height)
 ```
 
 **Parameters:**
 
-* `int` **x**: X position (pixels).
-* `int` **y**: Y position (pixels).
-* `int` **width**: Width (pixels).
-* `int` **height**: Height (pixels).
+* `number` **x**: X position (pixels).
+* `number` **y**: Y position (pixels).
+* `number` **width**: Width (pixels).
+* `number` **height**: Height (pixels).
   
 
 ----
@@ -255,14 +255,14 @@ Table containing x,y,width,height (pixels).
 Sets the texture color.
 
 ```cpp
-void setColor(int r, int g, int b)
+void setColor(number r, number g, number b)
 ```
 
 **Parameters:**
 
-* `int` **r**: Red component (0-255).
-* `int` **g**: Green component (0-255).
-* `int` **b**: Blue component (0-255).
+* `number` **r**: Red component (0-255).
+* `number` **g**: Green component (0-255).
+* `number` **b**: Blue component (0-255).
   
 
 ----
@@ -285,12 +285,12 @@ Table containing r,g,b (0-255).
 Sets the texture alpha (opacity).
 
 ```cpp
-void setAlpha(int alpha)
+void setAlpha(number alpha)
 ```
 
 **Parameters:**
 
-* `int` **alpha**: Opacity value (0-255).
+* `number` **alpha**: Opacity value (0-255).
   
 
 ----
@@ -299,11 +299,11 @@ void setAlpha(int alpha)
 Returns the texture alpha (opacity).
 
 ```cpp
-int getAlpha()
+number getAlpha()
 ```
 
   
-**Returns `int`:**
+**Returns `number`:**
 
 Opacity value (0-255).
 

@@ -8,10 +8,10 @@ Set the sky lighting color.
 
 ## Declaration
 ```cpp
-void setLightingColor(int r, int g, int b)
+void setLightingColor(number r, number g, number b)
 ```
 
 ## Parameters
-* `int` **r**: The red color component in RGB model.
-* `int` **g**: The green color component in RGB model.
-* `int` **b**: The blue color component in RGB model.
+* `number` **r**: The red color component in RGB model.
+* `number` **g**: The green color component in RGB model.
+* `number` **b**: The blue color component in RGB model.

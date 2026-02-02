@@ -8,9 +8,9 @@ Triggered when player health changes.
 
 ## Parameters
 ```c++
-void onPlayerChangeHealth(int player_id, int oldHP, int newHP)
+void onPlayerChangeHealth(number player_id, number oldHP, number newHP)
 ```
 
-* `int` **player_id**: The id of the player whose health points got changed.
-* `int` **oldHP**: The previous health points of the player.
-* `int` **newHP**: The new health points of the player.
+* `number` **player_id**: The id of the player whose health points got changed.
+* `number` **oldHP**: The previous health points of the player.
+* `number` **newHP**: The new health points of the player.

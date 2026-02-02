@@ -8,9 +8,9 @@ Set a player's model fatness.
 
 ## Declaration
 ```cpp
-void setPlayerFatness(int player_id, float fatness)
+void setPlayerFatness(number player_id, number fatness)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `float` **fatness**: Fatness value.
+* `number` **player_id**: Target player id.
+* `number` **fatness**: Fatness value.

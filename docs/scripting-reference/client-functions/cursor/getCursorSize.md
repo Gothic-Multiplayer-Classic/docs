@@ -8,11 +8,11 @@ Returns the cursor size in virtual (screen-scaled) units.
 
 ## Declaration
 ```cpp
-int, int getCursorSize()
+number, int getCursorSize()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int, int`
+## Returns `number, int`
 Cursor width and height.

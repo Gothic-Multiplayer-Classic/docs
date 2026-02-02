@@ -8,12 +8,12 @@ Get a player's weapon skill hit chance.
 
 ## Declaration
 ```cpp
-int|nil getPlayerSkillWeapon(int player_id, int skill_id)
+number|nil getPlayerSkillWeapon(number player_id, number skill_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **skill_id**: Skill identifier.
+* `number` **player_id**: Target player id.
+* `number` **skill_id**: Skill identifier.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Hit chance (0-100) or nil.

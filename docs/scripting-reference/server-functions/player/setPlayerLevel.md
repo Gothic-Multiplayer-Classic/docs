@@ -8,12 +8,12 @@ Set a player's experience level.
 
 ## Declaration
 ```cpp
-boolean setPlayerLevel(int player_id, int level)
+boolean setPlayerLevel(number player_id, number level)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **level**: New level.
+* `number` **player_id**: Target player id.
+* `number` **level**: New level.
   
 ## Returns `boolean`
 True on success.

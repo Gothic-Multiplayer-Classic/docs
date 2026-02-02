@@ -8,7 +8,7 @@ Triggered when a key is released.
 
 ## Parameters
 ```c++
-void onKeyUp(int key)
+void onKeyUp(number key)
 ```
 
-* `int` **key**: The key code released.
+* `number` **key**: The key code released.

@@ -8,9 +8,9 @@ Set a player's maximum mana and clamp current mana if needed.
 
 ## Declaration
 ```cpp
-void setPlayerMaxMana(int player_id, int max_mana)
+void setPlayerMaxMana(number player_id, number max_mana)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **max_mana**: New maximum mana.
+* `number` **player_id**: Target player id.
+* `number` **max_mana**: New maximum mana.

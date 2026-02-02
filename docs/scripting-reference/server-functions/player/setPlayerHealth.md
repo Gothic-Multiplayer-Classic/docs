@@ -8,12 +8,12 @@ Set a player's current health.
 
 ## Declaration
 ```cpp
-boolean setPlayerHealth(int player_id, int health)
+boolean setPlayerHealth(number player_id, number health)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **health**: New health value.
+* `number` **player_id**: Target player id.
+* `number` **health**: New health value.
   
 ## Returns `boolean`
 True on success.

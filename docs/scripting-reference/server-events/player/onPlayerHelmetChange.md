@@ -8,8 +8,8 @@ Triggered when a player's helmet changes.
 
 ## Parameters
 ```c++
-void onPlayerHelmetChange(int player_id, int|nil instance)
+void onPlayerHelmetChange(number player_id, number|nil instance)
 ```
 
-* `int` **player_id**: Player id.
-* `int|nil` **instance**: New helmet instance id (nil if none).
+* `number` **player_id**: Player id.
+* `number|nil` **instance**: New helmet instance id (nil if none).

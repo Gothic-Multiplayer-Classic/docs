@@ -8,8 +8,8 @@ Triggered when a player disconnects from the server.
 
 ## Parameters
 ```c++
-void onPlayerDisconnect(int player_id, int reason)
+void onPlayerDisconnect(number player_id, number reason)
 ```
 
-* `int` **player_id**: The id of the player that disconnected.
-* `int` **reason**: The reason why player got disconnected. See Network constants.
+* `number` **player_id**: The id of the player that disconnected.
+* `number` **reason**: The reason why player got disconnected. See Network constants.

@@ -8,11 +8,11 @@ Returns the cursor position in virtual (screen-scaled) coordinates.
 
 ## Declaration
 ```cpp
-int, int getCursorPosition()
+number, int getCursorPosition()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int, int`
+## Returns `number, int`
 X and Y position.

@@ -8,13 +8,13 @@ Set a player's talent value.
 
 ## Declaration
 ```cpp
-boolean setPlayerTalent(int player_id, int talent_id, int talent_value)
+boolean setPlayerTalent(number player_id, number talent_id, number talent_value)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **talent_id**: Talent identifier.
-* `int` **talent_value**: Talent value.
+* `number` **player_id**: Target player id.
+* `number` **talent_id**: Talent identifier.
+* `number` **talent_value**: Talent value.
   
 ## Returns `boolean`
 True on success.

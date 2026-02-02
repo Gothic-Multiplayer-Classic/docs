@@ -1,7 +1,7 @@
 ---
 title: 'heroId'
 ---
-# `int` heroId <font size="4">(client-side)</font>
+# `number` heroId <font size="4">(client-side)</font>
 
 Represents the client player id.
 

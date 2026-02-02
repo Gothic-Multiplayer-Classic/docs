@@ -8,13 +8,13 @@ Convert RGB components to a lowercase hex color string.
 
 ## Declaration
 ```cpp
-string rgbToHex(int r, int g, int b)
+string rgbToHex(number r, number g, number b)
 ```
 
 ## Parameters
-* `int` **r**: Red component (0-255).
-* `int` **g**: Green component (0-255).
-* `int` **b**: Blue component (0-255).
+* `number` **r**: Red component (0-255).
+* `number` **g**: Green component (0-255).
+* `number` **b**: Blue component (0-255).
   
 ## Returns `string`
 Lowercase hexadecimal representation.

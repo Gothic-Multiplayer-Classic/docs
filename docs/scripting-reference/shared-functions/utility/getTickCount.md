@@ -8,11 +8,11 @@ Get the number of milliseconds since the scripting runtime started.
 
 ## Declaration
 ```cpp
-int getTickCount()
+number getTickCount()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int`
+## Returns `number`
 Milliseconds since startup.

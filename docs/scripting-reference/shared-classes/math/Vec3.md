@@ -8,35 +8,35 @@ title: 'Vec3'
 
 ### Constructor
 ```cpp
-Vec3.new(float value)
+Vec3.new(number value)
 ```
 
 **Parameters:**
 
-* `float` **value**: Value assigned to x, y and z.
+* `number` **value**: Value assigned to x, y and z.
 ### Constructor
 ```cpp
-Vec3.new(float x, float y, float z)
+Vec3.new(number x, number y, number z)
 ```
 
 **Parameters:**
 
-* `float` **x**: X component.
-* `float` **y**: Y component.
-* `float` **z**: Z component.
+* `number` **x**: X component.
+* `number` **y**: Y component.
+* `number` **z**: Z component.
 
 ## Properties
-### `float` x 
+### `number` x 
 
 X component.
 
 ----
-### `float` y 
+### `number` y 
 
 Y component.
 
 ----
-### `float` z 
+### `number` z 
 
 Z component.
 
@@ -48,11 +48,11 @@ Z component.
 Returns the vector length (magnitude).
 
 ```cpp
-float len()
+number len()
 ```
 
   
-**Returns `float`:**
+**Returns `number`:**
 
 Vector length.
 
@@ -62,11 +62,11 @@ Vector length.
 Returns the squared vector length.
 
 ```cpp
-float len2()
+number len2()
 ```
 
   
-**Returns `float`:**
+**Returns `number`:**
 
 Squared vector length.
 
@@ -76,11 +76,11 @@ Squared vector length.
 Returns an approximate vector length.
 
 ```cpp
-float lenApprox()
+number lenApprox()
 ```
 
   
-**Returns `float`:**
+**Returns `number`:**
 
 Approximate vector length.
 
@@ -90,14 +90,14 @@ Approximate vector length.
 Returns the distance to another vector.
 
 ```cpp
-float distance(Vec3 vec)
+number distance(Vec3 vec)
 ```
 
 **Parameters:**
 
 * `Vec3` **vec**: Other vector.
   
-**Returns `float`:**
+**Returns `number`:**
 
 Distance between vectors.
 
@@ -107,14 +107,14 @@ Distance between vectors.
 Returns the 2D distance to another vector (ignores Z component).
 
 ```cpp
-float distance2d(Vec3 vec)
+number distance2d(Vec3 vec)
 ```
 
 **Parameters:**
 
 * `Vec3` **vec**: Other vector.
   
-**Returns `float`:**
+**Returns `number`:**
 
 2D distance between vectors.
 
@@ -170,14 +170,14 @@ This vector (normalized).
 Sets all components of the vector.
 
 ```cpp
-void set(float x, float y, float z)
+void set(number x, number y, number z)
 ```
 
 **Parameters:**
 
-* `float` **x**: X component.
-* `float` **y**: Y component.
-* `float` **z**: Z component.
+* `number` **x**: X component.
+* `number` **y**: Y component.
+* `number` **z**: Z component.
   
 
 ----
@@ -303,7 +303,7 @@ Component-wise product.
 Returns the dot product of two vectors.
 
 ```cpp
-float dot(Vec3 vec1, Vec3 vec2)
+number dot(Vec3 vec1, Vec3 vec2)
 ```
 
 **Parameters:**
@@ -311,7 +311,7 @@ float dot(Vec3 vec1, Vec3 vec2)
 * `Vec3` **vec1**: First vector.
 * `Vec3` **vec2**: Second vector.
   
-**Returns `float`:**
+**Returns `number`:**
 
 Dot product.
 
@@ -339,12 +339,12 @@ Cross product.
 Linearly interpolates between two vectors.
 
 ```cpp
-Vec3 lerp(float t, Vec3 v1, Vec3 v2)
+Vec3 lerp(number t, Vec3 v1, Vec3 v2)
 ```
 
 **Parameters:**
 
-* `float` **t**: Interpolation factor (typically 0..1).
+* `number` **t**: Interpolation factor (typically 0..1).
 * `Vec3` **v1**: Start vector.
 * `Vec3` **v2**: End vector.
   

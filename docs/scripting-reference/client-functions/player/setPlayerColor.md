@@ -8,11 +8,11 @@ Set a player's name color (RGB 0-255).
 
 ## Declaration
 ```cpp
-void setPlayerColor(int player_id, int r, int g, int b)
+void setPlayerColor(number player_id, number r, number g, number b)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **r**: Red (0-255).
-* `int` **g**: Green (0-255).
-* `int` **b**: Blue (0-255).
+* `number` **player_id**: Target player id.
+* `number` **r**: Red (0-255).
+* `number` **g**: Green (0-255).
+* `number` **b**: Blue (0-255).

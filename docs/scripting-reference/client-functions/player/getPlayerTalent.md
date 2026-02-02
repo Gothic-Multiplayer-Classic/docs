@@ -8,12 +8,12 @@ Get a player's talent value.
 
 ## Declaration
 ```cpp
-int|nil getPlayerTalent(int player_id, int talent_id)
+number|nil getPlayerTalent(number player_id, number talent_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **talent_id**: Talent identifier.
+* `number` **player_id**: Target player id.
+* `number` **talent_id**: Talent identifier.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Talent value or nil.

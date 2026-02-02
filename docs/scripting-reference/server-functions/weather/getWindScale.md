@@ -8,11 +8,11 @@ Return the current wind scale.
 
 ## Declaration
 ```cpp
-float getWindScale()
+number getWindScale()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `float`
+## Returns `number`
 Current wind scale.

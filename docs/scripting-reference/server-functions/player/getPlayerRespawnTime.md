@@ -8,11 +8,11 @@ Get the player time to respawn after death.
 
 ## Declaration
 ```cpp
-int|nil getPlayerRespawnTime(int player_id)
+number|nil getPlayerRespawnTime(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
-## Returns `int|nil`
+## Returns `number|nil`
 The player respawn time or nil if player isn't created.

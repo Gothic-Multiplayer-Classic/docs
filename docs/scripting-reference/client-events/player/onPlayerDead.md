@@ -8,7 +8,7 @@ Triggered when a player or NPC dies.
 
 ## Parameters
 ```c++
-void onPlayerDead(int id)
+void onPlayerDead(number id)
 ```
 
-* `int` **id**: The id of the player who died.
+* `number` **id**: The id of the player who died.

@@ -8,12 +8,12 @@ Get the amount of a specific item in a player's inventory.
 
 ## Declaration
 ```cpp
-int hasItem(int player_id, string instance)
+number hasItem(number player_id, string instance)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
 * `string` **instance**: Item instance name from scripts.
   
-## Returns `int`
+## Returns `number`
 Item amount or 0 if missing.

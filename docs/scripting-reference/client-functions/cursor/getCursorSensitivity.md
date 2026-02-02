@@ -8,11 +8,11 @@ Returns the cursor movement sensitivity.
 
 ## Declaration
 ```cpp
-float getCursorSensitivity()
+number getCursorSensitivity()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `float`
+## Returns `number`
 Cursor sensitivity multiplier.

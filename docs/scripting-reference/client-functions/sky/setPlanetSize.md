@@ -8,9 +8,9 @@ Set the planet size ratio.
 
 ## Declaration
 ```cpp
-void setPlanetSize(int planetId, float size)
+void setPlanetSize(number planetId, number size)
 ```
 
 ## Parameters
-* `int` **planetId**: The planet id, for more information see Planet constants.
-* `float` **size**: The size ratio.
+* `number` **planetId**: The planet id, for more information see Planet constants.
+* `number` **size**: The size ratio.

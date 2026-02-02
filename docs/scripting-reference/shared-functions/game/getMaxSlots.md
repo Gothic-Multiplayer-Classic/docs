@@ -8,11 +8,11 @@ Get the max number of slots available on the server.
 
 ## Declaration
 ```cpp
-int getMaxSlots()
+number getMaxSlots()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int`
+## Returns `number`
 Max slots number on the server.

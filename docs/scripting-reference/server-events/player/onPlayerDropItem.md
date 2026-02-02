@@ -8,9 +8,9 @@ Triggered when a player drops an item.
 
 ## Parameters
 ```c++
-void onPlayerDropItem(int player_id, int item_instance, int amount)
+void onPlayerDropItem(number player_id, number item_instance, number amount)
 ```
 
-* `int` **player_id**: Player id who dropped the item.
-* `int` **item_instance**: Item instance id.
-* `int` **amount**: Amount dropped.
+* `number` **player_id**: Player id who dropped the item.
+* `number` **item_instance**: Item instance id.
+* `number` **amount**: Amount dropped.

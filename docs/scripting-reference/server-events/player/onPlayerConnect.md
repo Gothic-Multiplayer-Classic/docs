@@ -8,7 +8,7 @@ Triggered when a player connects to the server.
 
 ## Parameters
 ```c++
-void onPlayerConnect(int player_id)
+void onPlayerConnect(number player_id)
 ```
 
-* `int` **player_id**: The id of the player that connected.
+* `number` **player_id**: The id of the player that connected.

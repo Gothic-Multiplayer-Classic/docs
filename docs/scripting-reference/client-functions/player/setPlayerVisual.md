@@ -8,12 +8,12 @@ Set a player's visual model and textures.
 
 ## Declaration
 ```cpp
-void setPlayerVisual(int player_id, string body_model, int body_texture, string head_model, int head_texture)
+void setPlayerVisual(number player_id, string body_model, number body_texture, string head_model, number head_texture)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
 * `string` **body_model**: Body model name.
-* `int` **body_texture**: Body texture index.
+* `number` **body_texture**: Body texture index.
 * `string` **head_model**: Head model name.
-* `int` **head_texture**: Head texture index.
+* `number` **head_texture**: Head texture index.

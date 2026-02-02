@@ -8,10 +8,10 @@ Triggered when the hero uses, interacts with, opens, or consumes an item.
 
 ## Parameters
 ```c++
-void onUseItem(string item, string scheme, int from, int to)
+void onUseItem(string item, string scheme, number from, number to)
 ```
 
 * `string` **item**: Item instance.
 * `string` **scheme**: Item scheme name, if available.
-* `int` **from**: Previous interact state.
-* `int` **to**: Current interact state.
+* `number` **from**: Previous interact state.
+* `number` **to**: Current interact state.

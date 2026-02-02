@@ -8,11 +8,11 @@ Get a player's instance name or nil if unavailable.
 
 ## Declaration
 ```cpp
-string|nil getPlayerInstance(int player_id)
+string|nil getPlayerInstance(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
 ## Returns `string|nil`
 Instance name or nil.

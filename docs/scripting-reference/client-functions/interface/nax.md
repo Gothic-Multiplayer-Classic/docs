@@ -10,11 +10,11 @@ Convert virtuals to pixels on screen X dimension and return it as a result.
 
 ## Declaration
 ```cpp
-int nax(int virtuals)
+number nax(number virtuals)
 ```
 
 ## Parameters
-* `int` **virtuals**: The virtuals to convert.
+* `number` **virtuals**: The virtuals to convert.
   
-## Returns `int`
+## Returns `number`
 The pixels after conversion.

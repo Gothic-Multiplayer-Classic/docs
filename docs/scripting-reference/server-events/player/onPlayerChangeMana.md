@@ -8,9 +8,9 @@ Triggered when player mana changes.
 
 ## Parameters
 ```c++
-void onPlayerChangeMana(int player_id, int previous, int current)
+void onPlayerChangeMana(number player_id, number previous, number current)
 ```
 
-* `int` **player_id**: The id of the player whose mana points got changed.
-* `int` **previous**: The previous mana points of the player.
-* `int` **current**: The current mana points of the player.
+* `number` **player_id**: The id of the player whose mana points got changed.
+* `number` **previous**: The previous mana points of the player.
+* `number` **current**: The current mana points of the player.

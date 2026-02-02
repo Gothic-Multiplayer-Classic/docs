@@ -8,9 +8,9 @@ This event is triggered every time the server clock updates.
 
 ## Parameters
 ```c++
-void onClockUpdate(int day, int hour, int min)
+void onClockUpdate(number day, number hour, number min)
 ```
 
-* `int` **day**: The current ingame day.
-* `int` **hour**: The current ingame hour.
-* `int` **min**: The current ingame minute.
+* `number` **day**: The current ingame day.
+* `number` **hour**: The current ingame hour.
+* `number` **min**: The current ingame minute.

@@ -8,7 +8,7 @@ Triggered when a player object is created locally.
 
 ## Parameters
 ```c++
-void onPlayerCreate(int player_id)
+void onPlayerCreate(number player_id)
 ```
 
-* `int` **player_id**: The local player id.
+* `number` **player_id**: The local player id.

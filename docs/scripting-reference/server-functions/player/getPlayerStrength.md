@@ -8,11 +8,11 @@ Get a player's strength attribute or nil if unavailable.
 
 ## Declaration
 ```cpp
-int|nil getPlayerStrength(int player_id)
+number|nil getPlayerStrength(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Strength value or nil.

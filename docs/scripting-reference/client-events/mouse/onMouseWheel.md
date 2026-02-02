@@ -8,7 +8,7 @@ Triggered when the mouse wheel is scrolled.
 
 ## Parameters
 ```c++
-void onMouseWheel(int z)
+void onMouseWheel(number z)
 ```
 
-* `int` **z**: Mouse wheel delta.
+* `number` **z**: Mouse wheel delta.

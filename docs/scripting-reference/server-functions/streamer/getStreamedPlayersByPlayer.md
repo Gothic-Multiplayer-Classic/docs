@@ -8,11 +8,11 @@ Get the list of players currently streamed to the given player.
 
 ## Declaration
 ```cpp
-{...} getStreamedPlayersByPlayer(int player_id)
+{...} getStreamedPlayersByPlayer(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
 ## Returns `{...}`
 Array of player ids.

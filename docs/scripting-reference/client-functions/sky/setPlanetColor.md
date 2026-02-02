@@ -8,12 +8,12 @@ Set the planet color.
 
 ## Declaration
 ```cpp
-void setPlanetColor(int planetId, int r, int g, int b, int a)
+void setPlanetColor(number planetId, number r, number g, number b, number a)
 ```
 
 ## Parameters
-* `int` **planetId**: The planet id, for more information see Planet constants.
-* `int` **r**: The red color component in RGBA model.
-* `int` **g**: The green color component in RGBA model.
-* `int` **b**: The blue color component in RGBA model.
-* `int` **a**: The alpha color component in RGBA model.
+* `number` **planetId**: The planet id, for more information see Planet constants.
+* `number` **r**: The red color component in RGBA model.
+* `number` **g**: The green color component in RGBA model.
+* `number` **b**: The blue color component in RGBA model.
+* `number` **a**: The alpha color component in RGBA model.

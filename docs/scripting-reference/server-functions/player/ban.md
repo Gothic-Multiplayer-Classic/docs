@@ -10,9 +10,9 @@ Ban the player on the server.
 
 ## Declaration
 ```cpp
-void ban(int player_id, string reason)
+void ban(number player_id, string reason)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
 * `string` **reason**: Optional reason why the player was banned.

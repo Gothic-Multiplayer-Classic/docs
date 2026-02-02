@@ -8,12 +8,12 @@ Set a player's facing angle (degrees).
 
 ## Declaration
 ```cpp
-boolean setPlayerAngle(int player_id, float angle_degrees)
+boolean setPlayerAngle(number player_id, number angle_degrees)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `float` **angle_degrees**: Angle in degrees.
+* `number` **player_id**: Target player id.
+* `number` **angle_degrees**: Angle in degrees.
   
 ## Returns `boolean`
 True on success.

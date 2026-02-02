@@ -8,11 +8,11 @@ Get a player's model scale.
 
 ## Declaration
 ```cpp
-{x, y, z}|nil getPlayerScale(int player_id)
+{x, y, z}|nil getPlayerScale(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
 ## Returns `{x, y, z}|nil`
 Scale table or nil.

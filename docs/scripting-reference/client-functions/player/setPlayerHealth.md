@@ -8,9 +8,9 @@ Set a player's current health (clamped to [0,max]).
 
 ## Declaration
 ```cpp
-void setPlayerHealth(int player_id, int health)
+void setPlayerHealth(number player_id, number health)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **health**: New health value.
+* `number` **player_id**: Target player id.
+* `number` **health**: New health value.

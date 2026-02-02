@@ -8,11 +8,11 @@ Get a player's model fatness.
 
 ## Declaration
 ```cpp
-float|nil getPlayerFatness(int player_id)
+float|nil getPlayerFatness(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
 ## Returns `float|nil`
 Fatness value or nil.

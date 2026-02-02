@@ -10,11 +10,11 @@ Convert virtuals to pixels on screen Y dimension and return it as a result.
 
 ## Declaration
 ```cpp
-int nay(int virtuals)
+number nay(number virtuals)
 ```
 
 ## Parameters
-* `int` **virtuals**: The virtuals to convert.
+* `number` **virtuals**: The virtuals to convert.
   
-## Returns `int`
+## Returns `number`
 The pixels after conversion.

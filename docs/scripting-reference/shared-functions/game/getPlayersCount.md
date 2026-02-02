@@ -8,11 +8,11 @@ Get the number of online players on the server.
 
 ## Declaration
 ```cpp
-int getPlayersCount()
+number getPlayersCount()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int`
+## Returns `number`
 Number of players on the server.

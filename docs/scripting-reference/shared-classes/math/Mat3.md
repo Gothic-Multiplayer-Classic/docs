@@ -16,12 +16,12 @@ Mat3.new()
 No parameters.
 ### Constructor
 ```cpp
-Mat3.new(float value)
+Mat3.new(number value)
 ```
 
 **Parameters:**
 
-* `float` **value**: Scalar initialization value.
+* `number` **value**: Scalar initialization value.
 ### Constructor
 ```cpp
 Mat3.new(Vec3 v0, Vec3 v1, Vec3 v2)
@@ -261,12 +261,12 @@ Scaling factors for x, y and z axes.
 Post-multiplies a rotation around the X axis (degrees).
 
 ```cpp
-void postRotateX(float angle_degrees)
+void postRotateX(number angle_degrees)
 ```
 
 **Parameters:**
 
-* `float` **angle_degrees**: Rotation angle in degrees.
+* `number` **angle_degrees**: Rotation angle in degrees.
   
 
 ----
@@ -275,12 +275,12 @@ void postRotateX(float angle_degrees)
 Post-multiplies a rotation around the Y axis (degrees).
 
 ```cpp
-void postRotateY(float angle_degrees)
+void postRotateY(number angle_degrees)
 ```
 
 **Parameters:**
 
-* `float` **angle_degrees**: Rotation angle in degrees.
+* `number` **angle_degrees**: Rotation angle in degrees.
   
 
 ----
@@ -289,12 +289,12 @@ void postRotateY(float angle_degrees)
 Post-multiplies a rotation around the Z axis (degrees).
 
 ```cpp
-void postRotateZ(float angle_degrees)
+void postRotateZ(number angle_degrees)
 ```
 
 **Parameters:**
 
-* `float` **angle_degrees**: Rotation angle in degrees.
+* `number` **angle_degrees**: Rotation angle in degrees.
   
 
 ----

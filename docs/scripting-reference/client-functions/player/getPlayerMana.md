@@ -8,11 +8,11 @@ Get a player's current mana.
 
 ## Declaration
 ```cpp
-int|nil getPlayerMana(int player_id)
+number|nil getPlayerMana(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Current mana or nil.

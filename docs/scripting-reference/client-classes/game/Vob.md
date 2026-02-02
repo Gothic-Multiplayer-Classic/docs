@@ -42,7 +42,7 @@ Represents the state of dynamic collision of vob. Enabling this option will prev
 Represents the state of static collision of vob. Enabling this option will prevent static objects (i.e. world mesh) from passing through it.
 
 ----
-### `float` farClipZScale 
+### `number` farClipZScale 
 
 Represents the max distance at which the vob will still be rendered.
 
@@ -52,7 +52,7 @@ Represents the max distance at which the vob will still be rendered.
 Represents the model file name used as vob visual, e.g. SPHERE.3DS.
 
 ----
-### `float` visualAlpha 
+### `number` visualAlpha 
 
 Represents the transparency of the vob visual.
 
@@ -64,14 +64,14 @@ Represents the transparency of the vob visual.
 Set the position of the vob in the world.
 
 ```cpp
-void setPosition(float x, float y, float z)
+void setPosition(number x, number y, number z)
 ```
 
 **Parameters:**
 
-* `float` **x**: Position on X axis.
-* `float` **y**: Position on Y axis.
-* `float` **z**: Position on Z axis.
+* `number` **x**: Position on X axis.
+* `number` **y**: Position on Y axis.
+* `number` **z**: Position on Z axis.
   
 
 ----
@@ -94,14 +94,14 @@ Get the position of the vob in the world.
 Set the euler rotation of the vob in the world.
 
 ```cpp
-void setRotation(float x, float y, float z)
+void setRotation(number x, number y, number z)
 ```
 
 **Parameters:**
 
-* `float` **x**: Rotation on X axis.
-* `float` **y**: Rotation on Y axis.
-* `float` **z**: Rotation on Z axis.
+* `number` **x**: Rotation on X axis.
+* `number` **y**: Rotation on Y axis.
+* `number` **z**: Rotation on Z axis.
   
 
 ----

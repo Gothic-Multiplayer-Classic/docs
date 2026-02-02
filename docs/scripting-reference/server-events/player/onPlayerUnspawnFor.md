@@ -8,8 +8,8 @@ Triggered when a player is unspawned for another player (streaming out).
 
 ## Parameters
 ```c++
-void onPlayerUnspawnFor(int player_id, int spawn_id)
+void onPlayerUnspawnFor(number player_id, number spawn_id)
 ```
 
-* `int` **player_id**: Player id losing the spawn.
-* `int` **spawn_id**: Player id removed for the receiver.
+* `number` **player_id**: Player id losing the spawn.
+* `number` **spawn_id**: Player id removed for the receiver.

@@ -8,9 +8,9 @@ Set a player's experience level.
 
 ## Declaration
 ```cpp
-void setPlayerLevel(int player_id, int level)
+void setPlayerLevel(number player_id, number level)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **level**: New level.
+* `number` **player_id**: Target player id.
+* `number` **level**: New level.

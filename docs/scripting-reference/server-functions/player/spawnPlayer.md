@@ -10,11 +10,11 @@ Spawn a player, optionally overriding the spawn position.
 
 ## Declaration
 ```cpp
-boolean spawnPlayer(int player_id, {x, y, z} Optional)
+boolean spawnPlayer(number player_id, {x, y, z} Optional)
 ```
 
 ## Parameters
-* `int` **player_id**: Player id to spawn.
+* `number` **player_id**: Player id to spawn.
 * `{x, y, z}` **Optional**: position table or three numeric coords.
   
 ## Returns `boolean`

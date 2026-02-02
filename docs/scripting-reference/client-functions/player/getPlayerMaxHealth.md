@@ -8,11 +8,11 @@ Get a player's maximum health.
 
 ## Declaration
 ```cpp
-int|nil getPlayerMaxHealth(int player_id)
+number|nil getPlayerMaxHealth(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Max health or nil.

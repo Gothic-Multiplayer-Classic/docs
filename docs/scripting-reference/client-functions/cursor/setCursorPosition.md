@@ -8,12 +8,12 @@ Sets the cursor position in virtual (screen-scaled) coordinates.
 
 ## Declaration
 ```cpp
-boolean setCursorPosition(int x, int y)
+boolean setCursorPosition(number x, number y)
 ```
 
 ## Parameters
-* `int` **x**: X position.
-* `int` **y**: Y position.
+* `number` **x**: X position.
+* `number` **y**: Y position.
   
 ## Returns `boolean`
 True on success.

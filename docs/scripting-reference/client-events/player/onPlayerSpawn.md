@@ -8,7 +8,7 @@ Triggered when a player is spawned into the world.
 
 ## Parameters
 ```c++
-void onPlayerSpawn(int id)
+void onPlayerSpawn(number id)
 ```
 
-* `int` **id**: The id of the spawned player.
+* `number` **id**: The id of the spawned player.

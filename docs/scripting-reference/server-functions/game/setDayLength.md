@@ -8,11 +8,11 @@ Set the duration of a full in-game day in milliseconds.
 
 ## Declaration
 ```cpp
-boolean setDayLength(float miliseconds)
+boolean setDayLength(number miliseconds)
 ```
 
 ## Parameters
-* `float` **miliseconds**: Day length in milliseconds (min 10000 ms).
+* `number` **miliseconds**: Day length in milliseconds (min 10000 ms).
   
 ## Returns `boolean`
 True on success.

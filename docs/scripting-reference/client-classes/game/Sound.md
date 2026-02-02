@@ -21,12 +21,12 @@ Sound.new(string file)
 Get or set the sound file path.
 
 ----
-### `float` playingTime <font size="2">(read-only)</font>
+### `number` playingTime <font size="2">(read-only)</font>
 
 Return the current playback time.
 
 ----
-### `float` volume 
+### `number` volume 
 
 Get or set the playback volume.
 
@@ -36,7 +36,7 @@ Get or set the playback volume.
 Get or set whether the sound should loop.
 
 ----
-### `float` balance 
+### `number` balance 
 
 Get or set the stereo balance (pan).
 

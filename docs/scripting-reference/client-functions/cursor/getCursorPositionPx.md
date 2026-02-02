@@ -8,11 +8,11 @@ Returns the cursor position in pixel coordinates.
 
 ## Declaration
 ```cpp
-int, int getCursorPositionPx()
+number, int getCursorPositionPx()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int, int`
+## Returns `number, int`
 X and Y position in pixels.

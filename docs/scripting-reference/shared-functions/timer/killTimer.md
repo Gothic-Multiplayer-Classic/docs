@@ -8,8 +8,8 @@ Stop and remove an existing timer.
 
 ## Declaration
 ```cpp
-void killTimer(int timer_id)
+void killTimer(number timer_id)
 ```
 
 ## Parameters
-* `int` **timer_id**: Timer ID returned by setTimer.
+* `number` **timer_id**: Timer ID returned by setTimer.

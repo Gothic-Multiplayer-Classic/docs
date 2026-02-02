@@ -8,8 +8,8 @@ Triggered when a player is spawned for another player (streaming in).
 
 ## Parameters
 ```c++
-void onPlayerSpawnFor(int player_id, int spawn_id)
+void onPlayerSpawnFor(number player_id, number spawn_id)
 ```
 
-* `int` **player_id**: Player id receiving the spawn.
-* `int` **spawn_id**: Player id spawned for the receiver.
+* `number` **player_id**: Player id receiving the spawn.
+* `number` **spawn_id**: Player id spawned for the receiver.

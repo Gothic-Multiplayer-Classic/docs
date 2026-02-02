@@ -8,12 +8,12 @@ Sets the cursor size in pixel units.
 
 ## Declaration
 ```cpp
-boolean setCursorSizePx(int width, int height)
+boolean setCursorSizePx(number width, number height)
 ```
 
 ## Parameters
-* `int` **width**: Cursor width in pixels.
-* `int` **height**: Cursor height in pixels.
+* `number` **width**: Cursor width in pixels.
+* `number` **height**: Cursor height in pixels.
   
 ## Returns `boolean`
 True on success.

@@ -8,11 +8,11 @@ Get the player's learn points.
 
 ## Declaration
 ```cpp
-int|nil getLearnPoints()
+number|nil getLearnPoints()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Learn points or nil.

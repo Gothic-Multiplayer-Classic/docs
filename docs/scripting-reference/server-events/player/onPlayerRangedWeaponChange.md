@@ -8,8 +8,8 @@ Triggered when a player's ranged weapon changes.
 
 ## Parameters
 ```c++
-void onPlayerRangedWeaponChange(int player_id, int|nil instance)
+void onPlayerRangedWeaponChange(number player_id, number|nil instance)
 ```
 
-* `int` **player_id**: Player id.
-* `int|nil` **instance**: New ranged weapon instance id (nil if none).
+* `number` **player_id**: Player id.
+* `number|nil` **instance**: New ranged weapon instance id (nil if none).

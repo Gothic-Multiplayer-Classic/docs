@@ -8,9 +8,9 @@ Set the sky weather time when it starts raining/snowing.
 
 ## Declaration
 ```cpp
-void setRainStartTime(int hour, int min)
+void setRainStartTime(number hour, number min)
 ```
 
 ## Parameters
-* `int` **hour**: The sky weather raining start hour.
-* `int` **min**: The sky weather raining start min.
+* `number` **hour**: The sky weather raining start hour.
+* `number` **min**: The sky weather raining start min.

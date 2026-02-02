@@ -8,14 +8,14 @@ Get the 2d distance between two points.
 
 ## Declaration
 ```cpp
-float getDistance2d(float x1, float y1, float x2, float y2)
+number getDistance2d(number x1, number y1, number x2, number y2)
 ```
 
 ## Parameters
-* `float` **x1**: The position on X axis of the first point.
-* `float` **y1**: The position on Y axis of the first point.
-* `float` **x2**: The position on X axis of the second point.
-* `float` **y2**: The position on Y axis of the second point.
+* `number` **x1**: The position on X axis of the first point.
+* `number` **y1**: The position on Y axis of the first point.
+* `number` **x2**: The position on X axis of the second point.
+* `number` **y2**: The position on Y axis of the second point.
   
-## Returns `float`
+## Returns `number`
 The distance between the two points.

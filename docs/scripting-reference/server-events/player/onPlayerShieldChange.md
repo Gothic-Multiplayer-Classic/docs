@@ -8,8 +8,8 @@ Triggered when a player's shield changes.
 
 ## Parameters
 ```c++
-void onPlayerShieldChange(int player_id, int|nil instance)
+void onPlayerShieldChange(number player_id, number|nil instance)
 ```
 
-* `int` **player_id**: Player id.
-* `int|nil` **instance**: New shield instance id (nil if none).
+* `number` **player_id**: Player id.
+* `number|nil` **instance**: New shield instance id (nil if none).

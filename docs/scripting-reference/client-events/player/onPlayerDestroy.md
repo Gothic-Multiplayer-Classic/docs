@@ -8,7 +8,7 @@ Triggered when a local player object is destroyed.
 
 ## Parameters
 ```c++
-void onPlayerDestroy(int player_id)
+void onPlayerDestroy(number player_id)
 ```
 
-* `int` **player_id**: The local player id.
+* `number` **player_id**: The local player id.

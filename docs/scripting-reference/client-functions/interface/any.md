@@ -13,11 +13,11 @@ Virtuals are special type of unit used by the game to position UI elements indep
 
 ## Declaration
 ```cpp
-int any(int pixels)
+number any(number pixels)
 ```
 
 ## Parameters
-* `int` **pixels**: The pixels to convert.
+* `number` **pixels**: The pixels to convert.
   
-## Returns `int`
+## Returns `number`
 The virtuals after conversion.

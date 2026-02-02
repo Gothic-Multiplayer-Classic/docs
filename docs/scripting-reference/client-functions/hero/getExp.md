@@ -8,11 +8,11 @@ Get the player's experience points.
 
 ## Declaration
 ```cpp
-int|nil getExp()
+number|nil getExp()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Exp value or nil.

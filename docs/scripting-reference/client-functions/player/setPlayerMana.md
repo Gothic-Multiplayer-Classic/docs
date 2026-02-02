@@ -8,9 +8,9 @@ Set a player's current mana (clamped to [0,max]).
 
 ## Declaration
 ```cpp
-void setPlayerMana(int player_id, int mana)
+void setPlayerMana(number player_id, number mana)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **mana**: Mana value.
+* `number` **player_id**: Target player id.
+* `number` **mana**: Mana value.

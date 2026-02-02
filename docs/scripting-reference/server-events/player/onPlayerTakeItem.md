@@ -8,8 +8,8 @@ Triggered when a player picks up an item.
 
 ## Parameters
 ```c++
-void onPlayerTakeItem(int player_id, int item_instance)
+void onPlayerTakeItem(number player_id, number item_instance)
 ```
 
-* `int` **player_id**: Player id who took the item.
-* `int` **item_instance**: Item instance id.
+* `number` **player_id**: Player id who took the item.
+* `number` **item_instance**: Item instance id.

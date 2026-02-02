@@ -8,11 +8,11 @@ Get the current duration of a full in-game day in milliseconds.
 
 ## Declaration
 ```cpp
-float getDayLength()
+number getDayLength()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `float`
+## Returns `number`
 Day length in milliseconds.

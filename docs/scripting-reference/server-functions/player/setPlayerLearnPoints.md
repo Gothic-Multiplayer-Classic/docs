@@ -8,12 +8,12 @@ Set a player's learn points.
 
 ## Declaration
 ```cpp
-boolean setPlayerLearnPoints(int player_id, int learn_points)
+boolean setPlayerLearnPoints(number player_id, number learn_points)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **learn_points**: New learn points value.
+* `number` **player_id**: Target player id.
+* `number` **learn_points**: New learn points value.
   
 ## Returns `boolean`
 True on success.

@@ -8,9 +8,9 @@ Set the interval (in milliseconds) of an existing timer.
 
 ## Declaration
 ```cpp
-void setTimerInterval(int timer_id, int interval)
+void setTimerInterval(number timer_id, number interval)
 ```
 
 ## Parameters
-* `int` **timer_id**: Timer ID returned by setTimer.
-* `int` **interval**: New interval in milliseconds.
+* `number` **timer_id**: Timer ID returned by setTimer.
+* `number` **interval**: New interval in milliseconds.

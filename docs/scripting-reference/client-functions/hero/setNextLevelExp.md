@@ -8,11 +8,11 @@ Set the experience required for the player's next level.
 
 ## Declaration
 ```cpp
-boolean setNextLevelExp(int next_level_exp)
+boolean setNextLevelExp(number next_level_exp)
 ```
 
 ## Parameters
-* `int` **next_level_exp**: Required exp for next level.
+* `number` **next_level_exp**: Required exp for next level.
   
 ## Returns `boolean`
 True on success.

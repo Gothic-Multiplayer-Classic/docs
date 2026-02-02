@@ -8,9 +8,9 @@ Triggered when a player is hit.
 
 ## Parameters
 ```c++
-void onPlayerHit(int attacker_id, int victim_id, int damage)
+void onPlayerHit(number attacker_id, number victim_id, number damage)
 ```
 
-* `int` **attacker_id**: Optional attacker id (nil if none).
-* `int` **victim_id**: Victim player id.
-* `int` **damage**: Damage dealt.
+* `number` **attacker_id**: Optional attacker id (nil if none).
+* `number` **victim_id**: Victim player id.
+* `number` **damage**: Damage dealt.

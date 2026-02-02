@@ -8,8 +8,8 @@ Triggered when a player sends a chat message.
 
 ## Parameters
 ```c++
-void onPlayerMessage(int player_id, string text)
+void onPlayerMessage(number player_id, string text)
 ```
 
-* `int` **player_id**: The id of the player who sent the message.
+* `number` **player_id**: The id of the player who sent the message.
 * `string` **text**: The message text.

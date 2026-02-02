@@ -8,9 +8,9 @@ Triggered when a player's active spell slot changes.
 
 ## Parameters
 ```c++
-void onPlayerSpellSlotChange(int player_id, int slot_id, int|nil instance)
+void onPlayerSpellSlotChange(number player_id, number slot_id, number|nil instance)
 ```
 
-* `int` **player_id**: Player id.
-* `int` **slot_id**: Active spell slot id.
-* `int|nil` **instance**: Spell instance id (nil if none).
+* `number` **player_id**: Player id.
+* `number` **slot_id**: Active spell slot id.
+* `number|nil` **instance**: Spell instance id (nil if none).

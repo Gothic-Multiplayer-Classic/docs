@@ -8,11 +8,11 @@ Get a player's learn points or nil if unavailable.
 
 ## Declaration
 ```cpp
-int|nil getPlayerLearnPoints(int player_id)
+number|nil getPlayerLearnPoints(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Learn points or nil.

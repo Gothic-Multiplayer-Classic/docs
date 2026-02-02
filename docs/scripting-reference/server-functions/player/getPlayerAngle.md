@@ -8,11 +8,11 @@ Get a player's facing angle in degrees or nil if unavailable.
 
 ## Declaration
 ```cpp
-number|nil getPlayerAngle(int player_id)
+number|nil getPlayerAngle(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
 ## Returns `number|nil`
 Angle in degrees or nil.

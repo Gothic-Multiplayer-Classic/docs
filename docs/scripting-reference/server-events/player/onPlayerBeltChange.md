@@ -8,8 +8,8 @@ Triggered when a player's belt changes.
 
 ## Parameters
 ```c++
-void onPlayerBeltChange(int player_id, int|nil instance)
+void onPlayerBeltChange(number player_id, number|nil instance)
 ```
 
-* `int` **player_id**: Player id.
-* `int|nil` **instance**: New belt instance id (nil if none).
+* `number` **player_id**: Player id.
+* `number|nil` **instance**: New belt instance id (nil if none).

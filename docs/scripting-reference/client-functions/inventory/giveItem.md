@@ -8,13 +8,13 @@ Give an item to a player or NPC on the client.
 
 ## Declaration
 ```cpp
-boolean giveItem(int player_id, string instance, int amount)
+boolean giveItem(number player_id, string instance, number amount)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
 * `string` **instance**: Item instance name.
-* `int` **amount**: Amount to give.
+* `number` **amount**: Amount to give.
   
 ## Returns `boolean`
 True on success.

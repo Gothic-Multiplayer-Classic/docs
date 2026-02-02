@@ -8,41 +8,41 @@ title: 'Vec4'
 
 ### Constructor
 ```cpp
-Vec4.new(float value)
+Vec4.new(number value)
 ```
 
 **Parameters:**
 
-* `float` **value**: Value assigned to x, y, z and w.
+* `number` **value**: Value assigned to x, y, z and w.
 ### Constructor
 ```cpp
-Vec4.new(float x, float y, float z, float w)
+Vec4.new(number x, number y, number z, number w)
 ```
 
 **Parameters:**
 
-* `float` **x**: X component.
-* `float` **y**: Y component.
-* `float` **z**: Z component.
-* `float` **w**: W component.
+* `number` **x**: X component.
+* `number` **y**: Y component.
+* `number` **z**: Z component.
+* `number` **w**: W component.
 
 ## Properties
-### `float` x 
+### `number` x 
 
 X component.
 
 ----
-### `float` y 
+### `number` y 
 
 Y component.
 
 ----
-### `float` z 
+### `number` z 
 
 Z component.
 
 ----
-### `float` w 
+### `number` w 
 
 W component.
 
@@ -54,11 +54,11 @@ W component.
 Returns the vector length (magnitude).
 
 ```cpp
-float len()
+number len()
 ```
 
   
-**Returns `float`:**
+**Returns `number`:**
 
 Vector length.
 
@@ -68,11 +68,11 @@ Vector length.
 Returns the squared vector length.
 
 ```cpp
-float len2()
+number len2()
 ```
 
   
-**Returns `float`:**
+**Returns `number`:**
 
 Squared vector length.
 
@@ -82,11 +82,11 @@ Squared vector length.
 Returns an approximate vector length.
 
 ```cpp
-float lenApprox()
+number lenApprox()
 ```
 
   
-**Returns `float`:**
+**Returns `number`:**
 
 Approximate vector length.
 
@@ -142,15 +142,15 @@ This vector (normalized).
 Sets all components of the vector.
 
 ```cpp
-void set(float x, float y, float z, float w)
+void set(number x, number y, number z, number w)
 ```
 
 **Parameters:**
 
-* `float` **x**: X component.
-* `float` **y**: Y component.
-* `float` **z**: Z component.
-* `float` **w**: W component.
+* `number` **x**: X component.
+* `number` **y**: Y component.
+* `number` **z**: Z component.
+* `number` **w**: W component.
   
 
 ----
@@ -259,7 +259,7 @@ Component-wise product.
 Returns the dot product of two vectors.
 
 ```cpp
-float dot(Vec4 vec1, Vec4 vec2)
+number dot(Vec4 vec1, Vec4 vec2)
 ```
 
 **Parameters:**
@@ -267,7 +267,7 @@ float dot(Vec4 vec1, Vec4 vec2)
 * `Vec4` **vec1**: First vector.
 * `Vec4` **vec2**: Second vector.
   
-**Returns `float`:**
+**Returns `number`:**
 
 Dot product.
 
@@ -277,12 +277,12 @@ Dot product.
 Linearly interpolates between two vectors.
 
 ```cpp
-Vec4 lerp(float t, Vec4 v1, Vec4 v2)
+Vec4 lerp(number t, Vec4 v1, Vec4 v2)
 ```
 
 **Parameters:**
 
-* `float` **t**: Interpolation factor (typically 0..1).
+* `number` **t**: Interpolation factor (typically 0..1).
 * `Vec4` **v1**: Start vector.
 * `Vec4` **v2**: End vector.
   

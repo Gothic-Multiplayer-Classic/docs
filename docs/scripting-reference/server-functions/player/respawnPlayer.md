@@ -8,8 +8,8 @@ Immediately respawn the player if he is dead.
 
 ## Declaration
 ```cpp
-void respawnPlayer(int player_id)
+void respawnPlayer(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.

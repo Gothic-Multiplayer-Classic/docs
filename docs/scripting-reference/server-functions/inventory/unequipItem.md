@@ -8,11 +8,11 @@ Unequip an item for all players.
 
 ## Declaration
 ```cpp
-boolean unequipItem(int player_id, string instance)
+boolean unequipItem(number player_id, string instance)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
 * `string` **instance**: Item instance name from scripts.
   
 ## Returns `boolean`

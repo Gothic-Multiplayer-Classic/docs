@@ -8,9 +8,9 @@ Triggered when a player's ring changes.
 
 ## Parameters
 ```c++
-void onPlayerRingChange(int player_id, int hand_id, int|nil instance)
+void onPlayerRingChange(number player_id, number hand_id, number|nil instance)
 ```
 
-* `int` **player_id**: Player id.
-* `int` **hand_id**: Hand id (0 = left, 1 = right).
-* `int|nil` **instance**: New ring instance id (nil if none).
+* `number` **player_id**: Player id.
+* `number` **hand_id**: Hand id (0 = left, 1 = right).
+* `number|nil` **instance**: New ring instance id (nil if none).

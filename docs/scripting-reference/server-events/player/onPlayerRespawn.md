@@ -8,10 +8,10 @@ Triggered when a player respawns.
 
 ## Parameters
 ```c++
-void onPlayerRespawn(int player_id, int x, int y, int z)
+void onPlayerRespawn(number player_id, number x, number y, number z)
 ```
 
-* `int` **player_id**: Player id respawned.
-* `int` **x**: X coordinate of respawn.
-* `int` **y**: Y coordinate of respawn.
-* `int` **z**: Z coordinate of respawn.
+* `number` **player_id**: Player id respawned.
+* `number` **x**: X coordinate of respawn.
+* `number` **y**: Y coordinate of respawn.
+* `number` **z**: Z coordinate of respawn.

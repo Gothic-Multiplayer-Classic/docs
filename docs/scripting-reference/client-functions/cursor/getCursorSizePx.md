@@ -8,11 +8,11 @@ Returns the cursor size in pixel units.
 
 ## Declaration
 ```cpp
-int, int getCursorSizePx()
+number, int getCursorSizePx()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `int, int`
+## Returns `number, int`
 Cursor width and height in pixels.

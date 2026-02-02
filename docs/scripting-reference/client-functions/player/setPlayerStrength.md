@@ -8,9 +8,9 @@ Set a player's strength attribute.
 
 ## Declaration
 ```cpp
-void setPlayerStrength(int player_id, int strength)
+void setPlayerStrength(number player_id, number strength)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
-* `int` **strength**: Strength value.
+* `number` **player_id**: Target player id.
+* `number` **strength**: Strength value.

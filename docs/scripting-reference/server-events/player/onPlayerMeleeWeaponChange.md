@@ -8,8 +8,8 @@ Triggered when a player's melee weapon changes.
 
 ## Parameters
 ```c++
-void onPlayerMeleeWeaponChange(int player_id, int|nil instance)
+void onPlayerMeleeWeaponChange(number player_id, number|nil instance)
 ```
 
-* `int` **player_id**: Player id.
-* `int|nil` **instance**: New melee weapon instance id (nil if none).
+* `number` **player_id**: Player id.
+* `number|nil` **instance**: New melee weapon instance id (nil if none).

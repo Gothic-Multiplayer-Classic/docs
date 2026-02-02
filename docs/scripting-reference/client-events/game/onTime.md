@@ -8,9 +8,9 @@ Triggered each time the game time minute passes.
 
 ## Parameters
 ```c++
-void onTime(int day, int hour, int min)
+void onTime(number day, number hour, number min)
 ```
 
-* `int` **day**: The current in-game day.
-* `int` **hour**: The current in-game hour.
-* `int` **min**: The current in-game minute.
+* `number` **day**: The current in-game day.
+* `number` **hour**: The current in-game hour.
+* `number` **min**: The current in-game minute.

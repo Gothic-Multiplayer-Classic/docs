@@ -8,8 +8,8 @@ Triggered when the client receives a ping update for a player.
 
 ## Parameters
 ```c++
-void onPlayerChangePing(int id, int ping)
+void onPlayerChangePing(number id, number ping)
 ```
 
-* `int` **id**: The id of the player.
-* `int` **ping**: The player's ping.
+* `number` **id**: The id of the player.
+* `number` **ping**: The player's ping.

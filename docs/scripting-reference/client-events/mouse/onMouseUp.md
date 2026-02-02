@@ -8,7 +8,7 @@ Triggered when a mouse button is released.
 
 ## Parameters
 ```c++
-void onMouseUp(int button)
+void onMouseUp(number button)
 ```
 
-* `int` **button**: The mouse button released.
+* `number` **button**: The mouse button released.

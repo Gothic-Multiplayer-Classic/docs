@@ -8,8 +8,8 @@ Set the desired weather type immediately.
 
 ## Declaration
 ```cpp
-void setWeatherType(int weather_type)
+void setWeatherType(number weather_type)
 ```
 
 ## Parameters
-* `int` **weather_type**: Weather type (WEATHER_SNOW/WEATHER_RAIN or 0 to disable precipitation).
+* `number` **weather_type**: Weather type (WEATHER_SNOW/WEATHER_RAIN or 0 to disable precipitation).

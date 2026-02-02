@@ -8,11 +8,11 @@ Get a player's name or nil if unavailable.
 
 ## Declaration
 ```cpp
-string|nil getPlayerName(int player_id)
+string|nil getPlayerName(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
 ## Returns `string|nil`
 Player name or nil.

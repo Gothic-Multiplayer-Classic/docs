@@ -8,8 +8,8 @@ Set the event value.
 
 ## Declaration
 ```cpp
-void eventValue(int eventValue)
+void eventValue(number eventValue)
 ```
 
 ## Parameters
-* `int` **eventValue**: The new event value.
+* `number` **eventValue**: The new event value.

@@ -8,11 +8,11 @@ The function is used to check whether player is spawned.
 
 ## Declaration
 ```cpp
-boolean isPlayerSpawned(int player_id)
+boolean isPlayerSpawned(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
 ## Returns `boolean`
 True when player is spawned, otherwise false.

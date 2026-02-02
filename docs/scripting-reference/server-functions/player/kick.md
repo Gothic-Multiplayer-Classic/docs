@@ -10,9 +10,9 @@ Kick the player from the server.
 
 ## Declaration
 ```cpp
-void kick(int player_id, string reason)
+void kick(number player_id, string reason)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
 * `string` **reason**: Optional reason why the player was kicked.

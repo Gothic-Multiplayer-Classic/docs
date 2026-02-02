@@ -16,13 +16,13 @@ Draw.new()
 No parameters.
 ### Constructor
 ```cpp
-Draw.new(int x, int y, string text)
+Draw.new(number x, number y, string text)
 ```
 
 **Parameters:**
 
-* `int` **x**: Initial X position (virtual units).
-* `int` **y**: Initial Y position (virtual units).
+* `number` **x**: Initial X position (virtual units).
+* `number` **y**: Initial Y position (virtual units).
 * `string` **text**: Initial text content.
 
 ## Properties
@@ -51,7 +51,7 @@ Gets or sets the font identifier used for rendering.
 Returns the current text color.
 
 ----
-### `int` alpha 
+### `number` alpha 
 
 Gets or sets the alpha (opacity).
 
@@ -68,13 +68,13 @@ Gets or sets whether the Draw object is rendered.
 Sets the draw position in virtual screen units.
 
 ```cpp
-void setPosition(int x, int y)
+void setPosition(number x, number y)
 ```
 
 **Parameters:**
 
-* `int` **x**: X position (virtual units).
-* `int` **y**: Y position (virtual units).
+* `number` **x**: X position (virtual units).
+* `number` **y**: Y position (virtual units).
   
 
 ----
@@ -97,13 +97,13 @@ Table containing x and y (virtual units).
 Sets the draw position in pixel coordinates.
 
 ```cpp
-void setPositionPx(int x, int y)
+void setPositionPx(number x, number y)
 ```
 
 **Parameters:**
 
-* `int` **x**: X position in pixels.
-* `int` **y**: Y position in pixels.
+* `number` **x**: X position in pixels.
+* `number` **y**: Y position in pixels.
   
 
 ----
@@ -182,14 +182,14 @@ Font file name.
 Sets the text color.
 
 ```cpp
-void setColor(int r, int g, int b)
+void setColor(number r, number g, number b)
 ```
 
 **Parameters:**
 
-* `int` **r**: Red component (0-255).
-* `int` **g**: Green component (0-255).
-* `int` **b**: Blue component (0-255).
+* `number` **r**: Red component (0-255).
+* `number` **g**: Green component (0-255).
+* `number` **b**: Blue component (0-255).
   
 
 ----
@@ -212,12 +212,12 @@ Table containing r,g,b (0-255).
 Sets text alpha (opacity).
 
 ```cpp
-void setAlpha(int alpha)
+void setAlpha(number alpha)
 ```
 
 **Parameters:**
 
-* `int` **alpha**: Opacity value (0-255).
+* `number` **alpha**: Opacity value (0-255).
   
 
 ----
@@ -226,11 +226,11 @@ void setAlpha(int alpha)
 Returns the current alpha (opacity).
 
 ```cpp
-int getAlpha()
+number getAlpha()
 ```
 
   
-**Returns `int`:**
+**Returns `number`:**
 
 Opacity value (0-255).
 

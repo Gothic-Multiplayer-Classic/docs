@@ -8,8 +8,8 @@ Triggered when the selected inventory slot changes.
 
 ## Parameters
 ```c++
-void onInventorySlotChange(int from, int to)
+void onInventorySlotChange(number from, number to)
 ```
 
-* `int` **from**: Previous slot number.
-* `int` **to**: Current slot number.
+* `number` **from**: Previous slot number.
+* `number` **to**: Current slot number.

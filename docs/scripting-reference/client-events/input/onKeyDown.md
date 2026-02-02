@@ -8,7 +8,7 @@ Triggered when a key is pressed.
 
 ## Parameters
 ```c++
-void onKeyDown(int key)
+void onKeyDown(number key)
 ```
 
-* `int` **key**: The key code pressed.
+* `number` **key**: The key code pressed.

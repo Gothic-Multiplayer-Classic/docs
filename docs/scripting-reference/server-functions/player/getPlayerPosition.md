@@ -8,11 +8,11 @@ Get a player's position as a table {x,y,z} or nil if unavailable.
 
 ## Declaration
 ```cpp
-{x, y, z}|nil getPlayerPosition(int player_id)
+{x, y, z}|nil getPlayerPosition(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
 ## Returns `{x, y, z}|nil`
 Table containing x,y,z or nil.

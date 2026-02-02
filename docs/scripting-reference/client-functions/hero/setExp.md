@@ -8,11 +8,11 @@ Set the player's experience points.
 
 ## Declaration
 ```cpp
-boolean setExp(int exp)
+boolean setExp(number exp)
 ```
 
 ## Parameters
-* `int` **exp**: New exp value.
+* `number` **exp**: New exp value.
   
 ## Returns `boolean`
 True on success.

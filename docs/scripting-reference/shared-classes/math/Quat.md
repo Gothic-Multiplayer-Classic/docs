@@ -19,41 +19,41 @@ Quat.new()
 No parameters.
 ### Constructor
 ```cpp
-Quat.new(float w)
+Quat.new(number w)
 ```
 
 **Parameters:**
 
-* `float` **w**: W component.
+* `number` **w**: W component.
 ### Constructor
 ```cpp
-Quat.new(float x, float y, float z, float w)
+Quat.new(number x, number y, number z, number w)
 ```
 
 **Parameters:**
 
-* `float` **x**: X component.
-* `float` **y**: Y component.
-* `float` **z**: Z component.
-* `float` **w**: W component.
+* `number` **x**: X component.
+* `number` **y**: Y component.
+* `number` **z**: Z component.
+* `number` **w**: W component.
 
 ## Properties
-### `float` x 
+### `number` x 
 
 X component.
 
 ----
-### `float` y 
+### `number` y 
 
 Y component.
 
 ----
-### `float` z 
+### `number` z 
 
 Z component.
 
 ----
-### `float` w 
+### `number` w 
 
 W component.
 
@@ -165,13 +165,13 @@ Axis-angle as (x, y, z, angle).
 Sets this quaternion from an axis and angle.
 
 ```cpp
-void fromAxisAngle(Vec3 axis, float angle)
+void fromAxisAngle(Vec3 axis, number angle)
 ```
 
 **Parameters:**
 
 * `Vec3` **axis**: Rotation axis (typically normalized).
-* `float` **angle**: Rotation angle.
+* `number` **angle**: Rotation angle.
   
 
 ----
@@ -205,11 +205,11 @@ True if identity.
 Returns the quaternion length.
 
 ```cpp
-float len()
+number len()
 ```
 
   
-**Returns `float`:**
+**Returns `number`:**
 
 Quaternion length.
 
@@ -219,11 +219,11 @@ Quaternion length.
 Returns the squared quaternion length.
 
 ```cpp
-float len2()
+number len2()
 ```
 
   
-**Returns `float`:**
+**Returns `number`:**
 
 Squared quaternion length.
 
@@ -233,11 +233,11 @@ Squared quaternion length.
 Returns an approximate quaternion length.
 
 ```cpp
-float lenApprox()
+number lenApprox()
 ```
 
   
-**Returns `float`:**
+**Returns `number`:**
 
 Approximate length.
 
@@ -293,15 +293,15 @@ This quaternion (normalized).
 Sets quaternion components.
 
 ```cpp
-void set(float x, float y, float z, float w)
+void set(number x, number y, number z, number w)
 ```
 
 **Parameters:**
 
-* `float` **x**: X component.
-* `float` **y**: Y component.
-* `float` **z**: Z component.
-* `float` **w**: W component.
+* `number` **x**: X component.
+* `number` **y**: Y component.
+* `number` **z**: Z component.
+* `number` **w**: W component.
   
 
 ----
@@ -340,7 +340,7 @@ Conjugated quaternion.
 Returns the dot product of two quaternions.
 
 ```cpp
-float dot(Quat quat1, Quat quat2)
+number dot(Quat quat1, Quat quat2)
 ```
 
 **Parameters:**
@@ -348,7 +348,7 @@ float dot(Quat quat1, Quat quat2)
 * `Quat` **quat1**: First quaternion.
 * `Quat` **quat2**: Second quaternion.
   
-**Returns `float`:**
+**Returns `number`:**
 
 Dot product.
 
@@ -358,12 +358,12 @@ Dot product.
 Linearly interpolates between two quaternions.
 
 ```cpp
-Quat lerp(float t, Quat q1, Quat q2)
+Quat lerp(number t, Quat q1, Quat q2)
 ```
 
 **Parameters:**
 
-* `float` **t**: Interpolation factor (typically 0..1).
+* `number` **t**: Interpolation factor (typically 0..1).
 * `Quat` **q1**: Start quaternion.
 * `Quat` **q2**: End quaternion.
   
@@ -377,12 +377,12 @@ Interpolated quaternion.
 Spherically interpolates between two quaternions.
 
 ```cpp
-Quat slerp(float t, Quat q1, Quat q2)
+Quat slerp(number t, Quat q1, Quat q2)
 ```
 
 **Parameters:**
 
-* `float` **t**: Interpolation factor (typically 0..1).
+* `number` **t**: Interpolation factor (typically 0..1).
 * `Quat` **q1**: Start quaternion.
 * `Quat` **q2**: End quaternion.
   
@@ -396,12 +396,12 @@ Spherically interpolated quaternion.
 Performs a squad-style interpolation using three quaternions.
 
 ```cpp
-Quat squad(float t, Quat q1, Quat q2, Quat q3)
+Quat squad(number t, Quat q1, Quat q2, Quat q3)
 ```
 
 **Parameters:**
 
-* `float` **t**: Interpolation factor (typically 0..1).
+* `number` **t**: Interpolation factor (typically 0..1).
 * `Quat` **q1**: First quaternion.
 * `Quat` **q2**: Second quaternion.
 * `Quat` **q3**: Third quaternion.

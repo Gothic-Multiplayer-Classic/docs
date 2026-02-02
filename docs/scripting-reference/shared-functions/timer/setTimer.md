@@ -11,14 +11,14 @@ If execute_times is 0 or negative, the timer repeats indefinitely.
 
 ## Declaration
 ```cpp
-int setTimer(function func, int interval, int execute_times, ... ...)
+number setTimer(function func, number interval, number execute_times, ... ...)
 ```
 
 ## Parameters
 * `function` **func**: Callback function executed by the timer.
-* `int` **interval**: Interval in milliseconds.
-* `int` **execute_times**: How many times to execute the callback (<= 0 means infinite).
+* `number` **interval**: Interval in milliseconds.
+* `number` **execute_times**: How many times to execute the callback (<= 0 means infinite).
 * `...` **...**: Additional arguments forwarded to the callback.
   
-## Returns `int`
+## Returns `number`
 Timer ID.

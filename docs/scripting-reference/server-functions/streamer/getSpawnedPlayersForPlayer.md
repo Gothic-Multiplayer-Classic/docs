@@ -8,11 +8,11 @@ Get the list of players that have been spawned for the given player.
 
 ## Declaration
 ```cpp
-{...} getSpawnedPlayersForPlayer(int player_id)
+{...} getSpawnedPlayersForPlayer(number player_id)
 ```
 
 ## Parameters
-* `int` **player_id**: Target player id.
+* `number` **player_id**: Target player id.
   
 ## Returns `{...}`
 Array of player ids.

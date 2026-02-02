@@ -10,11 +10,11 @@ A value of 0 means the timer repeats indefinitely.
 
 ## Declaration
 ```cpp
-int|nil getTimerExecuteTimes(int timer_id)
+number|nil getTimerExecuteTimes(number timer_id)
 ```
 
 ## Parameters
-* `int` **timer_id**: Timer ID returned by setTimer.
+* `number` **timer_id**: Timer ID returned by setTimer.
   
-## Returns `int|nil`
+## Returns `number|nil`
 Execute count (0 = infinite), or nil if not found.

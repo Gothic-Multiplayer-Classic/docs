@@ -8,13 +8,13 @@ Set the server time (hour, minute, optional day offset).
 
 ## Declaration
 ```cpp
-boolean setTime(int hour, int min, int day)
+boolean setTime(number hour, number min, number day)
 ```
 
 ## Parameters
-* `int` **hour**: Hour (0-23).
-* `int` **min**: Minute (0-59).
-* `int` **day**: Optional day offset.
+* `number` **hour**: Hour (0-23).
+* `number` **min**: Minute (0-59).
+* `number` **day**: Optional day offset.
   
 ## Returns `boolean`
 True on success.
