@@ -3264,20 +3264,9 @@
       "name": "Way",
       "doc": "",
       "side": "client",
-      "category": "Game",
+      "category": "World",
       "extends": null,
-      "fields": [
-        {
-          "name": "start",
-          "type": "string",
-          "doc": "Represents the start waypoint name."
-        },
-        {
-          "name": "end",
-          "type": "string",
-          "doc": "Represents the end waypoint name."
-        }
-      ],
+      "fields": [],
       "methods": [
         {
           "name": "new",
@@ -3297,6 +3286,24 @@
           ],
           "returns": {
             "type": "Way",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getStart",
+          "doc": "Returns the start waypoint name.",
+          "params": [],
+          "returns": {
+            "type": "string",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getEnd",
+          "doc": "Returns the end waypoint name.",
+          "params": [],
+          "returns": {
+            "type": "string",
             "doc": ""
           }
         },
@@ -7662,10 +7669,10 @@
       }
     },
     {
-      "name": "renderWaynet",
-      "doc": "Enable or disable waynet rendering (debug view).",
+      "name": "setDrawWaynet",
+      "doc": "Enable or disable waynet rendering.",
       "side": "client",
-      "category": "Game",
+      "category": "World",
       "params": [
         {
           "name": "enabled",
