@@ -18,7 +18,7 @@ boolean triggerClientEvent(number|{...}|nil sendTo, string eventName, number|nil
 ## Parameters
 * `number|{...}|nil` **sendTo**: Target player id, table of player ids, or nil to send to all players.
 * `string` **eventName**: Name of the client-side event to trigger.
-* `number|nil` **sourceElement**: Optional source element id. If omitted or nil, defaults to 0.
+* `number|nil` **sourceElement**: Optional source element id. Use nil if not needed.
 * `...` **...**: Optional arguments passed to the client event handler.
   
 ## Returns `boolean`

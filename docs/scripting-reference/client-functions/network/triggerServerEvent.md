@@ -18,7 +18,7 @@ boolean triggerServerEvent(string eventName, number|nil sourceElement, ... ...)
 
 ## Parameters
 * `string` **eventName**: Name of the server-side event to trigger.
-* `number|nil` **sourceElement**: Optional source element id. Use nil or omit it if not needed.
+* `number|nil` **sourceElement**: Optional source element id. Use nil if not needed.
 * `...` **...**: Optional arguments passed to the server event handler.
   
 ## Returns `boolean`

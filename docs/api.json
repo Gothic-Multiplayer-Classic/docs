@@ -3259,6 +3259,67 @@
         }
       ],
       "callbacks": []
+    },
+    "Way": {
+      "name": "Way",
+      "doc": "",
+      "side": "client",
+      "category": "Game",
+      "extends": null,
+      "fields": [
+        {
+          "name": "start",
+          "type": "string",
+          "doc": "Represents the start waypoint name."
+        },
+        {
+          "name": "end",
+          "type": "string",
+          "doc": "Represents the end waypoint name."
+        }
+      ],
+      "methods": [
+        {
+          "name": "new",
+          "is_constructor": true,
+          "doc": "Creates a path between two waypoint names.",
+          "params": [
+            {
+              "name": "startWp",
+              "type": "string",
+              "doc": "Name of the start waypoint."
+            },
+            {
+              "name": "endWp",
+              "type": "string",
+              "doc": "Name of the end waypoint."
+            }
+          ],
+          "returns": {
+            "type": "Way",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getWaypoints",
+          "doc": "Get all waypoints from the computed route.",
+          "params": [],
+          "returns": {
+            "type": "[wpname...]",
+            "doc": "Array with waypoint names."
+          }
+        },
+        {
+          "name": "getCountWaypoints",
+          "doc": "Get number of waypoints in the computed route.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": ""
+          }
+        }
+      ],
+      "callbacks": []
     }
   },
   "functions": [
@@ -3937,7 +3998,7 @@
         {
           "name": "sourceElement",
           "type": "number|nil",
-          "doc": "Optional source element id. If omitted or nil, defaults to 0."
+          "doc": "Optional source element id. Use nil if not needed."
         },
         {
           "name": "...",
@@ -4196,6 +4257,57 @@
       "returns": {
         "type": "string|nil",
         "doc": "Player name or nil."
+      }
+    },
+    {
+      "name": "getPlayerIP",
+      "doc": "Get a player's IP address or nil if unavailable.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Player IP or nil."
+      }
+    },
+    {
+      "name": "getPlayerMacAddress",
+      "doc": "Get a player's MAC address or nil if unavailable.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Player MAC address or nil."
+      }
+    },
+    {
+      "name": "getPlayerUUID",
+      "doc": "Get a player's UUID or nil if unavailable.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Player UUID or nil."
       }
     },
     {
@@ -7484,6 +7596,45 @@
       }
     },
     {
+      "name": "enableGMPMenu",
+      "doc": "Enable or disable opening GMP menu with ESC.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "enable",
+          "type": "boolean",
+          "doc": "True to allow ESC to open/close GMP menu, false to ignore ESC for GMP menu."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "openGMPMenu",
+      "doc": "Force open GMP menu.",
+      "side": "client",
+      "category": "Interface",
+      "params": [],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "closeGMPMenu",
+      "doc": "Force close GMP menu.",
+      "side": "client",
+      "category": "Interface",
+      "params": [],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
       "name": "triggerServerEvent",
       "doc": "Triggers a custom server-side event and optionally passes arguments.\nThe first argument is always the event name.",
       "side": "client",
@@ -7497,7 +7648,7 @@
         {
           "name": "sourceElement",
           "type": "number|nil",
-          "doc": "Optional source element id. Use nil or omit it if not needed."
+          "doc": "Optional source element id. Use nil if not needed."
         },
         {
           "name": "...",
@@ -7508,6 +7659,23 @@
       "returns": {
         "type": "boolean",
         "doc": "True if the event was sent successfully, otherwise false."
+      }
+    },
+    {
+      "name": "renderWaynet",
+      "doc": "Enable or disable waynet rendering (debug view).",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "doc": "True to render waynet, false to disable."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
       }
     },
     {
@@ -7968,25 +8136,6 @@
       "cancellable": false
     },
     {
-      "name": "onPlayerKill",
-      "doc": "Triggered when a player kills another player.",
-      "side": "server",
-      "category": "Player",
-      "params": [
-        {
-          "name": "killer_id",
-          "type": "number",
-          "doc": "The id of the killer."
-        },
-        {
-          "name": "victim_id",
-          "type": "number",
-          "doc": "The id of the victim."
-        }
-      ],
-      "cancellable": false
-    },
-    {
       "name": "onPlayerDeath",
       "doc": "Triggered when a player dies.",
       "side": "server",
@@ -8001,6 +8150,39 @@
           "name": "killer_id",
           "type": "number",
           "doc": "Optional id of the killer (nil if none)."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPlayerStandUp",
+      "doc": "Triggered when a player stands up after being unconscious.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "The id of the player who stood up."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPlayerUnconscious",
+      "doc": "Triggered when a player becomes unconscious.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "attacker_id",
+          "type": "number",
+          "doc": "Optional attacker id (nil if none)."
+        },
+        {
+          "name": "victim_id",
+          "type": "number",
+          "doc": "Victim player id."
         }
       ],
       "cancellable": false
