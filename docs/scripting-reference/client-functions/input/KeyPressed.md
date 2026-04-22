@@ -1,14 +1,14 @@
 ---
-title: 'KeyPressed'
+title: 'keyPressed'
 ---
-# `function` KeyPressed <font size="4">(client-side)</font>
+# `function` keyPressed <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-The function is used to check whether the specified keyboard key is pressed.
+This function will check whether the specified keyboard key is pressed.
 
 ## Declaration
 ```cpp
-boolean KeyPressed(number key)
+boolean keyPressed(number key)
 ```
 
 ## Parameters

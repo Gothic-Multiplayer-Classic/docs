@@ -4,7 +4,7 @@ title: 'Mat3'
 # `class` Mat3 <font size="4">(shared-side)</font>
 !!! info "Available since version: 0.3.0"
 
-3x3 matrix with common transformation utilities.
+This class represents a 3x3 matrix.
 
 ### Constructor
 ```cpp
@@ -41,7 +41,7 @@ No properties.
 ## Methods
 ### makeIdentity
 
-Resets the matrix to identity.
+This method resets the matrix to identity.
 
 ```cpp
 void makeIdentity()
@@ -52,7 +52,7 @@ void makeIdentity()
 ----
 ### makeZero
 
-Sets all matrix elements to zero.
+This method sets all matrix elements to zero.
 
 ```cpp
 void makeZero()
@@ -63,8 +63,7 @@ void makeZero()
 ----
 ### makeOrthonormal
 
-Orthonormalizes the matrix basis vectors.
-
+This method orthonormalizes the matrix basis vectors.
 This makes the basis vectors unit-length and mutually orthogonal.
 
 ```cpp
@@ -76,7 +75,7 @@ void makeOrthonormal()
 ----
 ### isUpper3x3Orthonormal
 
-Returns true if the matrix basis vectors are orthonormal.
+This method returns true if the matrix basis vectors are orthonormal.
 
 ```cpp
 boolean isUpper3x3Orthonormal()
@@ -90,7 +89,7 @@ True if orthonormal within epsilon tolerance.
 ----
 ### transpose
 
-Returns the transposed matrix.
+This method returns the transposed matrix.
 
 ```cpp
 Mat3 transpose()
@@ -104,7 +103,7 @@ Transposed matrix.
 ----
 ### inverse
 
-Returns the inverse matrix.
+This method returns the inverse matrix.
 
 ```cpp
 Mat3 inverse()
@@ -118,7 +117,7 @@ Inverse matrix.
 ----
 ### rotate
 
-Rotates a vector by this matrix.
+This method rotates a vector by this matrix.
 
 ```cpp
 Vec3 rotate(Vec3 vec)
@@ -135,7 +134,7 @@ Rotated vector.
 ----
 ### setRightVector
 
-Sets the right basis vector.
+This method sets the right basis vector.
 
 ```cpp
 void setRightVector(Vec3 vec)
@@ -149,7 +148,7 @@ void setRightVector(Vec3 vec)
 ----
 ### getRightVector
 
-Returns the right basis vector.
+This method returns the right basis vector.
 
 ```cpp
 Vec3 getRightVector()
@@ -163,7 +162,7 @@ Right vector.
 ----
 ### setUpVector
 
-Sets the up basis vector.
+This method sets the up basis vector.
 
 ```cpp
 void setUpVector(Vec3 vec)
@@ -177,7 +176,7 @@ void setUpVector(Vec3 vec)
 ----
 ### getUpVector
 
-Returns the up basis vector.
+This method returns the up basis vector.
 
 ```cpp
 Vec3 getUpVector()
@@ -191,7 +190,7 @@ Up vector.
 ----
 ### setAtVector
 
-Sets the forward (at) basis vector.
+This method sets the forward (at) basis vector.
 
 ```cpp
 void setAtVector(Vec3 vec)
@@ -205,7 +204,7 @@ void setAtVector(Vec3 vec)
 ----
 ### getAtVector
 
-Returns the forward (at) basis vector.
+This method returns the forward (at) basis vector.
 
 ```cpp
 Vec3 getAtVector()
@@ -219,7 +218,7 @@ At vector.
 ----
 ### resetRotation
 
-Resets rotation to identity.
+This method resets rotation to identity.
 
 ```cpp
 void resetRotation()
@@ -230,7 +229,7 @@ void resetRotation()
 ----
 ### extractRotation
 
-Returns a copy of this matrix with scaling removed.
+This method returns a copy of this matrix with scaling removed.
 
 ```cpp
 Mat3 extractRotation()
@@ -244,7 +243,7 @@ Rotation-only matrix.
 ----
 ### extractScaling
 
-Extracts scaling factors from the basis vectors.
+This method extracts scaling factors from the basis vectors.
 
 ```cpp
 Vec3 extractScaling()
@@ -258,7 +257,7 @@ Scaling factors for x, y and z axes.
 ----
 ### postRotateX
 
-Post-multiplies a rotation around the X axis (degrees).
+This method post-multiplies a rotation around the X axis (degrees).
 
 ```cpp
 void postRotateX(number angle_degrees)
@@ -272,7 +271,7 @@ void postRotateX(number angle_degrees)
 ----
 ### postRotateY
 
-Post-multiplies a rotation around the Y axis (degrees).
+This method post-multiplies a rotation around the Y axis (degrees).
 
 ```cpp
 void postRotateY(number angle_degrees)
@@ -286,7 +285,7 @@ void postRotateY(number angle_degrees)
 ----
 ### postRotateZ
 
-Post-multiplies a rotation around the Z axis (degrees).
+This method post-multiplies a rotation around the Z axis (degrees).
 
 ```cpp
 void postRotateZ(number angle_degrees)
@@ -300,7 +299,7 @@ void postRotateZ(number angle_degrees)
 ----
 ### preScale
 
-Pre-multiplies a scaling transformation.
+This method pre-multiplies a scaling transformation.
 
 ```cpp
 void preScale(Vec3 scale)
@@ -314,7 +313,7 @@ void preScale(Vec3 scale)
 ----
 ### postScale
 
-Post-multiplies a scaling transformation.
+This method post-multiplies a scaling transformation.
 
 ```cpp
 void postScale(Vec3 scale)
@@ -328,7 +327,7 @@ void postScale(Vec3 scale)
 ----
 ### `static` swap
 
-Swaps two matrices.
+This method swaps two matrices.
 
 ```cpp
 void swap(Mat3 mat1, Mat3 mat2)
@@ -343,7 +342,7 @@ void swap(Mat3 mat1, Mat3 mat2)
 ----
 ### data
 
-Returns a pointer to the raw matrix data (column-major float array).
+This method returns a pointer to the raw matrix data (column-major float array).
 
 ```cpp
 userdata data()

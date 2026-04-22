@@ -4,7 +4,7 @@ title: 'sscanf'
 # `function` sscanf <font size="4">(shared-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Split text according to a format string and return the parsed values.
+This function will split text according to a format string and return the parsed values.
 
 ## Declaration
 ```cpp

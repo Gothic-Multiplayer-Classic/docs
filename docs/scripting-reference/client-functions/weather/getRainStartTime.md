@@ -4,7 +4,7 @@ title: 'getRainStartTime'
 # `function` getRainStartTime <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get the sky weather time when it starts raining/snowing.
+This function will return the configured sky weather time when it starts raining/snowing.
 
 ## Declaration
 ```cpp

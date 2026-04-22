@@ -4,7 +4,7 @@ title: 'removePlayerOverlay'
 # `function` removePlayerOverlay <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Remove animation overlay on player.
+This function will remove specified animation overlay from the player.
 
 ## Declaration
 ```cpp

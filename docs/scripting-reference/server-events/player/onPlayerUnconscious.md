@@ -4,7 +4,7 @@ title: 'onPlayerUnconscious'
 # `event` onPlayerUnconscious <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player becomes unconscious.
+This event is triggered when a player becomes unconscious.
 
 ## Parameters
 ```c++

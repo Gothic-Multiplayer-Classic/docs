@@ -4,7 +4,7 @@ title: 'getPlayerInstance'
 # `function` getPlayerInstance <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get a player's instance name.
+This function will return the player/npc current instance, or nil if unavailable.
 
 ## Declaration
 ```cpp

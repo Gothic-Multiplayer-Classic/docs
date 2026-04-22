@@ -4,7 +4,7 @@ title: 'onUseItem'
 # `event` onUseItem <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when the hero uses, interacts with, opens, or consumes an item.
+This event is triggered when the hero uses, interacts with, opens, or consumes an item.
 
 ## Parameters
 ```c++

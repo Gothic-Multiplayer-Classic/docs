@@ -4,7 +4,7 @@ title: 'enableGMPMenu'
 # `function` enableGMPMenu <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Enable or disable opening GMP menu with ESC.
+This function will enable/disable opening GMP menu with ESC.
 
 ## Declaration
 ```cpp

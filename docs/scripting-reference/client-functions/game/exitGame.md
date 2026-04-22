@@ -4,7 +4,7 @@ title: 'exitGame'
 # `function` exitGame <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Close the game immediately.
+This function will close the game immediately.
 
 ## Declaration
 ```cpp

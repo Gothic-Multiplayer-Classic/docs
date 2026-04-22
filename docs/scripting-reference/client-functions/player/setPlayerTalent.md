@@ -4,7 +4,7 @@ title: 'setPlayerTalent'
 # `function` setPlayerTalent <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set a player's talent value.
+This function will set the player/npc talent value.
 
 ## Declaration
 ```cpp

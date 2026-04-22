@@ -4,11 +4,11 @@ title: 'setPlayerPosition'
 # `function` setPlayerPosition <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set a player's world position.
+This function will set the player's world position.
 
 ## Declaration
 ```cpp
-boolean setPlayerPosition(number player_id, number x, number y, number z)
+void setPlayerPosition(number player_id, number x, number y, number z)
 ```
 
 ## Parameters
@@ -16,6 +16,3 @@ boolean setPlayerPosition(number player_id, number x, number y, number z)
 * `number` **x**: X coordinate.
 * `number` **y**: Y coordinate.
 * `number` **z**: Z coordinate.
-  
-## Returns `boolean`
-True on success.

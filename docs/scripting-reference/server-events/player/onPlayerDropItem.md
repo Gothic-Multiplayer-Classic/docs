@@ -4,7 +4,7 @@ title: 'onPlayerDropItem'
 # `event` onPlayerDropItem <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player drops an item.
+This event is triggered when a player drops an item.
 
 ## Parameters
 ```c++

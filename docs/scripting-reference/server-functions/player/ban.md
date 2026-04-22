@@ -6,7 +6,7 @@ title: 'ban'
 !!! note
     The reason string can't be longer than 255 characters.
 
-Ban the player on the server.
+This function will ban the player on the server.
 
 ## Declaration
 ```cpp

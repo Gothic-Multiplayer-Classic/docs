@@ -4,7 +4,7 @@ title: 'onPlayerSpellSlotChange'
 # `event` onPlayerSpellSlotChange <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player's active spell slot changes.
+This event is triggered when a player's active spell slot changes.
 
 ## Parameters
 ```c++

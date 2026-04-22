@@ -4,7 +4,7 @@ title: 'Mat4'
 # `class` Mat4 <font size="4">(shared-side)</font>
 !!! info "Available since version: 0.3.0"
 
-4x4 matrix with common transformation utilities (rotation, scaling, translation).
+This class represents a 4x4 matrix.
 
 ### Constructor
 ```cpp
@@ -42,7 +42,7 @@ No properties.
 ## Methods
 ### makeIdentity
 
-Resets the matrix to identity.
+This method resets the matrix to identity.
 
 ```cpp
 void makeIdentity()
@@ -53,7 +53,7 @@ void makeIdentity()
 ----
 ### makeZero
 
-Sets all matrix elements to zero.
+This method sets all matrix elements to zero.
 
 ```cpp
 void makeZero()
@@ -64,7 +64,7 @@ void makeZero()
 ----
 ### makeOrthonormal
 
-Orthonormalizes the upper-left 3x3 basis vectors while preserving translation.
+This method orthonormalizes the upper-left 3x3 basis vectors while preserving translation.
 
 ```cpp
 void makeOrthonormal()
@@ -75,7 +75,7 @@ void makeOrthonormal()
 ----
 ### isUpper3x3Orthonormal
 
-Returns true if the upper 3x3 basis vectors are orthonormal.
+This method returns true if the upper 3x3 basis vectors are orthonormal.
 
 ```cpp
 boolean isUpper3x3Orthonormal()
@@ -89,7 +89,7 @@ True if orthonormal within epsilon tolerance.
 ----
 ### transpose
 
-Returns the transposed matrix.
+This method returns the transposed matrix.
 
 ```cpp
 Mat4 transpose()
@@ -103,7 +103,7 @@ Transposed matrix.
 ----
 ### inverse
 
-Returns the inverse matrix.
+This method returns the inverse matrix.
 
 ```cpp
 Mat4 inverse()
@@ -117,8 +117,7 @@ Inverse matrix.
 ----
 ### inverseLinTrafo
 
-Returns the inverse of a linear transform with translation.
-
+This method returns the inverse of a linear transform with translation.
 This is intended for typical transform matrices (rotation/scale + translation).
 
 ```cpp
@@ -133,7 +132,7 @@ Inverse linear transform matrix.
 ----
 ### rotate
 
-Rotates a vector by the matrix (ignores translation).
+This method rotates a vector by the matrix (ignores translation).
 
 ```cpp
 Vec3 rotate(Vec3 vec)
@@ -150,7 +149,7 @@ Rotated vector.
 ----
 ### setRightVector
 
-Sets the right basis vector.
+This method sets the right basis vector.
 
 ```cpp
 void setRightVector(Vec3 vec)
@@ -164,7 +163,7 @@ void setRightVector(Vec3 vec)
 ----
 ### getRightVector
 
-Returns the right basis vector.
+This method returns the right basis vector.
 
 ```cpp
 Vec3 getRightVector()
@@ -178,7 +177,7 @@ Right vector.
 ----
 ### setAtVector
 
-Sets the forward (at) basis vector.
+This method sets the forward (at) basis vector.
 
 ```cpp
 void setAtVector(Vec3 vec)
@@ -192,7 +191,7 @@ void setAtVector(Vec3 vec)
 ----
 ### getAtVector
 
-Returns the forward (at) basis vector.
+This method returns the forward (at) basis vector.
 
 ```cpp
 Vec3 getAtVector()
@@ -206,7 +205,7 @@ At vector.
 ----
 ### setUpVector
 
-Sets the up basis vector.
+This method sets the up basis vector.
 
 ```cpp
 void setUpVector(Vec3 vec)
@@ -220,7 +219,7 @@ void setUpVector(Vec3 vec)
 ----
 ### getUpVector
 
-Returns the up basis vector.
+This method returns the up basis vector.
 
 ```cpp
 Vec3 getUpVector()
@@ -234,7 +233,7 @@ Up vector.
 ----
 ### setTranslation
 
-Sets the translation component.
+This method sets the translation component.
 
 ```cpp
 void setTranslation(Vec3 vec)
@@ -248,7 +247,7 @@ void setTranslation(Vec3 vec)
 ----
 ### getTranslation
 
-Returns the translation component.
+This method returns the translation component.
 
 ```cpp
 Vec3 getTranslation()
@@ -262,7 +261,7 @@ Translation vector.
 ----
 ### resetRotation
 
-Resets rotation to identity while preserving translation.
+This method resets rotation to identity while preserving translation.
 
 ```cpp
 void resetRotation()
@@ -273,7 +272,7 @@ void resetRotation()
 ----
 ### extractRotation
 
-Extracts the rotation part of the matrix (scaling removed).
+This method extracts the rotation part of the matrix (scaling removed).
 
 ```cpp
 Mat3 extractRotation()
@@ -287,7 +286,7 @@ Rotation matrix.
 ----
 ### extractScaling
 
-Extracts scaling factors from the matrix basis vectors.
+This method extracts scaling factors from the matrix basis vectors.
 
 ```cpp
 Vec3 extractScaling()
@@ -301,7 +300,7 @@ Scaling factors for x, y and z axes.
 ----
 ### postRotateX
 
-Post-multiplies a rotation around the X axis (degrees).
+This method post-multiplies a rotation around the X axis (degrees).
 
 ```cpp
 void postRotateX(number angle_degrees)
@@ -315,7 +314,7 @@ void postRotateX(number angle_degrees)
 ----
 ### postRotateY
 
-Post-multiplies a rotation around the Y axis (degrees).
+This method post-multiplies a rotation around the Y axis (degrees).
 
 ```cpp
 void postRotateY(number angle_degrees)
@@ -329,7 +328,7 @@ void postRotateY(number angle_degrees)
 ----
 ### postRotateZ
 
-Post-multiplies a rotation around the Z axis (degrees).
+This method post-multiplies a rotation around the Z axis (degrees).
 
 ```cpp
 void postRotateZ(number angle_degrees)
@@ -343,7 +342,7 @@ void postRotateZ(number angle_degrees)
 ----
 ### preScale
 
-Pre-multiplies a scaling transformation.
+This method pre-multiplies a scaling transformation.
 
 ```cpp
 void preScale(Vec3 scale)
@@ -357,7 +356,7 @@ void preScale(Vec3 scale)
 ----
 ### postScale
 
-Post-multiplies a scaling transformation.
+This method post-multiplies a scaling transformation.
 
 ```cpp
 void postScale(Vec3 scale)
@@ -371,7 +370,7 @@ void postScale(Vec3 scale)
 ----
 ### `static` swap
 
-Swaps two matrices.
+This method swaps two matrices.
 
 ```cpp
 void swap(Mat4 mat1, Mat4 mat2)
@@ -386,7 +385,7 @@ void swap(Mat4 mat1, Mat4 mat2)
 ----
 ### `static` lookAt
 
-Builds a look-at transform from a position, target and up vector.
+This method builds a look-at transform from a position, target and up vector.
 
 ```cpp
 Mat4 lookAt(Vec3 from, Vec3 to, Vec3 up)
@@ -405,7 +404,7 @@ Look-at matrix.
 ----
 ### data
 
-Returns a pointer to the raw matrix data (column-major float array).
+This method returns a pointer to the raw matrix data (column-major float array).
 
 ```cpp
 userdata data()

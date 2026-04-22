@@ -4,7 +4,7 @@ title: 'setPlayerInstance'
 # `function` setPlayerInstance <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set a player's instance.
+This function will change the player/npc in-game instance.
 
 ## Declaration
 ```cpp

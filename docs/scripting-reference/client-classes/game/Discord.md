@@ -15,21 +15,21 @@ No properties.
 ## Methods
 ### `static` setActivity
 
-Update the Discord Rich Presence activity. Missing fields keep their last-set values.
+This function updates the Discord Rich Presence activity. Missing fields keep their last-set values.
 
 ```cpp
-void setActivity(table Activity)
+void setActivity({...} Activity)
 ```
 
 **Parameters:**
 
-* `table` **Activity**: configuration table.
+* `{...}` **Activity**: configuration table.
   
 
 ----
 ### `static` setState
 
-Update the activity state text.
+This function will update the activity state text.
 
 ```cpp
 void setState(string state)
@@ -37,13 +37,13 @@ void setState(string state)
 
 **Parameters:**
 
-* `string` **state**: New activity state text.
+* `string` **state**: 
   
 
 ----
 ### `static` setDetails
 
-Update the activity details text.
+This function will update the activity details text.
 
 ```cpp
 void setDetails(string details)
@@ -51,13 +51,13 @@ void setDetails(string details)
 
 **Parameters:**
 
-* `string` **details**: New activity details text.
+* `string` **details**: 
   
 
 ----
 ### `static` setLargeImage
 
-Update the large image entry for the activity.
+This function will update the large image entry for the activity.
 
 ```cpp
 void setLargeImage(string key, string text)
@@ -72,7 +72,7 @@ void setLargeImage(string key, string text)
 ----
 ### `static` setSmallImage
 
-Update the small image entry for the activity.
+This function will update the small image entry for the activity.
 
 ```cpp
 void setSmallImage(string key, string text)
@@ -87,7 +87,7 @@ void setSmallImage(string key, string text)
 ----
 ### `static` clearActivity
 
-Clear the current activity and stored values.
+This function will clear the current activity and stored values.
 
 ```cpp
 void clearActivity()

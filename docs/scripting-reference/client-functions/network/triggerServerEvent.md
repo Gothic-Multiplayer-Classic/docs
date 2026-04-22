@@ -8,7 +8,7 @@ title: 'triggerServerEvent'
 !!! note
     `sourceElement` is an optional numeric identifier that represents the object or entity that caused the event. Its meaning is user-defined and depends on the game logic.
 
-Triggers a custom server-side event and optionally passes arguments.
+This function triggers a custom server-side event and optionally passes arguments.
 The first argument is always the event name.
 
 ## Declaration

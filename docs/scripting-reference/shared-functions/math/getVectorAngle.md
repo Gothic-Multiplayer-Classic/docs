@@ -4,7 +4,7 @@ title: 'getVectorAngle'
 # `function` getVectorAngle <font size="4">(shared-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get angle on Y axis directed towards the second point.
+This function returns the angle on Y axis directed towards the second point.
 
 ## Declaration
 ```cpp

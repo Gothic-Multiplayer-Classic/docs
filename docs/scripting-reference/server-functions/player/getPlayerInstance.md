@@ -4,7 +4,7 @@ title: 'getPlayerInstance'
 # `function` getPlayerInstance <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get a player's instance name or nil if unavailable.
+This function will return the player's instance name, or nil if unavailable.
 
 ## Declaration
 ```cpp

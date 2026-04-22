@@ -4,7 +4,7 @@ title: 'applyPlayerOverlay'
 # `function` applyPlayerOverlay <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Apply animation overlay on player.
+This function will apply an animation overlay on player (eg. "HUMANS_MILITIA.MDS").
 
 ## Declaration
 ```cpp

@@ -4,7 +4,7 @@ title: 'getPlayerOverlays'
 # `function` getPlayerOverlays <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get a player's active animation overlays.
+This function will return the player's active animation overlays.
 
 ## Declaration
 ```cpp

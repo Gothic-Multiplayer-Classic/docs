@@ -4,7 +4,7 @@ title: 'onPlayerSpawn'
 # `event` onPlayerSpawn <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player spawns (initial spawn).
+This event is triggered when a player spawns (initial spawn).
 
 ## Parameters
 ```c++

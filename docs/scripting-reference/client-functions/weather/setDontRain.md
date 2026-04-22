@@ -4,7 +4,7 @@ title: 'setDontRain'
 # `function` setDontRain <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Enable/disable weather completely.
+This function will enable/disable weather completely.
 
 ## Declaration
 ```cpp

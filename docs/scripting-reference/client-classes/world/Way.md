@@ -4,7 +4,7 @@ title: 'Way'
 # `class` Way <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-
+This class represents a route between two waypoint names computed from Zengin zCRoute class.
 
 ### Constructor
 ```cpp
@@ -24,7 +24,7 @@ No properties.
 ## Methods
 ### getStart
 
-Returns the start waypoint name.
+This method will return the start waypoint name.
 
 ```cpp
 string getStart()
@@ -38,7 +38,7 @@ string getStart()
 ----
 ### getEnd
 
-Returns the end waypoint name.
+This method will return the end waypoint name.
 
 ```cpp
 string getEnd()
@@ -52,21 +52,21 @@ string getEnd()
 ----
 ### getWaypoints
 
-Get all waypoints from the computed route.
+This method will return all waypoints from the computed route.
 
 ```cpp
-[wpName...] getWaypoints()
+{wpName...} getWaypoints()
 ```
 
   
-**Returns `[wpName...]`:**
+**Returns `{wpName...}`:**
 
-Array with waypoint names.
+Table with waypoint names.
 
 ----
 ### getCountWaypoints
 
-Get number of waypoints in the computed route.
+This method will return the number of waypoints in the computed route.
 
 ```cpp
 number getCountWaypoints()
@@ -75,7 +75,7 @@ number getCountWaypoints()
   
 **Returns `number`:**
 
-
+Number of waypoints.
 
 ----
 

@@ -4,16 +4,13 @@ title: 'unequipItem'
 # `function` unequipItem <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Unequip an item from a player or NPC on the client.
+This function will unequip an item from the player/NPC.
 
 ## Declaration
 ```cpp
-boolean unequipItem(number player_id, string instance)
+void unequipItem(number player_id, string instance)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string` **instance**: Item instance name.
-  
-## Returns `boolean`
-True on success.

@@ -4,15 +4,15 @@ title: 'getCursorSizePx'
 # `function` getCursorSizePx <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Returns the cursor size in pixel units.
+This function will return the cursor size in pixel units.
 
 ## Declaration
 ```cpp
-number, int getCursorSizePx()
+{x, y} getCursorSizePx()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `number, int`
+## Returns `{x, y}`
 Cursor width and height in pixels.

@@ -6,7 +6,7 @@ title: 'setPlayerRespawnTime'
 !!! note
     The respawnTime can't be smaller than 1001 miliseconds.
 
-Set the player time to respawn after death. If set to 0, respawn is disabled for selected player.
+This function will set the player time to respawn after death. If set to 0, respawn is disabled for selected player.
 
 ## Declaration
 ```cpp

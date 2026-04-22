@@ -4,7 +4,7 @@ title: 'getExp'
 # `function` getExp <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get the player's experience points.
+This function will return the hero's current experience point amount, or nil if unavailable.
 
 ## Declaration
 ```cpp

@@ -1,14 +1,14 @@
 ---
-title: 'KeyToggled'
+title: 'keyToggled'
 ---
-# `function` KeyToggled <font size="4">(client-side)</font>
+# `function` keyToggled <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-The function is used to check whether the specified keyboard key was toggled from unpressed to pressed state.
+This function will check whether the specified keyboard key was toggled from unpressed to pressed state.
 
 ## Declaration
 ```cpp
-boolean KeyToggled(number key)
+boolean keyToggled(number key)
 ```
 
 ## Parameters

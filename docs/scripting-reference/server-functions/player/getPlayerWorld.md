@@ -4,7 +4,7 @@ title: 'getPlayerWorld'
 # `function` getPlayerWorld <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get the current world name for a player or nil if player missing.
+This function will return the player's current world name, or nil if unavailable.
 
 ## Declaration
 ```cpp

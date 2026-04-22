@@ -4,7 +4,7 @@ title: 'onPlayerSpawnFor'
 # `event` onPlayerSpawnFor <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player is spawned for another player (streaming in).
+This event is triggered when a player is spawned for another player (streaming in).
 
 ## Parameters
 ```c++

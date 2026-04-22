@@ -2,7 +2,7 @@
   "classes": {
     "Vec2": {
       "name": "Vec2",
-      "doc": "2D vector with basic math utilities.",
+      "doc": "This class represents a 2d vector.",
       "side": "shared",
       "category": "Math",
       "extends": null,
@@ -10,12 +10,12 @@
         {
           "name": "x",
           "type": "number",
-          "doc": "X component."
+          "doc": "Represents the X component."
         },
         {
           "name": "y",
           "type": "number",
-          "doc": "Y component."
+          "doc": "Represents the Y component."
         }
       ],
       "methods": [
@@ -58,7 +58,7 @@
         },
         {
           "name": "len",
-          "doc": "Returns the vector length (magnitude).",
+          "doc": "This method returns the vector length (magnitude).",
           "params": [],
           "returns": {
             "type": "number",
@@ -67,7 +67,7 @@
         },
         {
           "name": "len2",
-          "doc": "Returns the squared vector length.",
+          "doc": "This method returns the squared vector length.",
           "params": [],
           "returns": {
             "type": "number",
@@ -76,7 +76,7 @@
         },
         {
           "name": "lenApprox",
-          "doc": "Returns an approximate vector length.",
+          "doc": "This method returns an approximate vector length.",
           "params": [],
           "returns": {
             "type": "number",
@@ -85,7 +85,7 @@
         },
         {
           "name": "distance",
-          "doc": "Returns the distance to another vector.",
+          "doc": "This method returns the distance to another vector.",
           "params": [
             {
               "name": "vec",
@@ -100,7 +100,7 @@
         },
         {
           "name": "normalize",
-          "doc": "Normalizes the vector in-place.\n\nIf the vector length is zero, no change is applied.",
+          "doc": "This method normalizes the vector in-place.\nIf the vector length is zero, no change is applied.",
           "params": [],
           "returns": {
             "type": "vec2",
@@ -109,7 +109,7 @@
         },
         {
           "name": "normalizeSafe",
-          "doc": "Normalizes the vector in-place using an epsilon check.\n\nIf the vector length is below a small threshold, no change is applied.",
+          "doc": "This method normalizes the vector in-place using an epsilon check.\nIf the vector length is below a small threshold, no change is applied.",
           "params": [],
           "returns": {
             "type": "vec2",
@@ -118,7 +118,7 @@
         },
         {
           "name": "normalizeApprox",
-          "doc": "Normalizes the vector in-place using an approximate inverse square root.",
+          "doc": "This method normalizes the vector in-place using an approximate inverse square root.",
           "params": [],
           "returns": {
             "type": "vec2",
@@ -127,7 +127,7 @@
         },
         {
           "name": "set",
-          "doc": "Sets both components of the vector.",
+          "doc": "This method sets both components of the vector.",
           "params": [
             {
               "name": "x",
@@ -147,7 +147,7 @@
         },
         {
           "name": "isEqualEps",
-          "doc": "Compares this vector with another vector using an epsilon tolerance.",
+          "doc": "This method compares this vector with another vector using an epsilon tolerance.",
           "params": [
             {
               "name": "vec",
@@ -162,7 +162,7 @@
         },
         {
           "name": "abs",
-          "doc": "Returns a vector with absolute component values.",
+          "doc": "This method returns a vector with absolute component values.",
           "params": [],
           "returns": {
             "type": "vec2",
@@ -171,7 +171,7 @@
         },
         {
           "name": "swap",
-          "doc": "Swaps two vectors.",
+          "doc": "This method swaps two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -191,7 +191,7 @@
         },
         {
           "name": "min",
-          "doc": "Returns the component-wise minimum of two vectors.",
+          "doc": "This method returns the component-wise minimum of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -211,7 +211,7 @@
         },
         {
           "name": "max",
-          "doc": "Returns the component-wise maximum of two vectors.",
+          "doc": "This method returns the component-wise maximum of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -231,7 +231,7 @@
         },
         {
           "name": "prod",
-          "doc": "Returns the component-wise product of two vectors.",
+          "doc": "This method returns the component-wise product of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -251,7 +251,7 @@
         },
         {
           "name": "dot",
-          "doc": "Returns the dot product of two vectors.",
+          "doc": "This method returns the dot product of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -271,7 +271,7 @@
         },
         {
           "name": "lerp",
-          "doc": "Linearly interpolates between two vectors.",
+          "doc": "This method linearly interpolates between two vectors.",
           "params": [
             {
               "name": "t",
@@ -299,7 +299,7 @@
     },
     "Vec3": {
       "name": "Vec3",
-      "doc": "3D vector with basic math utilities.",
+      "doc": "This class represents a 3d vector.",
       "side": "shared",
       "category": "Math",
       "extends": null,
@@ -307,17 +307,17 @@
         {
           "name": "x",
           "type": "number",
-          "doc": "X component."
+          "doc": "Represents X component."
         },
         {
           "name": "y",
           "type": "number",
-          "doc": "Y component."
+          "doc": "Represents Y component."
         },
         {
           "name": "z",
           "type": "number",
-          "doc": "Z component."
+          "doc": "Represents Z component."
         }
       ],
       "methods": [
@@ -365,7 +365,7 @@
         },
         {
           "name": "len",
-          "doc": "Returns the vector length (magnitude).",
+          "doc": "This method returns the vector length (magnitude).",
           "params": [],
           "returns": {
             "type": "number",
@@ -374,7 +374,7 @@
         },
         {
           "name": "len2",
-          "doc": "Returns the squared vector length.",
+          "doc": "This method returns the squared vector length.",
           "params": [],
           "returns": {
             "type": "number",
@@ -383,7 +383,7 @@
         },
         {
           "name": "lenApprox",
-          "doc": "Returns an approximate vector length.",
+          "doc": "This method returns an approximate vector length.",
           "params": [],
           "returns": {
             "type": "number",
@@ -392,7 +392,7 @@
         },
         {
           "name": "distance",
-          "doc": "Returns the distance to another vector.",
+          "doc": "This method returns the distance to another vector.",
           "params": [
             {
               "name": "vec",
@@ -407,7 +407,7 @@
         },
         {
           "name": "distance2d",
-          "doc": "Returns the 2D distance to another vector (ignores Z component).",
+          "doc": "This method returns the 2D distance to another vector (ignores Z component).",
           "params": [
             {
               "name": "vec",
@@ -422,7 +422,7 @@
         },
         {
           "name": "normalize",
-          "doc": "Normalizes the vector in-place.\n\nIf the vector length is zero, no change is applied.",
+          "doc": "This method normalizes the vector in-place.\nIf the vector length is zero, no change is applied.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -431,7 +431,7 @@
         },
         {
           "name": "normalizeSafe",
-          "doc": "Normalizes the vector in-place using an epsilon check.\n\nIf the vector length is below a small threshold, no change is applied.",
+          "doc": "This method normalizes the vector in-place using an epsilon check.\nIf the vector length is below a small threshold, no change is applied.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -440,7 +440,7 @@
         },
         {
           "name": "normalizeApprox",
-          "doc": "Normalizes the vector in-place using an approximate inverse square root.",
+          "doc": "This method normalizes the vector in-place using an approximate inverse square root.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -449,7 +449,7 @@
         },
         {
           "name": "set",
-          "doc": "Sets all components of the vector.",
+          "doc": "This method sets all components of the vector.",
           "params": [
             {
               "name": "x",
@@ -474,7 +474,7 @@
         },
         {
           "name": "isEqualEps",
-          "doc": "Compares this vector with another vector using an epsilon tolerance.",
+          "doc": "This method compares this vector with another vector using an epsilon tolerance.",
           "params": [
             {
               "name": "vec",
@@ -489,7 +489,7 @@
         },
         {
           "name": "abs",
-          "doc": "Returns a vector with absolute component values.",
+          "doc": "This method returns a vector with absolute component values.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -498,7 +498,7 @@
         },
         {
           "name": "reflect",
-          "doc": "Returns the reflection of this vector around a surface normal.",
+          "doc": "This method returns the reflection of this vector around a surface normal.",
           "params": [
             {
               "name": "normal",
@@ -513,7 +513,7 @@
         },
         {
           "name": "swap",
-          "doc": "Swaps two vectors.",
+          "doc": "This method swaps two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -533,7 +533,7 @@
         },
         {
           "name": "min",
-          "doc": "Returns the component-wise minimum of two vectors.",
+          "doc": "This method returns the component-wise minimum of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -553,7 +553,7 @@
         },
         {
           "name": "max",
-          "doc": "Returns the component-wise maximum of two vectors.",
+          "doc": "This method returns the component-wise maximum of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -573,7 +573,7 @@
         },
         {
           "name": "prod",
-          "doc": "Returns the component-wise product of two vectors.",
+          "doc": "This method returns the component-wise product of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -593,7 +593,7 @@
         },
         {
           "name": "dot",
-          "doc": "Returns the dot product of two vectors.",
+          "doc": "This method returns the dot product of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -613,7 +613,7 @@
         },
         {
           "name": "cross",
-          "doc": "Returns the cross product of two vectors.",
+          "doc": "This method returns the cross product of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -633,7 +633,7 @@
         },
         {
           "name": "lerp",
-          "doc": "Linearly interpolates between two vectors.",
+          "doc": "This method linearly interpolates between two vectors.",
           "params": [
             {
               "name": "t",
@@ -661,7 +661,7 @@
     },
     "Vec4": {
       "name": "Vec4",
-      "doc": "4D vector with basic math utilities.",
+      "doc": "This class represents a 4d vector.",
       "side": "shared",
       "category": "Math",
       "extends": null,
@@ -669,22 +669,22 @@
         {
           "name": "x",
           "type": "number",
-          "doc": "X component."
+          "doc": "Represents X component."
         },
         {
           "name": "y",
           "type": "number",
-          "doc": "Y component."
+          "doc": "Represents Y component."
         },
         {
           "name": "z",
           "type": "number",
-          "doc": "Z component."
+          "doc": "Represents Z component."
         },
         {
           "name": "w",
           "type": "number",
-          "doc": "W component."
+          "doc": "Represents W component."
         }
       ],
       "methods": [
@@ -737,7 +737,7 @@
         },
         {
           "name": "len",
-          "doc": "Returns the vector length (magnitude).",
+          "doc": "This method returns the vector length (magnitude).",
           "params": [],
           "returns": {
             "type": "number",
@@ -746,7 +746,7 @@
         },
         {
           "name": "len2",
-          "doc": "Returns the squared vector length.",
+          "doc": "This method returns the squared vector length.",
           "params": [],
           "returns": {
             "type": "number",
@@ -755,7 +755,7 @@
         },
         {
           "name": "lenApprox",
-          "doc": "Returns an approximate vector length.",
+          "doc": "This method returns an approximate vector length.",
           "params": [],
           "returns": {
             "type": "number",
@@ -764,7 +764,7 @@
         },
         {
           "name": "normalize",
-          "doc": "Normalizes the vector in-place.\n\nIf the vector length is zero, no change is applied.",
+          "doc": "This method normalizes the vector in-place.\nIf the vector length is zero, no change is applied.",
           "params": [],
           "returns": {
             "type": "vec4",
@@ -773,7 +773,7 @@
         },
         {
           "name": "normalizeSafe",
-          "doc": "Normalizes the vector in-place using an epsilon check.\n\nIf the vector length is below a small threshold, no change is applied.",
+          "doc": "This method normalizes the vector in-place using an epsilon check.\nIf the vector length is below a small threshold, no change is applied.",
           "params": [],
           "returns": {
             "type": "vec4",
@@ -782,7 +782,7 @@
         },
         {
           "name": "normalizeApprox",
-          "doc": "Normalizes the vector in-place using an approximate inverse square root.",
+          "doc": "This method normalizes the vector in-place using an approximate inverse square root.",
           "params": [],
           "returns": {
             "type": "vec4",
@@ -791,7 +791,7 @@
         },
         {
           "name": "set",
-          "doc": "Sets all components of the vector.",
+          "doc": "This method sets all components of the vector.",
           "params": [
             {
               "name": "x",
@@ -821,7 +821,7 @@
         },
         {
           "name": "isEqualEps",
-          "doc": "Compares this vector with another vector using an epsilon tolerance.",
+          "doc": "This method compares this vector with another vector using an epsilon tolerance.",
           "params": [
             {
               "name": "vec",
@@ -836,7 +836,7 @@
         },
         {
           "name": "abs",
-          "doc": "Returns a vector with absolute component values.",
+          "doc": "This method returns a vector with absolute component values.",
           "params": [],
           "returns": {
             "type": "vec4",
@@ -845,7 +845,7 @@
         },
         {
           "name": "swap",
-          "doc": "Swaps two vectors.",
+          "doc": "This method swaps two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -865,7 +865,7 @@
         },
         {
           "name": "min",
-          "doc": "Returns the component-wise minimum of two vectors.",
+          "doc": "This method returns the component-wise minimum of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -885,7 +885,7 @@
         },
         {
           "name": "max",
-          "doc": "Returns the component-wise maximum of two vectors.",
+          "doc": "This method returns the component-wise maximum of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -905,7 +905,7 @@
         },
         {
           "name": "prod",
-          "doc": "Returns the component-wise product of two vectors.",
+          "doc": "This method returns the component-wise product of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -925,7 +925,7 @@
         },
         {
           "name": "dot",
-          "doc": "Returns the dot product of two vectors.",
+          "doc": "This method returns the dot product of two vectors.",
           "params": [
             {
               "name": "vec1",
@@ -945,7 +945,7 @@
         },
         {
           "name": "lerp",
-          "doc": "Linearly interpolates between two vectors.",
+          "doc": "This method linearly interpolates between two vectors.",
           "params": [
             {
               "name": "t",
@@ -973,7 +973,7 @@
     },
     "Mat3": {
       "name": "Mat3",
-      "doc": "3x3 matrix with common transformation utilities.",
+      "doc": "This class represents a 3x3 matrix.",
       "side": "shared",
       "category": "Math",
       "extends": null,
@@ -1033,7 +1033,7 @@
         },
         {
           "name": "makeIdentity",
-          "doc": "Resets the matrix to identity.",
+          "doc": "This method resets the matrix to identity.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -1042,7 +1042,7 @@
         },
         {
           "name": "makeZero",
-          "doc": "Sets all matrix elements to zero.",
+          "doc": "This method sets all matrix elements to zero.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -1051,7 +1051,7 @@
         },
         {
           "name": "makeOrthonormal",
-          "doc": "Orthonormalizes the matrix basis vectors.\n\nThis makes the basis vectors unit-length and mutually orthogonal.",
+          "doc": "This method orthonormalizes the matrix basis vectors.\nThis makes the basis vectors unit-length and mutually orthogonal.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -1060,7 +1060,7 @@
         },
         {
           "name": "isUpper3x3Orthonormal",
-          "doc": "Returns true if the matrix basis vectors are orthonormal.",
+          "doc": "This method returns true if the matrix basis vectors are orthonormal.",
           "params": [],
           "returns": {
             "type": "boolean",
@@ -1069,7 +1069,7 @@
         },
         {
           "name": "transpose",
-          "doc": "Returns the transposed matrix.",
+          "doc": "This method returns the transposed matrix.",
           "params": [],
           "returns": {
             "type": "mat3",
@@ -1078,7 +1078,7 @@
         },
         {
           "name": "inverse",
-          "doc": "Returns the inverse matrix.",
+          "doc": "This method returns the inverse matrix.",
           "params": [],
           "returns": {
             "type": "mat3",
@@ -1087,7 +1087,7 @@
         },
         {
           "name": "rotate",
-          "doc": "Rotates a vector by this matrix.",
+          "doc": "This method rotates a vector by this matrix.",
           "params": [
             {
               "name": "vec",
@@ -1102,7 +1102,7 @@
         },
         {
           "name": "setRightVector",
-          "doc": "Sets the right basis vector.",
+          "doc": "This method sets the right basis vector.",
           "params": [
             {
               "name": "vec",
@@ -1117,7 +1117,7 @@
         },
         {
           "name": "getRightVector",
-          "doc": "Returns the right basis vector.",
+          "doc": "This method returns the right basis vector.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -1126,7 +1126,7 @@
         },
         {
           "name": "setUpVector",
-          "doc": "Sets the up basis vector.",
+          "doc": "This method sets the up basis vector.",
           "params": [
             {
               "name": "vec",
@@ -1141,7 +1141,7 @@
         },
         {
           "name": "getUpVector",
-          "doc": "Returns the up basis vector.",
+          "doc": "This method returns the up basis vector.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -1150,7 +1150,7 @@
         },
         {
           "name": "setAtVector",
-          "doc": "Sets the forward (at) basis vector.",
+          "doc": "This method sets the forward (at) basis vector.",
           "params": [
             {
               "name": "vec",
@@ -1165,7 +1165,7 @@
         },
         {
           "name": "getAtVector",
-          "doc": "Returns the forward (at) basis vector.",
+          "doc": "This method returns the forward (at) basis vector.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -1174,7 +1174,7 @@
         },
         {
           "name": "resetRotation",
-          "doc": "Resets rotation to identity.",
+          "doc": "This method resets rotation to identity.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -1183,7 +1183,7 @@
         },
         {
           "name": "extractRotation",
-          "doc": "Returns a copy of this matrix with scaling removed.",
+          "doc": "This method returns a copy of this matrix with scaling removed.",
           "params": [],
           "returns": {
             "type": "mat3",
@@ -1192,7 +1192,7 @@
         },
         {
           "name": "extractScaling",
-          "doc": "Extracts scaling factors from the basis vectors.",
+          "doc": "This method extracts scaling factors from the basis vectors.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -1201,7 +1201,7 @@
         },
         {
           "name": "postRotateX",
-          "doc": "Post-multiplies a rotation around the X axis (degrees).",
+          "doc": "This method post-multiplies a rotation around the X axis (degrees).",
           "params": [
             {
               "name": "angle_degrees",
@@ -1216,7 +1216,7 @@
         },
         {
           "name": "postRotateY",
-          "doc": "Post-multiplies a rotation around the Y axis (degrees).",
+          "doc": "This method post-multiplies a rotation around the Y axis (degrees).",
           "params": [
             {
               "name": "angle_degrees",
@@ -1231,7 +1231,7 @@
         },
         {
           "name": "postRotateZ",
-          "doc": "Post-multiplies a rotation around the Z axis (degrees).",
+          "doc": "This method post-multiplies a rotation around the Z axis (degrees).",
           "params": [
             {
               "name": "angle_degrees",
@@ -1246,7 +1246,7 @@
         },
         {
           "name": "preScale",
-          "doc": "Pre-multiplies a scaling transformation.",
+          "doc": "This method pre-multiplies a scaling transformation.",
           "params": [
             {
               "name": "scale",
@@ -1261,7 +1261,7 @@
         },
         {
           "name": "postScale",
-          "doc": "Post-multiplies a scaling transformation.",
+          "doc": "This method post-multiplies a scaling transformation.",
           "params": [
             {
               "name": "scale",
@@ -1276,7 +1276,7 @@
         },
         {
           "name": "swap",
-          "doc": "Swaps two matrices.",
+          "doc": "This method swaps two matrices.",
           "params": [
             {
               "name": "mat1",
@@ -1296,7 +1296,7 @@
         },
         {
           "name": "data",
-          "doc": "Returns a pointer to the raw matrix data (column-major float array).",
+          "doc": "This method returns a pointer to the raw matrix data (column-major float array).",
           "params": [],
           "returns": {
             "type": "userdata",
@@ -1308,7 +1308,7 @@
     },
     "Mat4": {
       "name": "Mat4",
-      "doc": "4x4 matrix with common transformation utilities (rotation, scaling, translation).",
+      "doc": "This class represents a 4x4 matrix.",
       "side": "shared",
       "category": "Math",
       "extends": null,
@@ -1373,7 +1373,7 @@
         },
         {
           "name": "makeIdentity",
-          "doc": "Resets the matrix to identity.",
+          "doc": "This method resets the matrix to identity.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -1382,7 +1382,7 @@
         },
         {
           "name": "makeZero",
-          "doc": "Sets all matrix elements to zero.",
+          "doc": "This method sets all matrix elements to zero.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -1391,7 +1391,7 @@
         },
         {
           "name": "makeOrthonormal",
-          "doc": "Orthonormalizes the upper-left 3x3 basis vectors while preserving translation.",
+          "doc": "This method orthonormalizes the upper-left 3x3 basis vectors while preserving translation.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -1400,7 +1400,7 @@
         },
         {
           "name": "isUpper3x3Orthonormal",
-          "doc": "Returns true if the upper 3x3 basis vectors are orthonormal.",
+          "doc": "This method returns true if the upper 3x3 basis vectors are orthonormal.",
           "params": [],
           "returns": {
             "type": "boolean",
@@ -1409,7 +1409,7 @@
         },
         {
           "name": "transpose",
-          "doc": "Returns the transposed matrix.",
+          "doc": "This method returns the transposed matrix.",
           "params": [],
           "returns": {
             "type": "mat4",
@@ -1418,7 +1418,7 @@
         },
         {
           "name": "inverse",
-          "doc": "Returns the inverse matrix.",
+          "doc": "This method returns the inverse matrix.",
           "params": [],
           "returns": {
             "type": "mat4",
@@ -1427,7 +1427,7 @@
         },
         {
           "name": "inverseLinTrafo",
-          "doc": "Returns the inverse of a linear transform with translation.\n\nThis is intended for typical transform matrices (rotation/scale + translation).",
+          "doc": "This method returns the inverse of a linear transform with translation.\nThis is intended for typical transform matrices (rotation/scale + translation).",
           "params": [],
           "returns": {
             "type": "mat4",
@@ -1436,7 +1436,7 @@
         },
         {
           "name": "rotate",
-          "doc": "Rotates a vector by the matrix (ignores translation).",
+          "doc": "This method rotates a vector by the matrix (ignores translation).",
           "params": [
             {
               "name": "vec",
@@ -1451,7 +1451,7 @@
         },
         {
           "name": "setRightVector",
-          "doc": "Sets the right basis vector.",
+          "doc": "This method sets the right basis vector.",
           "params": [
             {
               "name": "vec",
@@ -1466,7 +1466,7 @@
         },
         {
           "name": "getRightVector",
-          "doc": "Returns the right basis vector.",
+          "doc": "This method returns the right basis vector.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -1475,7 +1475,7 @@
         },
         {
           "name": "setAtVector",
-          "doc": "Sets the forward (at) basis vector.",
+          "doc": "This method sets the forward (at) basis vector.",
           "params": [
             {
               "name": "vec",
@@ -1490,7 +1490,7 @@
         },
         {
           "name": "getAtVector",
-          "doc": "Returns the forward (at) basis vector.",
+          "doc": "This method returns the forward (at) basis vector.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -1499,7 +1499,7 @@
         },
         {
           "name": "setUpVector",
-          "doc": "Sets the up basis vector.",
+          "doc": "This method sets the up basis vector.",
           "params": [
             {
               "name": "vec",
@@ -1514,7 +1514,7 @@
         },
         {
           "name": "getUpVector",
-          "doc": "Returns the up basis vector.",
+          "doc": "This method returns the up basis vector.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -1523,7 +1523,7 @@
         },
         {
           "name": "setTranslation",
-          "doc": "Sets the translation component.",
+          "doc": "This method sets the translation component.",
           "params": [
             {
               "name": "vec",
@@ -1538,7 +1538,7 @@
         },
         {
           "name": "getTranslation",
-          "doc": "Returns the translation component.",
+          "doc": "This method returns the translation component.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -1547,7 +1547,7 @@
         },
         {
           "name": "resetRotation",
-          "doc": "Resets rotation to identity while preserving translation.",
+          "doc": "This method resets rotation to identity while preserving translation.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -1556,7 +1556,7 @@
         },
         {
           "name": "extractRotation",
-          "doc": "Extracts the rotation part of the matrix (scaling removed).",
+          "doc": "This method extracts the rotation part of the matrix (scaling removed).",
           "params": [],
           "returns": {
             "type": "mat3",
@@ -1565,7 +1565,7 @@
         },
         {
           "name": "extractScaling",
-          "doc": "Extracts scaling factors from the matrix basis vectors.",
+          "doc": "This method extracts scaling factors from the matrix basis vectors.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -1574,7 +1574,7 @@
         },
         {
           "name": "postRotateX",
-          "doc": "Post-multiplies a rotation around the X axis (degrees).",
+          "doc": "This method post-multiplies a rotation around the X axis (degrees).",
           "params": [
             {
               "name": "angle_degrees",
@@ -1589,7 +1589,7 @@
         },
         {
           "name": "postRotateY",
-          "doc": "Post-multiplies a rotation around the Y axis (degrees).",
+          "doc": "This method post-multiplies a rotation around the Y axis (degrees).",
           "params": [
             {
               "name": "angle_degrees",
@@ -1604,7 +1604,7 @@
         },
         {
           "name": "postRotateZ",
-          "doc": "Post-multiplies a rotation around the Z axis (degrees).",
+          "doc": "This method post-multiplies a rotation around the Z axis (degrees).",
           "params": [
             {
               "name": "angle_degrees",
@@ -1619,7 +1619,7 @@
         },
         {
           "name": "preScale",
-          "doc": "Pre-multiplies a scaling transformation.",
+          "doc": "This method pre-multiplies a scaling transformation.",
           "params": [
             {
               "name": "scale",
@@ -1634,7 +1634,7 @@
         },
         {
           "name": "postScale",
-          "doc": "Post-multiplies a scaling transformation.",
+          "doc": "This method post-multiplies a scaling transformation.",
           "params": [
             {
               "name": "scale",
@@ -1649,7 +1649,7 @@
         },
         {
           "name": "swap",
-          "doc": "Swaps two matrices.",
+          "doc": "This method swaps two matrices.",
           "params": [
             {
               "name": "mat1",
@@ -1669,7 +1669,7 @@
         },
         {
           "name": "lookAt",
-          "doc": "Builds a look-at transform from a position, target and up vector.",
+          "doc": "This method builds a look-at transform from a position, target and up vector.",
           "params": [
             {
               "name": "from",
@@ -1694,7 +1694,7 @@
         },
         {
           "name": "data",
-          "doc": "Returns a pointer to the raw matrix data (column-major float array).",
+          "doc": "This method returns a pointer to the raw matrix data (column-major float array).",
           "params": [],
           "returns": {
             "type": "userdata",
@@ -1706,7 +1706,7 @@
     },
     "Quat": {
       "name": "Quat",
-      "doc": "Quaternion representing 3D rotation.\n\nProvides conversion to/from matrices, Euler angles and axis-angle, as well as\ncommon quaternion operations and interpolation utilities.",
+      "doc": "This class represents a Quaternion.\n\nProvides conversion to/from matrices, Euler angles and axis-angle, as well as\ncommon quaternion operations and interpolation utilities.",
       "side": "shared",
       "category": "Math",
       "extends": null,
@@ -1714,22 +1714,22 @@
         {
           "name": "x",
           "type": "number",
-          "doc": "X component."
+          "doc": "Represents X component."
         },
         {
           "name": "y",
           "type": "number",
-          "doc": "Y component."
+          "doc": "Represents Y component."
         },
         {
           "name": "z",
           "type": "number",
-          "doc": "Z component."
+          "doc": "Represents Z component."
         },
         {
           "name": "w",
           "type": "number",
-          "doc": "W component."
+          "doc": "Represents W component."
         }
       ],
       "methods": [
@@ -1792,7 +1792,7 @@
         },
         {
           "name": "toMat3",
-          "doc": "Converts this quaternion to a 3x3 rotation matrix.",
+          "doc": "This method converts this quaternion to a 3x3 rotation matrix.",
           "params": [],
           "returns": {
             "type": "mat3",
@@ -1801,7 +1801,7 @@
         },
         {
           "name": "fromMat3",
-          "doc": "Sets this quaternion from a 3x3 rotation matrix.",
+          "doc": "This method sets this quaternion from a 3x3 rotation matrix.",
           "params": [
             {
               "name": "mat",
@@ -1816,7 +1816,7 @@
         },
         {
           "name": "toMat4",
-          "doc": "Converts this quaternion to a 4x4 rotation matrix.",
+          "doc": "This method converts this quaternion to a 4x4 rotation matrix.",
           "params": [],
           "returns": {
             "type": "mat4",
@@ -1825,7 +1825,7 @@
         },
         {
           "name": "fromMat4",
-          "doc": "Sets this quaternion from a 4x4 transform matrix (rotation part).",
+          "doc": "This method sets this quaternion from a 4x4 transform matrix (rotation part).",
           "params": [
             {
               "name": "mat",
@@ -1840,7 +1840,7 @@
         },
         {
           "name": "toEuler",
-          "doc": "Converts this quaternion to Euler angles.",
+          "doc": "This method converts this quaternion to Euler angles.",
           "params": [],
           "returns": {
             "type": "vec3",
@@ -1849,7 +1849,7 @@
         },
         {
           "name": "fromEuler",
-          "doc": "Sets this quaternion from Euler angles.",
+          "doc": "This method sets this quaternion from Euler angles.",
           "params": [
             {
               "name": "vec",
@@ -1864,7 +1864,7 @@
         },
         {
           "name": "toAxisAngle",
-          "doc": "Converts this quaternion to axis-angle representation.\n\nThe returned Vec4 contains (axis.x, axis.y, axis.z, angle).",
+          "doc": "This method converts this quaternion to axis-angle representation.\nThe returned Vec4 contains (axis.x, axis.y, axis.z, angle).",
           "params": [],
           "returns": {
             "type": "vec4",
@@ -1873,7 +1873,7 @@
         },
         {
           "name": "fromAxisAngle",
-          "doc": "Sets this quaternion from an axis and angle.",
+          "doc": "This method sets this quaternion from an axis and angle.",
           "params": [
             {
               "name": "axis",
@@ -1893,7 +1893,7 @@
         },
         {
           "name": "makeIdentity",
-          "doc": "Sets this quaternion to identity (no rotation).",
+          "doc": "This method sets this quaternion to identity (no rotation).",
           "params": [],
           "returns": {
             "type": "nil",
@@ -1902,7 +1902,7 @@
         },
         {
           "name": "isIdentity",
-          "doc": "Returns true if this quaternion is identity (within epsilon tolerance).",
+          "doc": "This method returns true if this quaternion is identity (within epsilon tolerance).",
           "params": [],
           "returns": {
             "type": "boolean",
@@ -1911,7 +1911,7 @@
         },
         {
           "name": "len",
-          "doc": "Returns the quaternion length.",
+          "doc": "This method returns the quaternion length.",
           "params": [],
           "returns": {
             "type": "number",
@@ -1920,7 +1920,7 @@
         },
         {
           "name": "len2",
-          "doc": "Returns the squared quaternion length.",
+          "doc": "This method returns the squared quaternion length.",
           "params": [],
           "returns": {
             "type": "number",
@@ -1929,7 +1929,7 @@
         },
         {
           "name": "lenApprox",
-          "doc": "Returns an approximate quaternion length.",
+          "doc": "This method returns an approximate quaternion length.",
           "params": [],
           "returns": {
             "type": "number",
@@ -1938,7 +1938,7 @@
         },
         {
           "name": "normalize",
-          "doc": "Normalizes the quaternion in-place.\n\nIf the quaternion length is zero, no change is applied.",
+          "doc": "This method normalizes the quaternion in-place.\nIf the quaternion length is zero, no change is applied.",
           "params": [],
           "returns": {
             "type": "quat",
@@ -1947,7 +1947,7 @@
         },
         {
           "name": "normalizeSafe",
-          "doc": "Normalizes the quaternion in-place using an epsilon check.\n\nIf the quaternion length is below a small threshold, no change is applied.",
+          "doc": "This method normalizes the quaternion in-place using an epsilon check.\nIf the quaternion length is below a small threshold, no change is applied.",
           "params": [],
           "returns": {
             "type": "quat",
@@ -1956,7 +1956,7 @@
         },
         {
           "name": "normalizeApprox",
-          "doc": "Normalizes the quaternion in-place using an approximate inverse square root.",
+          "doc": "This method normalizes the quaternion in-place using an approximate inverse square root.",
           "params": [],
           "returns": {
             "type": "quat",
@@ -1965,7 +1965,7 @@
         },
         {
           "name": "set",
-          "doc": "Sets quaternion components.",
+          "doc": "This method sets quaternion components.",
           "params": [
             {
               "name": "x",
@@ -1995,7 +1995,7 @@
         },
         {
           "name": "inverse",
-          "doc": "Returns the inverse quaternion.\n\nFor unit quaternions, this is equivalent to conjugate().",
+          "doc": "This method returns the inverse quaternion.\nFor unit quaternions, this is equivalent to conjugate().",
           "params": [],
           "returns": {
             "type": "quat",
@@ -2004,7 +2004,7 @@
         },
         {
           "name": "conjugate",
-          "doc": "Returns the conjugate quaternion.",
+          "doc": "This method returns the conjugate quaternion.",
           "params": [],
           "returns": {
             "type": "quat",
@@ -2013,7 +2013,7 @@
         },
         {
           "name": "dot",
-          "doc": "Returns the dot product of two quaternions.",
+          "doc": "This method returns the dot product of two quaternions.",
           "params": [
             {
               "name": "quat1",
@@ -2033,7 +2033,7 @@
         },
         {
           "name": "lerp",
-          "doc": "Linearly interpolates between two quaternions.",
+          "doc": "This method linearly interpolates between two quaternions.",
           "params": [
             {
               "name": "t",
@@ -2058,7 +2058,7 @@
         },
         {
           "name": "slerp",
-          "doc": "Spherically interpolates between two quaternions.",
+          "doc": "This method spherically interpolates between two quaternions.",
           "params": [
             {
               "name": "t",
@@ -2083,7 +2083,7 @@
         },
         {
           "name": "squad",
-          "doc": "Performs a squad-style interpolation using three quaternions.",
+          "doc": "This method performs a squad-style interpolation using three quaternions.",
           "params": [
             {
               "name": "t",
@@ -2113,7 +2113,7 @@
         },
         {
           "name": "lookRotation",
-          "doc": "Creates a quaternion that looks in the given forward direction with the given up direction.",
+          "doc": "This method creates a quaternion that looks in the given forward direction with the given up direction.",
           "params": [
             {
               "name": "forward",
@@ -2228,6 +2228,74 @@
       ],
       "callbacks": []
     },
+    "Way": {
+      "name": "Way",
+      "doc": "This class represents a route between two waypoint names computed from Zengin zCRoute class.",
+      "side": "client",
+      "category": "World",
+      "extends": null,
+      "fields": [],
+      "methods": [
+        {
+          "name": "new",
+          "is_constructor": true,
+          "doc": "Creates a path between two waypoint names.",
+          "params": [
+            {
+              "name": "startWp",
+              "type": "string",
+              "doc": "Name of the start waypoint."
+            },
+            {
+              "name": "endWp",
+              "type": "string",
+              "doc": "Name of the end waypoint."
+            }
+          ],
+          "returns": {
+            "type": "Way",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getStart",
+          "doc": "This method will return the start waypoint name.",
+          "params": [],
+          "returns": {
+            "type": "string",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getEnd",
+          "doc": "This method will return the end waypoint name.",
+          "params": [],
+          "returns": {
+            "type": "string",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getWaypoints",
+          "doc": "This method will return all waypoints from the computed route.",
+          "params": [],
+          "returns": {
+            "type": "table",
+            "doc": "Table with waypoint names."
+          }
+        },
+        {
+          "name": "getCountWaypoints",
+          "doc": "This method will return the number of waypoints in the computed route.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": "Number of waypoints."
+          }
+        }
+      ],
+      "callbacks": []
+    },
     "Discord": {
       "name": "Discord",
       "doc": "This class exposes static methods for updating the user's Discord activity from the game client.",
@@ -2238,7 +2306,7 @@
       "methods": [
         {
           "name": "setActivity",
-          "doc": "Update the Discord Rich Presence activity. Missing fields keep their last-set values.",
+          "doc": "This function updates the Discord Rich Presence activity. Missing fields keep their last-set values.",
           "params": [
             {
               "name": "Activity",
@@ -2253,12 +2321,12 @@
         },
         {
           "name": "setState",
-          "doc": "Update the activity state text.",
+          "doc": "This function will update the activity state text.",
           "params": [
             {
               "name": "state",
               "type": "string",
-              "doc": "New activity state text."
+              "doc": ""
             }
           ],
           "returns": {
@@ -2268,12 +2336,12 @@
         },
         {
           "name": "setDetails",
-          "doc": "Update the activity details text.",
+          "doc": "This function will update the activity details text.",
           "params": [
             {
               "name": "details",
               "type": "string",
-              "doc": "New activity details text."
+              "doc": ""
             }
           ],
           "returns": {
@@ -2283,7 +2351,7 @@
         },
         {
           "name": "setLargeImage",
-          "doc": "Update the large image entry for the activity.",
+          "doc": "This function will update the large image entry for the activity.",
           "params": [
             {
               "name": "key",
@@ -2303,7 +2371,7 @@
         },
         {
           "name": "setSmallImage",
-          "doc": "Update the small image entry for the activity.",
+          "doc": "This function will update the small image entry for the activity.",
           "params": [
             {
               "name": "key",
@@ -2323,7 +2391,7 @@
         },
         {
           "name": "clearActivity",
-          "doc": "Clear the current activity and stored values.",
+          "doc": "This function will clear the current activity and stored values.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -2335,7 +2403,7 @@
     },
     "Draw": {
       "name": "Draw",
-      "doc": "",
+      "doc": "2D text drawing helper for rendering overlay text on screen.",
       "side": "client",
       "category": "UI",
       "extends": null,
@@ -2343,37 +2411,37 @@
         {
           "name": "position",
           "type": "table",
-          "doc": "Gets or sets the draw position in virtual screen units."
+          "doc": "Represents the draw position in virtual screen units."
         },
         {
           "name": "positionPx",
           "type": "table",
-          "doc": "Gets or sets the draw position in pixel coordinates."
+          "doc": "Represents the draw position in pixel coordinates."
         },
         {
           "name": "text",
           "type": "string",
-          "doc": "Gets or sets the displayed text."
+          "doc": "Represents the displayed text."
         },
         {
           "name": "font",
           "type": "string",
-          "doc": "Gets or sets the font identifier used for rendering."
+          "doc": "Represents the font identifier used for rendering."
         },
         {
           "name": "color",
           "type": "table",
-          "doc": "Returns the current text color."
+          "doc": "Represents the draw's color."
         },
         {
           "name": "alpha",
           "type": "number",
-          "doc": "Gets or sets the alpha (opacity)."
+          "doc": "Represents the draw's alpha."
         },
         {
           "name": "visible",
           "type": "boolean",
-          "doc": "Gets or sets whether the Draw object is rendered."
+          "doc": "Represents whether the Draw object is rendered."
         }
       ],
       "methods": [
@@ -2415,17 +2483,17 @@
         },
         {
           "name": "setPosition",
-          "doc": "Sets the draw position in virtual screen units.",
+          "doc": "This function will set the draw position in virtual screen units.",
           "params": [
             {
               "name": "x",
               "type": "number",
-              "doc": "X position (virtual units)."
+              "doc": "X position."
             },
             {
               "name": "y",
               "type": "number",
-              "doc": "Y position (virtual units)."
+              "doc": "Y position."
             }
           ],
           "returns": {
@@ -2435,26 +2503,26 @@
         },
         {
           "name": "getPosition",
-          "doc": "Returns the draw position in virtual screen units.",
+          "doc": "This function will return the draw position in virtual screen units.",
           "params": [],
           "returns": {
             "type": "table",
-            "doc": "Table containing x and y (virtual units)."
+            "doc": "Table containing x and y numbers."
           }
         },
         {
           "name": "setPositionPx",
-          "doc": "Sets the draw position in pixel coordinates.",
+          "doc": "This function will set the draw position in pixel coordinates.",
           "params": [
             {
               "name": "x",
               "type": "number",
-              "doc": "X position in pixels."
+              "doc": "X position."
             },
             {
               "name": "y",
               "type": "number",
-              "doc": "Y position in pixels."
+              "doc": "Y position."
             }
           ],
           "returns": {
@@ -2464,16 +2532,16 @@
         },
         {
           "name": "getPositionPx",
-          "doc": "Returns the draw position in pixel coordinates.",
+          "doc": "This function will return the draw position in pixel coordinates.",
           "params": [],
           "returns": {
             "type": "table",
-            "doc": "Table containing x and y in pixels."
+            "doc": "Table containing x and y numbers."
           }
         },
         {
           "name": "setText",
-          "doc": "Sets the text to render.",
+          "doc": "This function will set the text to render.",
           "params": [
             {
               "name": "text",
@@ -2488,7 +2556,7 @@
         },
         {
           "name": "getText",
-          "doc": "Returns the current text.",
+          "doc": "This function will return the current text.",
           "params": [],
           "returns": {
             "type": "string",
@@ -2497,7 +2565,7 @@
         },
         {
           "name": "setFont",
-          "doc": "Sets the font used for rendering.",
+          "doc": "This function will set the font used for rendering.",
           "params": [
             {
               "name": "font",
@@ -2512,7 +2580,7 @@
         },
         {
           "name": "getFont",
-          "doc": "Returns the current font file name.",
+          "doc": "This function will return the current font file name.",
           "params": [],
           "returns": {
             "type": "string",
@@ -2521,22 +2589,22 @@
         },
         {
           "name": "setColor",
-          "doc": "Sets the text color.",
+          "doc": "This function will set the text color.",
           "params": [
             {
               "name": "r",
               "type": "number",
-              "doc": "Red component (0-255)."
+              "doc": "The red color component in RGB model."
             },
             {
               "name": "g",
               "type": "number",
-              "doc": "Green component (0-255)."
+              "doc": "The green color component in RGB model."
             },
             {
               "name": "b",
               "type": "number",
-              "doc": "Blue component (0-255)."
+              "doc": "The blue color component in RGB model."
             }
           ],
           "returns": {
@@ -2546,16 +2614,16 @@
         },
         {
           "name": "getColor",
-          "doc": "Returns the current text color.",
+          "doc": "This function will return the current text color.",
           "params": [],
           "returns": {
             "type": "table",
-            "doc": "Table containing r,g,b (0-255)."
+            "doc": "Table containing color in RGB model."
           }
         },
         {
           "name": "setAlpha",
-          "doc": "Sets text alpha (opacity).",
+          "doc": "This function will set the text alpha.",
           "params": [
             {
               "name": "alpha",
@@ -2570,7 +2638,7 @@
         },
         {
           "name": "getAlpha",
-          "doc": "Returns the current alpha (opacity).",
+          "doc": "This function will return the current alpha",
           "params": [],
           "returns": {
             "type": "number",
@@ -2579,7 +2647,7 @@
         },
         {
           "name": "setVisible",
-          "doc": "Sets whether the Draw object should render.",
+          "doc": "This function will set whether the Draw object should render.",
           "params": [
             {
               "name": "visible",
@@ -2594,7 +2662,7 @@
         },
         {
           "name": "getVisible",
-          "doc": "Returns whether this Draw object is visible.",
+          "doc": "This function will return whether this Draw object is visible.",
           "params": [],
           "returns": {
             "type": "boolean",
@@ -2606,7 +2674,7 @@
     },
     "Sound": {
       "name": "Sound",
-      "doc": "",
+      "doc": "This class represents an internal sound method.",
       "side": "client",
       "category": "Game",
       "extends": null,
@@ -2614,27 +2682,27 @@
         {
           "name": "file",
           "type": "string",
-          "doc": "Get or set the sound file path."
+          "doc": "Represents the sound file path."
         },
         {
           "name": "playingTime",
           "type": "number",
-          "doc": "Return the current playback time."
+          "doc": "Represents the current playback time."
         },
         {
           "name": "volume",
           "type": "number",
-          "doc": "Get or set the playback volume."
+          "doc": "Represents the playback volume."
         },
         {
           "name": "looping",
           "type": "boolean",
-          "doc": "Get or set whether the sound should loop."
+          "doc": "Represents whether the sound should loop."
         },
         {
           "name": "balance",
           "type": "number",
-          "doc": "Get or set the stereo balance (pan)."
+          "doc": "Represents the stereo balance (pan)."
         }
       ],
       "methods": [
@@ -2656,7 +2724,7 @@
         },
         {
           "name": "play",
-          "doc": "Start sound playback.",
+          "doc": "This method will start Sound playback.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -2665,7 +2733,7 @@
         },
         {
           "name": "stop",
-          "doc": "Stop sound playback.",
+          "doc": "This method will stop Sound playback.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -2674,7 +2742,7 @@
         },
         {
           "name": "isPlaying",
-          "doc": "Return whether the sound is currently playing.",
+          "doc": "This method will return whether the Sound is currently playing.",
           "params": [],
           "returns": {
             "type": "boolean",
@@ -2686,7 +2754,7 @@
     },
     "Texture": {
       "name": "Texture",
-      "doc": "",
+      "doc": "This class represents a 2d Texture on screen.",
       "side": "client",
       "category": "UI",
       "extends": null,
@@ -2694,52 +2762,52 @@
         {
           "name": "position",
           "type": "table",
-          "doc": "Gets or sets the texture position in virtual screen units."
+          "doc": "Represents the Texture position in virtual screen units."
         },
         {
           "name": "positionPx",
           "type": "table",
-          "doc": "Gets or sets the texture position in pixel coordinates."
+          "doc": "Represents the Texture position in pixel coordinates."
         },
         {
           "name": "size",
           "type": "table",
-          "doc": "Gets or sets the texture size in virtual screen units."
+          "doc": "Represents the Texture size in virtual screen units."
         },
         {
           "name": "sizePx",
           "type": "table",
-          "doc": "Gets or sets the texture size in pixel coordinates."
+          "doc": "Represents the Texture size in pixel coordinates."
         },
         {
           "name": "rect",
           "type": "table",
-          "doc": "Gets or sets the texture rectangle in virtual screen units."
+          "doc": "Represents the Texture rectangle in virtual screen units."
         },
         {
           "name": "rectPx",
           "type": "table",
-          "doc": "Gets or sets the texture rectangle in pixel coordinates."
+          "doc": "Represents the Texture rectangle in pixel coordinates."
         },
         {
           "name": "color",
           "type": "table",
-          "doc": "Gets or sets the texture color."
+          "doc": "Represents the Texture color."
         },
         {
           "name": "alpha",
           "type": "number",
-          "doc": "Gets or sets the texture alpha (opacity)."
+          "doc": "Represents the Texture alpha ."
         },
         {
           "name": "visible",
           "type": "boolean",
-          "doc": "Gets or sets whether the texture is rendered."
+          "doc": "Represents whether the texture is rendered."
         },
         {
           "name": "file",
           "type": "string",
-          "doc": "Gets or sets the texture file path."
+          "doc": "Represents the texture file path."
         }
       ],
       "methods": [
@@ -2781,7 +2849,7 @@
         },
         {
           "name": "setPosition",
-          "doc": "Sets the texture position in virtual screen units.",
+          "doc": "This method will set the Texture position in virtual screen units.",
           "params": [
             {
               "name": "x",
@@ -2801,7 +2869,7 @@
         },
         {
           "name": "getPosition",
-          "doc": "Returns the texture position in virtual screen units.",
+          "doc": "This method will return the Texture position in virtual screen units.",
           "params": [],
           "returns": {
             "type": "table",
@@ -2810,7 +2878,7 @@
         },
         {
           "name": "setPositionPx",
-          "doc": "Sets the texture position in pixel coordinates.",
+          "doc": "This method will set the Texture position in pixel coordinates.",
           "params": [
             {
               "name": "x",
@@ -2830,7 +2898,7 @@
         },
         {
           "name": "getPositionPx",
-          "doc": "Returns the texture position in pixel coordinates.",
+          "doc": "This method will return the Texture position in pixel coordinates.",
           "params": [],
           "returns": {
             "type": "table",
@@ -2839,7 +2907,7 @@
         },
         {
           "name": "setSize",
-          "doc": "Sets the texture size in virtual screen units.",
+          "doc": "This method will set the Texture size in virtual screen units.",
           "params": [
             {
               "name": "width",
@@ -2859,7 +2927,7 @@
         },
         {
           "name": "getSize",
-          "doc": "Returns the texture size in virtual screen units.",
+          "doc": "This method will return the Texture size in virtual screen units.",
           "params": [],
           "returns": {
             "type": "table",
@@ -2868,7 +2936,7 @@
         },
         {
           "name": "setSizePx",
-          "doc": "Sets the texture size in pixel coordinates.",
+          "doc": "This method will set the Texture size in pixel coordinates.",
           "params": [
             {
               "name": "width",
@@ -2888,7 +2956,7 @@
         },
         {
           "name": "getSizePx",
-          "doc": "Returns the texture size in pixel coordinates.",
+          "doc": "This method will return the Texture size in pixel coordinates.",
           "params": [],
           "returns": {
             "type": "table",
@@ -2897,7 +2965,7 @@
         },
         {
           "name": "setRect",
-          "doc": "Sets the texture rectangle in virtual screen units.",
+          "doc": "This method will set the Texture rectangle in virtual screen units.",
           "params": [
             {
               "name": "x",
@@ -2927,7 +2995,7 @@
         },
         {
           "name": "getRect",
-          "doc": "Returns the texture rectangle in virtual screen units.",
+          "doc": "This method will return the Texture rectangle in virtual screen units.",
           "params": [],
           "returns": {
             "type": "table",
@@ -2936,7 +3004,7 @@
         },
         {
           "name": "setRectPx",
-          "doc": "Sets the texture rectangle in pixel coordinates.",
+          "doc": "This method will set the Texture rectangle in pixel coordinates.",
           "params": [
             {
               "name": "x",
@@ -2966,7 +3034,7 @@
         },
         {
           "name": "getRectPx",
-          "doc": "Returns the texture rectangle in pixel coordinates.",
+          "doc": "This method will return the Texture rectangle in pixel coordinates.",
           "params": [],
           "returns": {
             "type": "table",
@@ -2975,22 +3043,22 @@
         },
         {
           "name": "setColor",
-          "doc": "Sets the texture color.",
+          "doc": "This method will set the Texture color.",
           "params": [
             {
               "name": "r",
               "type": "number",
-              "doc": "Red component (0-255)."
+              "doc": "The red color component in RGB model."
             },
             {
               "name": "g",
               "type": "number",
-              "doc": "Green component (0-255)."
+              "doc": "The green color component in RGB model."
             },
             {
               "name": "b",
               "type": "number",
-              "doc": "Blue component (0-255)."
+              "doc": "The blue color component in RGB model."
             }
           ],
           "returns": {
@@ -3000,16 +3068,16 @@
         },
         {
           "name": "getColor",
-          "doc": "Returns the texture color.",
+          "doc": "This method will return the Texture color.",
           "params": [],
           "returns": {
             "type": "table",
-            "doc": "Table containing r,g,b (0-255)."
+            "doc": "Table containing color in RGB model."
           }
         },
         {
           "name": "setAlpha",
-          "doc": "Sets the texture alpha (opacity).",
+          "doc": "This method will set the Texture alpha.",
           "params": [
             {
               "name": "alpha",
@@ -3024,7 +3092,7 @@
         },
         {
           "name": "getAlpha",
-          "doc": "Returns the texture alpha (opacity).",
+          "doc": "This method will return the current Texture alpha (opacity).",
           "params": [],
           "returns": {
             "type": "number",
@@ -3033,7 +3101,7 @@
         },
         {
           "name": "setFile",
-          "doc": "Sets the texture file name.",
+          "doc": "This method will set the Texture file name.",
           "params": [
             {
               "name": "file",
@@ -3048,7 +3116,7 @@
         },
         {
           "name": "getFile",
-          "doc": "Returns the texture file name.",
+          "doc": "This method will return the Texture file name.",
           "params": [],
           "returns": {
             "type": "string",
@@ -3057,7 +3125,7 @@
         },
         {
           "name": "setVisible",
-          "doc": "Sets whether the texture should be rendered.",
+          "doc": "This method will set whether the Texture should be rendered.",
           "params": [
             {
               "name": "visible",
@@ -3072,7 +3140,7 @@
         },
         {
           "name": "getVisible",
-          "doc": "Returns whether the texture is visible.",
+          "doc": "This method will return whether the Texture is visible.",
           "params": [],
           "returns": {
             "type": "boolean",
@@ -3081,7 +3149,7 @@
         },
         {
           "name": "top",
-          "doc": "Moves the texture to the top of the render order.",
+          "doc": "This method will move the Texture to the top of the render order.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -3093,7 +3161,7 @@
     },
     "Vob": {
       "name": "Vob",
-      "doc": "",
+      "doc": "This class represents a 3d object in the world.",
       "side": "client",
       "category": "Game",
       "extends": null,
@@ -3101,42 +3169,42 @@
         {
           "name": "objectName",
           "type": "string",
-          "doc": "Represents the internal engine object name."
+          "doc": "Represents the internal engine object name of the Vob."
         },
         {
           "name": "matrix",
           "type": "mat4",
-          "doc": "Represents the reference to the vob matrix."
+          "doc": "Represents the reference to the Vob matrix."
         },
         {
           "name": "parent",
           "type": "vob|nil",
-          "doc": "Represents the reference to the parent vob.\nNote: the vob hierarchy will be lost after changing the world."
+          "doc": "Represents the reference to the parent Vob."
         },
         {
           "name": "cdDynamic",
           "type": "boolean",
-          "doc": "Represents the state of dynamic collision of vob. Enabling this option will prevent other dynamic objects from passing through it."
+          "doc": "Represents the state of dynamic collision of the Vob. Enabling this option will prevent other dynamic objects from passing through it."
         },
         {
           "name": "cdStatic",
           "type": "boolean",
-          "doc": "Represents the state of static collision of vob. Enabling this option will prevent static objects (i.e. world mesh) from passing through it."
+          "doc": "Represents the state of static collision of the Vob. Enabling this option will prevent static objects (i.e. world mesh) from passing through it."
         },
         {
           "name": "farClipZScale",
           "type": "number",
-          "doc": "Represents the max distance at which the vob will still be rendered."
+          "doc": "Represents the max distance at which the Vob will still be rendered."
         },
         {
           "name": "visual",
           "type": "string",
-          "doc": "Represents the model file name used as vob visual, e.g. SPHERE.3DS."
+          "doc": "Represents the model file name used as Vob visual, e.g. \"SPHERE.3DS\"."
         },
         {
           "name": "visualAlpha",
           "type": "number",
-          "doc": "Represents the transparency of the vob visual."
+          "doc": "Represents the transparency of the Vob visual."
         }
       ],
       "methods": [
@@ -3158,7 +3226,7 @@
         },
         {
           "name": "setPosition",
-          "doc": "Set the position of the vob in the world.",
+          "doc": "This method will set the position of the Vob in the world.",
           "params": [
             {
               "name": "x",
@@ -3183,16 +3251,16 @@
         },
         {
           "name": "getPosition",
-          "doc": "Get the position of the vob in the world.",
+          "doc": "This method will return the position of the Vob in the world.",
           "params": [],
           "returns": {
             "type": "table",
-            "doc": ""
+            "doc": "Table containing x,y,z position."
           }
         },
         {
           "name": "setRotation",
-          "doc": "Set the euler rotation of the vob in the world.",
+          "doc": "This method will set the euler rotation of the Vob in the world.",
           "params": [
             {
               "name": "x",
@@ -3217,16 +3285,16 @@
         },
         {
           "name": "getRotation",
-          "doc": "Get the euler rotation of the vob in the world.",
+          "doc": "This method will set the euler rotation of the vob in the world.",
           "params": [],
           "returns": {
             "type": "table",
-            "doc": ""
+            "doc": "Table containing x,y,z rotation."
           }
         },
         {
           "name": "addToWorld",
-          "doc": "Add the vob to the currently loaded world. If the vob is not added, it won't show up.",
+          "doc": "This method will add the vob to the currently loaded world. If the vob is not added, it won't show up.",
           "params": [
             {
               "name": "parent",
@@ -3241,7 +3309,7 @@
         },
         {
           "name": "removeFromWorld",
-          "doc": "Remove the vob from the currently loaded world.",
+          "doc": "This method will remove the vob from the currently loaded world.",
           "params": [],
           "returns": {
             "type": "nil",
@@ -3250,78 +3318,10 @@
         },
         {
           "name": "floor",
-          "doc": "Try to put the vob on the floor. If the difference between vob position and the floor y position is <= 1000, the method succeeds.",
+          "doc": "This method will try to put the vob on the floor. If the difference between vob position and the floor y position is <= 1000, the method succeeds.",
           "params": [],
           "returns": {
             "type": "nil",
-            "doc": ""
-          }
-        }
-      ],
-      "callbacks": []
-    },
-    "Way": {
-      "name": "Way",
-      "doc": "",
-      "side": "client",
-      "category": "World",
-      "extends": null,
-      "fields": [],
-      "methods": [
-        {
-          "name": "new",
-          "is_constructor": true,
-          "doc": "Creates a path between two waypoint names.",
-          "params": [
-            {
-              "name": "startWp",
-              "type": "string",
-              "doc": "Name of the start waypoint."
-            },
-            {
-              "name": "endWp",
-              "type": "string",
-              "doc": "Name of the end waypoint."
-            }
-          ],
-          "returns": {
-            "type": "Way",
-            "doc": ""
-          }
-        },
-        {
-          "name": "getStart",
-          "doc": "Returns the start waypoint name.",
-          "params": [],
-          "returns": {
-            "type": "string",
-            "doc": ""
-          }
-        },
-        {
-          "name": "getEnd",
-          "doc": "Returns the end waypoint name.",
-          "params": [],
-          "returns": {
-            "type": "string",
-            "doc": ""
-          }
-        },
-        {
-          "name": "getWaypoints",
-          "doc": "Get all waypoints from the computed route.",
-          "params": [],
-          "returns": {
-            "type": "[wpname...]",
-            "doc": "Array with waypoint names."
-          }
-        },
-        {
-          "name": "getCountWaypoints",
-          "doc": "Get number of waypoints in the computed route.",
-          "params": [],
-          "returns": {
-            "type": "number",
             "doc": ""
           }
         }
@@ -3332,7 +3332,7 @@
   "functions": [
     {
       "name": "getDistance2d",
-      "doc": "Get the 2d distance between two points.",
+      "doc": "This function returns the 2d distance between two points.",
       "side": "shared",
       "category": "Math",
       "params": [
@@ -3364,7 +3364,7 @@
     },
     {
       "name": "getDistance3d",
-      "doc": "Get the 3d distance between two points.",
+      "doc": "This function returns the 3d distance between two points.",
       "side": "shared",
       "category": "Math",
       "params": [
@@ -3406,7 +3406,7 @@
     },
     {
       "name": "getVectorAngle",
-      "doc": "Get angle on Y axis directed towards the second point.",
+      "doc": "This function returns the angle on Y axis directed towards the second point.",
       "side": "shared",
       "category": "Math",
       "params": [
@@ -3437,8 +3437,246 @@
       }
     },
     {
+      "name": "hexToRgb",
+      "doc": "This function will convert a hex color string to an RGB table.",
+      "side": "shared",
+      "category": "Utility",
+      "params": [
+        {
+          "name": "hex",
+          "type": "string",
+          "doc": "Hex color string (e.g. \"#RRGGBB\", \"0xRRGGBB\", or \"RGB\")."
+        }
+      ],
+      "returns": {
+        "type": "{r, g, b}|nil",
+        "doc": "Table containing r, g, b components or nil on failure."
+      }
+    },
+    {
+      "name": "rgbToHex",
+      "doc": "This function will convert RGB components to a lowercase hex color string.",
+      "side": "shared",
+      "category": "Utility",
+      "params": [
+        {
+          "name": "r",
+          "type": "number",
+          "doc": "Red component (0-255)."
+        },
+        {
+          "name": "g",
+          "type": "number",
+          "doc": "Green component (0-255)."
+        },
+        {
+          "name": "b",
+          "type": "number",
+          "doc": "Blue component (0-255)."
+        }
+      ],
+      "returns": {
+        "type": "string",
+        "doc": "Lowercase hexadecimal representation."
+      }
+    },
+    {
+      "name": "sscanf",
+      "doc": "This function will split text according to a format string and return the parsed values.",
+      "side": "shared",
+      "category": "Utility",
+      "params": [
+        {
+          "name": "format",
+          "type": "string",
+          "doc": "Format string where each specifier maps to a value. Supported specifiers: `d` (integer), `f` (number), `s` (string)."
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "doc": "Input text to parse."
+        }
+      ],
+      "returns": {
+        "type": "table|nil",
+        "doc": "Array of parsed values, or nil on parse failure."
+      }
+    },
+    {
+      "name": "getTickCount",
+      "doc": "This function will return the number of milliseconds since the scripting runtime started.",
+      "side": "shared",
+      "category": "Utility",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "Milliseconds since startup."
+      }
+    },
+    {
+      "name": "sha256",
+      "doc": "This function will calculate the SHA-256 hash of a string and return it as hex.",
+      "side": "shared",
+      "category": "Hash",
+      "params": [
+        {
+          "name": "input",
+          "type": "string",
+          "doc": "Input text to hash."
+        }
+      ],
+      "returns": {
+        "type": "string",
+        "doc": "Hexadecimal hash string."
+      }
+    },
+    {
+      "name": "sha512",
+      "doc": "This function will calculate the SHA-512 hash of a string and return it as hex.",
+      "side": "shared",
+      "category": "Hash",
+      "params": [
+        {
+          "name": "input",
+          "type": "string",
+          "doc": "Input text to hash."
+        }
+      ],
+      "returns": {
+        "type": "string",
+        "doc": "Hexadecimal hash string."
+      }
+    },
+    {
+      "name": "setTimer",
+      "doc": "This function will create a new timer that calls the given function at a fixed interval.\n\nThe timer passes any additional arguments to the callback when it executes.\nIf execute_times is 0 or negative, the timer repeats indefinitely.",
+      "side": "shared",
+      "category": "Timer",
+      "params": [
+        {
+          "name": "func",
+          "type": "fun",
+          "doc": "Callback function executed by the timer."
+        },
+        {
+          "name": "interval",
+          "type": "number",
+          "doc": "Interval in milliseconds."
+        },
+        {
+          "name": "execute_times",
+          "type": "number",
+          "doc": "How many times to execute the callback (<= 0 means infinite)."
+        },
+        {
+          "name": "...",
+          "type": "...",
+          "doc": "Additional arguments forwarded to the callback."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Timer ID."
+      }
+    },
+    {
+      "name": "killTimer",
+      "doc": "This function will stop and remove an existing timer.",
+      "side": "shared",
+      "category": "Timer",
+      "params": [
+        {
+          "name": "timer_id",
+          "type": "number",
+          "doc": "Timer ID returned by setTimer."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "setTimerInterval",
+      "doc": "This function will set the interval (in milliseconds) of an existing timer.",
+      "side": "shared",
+      "category": "Timer",
+      "params": [
+        {
+          "name": "timer_id",
+          "type": "number",
+          "doc": "Timer ID returned by setTimer."
+        },
+        {
+          "name": "interval",
+          "type": "number",
+          "doc": "New interval in milliseconds."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "getTimerInterval",
+      "doc": "This function will return the interval (in milliseconds) of a timer, or nil if the timer does not exist.",
+      "side": "shared",
+      "category": "Timer",
+      "params": [
+        {
+          "name": "timer_id",
+          "type": "number",
+          "doc": "Timer ID returned by setTimer."
+        }
+      ],
+      "returns": {
+        "type": "number|nil",
+        "doc": "Interval in milliseconds, or nil if not found."
+      }
+    },
+    {
+      "name": "setTimerExecuteTimes",
+      "doc": "This function will set how many times the timer should execute.\nIf execute_times is 0 or negative, the timer repeats indefinitely.",
+      "side": "shared",
+      "category": "Timer",
+      "params": [
+        {
+          "name": "timer_id",
+          "type": "number",
+          "doc": "Timer ID returned by setTimer."
+        },
+        {
+          "name": "execute_times",
+          "type": "number",
+          "doc": "How many times to execute (<= 0 means infinite)."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "getTimerExecuteTimes",
+      "doc": "This function will return how many times the timer will execute, or nil if the timer does not exist.\nA value of 0 means the timer repeats indefinitely.",
+      "side": "shared",
+      "category": "Timer",
+      "params": [
+        {
+          "name": "timer_id",
+          "type": "number",
+          "doc": "Timer ID returned by setTimer."
+        }
+      ],
+      "returns": {
+        "type": "number|nil",
+        "doc": "Execute count (0 = infinite), or nil if not found."
+      }
+    },
+    {
       "name": "getHostname",
-      "doc": "Get the hostname of the server.",
+      "doc": "This function returns the host name of the server.",
       "side": "shared",
       "category": "Game",
       "params": [],
@@ -3449,7 +3687,7 @@
     },
     {
       "name": "getMaxSlots",
-      "doc": "Get the max number of slots available on the server.",
+      "doc": "This function returns the max number of slots available on the server.",
       "side": "shared",
       "category": "Game",
       "params": [],
@@ -3460,7 +3698,7 @@
     },
     {
       "name": "getOnlinePlayers",
-      "doc": "Get the array containing player ids that are currently online.",
+      "doc": "This function returns the array containing player ids that are currently online.",
       "side": "shared",
       "category": "Game",
       "params": [],
@@ -3471,7 +3709,7 @@
     },
     {
       "name": "getPlayersCount",
-      "doc": "Get the number of online players on the server.",
+      "doc": "This function returns the number of online players on the server.",
       "side": "shared",
       "category": "Game",
       "params": [],
@@ -3749,246 +3987,8 @@
       }
     },
     {
-      "name": "hexToRgb",
-      "doc": "Convert a hex color string to an RGB table.",
-      "side": "shared",
-      "category": "Utility",
-      "params": [
-        {
-          "name": "hex",
-          "type": "string",
-          "doc": "Hex color string (e.g. \"#RRGGBB\", \"0xRRGGBB\", or \"RGB\")."
-        }
-      ],
-      "returns": {
-        "type": "{r, g, b}|nil",
-        "doc": "Table containing r, g, b components or nil on failure."
-      }
-    },
-    {
-      "name": "rgbToHex",
-      "doc": "Convert RGB components to a lowercase hex color string.",
-      "side": "shared",
-      "category": "Utility",
-      "params": [
-        {
-          "name": "r",
-          "type": "number",
-          "doc": "Red component (0-255)."
-        },
-        {
-          "name": "g",
-          "type": "number",
-          "doc": "Green component (0-255)."
-        },
-        {
-          "name": "b",
-          "type": "number",
-          "doc": "Blue component (0-255)."
-        }
-      ],
-      "returns": {
-        "type": "string",
-        "doc": "Lowercase hexadecimal representation."
-      }
-    },
-    {
-      "name": "sscanf",
-      "doc": "Split text according to a format string and return the parsed values.",
-      "side": "shared",
-      "category": "Utility",
-      "params": [
-        {
-          "name": "format",
-          "type": "string",
-          "doc": "Format string where each specifier maps to a value. Supported specifiers: `d` (integer), `f` (number), `s` (string)."
-        },
-        {
-          "name": "text",
-          "type": "string",
-          "doc": "Input text to parse."
-        }
-      ],
-      "returns": {
-        "type": "table|nil",
-        "doc": "Array of parsed values, or nil on parse failure."
-      }
-    },
-    {
-      "name": "getTickCount",
-      "doc": "Get the number of milliseconds since the scripting runtime started.",
-      "side": "shared",
-      "category": "Utility",
-      "params": [],
-      "returns": {
-        "type": "number",
-        "doc": "Milliseconds since startup."
-      }
-    },
-    {
-      "name": "sha256",
-      "doc": "Calculate the SHA-256 hash of a string and return it as hex.",
-      "side": "shared",
-      "category": "Hash",
-      "params": [
-        {
-          "name": "input",
-          "type": "string",
-          "doc": "Input text to hash."
-        }
-      ],
-      "returns": {
-        "type": "string",
-        "doc": "Hexadecimal hash string."
-      }
-    },
-    {
-      "name": "sha512",
-      "doc": "Calculate the SHA-512 hash of a string and return it as hex.",
-      "side": "shared",
-      "category": "Hash",
-      "params": [
-        {
-          "name": "input",
-          "type": "string",
-          "doc": "Input text to hash."
-        }
-      ],
-      "returns": {
-        "type": "string",
-        "doc": "Hexadecimal hash string."
-      }
-    },
-    {
-      "name": "setTimer",
-      "doc": "Create a new timer that calls the given function at a fixed interval.\n\nThe timer passes any additional arguments to the callback when it executes.\nIf execute_times is 0 or negative, the timer repeats indefinitely.",
-      "side": "shared",
-      "category": "Timer",
-      "params": [
-        {
-          "name": "func",
-          "type": "fun",
-          "doc": "Callback function executed by the timer."
-        },
-        {
-          "name": "interval",
-          "type": "number",
-          "doc": "Interval in milliseconds."
-        },
-        {
-          "name": "execute_times",
-          "type": "number",
-          "doc": "How many times to execute the callback (<= 0 means infinite)."
-        },
-        {
-          "name": "...",
-          "type": "...",
-          "doc": "Additional arguments forwarded to the callback."
-        }
-      ],
-      "returns": {
-        "type": "number",
-        "doc": "Timer ID."
-      }
-    },
-    {
-      "name": "killTimer",
-      "doc": "Stop and remove an existing timer.",
-      "side": "shared",
-      "category": "Timer",
-      "params": [
-        {
-          "name": "timer_id",
-          "type": "number",
-          "doc": "Timer ID returned by setTimer."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "setTimerInterval",
-      "doc": "Set the interval (in milliseconds) of an existing timer.",
-      "side": "shared",
-      "category": "Timer",
-      "params": [
-        {
-          "name": "timer_id",
-          "type": "number",
-          "doc": "Timer ID returned by setTimer."
-        },
-        {
-          "name": "interval",
-          "type": "number",
-          "doc": "New interval in milliseconds."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "getTimerInterval",
-      "doc": "Return the interval (in milliseconds) of a timer, or nil if the timer does not exist.",
-      "side": "shared",
-      "category": "Timer",
-      "params": [
-        {
-          "name": "timer_id",
-          "type": "number",
-          "doc": "Timer ID returned by setTimer."
-        }
-      ],
-      "returns": {
-        "type": "number|nil",
-        "doc": "Interval in milliseconds, or nil if not found."
-      }
-    },
-    {
-      "name": "setTimerExecuteTimes",
-      "doc": "Set how many times the timer should execute.\n\nIf execute_times is 0 or negative, the timer repeats indefinitely.",
-      "side": "shared",
-      "category": "Timer",
-      "params": [
-        {
-          "name": "timer_id",
-          "type": "number",
-          "doc": "Timer ID returned by setTimer."
-        },
-        {
-          "name": "execute_times",
-          "type": "number",
-          "doc": "How many times to execute (<= 0 means infinite)."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "getTimerExecuteTimes",
-      "doc": "Return how many times the timer will execute, or nil if the timer does not exist.\n\nA value of 0 means the timer repeats indefinitely.",
-      "side": "shared",
-      "category": "Timer",
-      "params": [
-        {
-          "name": "timer_id",
-          "type": "number",
-          "doc": "Timer ID returned by setTimer."
-        }
-      ],
-      "returns": {
-        "type": "number|nil",
-        "doc": "Execute count (0 = infinite), or nil if not found."
-      }
-    },
-    {
       "name": "triggerClientEvent",
-      "doc": "Triggers a custom client-side event for one or more players and optionally passes arguments.",
+      "doc": "This function will treigger a custom client-side event for one or more players and optionally passes arguments.",
       "side": "server",
       "category": "Network",
       "params": [
@@ -4020,7 +4020,7 @@
     },
     {
       "name": "sendMessageToAll",
-      "doc": "Send a colored chat message to all connected players.",
+      "doc": "This function will send a colored chat message to all connected players.",
       "side": "server",
       "category": "Chat",
       "params": [
@@ -4046,13 +4046,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "sendMessageToPlayer",
-      "doc": "Send a colored chat message to a specific player.",
+      "doc": "This function will send a colored chat message to a specific player.",
       "side": "server",
       "category": "Chat",
       "params": [
@@ -4083,13 +4083,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success, false if the player is missing."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "sendPlayerMessageToAll",
-      "doc": "Send a player-sourced colored message to all players (includes sender id).",
+      "doc": "This function will send a player-sourced colored message to all players (includes sender id).",
       "side": "server",
       "category": "Chat",
       "params": [
@@ -4120,13 +4120,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success, false if the sender is missing."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "sendPlayerMessageToPlayer",
-      "doc": "Send a player-sourced colored message to a specific player.",
+      "doc": "This function will send a player-sourced colored message to a specific player.",
       "side": "server",
       "category": "Chat",
       "params": [
@@ -4162,13 +4162,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success, false if sender or receiver is missing."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "spawnPlayer",
-      "doc": "Spawn a player, optionally overriding the spawn position.",
+      "doc": "This function will spawn the player, optionally overriding the spawn position.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4184,13 +4184,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success, false if the player is missing."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "setPlayerInstance",
-      "doc": "Set a player's instance name.",
+      "doc": "This function will set the player's character instance.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4206,13 +4206,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success, false if the player is missing."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerInstance",
-      "doc": "Get a player's instance name or nil if unavailable.",
+      "doc": "This function will return the player's instance name, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4229,7 +4229,7 @@
     },
     {
       "name": "setPlayerName",
-      "doc": "Set a player's display name.",
+      "doc": "This function will set the player's character name.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4245,13 +4245,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success, false if the player is missing."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerName",
-      "doc": "Get a player's name or nil if unavailable.",
+      "doc": "This function will return the player's name, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4268,7 +4268,7 @@
     },
     {
       "name": "getPlayerIP",
-      "doc": "Get a player's IP address or nil if unavailable.",
+      "doc": "This function will return the player's IP address or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4285,7 +4285,7 @@
     },
     {
       "name": "getPlayerMacAddress",
-      "doc": "Get a player's MAC address or nil if unavailable.",
+      "doc": "This function will return the player's MAC address or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4302,7 +4302,7 @@
     },
     {
       "name": "getPlayerUUID",
-      "doc": "Get a player's UUID or nil if unavailable.",
+      "doc": "This function will return the player's UUID or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4319,7 +4319,7 @@
     },
     {
       "name": "setPlayerColor",
-      "doc": "Set a player's name color (RGB 0-255).",
+      "doc": "This function will set the player's name color in RGB format.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4345,13 +4345,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success, false if the player is missing."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerColor",
-      "doc": "Get a player's name color as a table {r, g, b} or nil if unavailable.",
+      "doc": "This function will return the player's name color, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4363,12 +4363,12 @@
       ],
       "returns": {
         "type": "{r, g, b}|nil",
-        "doc": "RGB color or nil."
+        "doc": "RGB color table or nil."
       }
     },
     {
       "name": "setPlayerHealth",
-      "doc": "Set a player's current health.",
+      "doc": "This function will set the player's current health.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4384,13 +4384,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerHealth",
-      "doc": "Get a player's current health or nil if unavailable.",
+      "doc": "This function will return the player's current health, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4407,7 +4407,7 @@
     },
     {
       "name": "setPlayerMaxHealth",
-      "doc": "Set a player's maximum health.",
+      "doc": "This function will set the player's maximum health.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4423,13 +4423,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerMaxHealth",
-      "doc": "Get a player's maximum health or nil if unavailable.",
+      "doc": "This function will return the player's maximum health, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4446,7 +4446,7 @@
     },
     {
       "name": "setPlayerMana",
-      "doc": "Set a player's current mana.",
+      "doc": "This function will set the player's current mana.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4462,13 +4462,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerMana",
-      "doc": "Get a player's current mana or nil if unavailable.",
+      "doc": "This function will return the player's current mana, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4485,7 +4485,7 @@
     },
     {
       "name": "setPlayerMaxMana",
-      "doc": "Set a player's maximum mana.",
+      "doc": "This function will set the player's maximum mana.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4501,13 +4501,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerMaxMana",
-      "doc": "Get a player's maximum mana or nil if unavailable.",
+      "doc": "This function will get the player's maximum mana, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4524,7 +4524,7 @@
     },
     {
       "name": "setPlayerStrength",
-      "doc": "Set a player's strength attribute.",
+      "doc": "This function will set the player's strength attribute.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4540,13 +4540,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerStrength",
-      "doc": "Get a player's strength attribute or nil if unavailable.",
+      "doc": "This function will return the player's strength attribute, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4563,7 +4563,7 @@
     },
     {
       "name": "setPlayerDexterity",
-      "doc": "Set a player's dexterity attribute.",
+      "doc": "This function will set the player's dexterity attribute.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4579,13 +4579,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerDexterity",
-      "doc": "Get a player's dexterity attribute or nil if unavailable.",
+      "doc": "This function will return the player's dexterity attribute, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4602,7 +4602,7 @@
     },
     {
       "name": "setPlayerSkillWeapon",
-      "doc": "Set a player's weapon skill hit chance (0-100).",
+      "doc": "This function will set the player's weapon skill hit chance.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4614,22 +4614,22 @@
         {
           "name": "skill_id",
           "type": "number",
-          "doc": "Skill identifier."
+          "doc": "Skill identifier, for more information check [Weapon Constants](../../shared-constants/Weapon.md)."
         },
         {
           "name": "percentage",
           "type": "number",
-          "doc": "Hit chance (0-100)."
+          "doc": "Hit chance amount."
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerSkillWeapon",
-      "doc": "Get a player's weapon skill hit chance.",
+      "doc": "This function will return the player's weapon skill hit chance, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4641,17 +4641,17 @@
         {
           "name": "skill_id",
           "type": "number",
-          "doc": "Skill identifier."
+          "doc": "Skill identifier, for more information check [Weapon Constants](../../shared-constants/Weapon.md)."
         }
       ],
       "returns": {
         "type": "number|nil",
-        "doc": "Hit chance (0-100) or nil."
+        "doc": "Hit chance amount or nil."
       }
     },
     {
       "name": "setPlayerTalent",
-      "doc": "Set a player's talent value.",
+      "doc": "This function will set the player's talent value.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4663,7 +4663,7 @@
         {
           "name": "talent_id",
           "type": "number",
-          "doc": "Talent identifier."
+          "doc": "Talent identifier, for more information check [Talent Constants](../../shared-constants/Talent.md)."
         },
         {
           "name": "talent_value",
@@ -4672,13 +4672,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerTalent",
-      "doc": "Get a player's talent value.",
+      "doc": "This function will return the player's talent value, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4690,7 +4690,7 @@
         {
           "name": "talent_id",
           "type": "number",
-          "doc": "Talent identifier."
+          "doc": "Talent identifier, for more information check [Talent Constants](../../shared-constants/Talent.md)."
         }
       ],
       "returns": {
@@ -4700,7 +4700,7 @@
     },
     {
       "name": "setPlayerLevel",
-      "doc": "Set a player's experience level.",
+      "doc": "This function will set the player's level.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4716,13 +4716,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerLevel",
-      "doc": "Get a player's level or nil if unavailable.",
+      "doc": "This function will return the player's level, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4739,7 +4739,7 @@
     },
     {
       "name": "setPlayerExp",
-      "doc": "Set a player's experience points.",
+      "doc": "This function will set the player's experience points.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4755,13 +4755,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerExp",
-      "doc": "Get a player's experience points or nil if unavailable.",
+      "doc": "This function will return the player's experience points, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4778,7 +4778,7 @@
     },
     {
       "name": "setPlayerNextLevelExp",
-      "doc": "Set the experience required for a player's next level.",
+      "doc": "This function will set the experience required for the player's next level.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4794,13 +4794,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerNextLevelExp",
-      "doc": "Get the experience required for a player's next level or nil if unavailable.",
+      "doc": "This function will return the experience required for the player's next level, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4817,7 +4817,7 @@
     },
     {
       "name": "setPlayerLearnPoints",
-      "doc": "Set a player's learn points.",
+      "doc": "This function will set the player's learn points.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4833,13 +4833,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerLearnPoints",
-      "doc": "Get a player's learn points or nil if unavailable.",
+      "doc": "This function will return the player's learn points, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4856,7 +4856,7 @@
     },
     {
       "name": "setPlayerVisual",
-      "doc": "Set a player's visual model and textures.",
+      "doc": "This function will set the player's visual model and textures.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4887,13 +4887,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerVisual",
-      "doc": "Get a player's visual information as a table or nil if unavailable.",
+      "doc": "This function will return the player's visual information as a table, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4910,7 +4910,7 @@
     },
     {
       "name": "setPlayerFatness",
-      "doc": "Set a player's model fatness.",
+      "doc": "This function will set the player's model fatness.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4926,13 +4926,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerFatness",
-      "doc": "Get a player's model fatness.",
+      "doc": "This function will return the player's model fatness, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4949,7 +4949,7 @@
     },
     {
       "name": "setPlayerScale",
-      "doc": "Set a player's model scale.",
+      "doc": "This function will set the player's model scale.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4975,13 +4975,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerScale",
-      "doc": "Get a player's model scale.",
+      "doc": "This function will return the player's model scale.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -4998,7 +4998,7 @@
     },
     {
       "name": "setPlayerWeaponMode",
-      "doc": "Set the player/npc weapon mode for all players.",
+      "doc": "This function will set the player's weapon mode.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5014,13 +5014,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success, false if the player is missing."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerWeaponMode",
-      "doc": "Get the player/npc weapon mode.",
+      "doc": "This function will return the player's weapon mode, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5032,12 +5032,12 @@
       ],
       "returns": {
         "type": "number|nil",
-        "doc": "Weapon mode or nil if unavailable."
+        "doc": "Weapon mode or nil."
       }
     },
     {
       "name": "applyPlayerOverlay",
-      "doc": "Apply animation overlay on a player.",
+      "doc": "This function will apply animation overlay on the player.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5053,13 +5053,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerOverlays",
-      "doc": "Get a player's active animation overlays.",
+      "doc": "This function will return the player's active animation overlays.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5076,7 +5076,7 @@
     },
     {
       "name": "removePlayerOverlay",
-      "doc": "Remove animation overlay on a player.",
+      "doc": "This function will remove a specified animation overlay from the player.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5092,13 +5092,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "playAni",
-      "doc": "Play an animation on a player/npc for all players.",
+      "doc": "This function will play an animation on the player's character.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5114,13 +5114,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "stopAni",
-      "doc": "Stop a played animation on a player/npc for all players.",
+      "doc": "This function will stop a played animation on the player's character.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5136,13 +5136,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "playFaceAni",
-      "doc": "Play a face animation on a player/npc.",
+      "doc": "This function will play a face animation on the player's character.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5158,13 +5158,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "stopFaceAni",
-      "doc": "Stop a played face animation on a player/npc.",
+      "doc": "This function will stop a played face animation on the player's character.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5180,13 +5180,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "playGesticulation",
-      "doc": "Play a gesticulation animation on a player/npc.",
+      "doc": "This function will play gesticulation animation on the player's character.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5197,13 +5197,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "setPlayerPosition",
-      "doc": "Set a player's world position.",
+      "doc": "This function will set the player's world position.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5229,13 +5229,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerPosition",
-      "doc": "Get a player's position as a table {x,y,z} or nil if unavailable.",
+      "doc": "This function will return the player's position, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5252,7 +5252,7 @@
     },
     {
       "name": "setPlayerAngle",
-      "doc": "Set a player's facing angle (degrees).",
+      "doc": "This function will set the player's facing angle (degrees).",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5268,13 +5268,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerAngle",
-      "doc": "Get a player's facing angle in degrees or nil if unavailable.",
+      "doc": "This function will return the player's facing angle in degrees, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5291,7 +5291,7 @@
     },
     {
       "name": "setPlayerWorld",
-      "doc": "Move a player to a different world, optionally specifying a start point.",
+      "doc": "This function will move the player to a different world, optionally specifying a start point.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5312,13 +5312,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerWorld",
-      "doc": "Get the current world name for a player or nil if player missing.",
+      "doc": "This function will return the player's current world name, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5335,7 +5335,7 @@
     },
     {
       "name": "setPlayerVirtualWorld",
-      "doc": "Set a player's virtual world id.",
+      "doc": "This function will set the player's virtual world id.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5351,13 +5351,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerVirtualWorld",
-      "doc": "Get a player's virtual world id or nil if unavailable.",
+      "doc": "This function will return the player's virtual world id, or nil if unavailable.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5374,7 +5374,7 @@
     },
     {
       "name": "ban",
-      "doc": "Ban the player on the server.",
+      "doc": "This function will ban the player on the server.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5396,7 +5396,7 @@
     },
     {
       "name": "kick",
-      "doc": "Kick the player from the server.",
+      "doc": "This function will kick the player from the server.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5418,7 +5418,7 @@
     },
     {
       "name": "isPlayerConnected",
-      "doc": "The function is used to check whether player is connected to the server.",
+      "doc": "This function will check whether player is connected to the server.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5435,7 +5435,7 @@
     },
     {
       "name": "isPlayerDead",
-      "doc": "The function is used to check whether player is dead.",
+      "doc": "This function will check whether player is dead.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5452,7 +5452,7 @@
     },
     {
       "name": "isPlayerSpawned",
-      "doc": "The function is used to check whether player is spawned.",
+      "doc": "This function will check whether player is spawned.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5469,7 +5469,7 @@
     },
     {
       "name": "isPlayerUnconscious",
-      "doc": "The function is used to check whether player is in unconscious state. The player will be unconscious, when it gets beaten up, but not killed.",
+      "doc": "This function will check whether player is in unconscious state. The player will be unconscious, when it gets beaten up, but not killed.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5486,7 +5486,7 @@
     },
     {
       "name": "respawnPlayer",
-      "doc": "Immediately respawn the player if he is dead.",
+      "doc": "This function will immediately respawn the player if he is dead.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5503,7 +5503,7 @@
     },
     {
       "name": "setPlayerRespawnTime",
-      "doc": "Set the player time to respawn after death. If set to 0, respawn is disabled for selected player.",
+      "doc": "This function will set the player time to respawn after death. If set to 0, respawn is disabled for selected player.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5525,7 +5525,7 @@
     },
     {
       "name": "getPlayerRespawnTime",
-      "doc": "Get the player time to respawn after death.",
+      "doc": "This function will return the player time to respawn after death.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -5542,7 +5542,7 @@
     },
     {
       "name": "giveItem",
-      "doc": "Give an item to a player or NPC.",
+      "doc": "This function will give an item to the player.",
       "side": "server",
       "category": "Inventory",
       "params": [
@@ -5563,13 +5563,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "equipItem",
-      "doc": "Equip an item for all players.",
+      "doc": "This function will equip an item for the player.",
       "side": "server",
       "category": "Inventory",
       "params": [
@@ -5590,13 +5590,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "unequipItem",
-      "doc": "Unequip an item for all players.",
+      "doc": "This function will unequip an item for the player.",
       "side": "server",
       "category": "Inventory",
       "params": [
@@ -5612,13 +5612,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "hasItem",
-      "doc": "Get the amount of a specific item in a player's inventory.",
+      "doc": "This function will return the amount of a specific item in the player's inventory.",
       "side": "server",
       "category": "Inventory",
       "params": [
@@ -5640,7 +5640,7 @@
     },
     {
       "name": "removeItem",
-      "doc": "Remove an item from a player or NPC.",
+      "doc": "This function will remove an item from the player's inventory.",
       "side": "server",
       "category": "Inventory",
       "params": [
@@ -5661,13 +5661,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "setServerWorld",
-      "doc": "Set the server's current world name.",
+      "doc": "This function will set the server's current world name.",
       "side": "server",
       "category": "Game",
       "params": [
@@ -5684,7 +5684,7 @@
     },
     {
       "name": "getServerWorld",
-      "doc": "Get the server's current world name.",
+      "doc": "This function will return the server's current world name.",
       "side": "server",
       "category": "Game",
       "params": [],
@@ -5695,7 +5695,7 @@
     },
     {
       "name": "findNearbyPlayers",
-      "doc": "Find player ids within a radius of a given position in a world.",
+      "doc": "This function will return player ids within a radius of a given position in a world.",
       "side": "server",
       "category": "Streamer",
       "params": [
@@ -5727,7 +5727,7 @@
     },
     {
       "name": "getSpawnedPlayersForPlayer",
-      "doc": "Get the list of players that have been spawned for the given player.",
+      "doc": "This function will return the list of players that have been spawned for the given player.",
       "side": "server",
       "category": "Streamer",
       "params": [
@@ -5744,7 +5744,7 @@
     },
     {
       "name": "getStreamedPlayersByPlayer",
-      "doc": "Get the list of players currently streamed to the given player.",
+      "doc": "This function will return the list of players currently streamed to the given player.",
       "side": "server",
       "category": "Streamer",
       "params": [
@@ -5761,7 +5761,7 @@
     },
     {
       "name": "setTime",
-      "doc": "Set the server time (hour, minute, optional day offset).",
+      "doc": "This function will set the server time (hour, minute, optional day offset).",
       "side": "server",
       "category": "Game",
       "params": [
@@ -5782,13 +5782,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getTime",
-      "doc": "Get the current server time as a table {day,hour,min}.",
+      "doc": "This function will return the current server time as a table {day,hour,min}.",
       "side": "server",
       "category": "Game",
       "params": [],
@@ -5799,7 +5799,7 @@
     },
     {
       "name": "setDayLength",
-      "doc": "Set the duration of a full in-game day in milliseconds.",
+      "doc": "This function will set the duration of a full in-game day in milliseconds.",
       "side": "server",
       "category": "Game",
       "params": [
@@ -5810,13 +5810,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getDayLength",
-      "doc": "Get the current duration of a full in-game day in milliseconds.",
+      "doc": "This function will return the current duration of a full in-game day in milliseconds.",
       "side": "server",
       "category": "Game",
       "params": [],
@@ -5826,15 +5826,32 @@
       }
     },
     {
+      "name": "JSON",
+      "doc": "Open a JSON file relative to the server data directory.",
+      "side": "server",
+      "category": "File",
+      "params": [
+        {
+          "name": "relative_path",
+          "type": "string",
+          "doc": "Path under the data directory."
+        }
+      ],
+      "returns": {
+        "type": "jsonfile|nil",
+        "doc": "File handle or nil on error."
+      }
+    },
+    {
       "name": "setWeatherType",
-      "doc": "Set the desired weather type immediately.",
+      "doc": "This function will set the desired weather type immediately.",
       "side": "server",
       "category": "Weather",
       "params": [
         {
           "name": "weather_type",
           "type": "number",
-          "doc": "Weather type (WEATHER_SNOW/WEATHER_RAIN or 0 to disable precipitation)."
+          "doc": "Weather type, for more information see [Weather Constants](../../shared-constants/Weather.md)"
         }
       ],
       "returns": {
@@ -5844,7 +5861,7 @@
     },
     {
       "name": "getWeatherType",
-      "doc": "Return the current weather type.",
+      "doc": "This function will return the current weather type.",
       "side": "server",
       "category": "Weather",
       "params": [],
@@ -5855,7 +5872,7 @@
     },
     {
       "name": "setRainStartTime",
-      "doc": "Set the sky weather time when it starts raining/snowing.",
+      "doc": "This function will set the sky weather time when it starts raining/snowing.",
       "side": "server",
       "category": "Weather",
       "params": [
@@ -5877,7 +5894,7 @@
     },
     {
       "name": "getRainStartTime",
-      "doc": "Get the sky weather time when it starts raining/snowing.",
+      "doc": "This function will return the sky weather time when it starts raining/snowing.",
       "side": "server",
       "category": "Weather",
       "params": [],
@@ -5888,7 +5905,7 @@
     },
     {
       "name": "setWindScale",
-      "doc": "Change the wind scale used during raining/snowing.",
+      "doc": "This function will change the wind scale used during raining/snowing.",
       "side": "server",
       "category": "Weather",
       "params": [
@@ -5905,7 +5922,7 @@
     },
     {
       "name": "getWindScale",
-      "doc": "Return the current wind scale.",
+      "doc": "This function will return the current wind scale.",
       "side": "server",
       "category": "Weather",
       "params": [],
@@ -5916,7 +5933,7 @@
     },
     {
       "name": "setDontRain",
-      "doc": "Enable/disable weather completely.",
+      "doc": "This function will enable/disable weather completely.",
       "side": "server",
       "category": "Weather",
       "params": [
@@ -5927,30 +5944,104 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
-      "name": "JSON",
-      "doc": "Open a JSON file relative to the server data directory.",
+      "name": "getWaypoint",
+      "doc": "Retrieve world position of a waypoint by name.",
       "side": "server",
-      "category": "File",
+      "category": "World",
       "params": [
         {
-          "name": "relative_path",
+          "name": "world",
           "type": "string",
-          "doc": "Path under the data directory."
+          "doc": "World name in which the waypoint exists."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "doc": "Waypoint name."
         }
       ],
       "returns": {
-        "type": "jsonfile|nil",
-        "doc": "File handle or nil on error."
+        "type": "{x, y, z}|nil",
+        "doc": "Waypoint position or nil."
+      }
+    },
+    {
+      "name": "getNearestWaypoint",
+      "doc": "Retrieve nearest waypoint for a given position.",
+      "side": "server",
+      "category": "World",
+      "params": [
+        {
+          "name": "world",
+          "type": "string",
+          "doc": "World name in which the waypoint exists."
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "doc": "Position X."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "doc": "Position Y."
+        },
+        {
+          "name": "z",
+          "type": "number",
+          "doc": "Position Z."
+        },
+        {
+          "name": "distance",
+          "type": "number|nil",
+          "doc": "Optional maximum search distance."
+        }
+      ],
+      "returns": {
+        "type": "{name, x, y, z}|nil",
+        "doc": "Waypoint information or nil."
+      }
+    },
+    {
+      "name": "getNextNearestWaypoint",
+      "doc": "Retrieve second nearest waypoint for a given position.",
+      "side": "server",
+      "category": "World",
+      "params": [
+        {
+          "name": "world",
+          "type": "string",
+          "doc": "World name in which the waypoint exists."
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "doc": "Position X."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "doc": "Position Y."
+        },
+        {
+          "name": "z",
+          "type": "number",
+          "doc": "Position Z."
+        }
+      ],
+      "returns": {
+        "type": "{name, x, y, z}|nil",
+        "doc": "Waypoint information or nil."
       }
     },
     {
       "name": "setPlayerInstance",
-      "doc": "Set a player's instance.",
+      "doc": "This function will change the player/npc in-game instance.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -5972,7 +6063,7 @@
     },
     {
       "name": "getPlayerInstance",
-      "doc": "Get a player's instance name.",
+      "doc": "This function will return the player/npc current instance, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -5989,7 +6080,7 @@
     },
     {
       "name": "setPlayerName",
-      "doc": "Set a player's display name.",
+      "doc": "This function will change the player/npc character name.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6011,7 +6102,7 @@
     },
     {
       "name": "getPlayerName",
-      "doc": "Get a player's name or nil if unavailable.",
+      "doc": "This function will return the player/npc current character name, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6028,7 +6119,7 @@
     },
     {
       "name": "setPlayerColor",
-      "doc": "Set a player's name color (RGB 0-255).",
+      "doc": "This function will change the player/npc character name color.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6040,17 +6131,17 @@
         {
           "name": "r",
           "type": "number",
-          "doc": "Red (0-255)."
+          "doc": "The red color component in RGB model."
         },
         {
           "name": "g",
           "type": "number",
-          "doc": "Green (0-255)."
+          "doc": "The green color component in RGB model."
         },
         {
           "name": "b",
           "type": "number",
-          "doc": "Blue (0-255)."
+          "doc": "The blue color component in RGB model."
         }
       ],
       "returns": {
@@ -6060,7 +6151,7 @@
     },
     {
       "name": "getPlayerColor",
-      "doc": "Get a player's name color as a table { r, g, b } or nil if unavailable.",
+      "doc": "This function will return the player/npc current character name color, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6072,12 +6163,12 @@
       ],
       "returns": {
         "type": "{r, g, b}|nil",
-        "doc": "RGB color (0-255) or nil."
+        "doc": "Table containing color in RGB model or nil."
       }
     },
     {
       "name": "setPlayerHealth",
-      "doc": "Set a player's current health (clamped to [0,max]).",
+      "doc": "This function will set the player/npc health, not exceeding his current max health.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6099,7 +6190,7 @@
     },
     {
       "name": "getPlayerHealth",
-      "doc": "Get a player's current health.",
+      "doc": "This function will return the player/npc current health, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6116,7 +6207,7 @@
     },
     {
       "name": "setPlayerMaxHealth",
-      "doc": "Set a player's maximum health and clamp current health if needed.",
+      "doc": "This function will set the player/npc maximum health. If the current health exceeds the new maximum, it will be clamped down to the new value.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6138,7 +6229,7 @@
     },
     {
       "name": "getPlayerMaxHealth",
-      "doc": "Get a player's maximum health.",
+      "doc": "This function will return the player/npc current maximum health, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6155,7 +6246,7 @@
     },
     {
       "name": "setPlayerMana",
-      "doc": "Set a player's current mana (clamped to [0,max]).",
+      "doc": "This function will set the player/npc mana, not exceeding his current max mana.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6177,7 +6268,7 @@
     },
     {
       "name": "getPlayerMana",
-      "doc": "Get a player's current mana.",
+      "doc": "This function will return the player/npc current mana, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6194,7 +6285,7 @@
     },
     {
       "name": "setPlayerMaxMana",
-      "doc": "Set a player's maximum mana and clamp current mana if needed.",
+      "doc": "This function will set the player/npc maximum mana. If the current mana exceeds the new maximum, it will be clamped down to the new value.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6216,7 +6307,7 @@
     },
     {
       "name": "getPlayerMaxMana",
-      "doc": "Get a player's maximum mana.",
+      "doc": "This function will return the player/npc current max mana, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6233,7 +6324,7 @@
     },
     {
       "name": "setPlayerStrength",
-      "doc": "Set a player's strength attribute.",
+      "doc": "This function will set the player/npc strength attribute.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6255,7 +6346,7 @@
     },
     {
       "name": "getPlayerStrength",
-      "doc": "Get a player's strength attribute.",
+      "doc": "This function will return the player/npc strength attribute, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6272,7 +6363,7 @@
     },
     {
       "name": "setPlayerDexterity",
-      "doc": "Set a player's dexterity attribute.",
+      "doc": "This function will set the player/npc dexterity attribute.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6294,7 +6385,7 @@
     },
     {
       "name": "getPlayerDexterity",
-      "doc": "Get a player's dexterity attribute.",
+      "doc": "This function will return the player/npc dexterity attribute, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6311,7 +6402,7 @@
     },
     {
       "name": "setPlayerSkillWeapon",
-      "doc": "Set a player's weapon skill hit chance (0-100).",
+      "doc": "This function will set the player/npc weapon skill hit chance.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6338,7 +6429,7 @@
     },
     {
       "name": "getPlayerSkillWeapon",
-      "doc": "Get a player's weapon skill hit chance.",
+      "doc": "This function will return the player/npc weapon skill hit chance, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6360,7 +6451,7 @@
     },
     {
       "name": "setPlayerTalent",
-      "doc": "Set a player's talent value.",
+      "doc": "This function will set the player/npc talent value.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6387,7 +6478,7 @@
     },
     {
       "name": "getPlayerTalent",
-      "doc": "Get a player's talent value.",
+      "doc": "This function will return the player/npc talent value, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6409,7 +6500,7 @@
     },
     {
       "name": "setPlayerLevel",
-      "doc": "Set a player's experience level.",
+      "doc": "This function will set the player/npc level.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6431,7 +6522,7 @@
     },
     {
       "name": "getPlayerLevel",
-      "doc": "Get a player's level or 0 if unavailable.",
+      "doc": "This function will return player/npc current level, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6448,7 +6539,7 @@
     },
     {
       "name": "setExp",
-      "doc": "Set the player's experience points.",
+      "doc": "This function will set the hero's experience points.",
       "side": "client",
       "category": "Hero",
       "params": [
@@ -6459,13 +6550,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getExp",
-      "doc": "Get the player's experience points.",
+      "doc": "This function will return the hero's current experience point amount, or nil if unavailable.",
       "side": "client",
       "category": "Hero",
       "params": [],
@@ -6476,7 +6567,7 @@
     },
     {
       "name": "setNextLevelExp",
-      "doc": "Set the experience required for the player's next level.",
+      "doc": "This function will set the experience required for the hero's next level.",
       "side": "client",
       "category": "Hero",
       "params": [
@@ -6487,13 +6578,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getNextLevelExp",
-      "doc": "Get the experience required for the player's next level.",
+      "doc": "This function will return the current experience required for the hero's next level, or nil if unavailable.",
       "side": "client",
       "category": "Hero",
       "params": [],
@@ -6504,7 +6595,7 @@
     },
     {
       "name": "setLearnPoints",
-      "doc": "Set the player's learn points.",
+      "doc": "This function will set the hero's learn points.",
       "side": "client",
       "category": "Hero",
       "params": [
@@ -6515,13 +6606,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getLearnPoints",
-      "doc": "Get the player's learn points.",
+      "doc": "This function will return the hero's current learn points, or nil if unavailable.",
       "side": "client",
       "category": "Hero",
       "params": [],
@@ -6532,7 +6623,7 @@
     },
     {
       "name": "setPlayerVisual",
-      "doc": "Set a player's visual model and textures.",
+      "doc": "This function will set the player/npc visual model and textures.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6568,8 +6659,25 @@
       }
     },
     {
+      "name": "getPlayerVisual",
+      "doc": "This function will return the player/npc current visual model and textures, or nil if unavailable.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "{body_model, body_texture, head_model, head_texture}|nil",
+        "doc": "Player visual or nil."
+      }
+    },
+    {
       "name": "setPlayerFatness",
-      "doc": "Set a player's model fatness.",
+      "doc": "This function will set the player/npc model fatness.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6590,8 +6698,25 @@
       }
     },
     {
+      "name": "getPlayerFatness",
+      "doc": "This function will return the player/npc current model fatness, or nil if unavailable.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "number|nil",
+        "doc": "Player fatness or nil."
+      }
+    },
+    {
       "name": "setPlayerScale",
-      "doc": "Set a player's model scale.",
+      "doc": "This function will set the player/npc model scale.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6623,7 +6748,7 @@
     },
     {
       "name": "getPlayerScale",
-      "doc": "Get a player's model scale.",
+      "doc": "This function will return the player/npc current model scale, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6640,7 +6765,7 @@
     },
     {
       "name": "setPlayerWeaponMode",
-      "doc": "Set the player/npc weapon mode for all players.",
+      "doc": "This function will set the player/npc weapon mode for all players.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6656,13 +6781,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getPlayerWeaponMode",
-      "doc": "Get the player/npc weapon mode.",
+      "doc": "This function will return the player/npc current weapon mode, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6679,7 +6804,7 @@
     },
     {
       "name": "applyPlayerOverlay",
-      "doc": "Apply animation overlay on player.",
+      "doc": "This function will apply an animation overlay on player (eg. \"HUMANS_MILITIA.MDS\").",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6701,14 +6826,14 @@
     },
     {
       "name": "getPlayerOverlays",
-      "doc": "Get a player's active animation overlays.",
+      "doc": "This function will return the player/npc active animation overlays, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
         {
           "name": "player_id",
           "type": "number",
-          "doc": ""
+          "doc": "Target player id."
         }
       ],
       "returns": {
@@ -6718,7 +6843,7 @@
     },
     {
       "name": "removePlayerOverlay",
-      "doc": "Remove animation overlay on player.",
+      "doc": "This function will remove specified animation overlay from the player.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6740,7 +6865,7 @@
     },
     {
       "name": "playAni",
-      "doc": "Play an animation on a player/npc for all players.",
+      "doc": "This function will play an animation on the player/npc character.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6756,13 +6881,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "stopAni",
-      "doc": "Stop a played animation on a player/npc for all players.",
+      "doc": "This function will stop a played animation on the player/npc character.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6778,13 +6903,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "playFaceAni",
-      "doc": "Play a face animation on a player/npc.",
+      "doc": "This function will play a face animation on the player/npc character.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6800,13 +6925,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "stopFaceAni",
-      "doc": "Stop a played face animation on a player/npc.",
+      "doc": "This function will stop a played face animation on the player/npc character.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6822,13 +6947,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "playGesticulation",
-      "doc": "Play a gesticulation animation on a player/npc.",
+      "doc": "This function will play a gesticulation animation on the player/npc character.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6839,13 +6964,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "setPlayerPosition",
-      "doc": "Set a player's world position.",
+      "doc": "This function will set the player/npc world position.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6877,7 +7002,7 @@
     },
     {
       "name": "getPlayerPosition",
-      "doc": "Get a player's world position as tuple (x,y,z).",
+      "doc": "This function will return the player/npc current world position.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6894,7 +7019,7 @@
     },
     {
       "name": "setPlayerAngle",
-      "doc": "Set a player's facing angle (radians) in world space.",
+      "doc": "This function will set the player/npc facing angle in world space.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6907,11 +7032,6 @@
           "name": "angle",
           "type": "number",
           "doc": "Angle in radians."
-        },
-        {
-          "name": "interpolate",
-          "type": "bool|nil",
-          "doc": "Optional interpolation flag."
         }
       ],
       "returns": {
@@ -6921,7 +7041,7 @@
     },
     {
       "name": "getPlayerAngle",
-      "doc": "Get a player's facing angle (radians) in world space.",
+      "doc": "This function will return the player/npc facing angle in world space, or nil if unavailable.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -6938,7 +7058,7 @@
     },
     {
       "name": "giveItem",
-      "doc": "Give an item to a player or NPC on the client.",
+      "doc": "This function will give an item to the player or NPC on the client.",
       "side": "client",
       "category": "Inventory",
       "params": [
@@ -6959,13 +7079,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "equipItem",
-      "doc": "Equip an item for a player or NPC on the client.",
+      "doc": "This function will equip an item for the player/NPC.",
       "side": "client",
       "category": "Inventory",
       "params": [
@@ -6978,21 +7098,16 @@
           "name": "instance",
           "type": "string",
           "doc": "Item instance name."
-        },
-        {
-          "name": "slot_id",
-          "type": "number",
-          "doc": "Optional slot id, ignored on client."
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "unequipItem",
-      "doc": "Unequip an item from a player or NPC on the client.",
+      "doc": "This function will unequip an item from the player/NPC.",
       "side": "client",
       "category": "Inventory",
       "params": [
@@ -7008,13 +7123,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "hasItem",
-      "doc": "Get the amount of a specific item in a player's inventory on the client.",
+      "doc": "This function will return the amount of a specific item in the player/npc inventory on the client.",
       "side": "client",
       "category": "Inventory",
       "params": [
@@ -7036,7 +7151,7 @@
     },
     {
       "name": "removeItem",
-      "doc": "Remove an item from a player's inventory on the client.",
+      "doc": "This function will remove an item from the player/npc inventory on the client.",
       "side": "client",
       "category": "Inventory",
       "params": [
@@ -7057,24 +7172,24 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "clearInventory",
-      "doc": "Remove all items from the local hero's inventory.",
+      "doc": "This function will remove all items from the hero's inventory.",
       "side": "client",
       "category": "Inventory",
       "params": [],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "changeWorld",
-      "doc": "Change the current game world.",
+      "doc": "This function will change the player's current game world.",
       "side": "client",
       "category": "World",
       "params": [
@@ -7096,7 +7211,7 @@
     },
     {
       "name": "getWorld",
-      "doc": "Get the current game world filename.",
+      "doc": "This function will return the current game world filename.",
       "side": "client",
       "category": "World",
       "params": [],
@@ -7107,7 +7222,7 @@
     },
     {
       "name": "createNpc",
-      "doc": "Create a client-side NPC entry and return an internal npc id (<0).",
+      "doc": "This function will create a client-side NPC entry and return an internal npc id (<0).",
       "side": "client",
       "category": "NPC",
       "params": [
@@ -7119,19 +7234,19 @@
       ],
       "returns": {
         "type": "number",
-        "doc": "Internal npc id (negative) or 0 on failure."
+        "doc": "NPC id (starting from -1) or 0 on failure."
       }
     },
     {
       "name": "destroyNpc",
-      "doc": "Destroy a client-side NPC previously created with `createNpc`.",
+      "doc": "This function will destroy a client-side NPC`.",
       "side": "client",
       "category": "NPC",
       "params": [
         {
           "name": "npc_id",
           "type": "number",
-          "doc": "Internal npc id returned by `createNpc`."
+          "doc": "NPC id."
         }
       ],
       "returns": {
@@ -7141,19 +7256,19 @@
     },
     {
       "name": "spawnNpc",
-      "doc": "Spawn a previously created NPC into the world using an optional instance.",
+      "doc": "This function will spawn a previously created NPC into the world.",
       "side": "client",
       "category": "NPC",
       "params": [
         {
           "name": "npc_id",
           "type": "number",
-          "doc": "Internal npc id."
+          "doc": "NPC id."
         },
         {
           "name": "instance_name",
           "type": "string|nil",
-          "doc": "Optional instance name (e.g., \"PC_HERO\")."
+          "doc": "Optional instance name (defaults to \"PC_HERO\")."
         }
       ],
       "returns": {
@@ -7163,7 +7278,7 @@
     },
     {
       "name": "unspawnNpc",
-      "doc": "Unspawn (remove) a client NPC from the world without destroying it.",
+      "doc": "This function will unspawn a client NPC from the world.",
       "side": "client",
       "category": "NPC",
       "params": [
@@ -7179,8 +7294,157 @@
       }
     },
     {
+      "name": "setTime",
+      "doc": "This function will set the in-game world time (hour, minute).",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "hour",
+          "type": "number",
+          "doc": "Hour component."
+        },
+        {
+          "name": "minute",
+          "type": "number",
+          "doc": "Minute component."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "getTime",
+      "doc": "This function will return the current in-game world time.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "table",
+        "doc": "Table containing hour and minute."
+      }
+    },
+    {
+      "name": "setDayLength",
+      "doc": "This function will set the duration of an in-game day in milliseconds.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "miliseconds",
+          "type": "number",
+          "doc": "Day length in milliseconds (min 10000 ms)."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "getDayLength",
+      "doc": "This function will return the current configured in-game day length in milliseconds.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "Day length in milliseconds."
+      }
+    },
+    {
+      "name": "exitGame",
+      "doc": "This function will close the game immediately.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "clearMultiplayerMessages",
+      "doc": "This function will clear multiplayer status messages shown while joining the server.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "enableGMPMenu",
+      "doc": "This function will enable/disable opening GMP menu with ESC.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "enable",
+          "type": "boolean",
+          "doc": "True to allow ESC to open/close GMP menu, false to ignore ESC for GMP menu."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "openGMPMenu",
+      "doc": "This function will force open GMP menu.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "closeGMPMenu",
+      "doc": "This function will force close GMP menu.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "triggerServerEvent",
+      "doc": "This function triggers a custom server-side event and optionally passes arguments.\nThe first argument is always the event name.",
+      "side": "client",
+      "category": "Network",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "string",
+          "doc": "Name of the server-side event to trigger."
+        },
+        {
+          "name": "sourceElement",
+          "type": "number|nil",
+          "doc": "Optional source element id. Use nil if not needed."
+        },
+        {
+          "name": "...",
+          "type": "...",
+          "doc": "Optional arguments passed to the server event handler."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if the event was sent successfully, otherwise false."
+      }
+    },
+    {
       "name": "anx",
-      "doc": "Convert pixels to virtuals screen X dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
+      "doc": "This function will convert pixels to virtuals screen X dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
       "side": "client",
       "category": "Interface",
       "params": [
@@ -7197,7 +7461,7 @@
     },
     {
       "name": "any",
-      "doc": "Convert pixels to virtuals on screen Y dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
+      "doc": "This function will convert pixels to virtuals on screen Y dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
       "side": "client",
       "category": "Interface",
       "params": [
@@ -7214,7 +7478,7 @@
     },
     {
       "name": "nax",
-      "doc": "Convert virtuals to pixels on screen X dimension and return it as a result.",
+      "doc": "This function will convert virtuals to pixels on screen X dimension and return it as a result.",
       "side": "client",
       "category": "Interface",
       "params": [
@@ -7231,7 +7495,7 @@
     },
     {
       "name": "nay",
-      "doc": "Convert virtuals to pixels on screen Y dimension and return it as a result.",
+      "doc": "This function will convert virtuals to pixels on screen Y dimension and return it as a result.",
       "side": "client",
       "category": "Interface",
       "params": [
@@ -7247,69 +7511,8 @@
       }
     },
     {
-      "name": "setTime",
-      "doc": "Set the in-game world time (hour, minute).",
-      "side": "client",
-      "category": "Game",
-      "params": [
-        {
-          "name": "hour",
-          "type": "number",
-          "doc": "Hour component."
-        },
-        {
-          "name": "minute",
-          "type": "number",
-          "doc": "Minute component."
-        }
-      ],
-      "returns": {
-        "type": "boolean",
-        "doc": "True on success."
-      }
-    },
-    {
-      "name": "getTime",
-      "doc": "Get the in-game world time.",
-      "side": "client",
-      "category": "Game",
-      "params": [],
-      "returns": {
-        "type": "table",
-        "doc": "Table containing hour and minute."
-      }
-    },
-    {
-      "name": "setDayLength",
-      "doc": "Set the duration of an in-game day in milliseconds.",
-      "side": "client",
-      "category": "Game",
-      "params": [
-        {
-          "name": "miliseconds",
-          "type": "number",
-          "doc": "Day length in milliseconds (min 10000 ms)."
-        }
-      ],
-      "returns": {
-        "type": "boolean",
-        "doc": "True on success."
-      }
-    },
-    {
-      "name": "getDayLength",
-      "doc": "Get the configured in-game day length in milliseconds.",
-      "side": "client",
-      "category": "Game",
-      "params": [],
-      "returns": {
-        "type": "number",
-        "doc": "Day length in milliseconds."
-      }
-    },
-    {
       "name": "setWeatherType",
-      "doc": "Set the desired weather type immediately.",
+      "doc": "This function will set the desired weather type immediately.",
       "side": "client",
       "category": "Weather",
       "params": [
@@ -7326,7 +7529,7 @@
     },
     {
       "name": "getWeatherType",
-      "doc": "Return the current weather type.",
+      "doc": "This function will return the current weather type.",
       "side": "client",
       "category": "Weather",
       "params": [],
@@ -7337,7 +7540,7 @@
     },
     {
       "name": "setRainStartTime",
-      "doc": "Set the sky weather time when it starts raining/snowing.",
+      "doc": "This function will set the sky weather time when it starts raining/snowing.",
       "side": "client",
       "category": "Weather",
       "params": [
@@ -7359,7 +7562,7 @@
     },
     {
       "name": "getRainStartTime",
-      "doc": "Get the sky weather time when it starts raining/snowing.",
+      "doc": "This function will return the configured sky weather time when it starts raining/snowing.",
       "side": "client",
       "category": "Weather",
       "params": [],
@@ -7370,7 +7573,7 @@
     },
     {
       "name": "setWindScale",
-      "doc": "Change the wind scale used during raining/snowing.",
+      "doc": "This function will change the wind scale used during raining/snowing.",
       "side": "client",
       "category": "Weather",
       "params": [
@@ -7387,7 +7590,7 @@
     },
     {
       "name": "getWindScale",
-      "doc": "Return the current wind scale.",
+      "doc": "This function will return the current wind scale.",
       "side": "client",
       "category": "Weather",
       "params": [],
@@ -7398,7 +7601,7 @@
     },
     {
       "name": "setDontRain",
-      "doc": "Enable/disable weather completely.",
+      "doc": "This function will enable/disable weather completely.",
       "side": "client",
       "category": "Weather",
       "params": [
@@ -7415,7 +7618,7 @@
     },
     {
       "name": "setFogColor",
-      "doc": "Set the sky fog color day variation.",
+      "doc": "This function will set the sky fog color day variation.",
       "side": "client",
       "category": "Sky",
       "params": [
@@ -7447,7 +7650,7 @@
     },
     {
       "name": "setCloudsColor",
-      "doc": "Set the sky clouds color.",
+      "doc": "This function will set the sky clouds color.",
       "side": "client",
       "category": "Sky",
       "params": [
@@ -7474,14 +7677,14 @@
     },
     {
       "name": "setPlanetSize",
-      "doc": "Set the planet size ratio.",
+      "doc": "This function will set the planet size ratio.",
       "side": "client",
       "category": "Sky",
       "params": [
         {
           "name": "planetId",
           "type": "number",
-          "doc": "The planet id, for more information see Planet constants."
+          "doc": "The planet id, for more information see [Planet](../../client-constants/Sky.md) constants."
         },
         {
           "name": "size",
@@ -7496,14 +7699,14 @@
     },
     {
       "name": "setPlanetColor",
-      "doc": "Set the planet color.",
+      "doc": "This function will set the planet color.",
       "side": "client",
       "category": "Sky",
       "params": [
         {
           "name": "planetId",
           "type": "number",
-          "doc": "The planet id, for more information see Planet constants."
+          "doc": "The planet id, for more information see [Planet](../../client-constants/Sky.md) constants."
         },
         {
           "name": "r",
@@ -7540,7 +7743,7 @@
         {
           "name": "planetId",
           "type": "number",
-          "doc": "The planet id, for more information see Planet constants."
+          "doc": "The planet id, for more information see [Planet](../../client-constants/Sky.md) constants."
         },
         {
           "name": "texture",
@@ -7555,7 +7758,7 @@
     },
     {
       "name": "setLightingColor",
-      "doc": "Set the sky lighting color.",
+      "doc": "This function will set the sky lighting color.",
       "side": "client",
       "category": "Sky",
       "params": [
@@ -7581,98 +7784,10 @@
       }
     },
     {
-      "name": "exitGame",
-      "doc": "Close the game immediately.",
+      "name": "toggleDrawWaynet",
+      "doc": "This function will enable/disable waynet rendering.",
       "side": "client",
       "category": "Game",
-      "params": [],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "clearMultiplayerMessages",
-      "doc": "Clear multiplayer status messages shown while joining the server.",
-      "side": "client",
-      "category": "Game",
-      "params": [],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "enableGMPMenu",
-      "doc": "Enable or disable opening GMP menu with ESC.",
-      "side": "client",
-      "category": "Interface",
-      "params": [
-        {
-          "name": "enable",
-          "type": "boolean",
-          "doc": "True to allow ESC to open/close GMP menu, false to ignore ESC for GMP menu."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "openGMPMenu",
-      "doc": "Force open GMP menu.",
-      "side": "client",
-      "category": "Interface",
-      "params": [],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "closeGMPMenu",
-      "doc": "Force close GMP menu.",
-      "side": "client",
-      "category": "Interface",
-      "params": [],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "triggerServerEvent",
-      "doc": "Triggers a custom server-side event and optionally passes arguments.\nThe first argument is always the event name.",
-      "side": "client",
-      "category": "Network",
-      "params": [
-        {
-          "name": "eventName",
-          "type": "string",
-          "doc": "Name of the server-side event to trigger."
-        },
-        {
-          "name": "sourceElement",
-          "type": "number|nil",
-          "doc": "Optional source element id. Use nil if not needed."
-        },
-        {
-          "name": "...",
-          "type": "...",
-          "doc": "Optional arguments passed to the server event handler."
-        }
-      ],
-      "returns": {
-        "type": "boolean",
-        "doc": "True if the event was sent successfully, otherwise false."
-      }
-    },
-    {
-      "name": "setDrawWaynet",
-      "doc": "Enable or disable waynet rendering.",
-      "side": "client",
-      "category": "World",
       "params": [
         {
           "name": "enabled",
@@ -7686,8 +7801,95 @@
       }
     },
     {
-      "name": "KeyPressed",
-      "doc": "The function is used to check whether the specified keyboard key is pressed.",
+      "name": "getWaypoint",
+      "doc": "This function will return world position of a waypoint by name.",
+      "side": "client",
+      "category": "World",
+      "params": [
+        {
+          "name": "name",
+          "type": "string",
+          "doc": "Waypoint name."
+        }
+      ],
+      "returns": {
+        "type": "{x, y, z}|nil",
+        "doc": "Waypoint position table or nil."
+      }
+    },
+    {
+      "name": "getNearestWaypoint",
+      "doc": "This function will return the nearest waypoint for a given position.",
+      "side": "client",
+      "category": "World",
+      "params": [
+        {
+          "name": "x",
+          "type": "number",
+          "doc": "Position X."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "doc": "Position Y."
+        },
+        {
+          "name": "z",
+          "type": "number",
+          "doc": "Position Z."
+        },
+        {
+          "name": "distance",
+          "type": "number|nil",
+          "doc": "Optional maximum search distance."
+        }
+      ],
+      "returns": {
+        "type": "{name, x, y, z}|nil",
+        "doc": "Waypoint information table or nil."
+      }
+    },
+    {
+      "name": "getNextNearestWaypoint",
+      "doc": "This function will return the second nearest waypoint for a given position.",
+      "side": "client",
+      "category": "World",
+      "params": [
+        {
+          "name": "x",
+          "type": "number",
+          "doc": "Position X."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "doc": "Position Y."
+        },
+        {
+          "name": "z",
+          "type": "number",
+          "doc": "Position Z."
+        }
+      ],
+      "returns": {
+        "type": "{name, x, y, z}|nil",
+        "doc": "Waypoint information table or nil."
+      }
+    },
+    {
+      "name": "getWaypoints",
+      "doc": "This function will return the list of all waypoints from current world.",
+      "side": "client",
+      "category": "World",
+      "params": [],
+      "returns": {
+        "type": "table",
+        "doc": "Table of waypoints {name, x, y, z}."
+      }
+    },
+    {
+      "name": "keyPressed",
+      "doc": "This function will check whether the specified keyboard key is pressed.",
       "side": "client",
       "category": "Input",
       "params": [
@@ -7703,8 +7905,8 @@
       }
     },
     {
-      "name": "KeyToggled",
-      "doc": "The function is used to check whether the specified keyboard key was toggled from unpressed to pressed state.",
+      "name": "keyToggled",
+      "doc": "This function will check whether the specified keyboard key was toggled from unpressed to pressed state.",
       "side": "client",
       "category": "Input",
       "params": [
@@ -7721,12 +7923,12 @@
     },
     {
       "name": "disableControls",
-      "doc": "Disable/enable default game actions that are bound to keys.",
+      "doc": "This functiuon will disable/enable default game actions that are bound to keys.",
       "side": "client",
       "category": "Input",
       "params": [
         {
-          "name": "true",
+          "name": "True",
           "type": "boolean",
           "doc": "when you want to disable game keys, otherwise false."
         }
@@ -7738,18 +7940,18 @@
     },
     {
       "name": "isControlsDisabled",
-      "doc": "The function is used to check whether default game actions are disabled.",
+      "doc": "This function will check whether default game actions are disabled.",
       "side": "client",
       "category": "Input",
       "params": [],
       "returns": {
         "type": "boolean",
-        "doc": "true when disabled, otherwise false."
+        "doc": "True when disabled, otherwise false."
       }
     },
     {
       "name": "disableKey",
-      "doc": "Disable/enable specified keyboard key, like: ESCAPE, TAB, etc.",
+      "doc": "This function will disable/enable specified keyboard key, like: ESCAPE, TAB, etc.",
       "side": "client",
       "category": "Input",
       "params": [
@@ -7761,7 +7963,7 @@
         {
           "name": "toggle",
           "type": "boolean",
-          "doc": "true when you want to disable specified keyboard key, otherwise false"
+          "doc": "True when you want to disable specified keyboard key, otherwise false"
         }
       ],
       "returns": {
@@ -7771,7 +7973,7 @@
     },
     {
       "name": "isKeyDisabled",
-      "doc": "The function is used to check whether the specified keyboard key is disabled.",
+      "doc": "This function will check whether the specified keyboard key is disabled.",
       "side": "client",
       "category": "Input",
       "params": [
@@ -7783,12 +7985,12 @@
       ],
       "returns": {
         "type": "boolean",
-        "doc": "true when disabled, otherwise false."
+        "doc": "True when disabled, otherwise false."
       }
     },
     {
       "name": "setCursorPosition",
-      "doc": "Sets the cursor position in virtual (screen-scaled) coordinates.",
+      "doc": "This function will set the cursor position in virtual (screen-scaled) coordinates.",
       "side": "client",
       "category": "Cursor",
       "params": [
@@ -7804,24 +8006,24 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getCursorPosition",
-      "doc": "Returns the cursor position in virtual (screen-scaled) coordinates.",
+      "doc": "This function will return the current cursor position in virtual (screen-scaled) coordinates.",
       "side": "client",
       "category": "Cursor",
       "params": [],
       "returns": {
-        "type": "number, int",
+        "type": "table",
         "doc": "X and Y position."
       }
     },
     {
       "name": "setCursorPositionPx",
-      "doc": "Sets the cursor position in pixel coordinates.",
+      "doc": "This function will set the cursor position in pixel coordinates.",
       "side": "client",
       "category": "Cursor",
       "params": [
@@ -7837,24 +8039,24 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getCursorPositionPx",
-      "doc": "Returns the cursor position in pixel coordinates.",
+      "doc": "This function will return the current cursor position in pixel coordinates.",
       "side": "client",
       "category": "Cursor",
       "params": [],
       "returns": {
-        "type": "number, int",
+        "type": "table",
         "doc": "X and Y position in pixels."
       }
     },
     {
       "name": "setCursorSize",
-      "doc": "Sets the cursor size in virtual (screen-scaled) units.",
+      "doc": "This function will set the cursor size in virtual units.",
       "side": "client",
       "category": "Cursor",
       "params": [
@@ -7870,24 +8072,24 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getCursorSize",
-      "doc": "Returns the cursor size in virtual (screen-scaled) units.",
+      "doc": "This function will return the cursor size in virtual (screen-scaled) units.",
       "side": "client",
       "category": "Cursor",
       "params": [],
       "returns": {
-        "type": "number, int",
+        "type": "table",
         "doc": "Cursor width and height."
       }
     },
     {
       "name": "setCursorSizePx",
-      "doc": "Sets the cursor size in pixel units.",
+      "doc": "This function will set the cursor size in pixel units.",
       "side": "client",
       "category": "Cursor",
       "params": [
@@ -7903,24 +8105,24 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getCursorSizePx",
-      "doc": "Returns the cursor size in pixel units.",
+      "doc": "This function will return the cursor size in pixel units.",
       "side": "client",
       "category": "Cursor",
       "params": [],
       "returns": {
-        "type": "number, int",
+        "type": "table",
         "doc": "Cursor width and height in pixels."
       }
     },
     {
       "name": "setCursorTxt",
-      "doc": "Sets the cursor texture.",
+      "doc": "This function will set the cursor texture.",
       "side": "client",
       "category": "Cursor",
       "params": [
@@ -7931,13 +8133,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getCursorTxt",
-      "doc": "Returns the current cursor texture.",
+      "doc": "This function will return the current cursor texture.",
       "side": "client",
       "category": "Cursor",
       "params": [],
@@ -7948,7 +8150,7 @@
     },
     {
       "name": "setCursorVisible",
-      "doc": "Sets whether the cursor is visible.",
+      "doc": "This function will set whether the cursor is visible.",
       "side": "client",
       "category": "Cursor",
       "params": [
@@ -7959,13 +8161,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "isCursorVisible",
-      "doc": "Returns whether the cursor is currently visible.",
+      "doc": "This function will return whether the cursor is currently visible.",
       "side": "client",
       "category": "Cursor",
       "params": [],
@@ -7976,7 +8178,7 @@
     },
     {
       "name": "setCursorSensitivity",
-      "doc": "Sets the cursor movement sensitivity.",
+      "doc": "This function will set the cursor movement sensitivity.",
       "side": "client",
       "category": "Cursor",
       "params": [
@@ -7987,13 +8189,13 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True on success."
+        "type": "nil",
+        "doc": ""
       }
     },
     {
       "name": "getCursorSensitivity",
-      "doc": "Returns the cursor movement sensitivity.",
+      "doc": "This function will return the cursor movement sensitivity.",
       "side": "client",
       "category": "Cursor",
       "params": [],
@@ -8004,7 +8206,7 @@
     },
     {
       "name": "isMouseBtnPressed",
-      "doc": "Returns whether a mouse button is currently pressed.",
+      "doc": "This function will return whether a mouse button is currently pressed.",
       "side": "client",
       "category": "Cursor",
       "params": [
@@ -8015,8 +8217,8 @@
         }
       ],
       "returns": {
-        "type": "boolean",
-        "doc": "True if the button is pressed."
+        "type": "nil",
+        "doc": ""
       }
     }
   ],
@@ -8068,7 +8270,7 @@
     },
     {
       "name": "onPlayerConnect",
-      "doc": "Triggered when a player connects to the server.",
+      "doc": "This event is triggered when a player connects to the server.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8082,7 +8284,7 @@
     },
     {
       "name": "onPlayerDisconnect",
-      "doc": "Triggered when a player disconnects from the server.",
+      "doc": "This event is triggered when a player disconnects from the server.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8101,7 +8303,7 @@
     },
     {
       "name": "onPlayerMessage",
-      "doc": "Triggered when a player sends a chat message.",
+      "doc": "This event is triggered when a player sends a chat message.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8120,7 +8322,7 @@
     },
     {
       "name": "onPlayerCommand",
-      "doc": "Triggered when a player issues a command.",
+      "doc": "This event is triggered when a player issues a command.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8144,7 +8346,7 @@
     },
     {
       "name": "onPlayerDeath",
-      "doc": "Triggered when a player dies.",
+      "doc": "This event is triggered when a player dies.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8163,7 +8365,7 @@
     },
     {
       "name": "onPlayerStandUp",
-      "doc": "Triggered when a player stands up after being unconscious.",
+      "doc": "This event is triggered when a player stands up after being unconscious.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8177,7 +8379,7 @@
     },
     {
       "name": "onPlayerUnconscious",
-      "doc": "Triggered when a player becomes unconscious.",
+      "doc": "This event is triggered when a player becomes unconscious.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8196,7 +8398,7 @@
     },
     {
       "name": "onPlayerDropItem",
-      "doc": "Triggered when a player drops an item.",
+      "doc": "This event is triggered when a player drops an item.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8220,7 +8422,7 @@
     },
     {
       "name": "onPlayerTakeItem",
-      "doc": "Triggered when a player picks up an item.",
+      "doc": "This event is triggered when a player picks up an item.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8239,7 +8441,7 @@
     },
     {
       "name": "onPlayerCastSpell",
-      "doc": "Triggered when a player casts a spell.",
+      "doc": "This event is triggered when a player casts a spell.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8263,7 +8465,7 @@
     },
     {
       "name": "onPlayerChangeHealth",
-      "doc": "Triggered when player health changes.",
+      "doc": "This event is triggered when player health changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8287,7 +8489,7 @@
     },
     {
       "name": "onPlayerChangeMana",
-      "doc": "Triggered when player mana changes.",
+      "doc": "This event is triggered when player mana changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8311,7 +8513,7 @@
     },
     {
       "name": "onPlayerChangeWorld",
-      "doc": "Triggered when player tries to change the played world (ZEN).",
+      "doc": "This event is triggered when player tries to change the played world (ZEN).",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8335,7 +8537,7 @@
     },
     {
       "name": "onPlayerWeaponModeChange",
-      "doc": "Triggered when a player's weapon mode changes.",
+      "doc": "This event is triggered when a player's weapon mode changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8359,7 +8561,7 @@
     },
     {
       "name": "onPlayerAmuletChange",
-      "doc": "Triggered when a player's amulet changes.",
+      "doc": "This event is triggered when a player's amulet changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8378,7 +8580,7 @@
     },
     {
       "name": "onPlayerArmorChange",
-      "doc": "Triggered when a player's armor changes.",
+      "doc": "This event is triggered when a player's armor changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8397,7 +8599,7 @@
     },
     {
       "name": "onPlayerBeltChange",
-      "doc": "Triggered when a player's belt changes.",
+      "doc": "This event is triggered when a player's belt changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8416,7 +8618,7 @@
     },
     {
       "name": "onPlayerHandItemChange",
-      "doc": "Triggered when a player's hand item changes.",
+      "doc": "This event is triggered when a player's hand item changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8440,7 +8642,7 @@
     },
     {
       "name": "onPlayerHelmetChange",
-      "doc": "Triggered when a player's helmet changes.",
+      "doc": "This event is triggered when a player's helmet changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8459,7 +8661,7 @@
     },
     {
       "name": "onPlayerMeleeWeaponChange",
-      "doc": "Triggered when a player's melee weapon changes.",
+      "doc": "This event is triggered when a player's melee weapon changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8478,7 +8680,7 @@
     },
     {
       "name": "onPlayerRangedWeaponChange",
-      "doc": "Triggered when a player's ranged weapon changes.",
+      "doc": "This event is triggered when a player's ranged weapon changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8497,7 +8699,7 @@
     },
     {
       "name": "onPlayerRingChange",
-      "doc": "Triggered when a player's ring changes.",
+      "doc": "This event is triggered when a player's ring changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8521,7 +8723,7 @@
     },
     {
       "name": "onPlayerShieldChange",
-      "doc": "Triggered when a player's shield changes.",
+      "doc": "This event is triggered when a player's shield changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8540,7 +8742,7 @@
     },
     {
       "name": "onPlayerSpellSlotChange",
-      "doc": "Triggered when a player's active spell slot changes.",
+      "doc": "This event is triggered when a player's active spell slot changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8564,7 +8766,7 @@
     },
     {
       "name": "onPlayerSpawn",
-      "doc": "Triggered when a player spawns (initial spawn).",
+      "doc": "This event is triggered when a player spawns (initial spawn).",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8593,7 +8795,7 @@
     },
     {
       "name": "onPlayerRespawn",
-      "doc": "Triggered when a player respawns.",
+      "doc": "This event is triggered when a player respawns.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8622,7 +8824,7 @@
     },
     {
       "name": "onPlayerSpawnFor",
-      "doc": "Triggered when a player is spawned for another player (streaming in).",
+      "doc": "This event is triggered when a player is spawned for another player (streaming in).",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8641,7 +8843,7 @@
     },
     {
       "name": "onPlayerUnspawnFor",
-      "doc": "Triggered when a player is unspawned for another player (streaming out).",
+      "doc": "This event is triggered when a player is unspawned for another player (streaming out).",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8660,7 +8862,7 @@
     },
     {
       "name": "onPlayerHit",
-      "doc": "Triggered when a player is hit.",
+      "doc": "This event is triggered when a player is hit.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8684,7 +8886,7 @@
     },
     {
       "name": "onInit",
-      "doc": "Triggered once when the Gothic engine initializes.",
+      "doc": "This event is triggered once when the player connects to the server.",
       "side": "client",
       "category": "Game",
       "params": [],
@@ -8692,7 +8894,7 @@
     },
     {
       "name": "onExit",
-      "doc": "Triggered when the Gothic engine is exiting.",
+      "doc": "This event is triggered when the player disconnects from the server.",
       "side": "client",
       "category": "Game",
       "params": [],
@@ -8700,7 +8902,7 @@
     },
     {
       "name": "onRender",
-      "doc": "Triggered each frame when the game renders.",
+      "doc": "This event is triggered each frame.",
       "side": "client",
       "category": "Game",
       "params": [],
@@ -8708,7 +8910,7 @@
     },
     {
       "name": "onTime",
-      "doc": "Triggered each time the game time minute passes.",
+      "doc": "This event is triggered each time the game time minute passes.",
       "side": "client",
       "category": "Game",
       "params": [
@@ -8732,7 +8934,7 @@
     },
     {
       "name": "onWeatherChange",
-      "doc": "Triggered when weather changes.",
+      "doc": "This event is triggered when weather changes.",
       "side": "client",
       "category": "Weather",
       "params": [
@@ -8751,7 +8953,7 @@
     },
     {
       "name": "onKeyDown",
-      "doc": "Triggered when a key is pressed.",
+      "doc": "This event is triggered when a key is pressed.",
       "side": "client",
       "category": "Input",
       "params": [
@@ -8765,7 +8967,7 @@
     },
     {
       "name": "onKeyUp",
-      "doc": "Triggered when a key is released.",
+      "doc": "This event is triggered when a key is released.",
       "side": "client",
       "category": "Input",
       "params": [
@@ -8779,7 +8981,7 @@
     },
     {
       "name": "onMouseDown",
-      "doc": "Triggered when a mouse button is pressed.",
+      "doc": "This event is triggered when a mouse button is pressed.",
       "side": "client",
       "category": "Mouse",
       "params": [
@@ -8793,7 +8995,7 @@
     },
     {
       "name": "onMouseUp",
-      "doc": "Triggered when a mouse button is released.",
+      "doc": "This event is triggered when a mouse button is released.",
       "side": "client",
       "category": "Mouse",
       "params": [
@@ -8807,7 +9009,7 @@
     },
     {
       "name": "onMouseMove",
-      "doc": "Triggered when the mouse cursor is moved.",
+      "doc": "This event is triggered when the mouse cursor is moved.",
       "side": "client",
       "category": "Mouse",
       "params": [
@@ -8826,7 +9028,7 @@
     },
     {
       "name": "onMouseWheel",
-      "doc": "Triggered when the mouse wheel is scrolled.",
+      "doc": "This event is triggered when the mouse wheel is scrolled.",
       "side": "client",
       "category": "Mouse",
       "params": [
@@ -8840,7 +9042,7 @@
     },
     {
       "name": "onOpenInventory",
-      "doc": "Triggered when the user opens the inventory.",
+      "doc": "This event is triggered when the user opens the inventory.",
       "side": "client",
       "category": "Inventory",
       "params": [],
@@ -8848,7 +9050,7 @@
     },
     {
       "name": "onCloseInventory",
-      "doc": "Triggered when the user closes the inventory.",
+      "doc": "This event is triggered when the user closes the inventory.",
       "side": "client",
       "category": "Inventory",
       "params": [],
@@ -8856,7 +9058,7 @@
     },
     {
       "name": "onInventorySlotChange",
-      "doc": "Triggered when the selected inventory slot changes.",
+      "doc": "This event is triggered when the selected inventory slot changes.",
       "side": "client",
       "category": "Inventory",
       "params": [
@@ -8875,26 +9077,26 @@
     },
     {
       "name": "onWorldChange",
-      "doc": "Triggered when the client requests a world change.",
+      "doc": "This event is triggered when the client requests a world change via oCTriggerChangeLevel vob.",
       "side": "client",
       "category": "World",
       "params": [
         {
           "name": "world",
           "type": "string",
-          "doc": "World filename."
+          "doc": "New world filename."
         },
         {
           "name": "waypoint",
           "type": "string",
-          "doc": "Waypoint name used for teleport."
+          "doc": "Waypoint name the player will be teleported to."
         }
       ],
       "cancellable": false
     },
     {
       "name": "onWorldEnter",
-      "doc": "Triggered when the active world is loaded and the hero is present in it.",
+      "doc": "This event is triggered when the player enters a world.",
       "side": "client",
       "category": "World",
       "params": [
@@ -8908,7 +9110,7 @@
     },
     {
       "name": "onEquip",
-      "doc": "Triggered when the hero equips an item.",
+      "doc": "This event is triggered when the hero equips an item.",
       "side": "client",
       "category": "Hero",
       "params": [
@@ -8922,7 +9124,7 @@
     },
     {
       "name": "onDropItem",
-      "doc": "Triggered when the hero drops an item.",
+      "doc": "This event is triggered when the hero drops an item.",
       "side": "client",
       "category": "Hero",
       "params": [
@@ -8936,7 +9138,7 @@
     },
     {
       "name": "onTakeItem",
-      "doc": "Triggered when the hero takes an item from the ground.",
+      "doc": "This event is triggered when the hero takes an item from the ground.",
       "side": "client",
       "category": "Hero",
       "params": [
@@ -8955,7 +9157,7 @@
     },
     {
       "name": "onUseItem",
-      "doc": "Triggered when the hero uses, interacts with, opens, or consumes an item.",
+      "doc": "This event is triggered when the hero uses, interacts with, opens, or consumes an item.",
       "side": "client",
       "category": "Hero",
       "params": [
@@ -8984,7 +9186,7 @@
     },
     {
       "name": "onUnequip",
-      "doc": "Triggered when the hero unequips an item.",
+      "doc": "This event is triggered when the hero unequips an item.",
       "side": "client",
       "category": "Hero",
       "params": [
@@ -8998,7 +9200,7 @@
     },
     {
       "name": "onPlayerCreate",
-      "doc": "Triggered when a player object is created locally.",
+      "doc": "This event is triggered when a player object is created locally.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -9012,7 +9214,7 @@
     },
     {
       "name": "onPlayerDestroy",
-      "doc": "Triggered when a local player object is destroyed.",
+      "doc": "This event is triggered when a local player object is destroyed.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -9026,7 +9228,7 @@
     },
     {
       "name": "onPlayerMessage",
-      "doc": "Triggered when a chat message is received locally.",
+      "doc": "This event is triggered when a chat message is received locally.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -9038,17 +9240,17 @@
         {
           "name": "r",
           "type": "number",
-          "doc": "Red color component."
+          "doc": "The red color component in RGB model."
         },
         {
           "name": "g",
           "type": "number",
-          "doc": "Green color component."
+          "doc": "The green color component in RGB model."
         },
         {
           "name": "b",
           "type": "number",
-          "doc": "Blue color component."
+          "doc": "The blue color component in RGB model."
         },
         {
           "name": "message",
@@ -9060,7 +9262,7 @@
     },
     {
       "name": "onPlayerRespawn",
-      "doc": "Triggered when a player respawns after death.",
+      "doc": "This event is triggered when a player respawns after death.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -9074,7 +9276,7 @@
     },
     {
       "name": "onPlayerSpawn",
-      "doc": "Triggered when a player is spawned into the world.",
+      "doc": "This event is triggered when a player is spawned into the world.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -9088,7 +9290,7 @@
     },
     {
       "name": "onPlayerDead",
-      "doc": "Triggered when a player or NPC dies.",
+      "doc": "This event is triggered when a player or NPC dies.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -9102,7 +9304,7 @@
     },
     {
       "name": "onPlayerChangePing",
-      "doc": "Triggered when the client receives a ping update for a player.",
+      "doc": "This event is triggered when the client receives a ping update for a player.",
       "side": "client",
       "category": "Player",
       "params": [

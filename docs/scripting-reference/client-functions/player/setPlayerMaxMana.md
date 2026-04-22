@@ -4,7 +4,7 @@ title: 'setPlayerMaxMana'
 # `function` setPlayerMaxMana <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set a player's maximum mana and clamp current mana if needed.
+This function will set the player/npc maximum mana. If the current mana exceeds the new maximum, it will be clamped down to the new value.
 
 ## Declaration
 ```cpp

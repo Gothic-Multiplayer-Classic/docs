@@ -4,16 +4,13 @@ title: 'playAni'
 # `function` playAni <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Play an animation on a player/npc for all players.
+This function will play an animation on the player/npc character.
 
 ## Declaration
 ```cpp
-boolean playAni(number player_id, string aniName)
+void playAni(number player_id, string aniName)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string` **aniName**: Animation name (e.g. "T_STAND_2_SIT").
-  
-## Returns `boolean`
-True on success.

@@ -8,7 +8,7 @@ title: 'any'
 !!! note
     Virtual screen coordinates are similar to percentage values, where 0 is 0% and 8192 is 100%.
 
-Convert pixels to virtuals on screen Y dimension and return it as a result.
+This function will convert pixels to virtuals on screen Y dimension and return it as a result.
 Virtuals are special type of unit used by the game to position UI elements independent from game resolution.
 
 ## Declaration

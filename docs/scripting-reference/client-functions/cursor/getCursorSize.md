@@ -4,15 +4,15 @@ title: 'getCursorSize'
 # `function` getCursorSize <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Returns the cursor size in virtual (screen-scaled) units.
+This function will return the cursor size in virtual (screen-scaled) units.
 
 ## Declaration
 ```cpp
-number, int getCursorSize()
+{x, y} getCursorSize()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `number, int`
+## Returns `{x, y}`
 Cursor width and height.

@@ -4,7 +4,7 @@ title: 'getDistance3d'
 # `function` getDistance3d <font size="4">(shared-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get the 3d distance between two points.
+This function returns the 3d distance between two points.
 
 ## Declaration
 ```cpp

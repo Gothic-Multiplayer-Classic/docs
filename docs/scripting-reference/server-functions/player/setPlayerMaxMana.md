@@ -4,16 +4,13 @@ title: 'setPlayerMaxMana'
 # `function` setPlayerMaxMana <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set a player's maximum mana.
+This function will set the player's maximum mana.
 
 ## Declaration
 ```cpp
-boolean setPlayerMaxMana(number player_id, number max_mana)
+void setPlayerMaxMana(number player_id, number max_mana)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `number` **max_mana**: New maximum mana.
-  
-## Returns `boolean`
-True on success.

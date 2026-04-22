@@ -4,7 +4,7 @@ title: 'onPlayerChangeMana'
 # `event` onPlayerChangeMana <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when player mana changes.
+This event is triggered when player mana changes.
 
 ## Parameters
 ```c++

@@ -4,7 +4,7 @@ title: 'getPlayerMana'
 # `function` getPlayerMana <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get a player's current mana.
+This function will return the player/npc current mana, or nil if unavailable.
 
 ## Declaration
 ```cpp

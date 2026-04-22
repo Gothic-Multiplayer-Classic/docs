@@ -4,7 +4,7 @@ title: 'setCloudsColor'
 # `function` setCloudsColor <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set the sky clouds color.
+This function will set the sky clouds color.
 
 ## Declaration
 ```cpp

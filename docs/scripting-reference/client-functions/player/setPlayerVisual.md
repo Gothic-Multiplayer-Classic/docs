@@ -4,7 +4,7 @@ title: 'setPlayerVisual'
 # `function` setPlayerVisual <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set a player's visual model and textures.
+This function will set the player/npc visual model and textures.
 
 ## Declaration
 ```cpp

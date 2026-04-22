@@ -62,7 +62,7 @@ Conceptually, `client/` holds code that will only ever run on clients, `server/`
 
 ---
 
-# What the Client guarantees before Lua runs
+## What the Client guarantees before Lua runs
 When client-side Lua begins executing, it does so under strong guarantees. The client will not start running Lua until all resources are fully downloaded, all declared files exist, and integrity checks have passed. By the time Lua runs, the Lua environment is initialized and the engine bindings are already registered.
 
 This is important because it eliminates partial or "half-loaded" states. If your client Lua is running, you can assume the resource is complete and the files it depends on are present. If something is missing or corrupted, the resource won't start in the first place.

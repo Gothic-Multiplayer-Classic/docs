@@ -6,16 +6,13 @@ title: 'spawnPlayer'
 !!! note
     If the player is not spawned, server doesn't recognize his presence at all.
 
-Spawn a player, optionally overriding the spawn position.
+This function will spawn the player, optionally overriding the spawn position.
 
 ## Declaration
 ```cpp
-boolean spawnPlayer(number player_id, {x, y, z} Optional)
+void spawnPlayer(number player_id, {x, y, z} Optional)
 ```
 
 ## Parameters
 * `number` **player_id**: Player id to spawn.
 * `{x, y, z}` **Optional**: position table or three numeric coords.
-  
-## Returns `boolean`
-True on success, false if the player is missing.

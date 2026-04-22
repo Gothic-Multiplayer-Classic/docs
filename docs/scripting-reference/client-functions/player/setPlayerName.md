@@ -4,7 +4,7 @@ title: 'setPlayerName'
 # `function` setPlayerName <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set a player's display name.
+This function will change the player/npc character name.
 
 ## Declaration
 ```cpp

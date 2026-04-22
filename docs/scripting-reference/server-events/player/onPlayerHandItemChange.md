@@ -4,7 +4,7 @@ title: 'onPlayerHandItemChange'
 # `event` onPlayerHandItemChange <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player's hand item changes.
+This event is triggered when a player's hand item changes.
 
 ## Parameters
 ```c++

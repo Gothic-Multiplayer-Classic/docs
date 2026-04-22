@@ -4,7 +4,7 @@ title: 'Texture'
 # `class` Texture <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-
+This class represents a 2d Texture on screen.
 
 ### Constructor
 ```cpp
@@ -22,59 +22,59 @@ Texture.new(number x, number y, number width, number height, string file)
 ## Properties
 ### `{x, y}` position 
 
-Gets or sets the texture position in virtual screen units.
+Represents the Texture position in virtual screen units.
 
 ----
 ### `{x, y}` positionPx 
 
-Gets or sets the texture position in pixel coordinates.
+Represents the Texture position in pixel coordinates.
 
 ----
 ### `{width, height}` size 
 
-Gets or sets the texture size in virtual screen units.
+Represents the Texture size in virtual screen units.
 
 ----
 ### `{width, height}` sizePx 
 
-Gets or sets the texture size in pixel coordinates.
+Represents the Texture size in pixel coordinates.
 
 ----
 ### `{x, y, width, height}` rect 
 
-Gets or sets the texture rectangle in virtual screen units.
+Represents the Texture rectangle in virtual screen units.
 
 ----
 ### `{x, y, width, height}` rectPx 
 
-Gets or sets the texture rectangle in pixel coordinates.
+Represents the Texture rectangle in pixel coordinates.
 
 ----
 ### `{r, g, b}` color 
 
-Gets or sets the texture color.
+Represents the Texture color.
 
 ----
 ### `number` alpha 
 
-Gets or sets the texture alpha (opacity).
+Represents the Texture alpha .
 
 ----
 ### `boolean` visible 
 
-Gets or sets whether the texture is rendered.
+Represents whether the texture is rendered.
 
 ----
 ### `string` file 
 
-Gets or sets the texture file path.
+Represents the texture file path.
 
 ----
 
 ## Methods
 ### setPosition
 
-Sets the texture position in virtual screen units.
+This method will set the Texture position in virtual screen units.
 
 ```cpp
 void setPosition(number x, number y)
@@ -89,7 +89,7 @@ void setPosition(number x, number y)
 ----
 ### getPosition
 
-Returns the texture position in virtual screen units.
+This method will return the Texture position in virtual screen units.
 
 ```cpp
 {x, y} getPosition()
@@ -103,7 +103,7 @@ Table containing x and y (virtual units).
 ----
 ### setPositionPx
 
-Sets the texture position in pixel coordinates.
+This method will set the Texture position in pixel coordinates.
 
 ```cpp
 void setPositionPx(number x, number y)
@@ -118,7 +118,7 @@ void setPositionPx(number x, number y)
 ----
 ### getPositionPx
 
-Returns the texture position in pixel coordinates.
+This method will return the Texture position in pixel coordinates.
 
 ```cpp
 {x, y} getPositionPx()
@@ -132,7 +132,7 @@ Table containing x and y (pixels).
 ----
 ### setSize
 
-Sets the texture size in virtual screen units.
+This method will set the Texture size in virtual screen units.
 
 ```cpp
 void setSize(number width, number height)
@@ -147,7 +147,7 @@ void setSize(number width, number height)
 ----
 ### getSize
 
-Returns the texture size in virtual screen units.
+This method will return the Texture size in virtual screen units.
 
 ```cpp
 {width, height} getSize()
@@ -161,7 +161,7 @@ Table containing width and height (virtual units).
 ----
 ### setSizePx
 
-Sets the texture size in pixel coordinates.
+This method will set the Texture size in pixel coordinates.
 
 ```cpp
 void setSizePx(number width, number height)
@@ -176,7 +176,7 @@ void setSizePx(number width, number height)
 ----
 ### getSizePx
 
-Returns the texture size in pixel coordinates.
+This method will return the Texture size in pixel coordinates.
 
 ```cpp
 {width, height} getSizePx()
@@ -190,7 +190,7 @@ Table containing width and height (pixels).
 ----
 ### setRect
 
-Sets the texture rectangle in virtual screen units.
+This method will set the Texture rectangle in virtual screen units.
 
 ```cpp
 void setRect(number x, number y, number width, number height)
@@ -207,7 +207,7 @@ void setRect(number x, number y, number width, number height)
 ----
 ### getRect
 
-Returns the texture rectangle in virtual screen units.
+This method will return the Texture rectangle in virtual screen units.
 
 ```cpp
 {x, y, width, height} getRect()
@@ -221,7 +221,7 @@ Table containing x,y,width,height (virtual units).
 ----
 ### setRectPx
 
-Sets the texture rectangle in pixel coordinates.
+This method will set the Texture rectangle in pixel coordinates.
 
 ```cpp
 void setRectPx(number x, number y, number width, number height)
@@ -238,7 +238,7 @@ void setRectPx(number x, number y, number width, number height)
 ----
 ### getRectPx
 
-Returns the texture rectangle in pixel coordinates.
+This method will return the Texture rectangle in pixel coordinates.
 
 ```cpp
 {x, y, width, height} getRectPx()
@@ -252,7 +252,7 @@ Table containing x,y,width,height (pixels).
 ----
 ### setColor
 
-Sets the texture color.
+This method will set the Texture color.
 
 ```cpp
 void setColor(number r, number g, number b)
@@ -260,15 +260,15 @@ void setColor(number r, number g, number b)
 
 **Parameters:**
 
-* `number` **r**: Red component (0-255).
-* `number` **g**: Green component (0-255).
-* `number` **b**: Blue component (0-255).
+* `number` **r**: The red color component in RGB model.
+* `number` **g**: The green color component in RGB model.
+* `number` **b**: The blue color component in RGB model.
   
 
 ----
 ### getColor
 
-Returns the texture color.
+This method will return the Texture color.
 
 ```cpp
 {r, g, b} getColor()
@@ -277,12 +277,12 @@ Returns the texture color.
   
 **Returns `{r, g, b}`:**
 
-Table containing r,g,b (0-255).
+Table containing color in RGB model.
 
 ----
 ### setAlpha
 
-Sets the texture alpha (opacity).
+This method will set the Texture alpha.
 
 ```cpp
 void setAlpha(number alpha)
@@ -296,7 +296,7 @@ void setAlpha(number alpha)
 ----
 ### getAlpha
 
-Returns the texture alpha (opacity).
+This method will return the current Texture alpha (opacity).
 
 ```cpp
 number getAlpha()
@@ -310,7 +310,7 @@ Opacity value (0-255).
 ----
 ### setFile
 
-Sets the texture file name.
+This method will set the Texture file name.
 
 ```cpp
 void setFile(string file)
@@ -324,7 +324,7 @@ void setFile(string file)
 ----
 ### getFile
 
-Returns the texture file name.
+This method will return the Texture file name.
 
 ```cpp
 string getFile()
@@ -338,7 +338,7 @@ Texture file name.
 ----
 ### setVisible
 
-Sets whether the texture should be rendered.
+This method will set whether the Texture should be rendered.
 
 ```cpp
 void setVisible(boolean visible)
@@ -352,7 +352,7 @@ void setVisible(boolean visible)
 ----
 ### getVisible
 
-Returns whether the texture is visible.
+This method will return whether the Texture is visible.
 
 ```cpp
 boolean getVisible()
@@ -366,7 +366,7 @@ True if visible.
 ----
 ### top
 
-Moves the texture to the top of the render order.
+This method will move the Texture to the top of the render order.
 
 ```cpp
 void top()

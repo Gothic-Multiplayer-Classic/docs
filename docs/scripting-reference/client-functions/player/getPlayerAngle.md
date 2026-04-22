@@ -4,7 +4,7 @@ title: 'getPlayerAngle'
 # `function` getPlayerAngle <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get a player's facing angle (radians) in world space.
+This function will return the player/npc facing angle in world space, or nil if unavailable.
 
 ## Declaration
 ```cpp

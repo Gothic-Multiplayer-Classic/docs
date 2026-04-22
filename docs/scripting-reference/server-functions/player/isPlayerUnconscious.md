@@ -4,7 +4,7 @@ title: 'isPlayerUnconscious'
 # `function` isPlayerUnconscious <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-The function is used to check whether player is in unconscious state. The player will be unconscious, when it gets beaten up, but not killed.
+This function will check whether player is in unconscious state. The player will be unconscious, when it gets beaten up, but not killed.
 
 ## Declaration
 ```cpp

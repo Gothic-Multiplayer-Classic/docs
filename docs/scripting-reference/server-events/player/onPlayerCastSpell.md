@@ -4,7 +4,7 @@ title: 'onPlayerCastSpell'
 # `event` onPlayerCastSpell <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player casts a spell.
+This event is triggered when a player casts a spell.
 
 ## Parameters
 ```c++

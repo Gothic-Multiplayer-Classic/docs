@@ -4,7 +4,7 @@ title: 'onPlayerMessage'
 # `event` onPlayerMessage <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player sends a chat message.
+This event is triggered when a player sends a chat message.
 
 ## Parameters
 ```c++

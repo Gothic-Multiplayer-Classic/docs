@@ -4,7 +4,7 @@ title: 'getPlayerUUID'
 # `function` getPlayerUUID <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get a player's UUID or nil if unavailable.
+This function will return the player's UUID or nil if unavailable.
 
 ## Declaration
 ```cpp

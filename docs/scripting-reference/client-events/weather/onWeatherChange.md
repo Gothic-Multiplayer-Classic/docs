@@ -4,7 +4,7 @@ title: 'onWeatherChange'
 # `event` onWeatherChange <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when weather changes.
+This event is triggered when weather changes.
 
 ## Parameters
 ```c++

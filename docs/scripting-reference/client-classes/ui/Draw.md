@@ -4,7 +4,7 @@ title: 'Draw'
 # `class` Draw <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-
+2D text drawing helper for rendering overlay text on screen.
 
 ### Constructor
 ```cpp
@@ -28,44 +28,44 @@ Draw.new(number x, number y, string text)
 ## Properties
 ### `{x, y}` position 
 
-Gets or sets the draw position in virtual screen units.
+Represents the draw position in virtual screen units.
 
 ----
 ### `{x, y}` positionPx 
 
-Gets or sets the draw position in pixel coordinates.
+Represents the draw position in pixel coordinates.
 
 ----
 ### `string` text 
 
-Gets or sets the displayed text.
+Represents the displayed text.
 
 ----
 ### `string` font 
 
-Gets or sets the font identifier used for rendering.
+Represents the font identifier used for rendering.
 
 ----
 ### `{r, g, b}` color <font size="2">(read-only)</font>
 
-Returns the current text color.
+Represents the draw's color.
 
 ----
 ### `number` alpha 
 
-Gets or sets the alpha (opacity).
+Represents the draw's alpha.
 
 ----
 ### `boolean` visible 
 
-Gets or sets whether the Draw object is rendered.
+Represents whether the Draw object is rendered.
 
 ----
 
 ## Methods
 ### setPosition
 
-Sets the draw position in virtual screen units.
+This function will set the draw position in virtual screen units.
 
 ```cpp
 void setPosition(number x, number y)
@@ -73,14 +73,14 @@ void setPosition(number x, number y)
 
 **Parameters:**
 
-* `number` **x**: X position (virtual units).
-* `number` **y**: Y position (virtual units).
+* `number` **x**: X position.
+* `number` **y**: Y position.
   
 
 ----
 ### getPosition
 
-Returns the draw position in virtual screen units.
+This function will return the draw position in virtual screen units.
 
 ```cpp
 {x, y} getPosition()
@@ -89,12 +89,12 @@ Returns the draw position in virtual screen units.
   
 **Returns `{x, y}`:**
 
-Table containing x and y (virtual units).
+Table containing x and y numbers.
 
 ----
 ### setPositionPx
 
-Sets the draw position in pixel coordinates.
+This function will set the draw position in pixel coordinates.
 
 ```cpp
 void setPositionPx(number x, number y)
@@ -102,14 +102,14 @@ void setPositionPx(number x, number y)
 
 **Parameters:**
 
-* `number` **x**: X position in pixels.
-* `number` **y**: Y position in pixels.
+* `number` **x**: X position.
+* `number` **y**: Y position.
   
 
 ----
 ### getPositionPx
 
-Returns the draw position in pixel coordinates.
+This function will return the draw position in pixel coordinates.
 
 ```cpp
 {x, y} getPositionPx()
@@ -118,12 +118,12 @@ Returns the draw position in pixel coordinates.
   
 **Returns `{x, y}`:**
 
-Table containing x and y in pixels.
+Table containing x and y numbers.
 
 ----
 ### setText
 
-Sets the text to render.
+This function will set the text to render.
 
 ```cpp
 void setText(string text)
@@ -137,7 +137,7 @@ void setText(string text)
 ----
 ### getText
 
-Returns the current text.
+This function will return the current text.
 
 ```cpp
 string getText()
@@ -151,7 +151,7 @@ Current text.
 ----
 ### setFont
 
-Sets the font used for rendering.
+This function will set the font used for rendering.
 
 ```cpp
 void setFont(string font)
@@ -165,7 +165,7 @@ void setFont(string font)
 ----
 ### getFont
 
-Returns the current font file name.
+This function will return the current font file name.
 
 ```cpp
 string getFont()
@@ -179,7 +179,7 @@ Font file name.
 ----
 ### setColor
 
-Sets the text color.
+This function will set the text color.
 
 ```cpp
 void setColor(number r, number g, number b)
@@ -187,15 +187,15 @@ void setColor(number r, number g, number b)
 
 **Parameters:**
 
-* `number` **r**: Red component (0-255).
-* `number` **g**: Green component (0-255).
-* `number` **b**: Blue component (0-255).
+* `number` **r**: The red color component in RGB model.
+* `number` **g**: The green color component in RGB model.
+* `number` **b**: The blue color component in RGB model.
   
 
 ----
 ### getColor
 
-Returns the current text color.
+This function will return the current text color.
 
 ```cpp
 {r, g, b} getColor()
@@ -204,12 +204,12 @@ Returns the current text color.
   
 **Returns `{r, g, b}`:**
 
-Table containing r,g,b (0-255).
+Table containing color in RGB model.
 
 ----
 ### setAlpha
 
-Sets text alpha (opacity).
+This function will set the text alpha.
 
 ```cpp
 void setAlpha(number alpha)
@@ -223,7 +223,7 @@ void setAlpha(number alpha)
 ----
 ### getAlpha
 
-Returns the current alpha (opacity).
+This function will return the current alpha
 
 ```cpp
 number getAlpha()
@@ -237,7 +237,7 @@ Opacity value (0-255).
 ----
 ### setVisible
 
-Sets whether the Draw object should render.
+This function will set whether the Draw object should render.
 
 ```cpp
 void setVisible(boolean visible)
@@ -251,7 +251,7 @@ void setVisible(boolean visible)
 ----
 ### getVisible
 
-Returns whether this Draw object is visible.
+This function will return whether this Draw object is visible.
 
 ```cpp
 boolean getVisible()

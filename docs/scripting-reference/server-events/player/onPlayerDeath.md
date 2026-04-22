@@ -4,7 +4,7 @@ title: 'onPlayerDeath'
 # `event` onPlayerDeath <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player dies.
+This event is triggered when a player dies.
 
 ## Parameters
 ```c++

@@ -4,7 +4,7 @@ title: 'getTimerInterval'
 # `function` getTimerInterval <font size="4">(shared-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Return the interval (in milliseconds) of a timer, or nil if the timer does not exist.
+This function will return the interval (in milliseconds) of a timer, or nil if the timer does not exist.
 
 ## Declaration
 ```cpp

@@ -4,7 +4,7 @@ title: 'Sound'
 # `class` Sound <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-
+This class represents an internal sound method.
 
 ### Constructor
 ```cpp
@@ -18,34 +18,34 @@ Sound.new(string file)
 ## Properties
 ### `string` file 
 
-Get or set the sound file path.
+Represents the sound file path.
 
 ----
 ### `number` playingTime <font size="2">(read-only)</font>
 
-Return the current playback time.
+Represents the current playback time.
 
 ----
 ### `number` volume 
 
-Get or set the playback volume.
+Represents the playback volume.
 
 ----
 ### `boolean` looping 
 
-Get or set whether the sound should loop.
+Represents whether the sound should loop.
 
 ----
 ### `number` balance 
 
-Get or set the stereo balance (pan).
+Represents the stereo balance (pan).
 
 ----
 
 ## Methods
 ### play
 
-Start sound playback.
+This method will start Sound playback.
 
 ```cpp
 void play()
@@ -56,7 +56,7 @@ void play()
 ----
 ### stop
 
-Stop sound playback.
+This method will stop Sound playback.
 
 ```cpp
 void stop()
@@ -67,7 +67,7 @@ void stop()
 ----
 ### isPlaying
 
-Return whether the sound is currently playing.
+This method will return whether the Sound is currently playing.
 
 ```cpp
 boolean isPlaying()

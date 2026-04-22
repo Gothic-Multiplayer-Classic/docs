@@ -4,7 +4,7 @@ title: 'Quat'
 # `class` Quat <font size="4">(shared-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Quaternion representing 3D rotation.
+This class represents a Quaternion.
 
 Provides conversion to/from matrices, Euler angles and axis-angle, as well as
 common quaternion operations and interpolation utilities.
@@ -40,29 +40,29 @@ Quat.new(number x, number y, number z, number w)
 ## Properties
 ### `number` x 
 
-X component.
+Represents X component.
 
 ----
 ### `number` y 
 
-Y component.
+Represents Y component.
 
 ----
 ### `number` z 
 
-Z component.
+Represents Z component.
 
 ----
 ### `number` w 
 
-W component.
+Represents W component.
 
 ----
 
 ## Methods
 ### toMat3
 
-Converts this quaternion to a 3x3 rotation matrix.
+This method converts this quaternion to a 3x3 rotation matrix.
 
 ```cpp
 Mat3 toMat3()
@@ -76,7 +76,7 @@ Rotation matrix.
 ----
 ### fromMat3
 
-Sets this quaternion from a 3x3 rotation matrix.
+This method sets this quaternion from a 3x3 rotation matrix.
 
 ```cpp
 void fromMat3(Mat3 mat)
@@ -90,7 +90,7 @@ void fromMat3(Mat3 mat)
 ----
 ### toMat4
 
-Converts this quaternion to a 4x4 rotation matrix.
+This method converts this quaternion to a 4x4 rotation matrix.
 
 ```cpp
 Mat4 toMat4()
@@ -104,7 +104,7 @@ Rotation matrix.
 ----
 ### fromMat4
 
-Sets this quaternion from a 4x4 transform matrix (rotation part).
+This method sets this quaternion from a 4x4 transform matrix (rotation part).
 
 ```cpp
 void fromMat4(Mat4 mat)
@@ -118,7 +118,7 @@ void fromMat4(Mat4 mat)
 ----
 ### toEuler
 
-Converts this quaternion to Euler angles.
+This method converts this quaternion to Euler angles.
 
 ```cpp
 Vec3 toEuler()
@@ -132,7 +132,7 @@ Euler angles as a 3D vector.
 ----
 ### fromEuler
 
-Sets this quaternion from Euler angles.
+This method sets this quaternion from Euler angles.
 
 ```cpp
 void fromEuler(Vec3 vec)
@@ -146,8 +146,7 @@ void fromEuler(Vec3 vec)
 ----
 ### toAxisAngle
 
-Converts this quaternion to axis-angle representation.
-
+This method converts this quaternion to axis-angle representation.
 The returned Vec4 contains (axis.x, axis.y, axis.z, angle).
 
 ```cpp
@@ -162,7 +161,7 @@ Axis-angle as (x, y, z, angle).
 ----
 ### fromAxisAngle
 
-Sets this quaternion from an axis and angle.
+This method sets this quaternion from an axis and angle.
 
 ```cpp
 void fromAxisAngle(Vec3 axis, number angle)
@@ -177,7 +176,7 @@ void fromAxisAngle(Vec3 axis, number angle)
 ----
 ### makeIdentity
 
-Sets this quaternion to identity (no rotation).
+This method sets this quaternion to identity (no rotation).
 
 ```cpp
 void makeIdentity()
@@ -188,7 +187,7 @@ void makeIdentity()
 ----
 ### isIdentity
 
-Returns true if this quaternion is identity (within epsilon tolerance).
+This method returns true if this quaternion is identity (within epsilon tolerance).
 
 ```cpp
 boolean isIdentity()
@@ -202,7 +201,7 @@ True if identity.
 ----
 ### len
 
-Returns the quaternion length.
+This method returns the quaternion length.
 
 ```cpp
 number len()
@@ -216,7 +215,7 @@ Quaternion length.
 ----
 ### len2
 
-Returns the squared quaternion length.
+This method returns the squared quaternion length.
 
 ```cpp
 number len2()
@@ -230,7 +229,7 @@ Squared quaternion length.
 ----
 ### lenApprox
 
-Returns an approximate quaternion length.
+This method returns an approximate quaternion length.
 
 ```cpp
 number lenApprox()
@@ -244,8 +243,7 @@ Approximate length.
 ----
 ### normalize
 
-Normalizes the quaternion in-place.
-
+This method normalizes the quaternion in-place.
 If the quaternion length is zero, no change is applied.
 
 ```cpp
@@ -260,8 +258,7 @@ This quaternion (normalized).
 ----
 ### normalizeSafe
 
-Normalizes the quaternion in-place using an epsilon check.
-
+This method normalizes the quaternion in-place using an epsilon check.
 If the quaternion length is below a small threshold, no change is applied.
 
 ```cpp
@@ -276,7 +273,7 @@ This quaternion (normalized).
 ----
 ### normalizeApprox
 
-Normalizes the quaternion in-place using an approximate inverse square root.
+This method normalizes the quaternion in-place using an approximate inverse square root.
 
 ```cpp
 Quat normalizeApprox()
@@ -290,7 +287,7 @@ This quaternion (normalized).
 ----
 ### set
 
-Sets quaternion components.
+This method sets quaternion components.
 
 ```cpp
 void set(number x, number y, number z, number w)
@@ -307,8 +304,7 @@ void set(number x, number y, number z, number w)
 ----
 ### inverse
 
-Returns the inverse quaternion.
-
+This method returns the inverse quaternion.
 For unit quaternions, this is equivalent to conjugate().
 
 ```cpp
@@ -323,7 +319,7 @@ Inverse quaternion.
 ----
 ### conjugate
 
-Returns the conjugate quaternion.
+This method returns the conjugate quaternion.
 
 ```cpp
 Quat conjugate()
@@ -337,7 +333,7 @@ Conjugated quaternion.
 ----
 ### `static` dot
 
-Returns the dot product of two quaternions.
+This method returns the dot product of two quaternions.
 
 ```cpp
 number dot(Quat quat1, Quat quat2)
@@ -355,7 +351,7 @@ Dot product.
 ----
 ### `static` lerp
 
-Linearly interpolates between two quaternions.
+This method linearly interpolates between two quaternions.
 
 ```cpp
 Quat lerp(number t, Quat q1, Quat q2)
@@ -374,7 +370,7 @@ Interpolated quaternion.
 ----
 ### `static` slerp
 
-Spherically interpolates between two quaternions.
+This method spherically interpolates between two quaternions.
 
 ```cpp
 Quat slerp(number t, Quat q1, Quat q2)
@@ -393,7 +389,7 @@ Spherically interpolated quaternion.
 ----
 ### `static` squad
 
-Performs a squad-style interpolation using three quaternions.
+This method performs a squad-style interpolation using three quaternions.
 
 ```cpp
 Quat squad(number t, Quat q1, Quat q2, Quat q3)
@@ -413,7 +409,7 @@ Interpolated quaternion.
 ----
 ### `static` lookRotation
 
-Creates a quaternion that looks in the given forward direction with the given up direction.
+This method creates a quaternion that looks in the given forward direction with the given up direction.
 
 ```cpp
 Quat lookRotation(Vec3 forward, Vec3 up)

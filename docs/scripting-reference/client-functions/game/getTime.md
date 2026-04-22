@@ -4,7 +4,7 @@ title: 'getTime'
 # `function` getTime <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get the in-game world time.
+This function will return the current in-game world time.
 
 ## Declaration
 ```cpp

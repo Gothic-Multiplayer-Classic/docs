@@ -4,7 +4,7 @@ title: 'Vec4'
 # `class` Vec4 <font size="4">(shared-side)</font>
 !!! info "Available since version: 0.3.0"
 
-4D vector with basic math utilities.
+This class represents a 4d vector.
 
 ### Constructor
 ```cpp
@@ -29,29 +29,29 @@ Vec4.new(number x, number y, number z, number w)
 ## Properties
 ### `number` x 
 
-X component.
+Represents X component.
 
 ----
 ### `number` y 
 
-Y component.
+Represents Y component.
 
 ----
 ### `number` z 
 
-Z component.
+Represents Z component.
 
 ----
 ### `number` w 
 
-W component.
+Represents W component.
 
 ----
 
 ## Methods
 ### len
 
-Returns the vector length (magnitude).
+This method returns the vector length (magnitude).
 
 ```cpp
 number len()
@@ -65,7 +65,7 @@ Vector length.
 ----
 ### len2
 
-Returns the squared vector length.
+This method returns the squared vector length.
 
 ```cpp
 number len2()
@@ -79,7 +79,7 @@ Squared vector length.
 ----
 ### lenApprox
 
-Returns an approximate vector length.
+This method returns an approximate vector length.
 
 ```cpp
 number lenApprox()
@@ -93,8 +93,7 @@ Approximate vector length.
 ----
 ### normalize
 
-Normalizes the vector in-place.
-
+This method normalizes the vector in-place.
 If the vector length is zero, no change is applied.
 
 ```cpp
@@ -109,8 +108,7 @@ This vector (normalized).
 ----
 ### normalizeSafe
 
-Normalizes the vector in-place using an epsilon check.
-
+This method normalizes the vector in-place using an epsilon check.
 If the vector length is below a small threshold, no change is applied.
 
 ```cpp
@@ -125,7 +123,7 @@ This vector (normalized).
 ----
 ### normalizeApprox
 
-Normalizes the vector in-place using an approximate inverse square root.
+This method normalizes the vector in-place using an approximate inverse square root.
 
 ```cpp
 Vec4 normalizeApprox()
@@ -139,7 +137,7 @@ This vector (normalized).
 ----
 ### set
 
-Sets all components of the vector.
+This method sets all components of the vector.
 
 ```cpp
 void set(number x, number y, number z, number w)
@@ -156,7 +154,7 @@ void set(number x, number y, number z, number w)
 ----
 ### isEqualEps
 
-Compares this vector with another vector using an epsilon tolerance.
+This method compares this vector with another vector using an epsilon tolerance.
 
 ```cpp
 boolean isEqualEps(Vec4 vec)
@@ -173,7 +171,7 @@ True if all components are equal within epsilon.
 ----
 ### abs
 
-Returns a vector with absolute component values.
+This method returns a vector with absolute component values.
 
 ```cpp
 Vec4 abs()
@@ -187,7 +185,7 @@ Vector with abs(x), abs(y), abs(z) and abs(w).
 ----
 ### `static` swap
 
-Swaps two vectors.
+This method swaps two vectors.
 
 ```cpp
 void swap(Vec4 vec1, Vec4 vec2)
@@ -202,7 +200,7 @@ void swap(Vec4 vec1, Vec4 vec2)
 ----
 ### `static` min
 
-Returns the component-wise minimum of two vectors.
+This method returns the component-wise minimum of two vectors.
 
 ```cpp
 Vec4 min(Vec4 vec1, Vec4 vec2)
@@ -220,7 +218,7 @@ Component-wise minimum.
 ----
 ### `static` max
 
-Returns the component-wise maximum of two vectors.
+This method returns the component-wise maximum of two vectors.
 
 ```cpp
 Vec4 max(Vec4 vec1, Vec4 vec2)
@@ -238,7 +236,7 @@ Component-wise maximum.
 ----
 ### `static` prod
 
-Returns the component-wise product of two vectors.
+This method returns the component-wise product of two vectors.
 
 ```cpp
 Vec4 prod(Vec4 vec1, Vec4 vec2)
@@ -256,7 +254,7 @@ Component-wise product.
 ----
 ### `static` dot
 
-Returns the dot product of two vectors.
+This method returns the dot product of two vectors.
 
 ```cpp
 number dot(Vec4 vec1, Vec4 vec2)
@@ -274,7 +272,7 @@ Dot product.
 ----
 ### `static` lerp
 
-Linearly interpolates between two vectors.
+This method linearly interpolates between two vectors.
 
 ```cpp
 Vec4 lerp(number t, Vec4 v1, Vec4 v2)

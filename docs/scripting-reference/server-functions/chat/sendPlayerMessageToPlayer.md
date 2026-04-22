@@ -4,11 +4,11 @@ title: 'sendPlayerMessageToPlayer'
 # `function` sendPlayerMessageToPlayer <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Send a player-sourced colored message to a specific player.
+This function will send a player-sourced colored message to a specific player.
 
 ## Declaration
 ```cpp
-boolean sendPlayerMessageToPlayer(number sender_id, number receiver_id, number r, number g, number b, string text)
+void sendPlayerMessageToPlayer(number sender_id, number receiver_id, number r, number g, number b, string text)
 ```
 
 ## Parameters
@@ -18,6 +18,3 @@ boolean sendPlayerMessageToPlayer(number sender_id, number receiver_id, number r
 * `number` **g**: Green component (0-255).
 * `number` **b**: Blue component (0-255).
 * `string` **text**: Message text.
-  
-## Returns `boolean`
-True on success, false if sender or receiver is missing.

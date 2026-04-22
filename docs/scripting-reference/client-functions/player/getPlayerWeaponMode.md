@@ -4,7 +4,7 @@ title: 'getPlayerWeaponMode'
 # `function` getPlayerWeaponMode <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get the player/npc weapon mode.
+This function will return the player/npc current weapon mode, or nil if unavailable.
 
 ## Declaration
 ```cpp

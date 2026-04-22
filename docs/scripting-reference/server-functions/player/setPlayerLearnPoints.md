@@ -4,16 +4,13 @@ title: 'setPlayerLearnPoints'
 # `function` setPlayerLearnPoints <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set a player's learn points.
+This function will set the player's learn points.
 
 ## Declaration
 ```cpp
-boolean setPlayerLearnPoints(number player_id, number learn_points)
+void setPlayerLearnPoints(number player_id, number learn_points)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `number` **learn_points**: New learn points value.
-  
-## Returns `boolean`
-True on success.

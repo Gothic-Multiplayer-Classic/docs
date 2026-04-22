@@ -4,7 +4,7 @@ title: 'Vob'
 # `class` Vob <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-
+This class represents a 3d object in the world.
 
 ### Constructor
 ```cpp
@@ -18,50 +18,51 @@ Vob.new(string model)
 ## Properties
 ### `string` objectName 
 
-Represents the internal engine object name.
+Represents the internal engine object name of the Vob.
 
 ----
 ### `Mat4` matrix 
 
-Represents the reference to the vob matrix.
+Represents the reference to the Vob matrix.
 
 ----
 ### `Vob|nil` parent 
+!!! note
+    The Vob hierarchy will be lost after changing the world.
 
-Represents the reference to the parent vob.
-Note: the vob hierarchy will be lost after changing the world.
+Represents the reference to the parent Vob.
 
 ----
 ### `boolean` cdDynamic 
 
-Represents the state of dynamic collision of vob. Enabling this option will prevent other dynamic objects from passing through it.
+Represents the state of dynamic collision of the Vob. Enabling this option will prevent other dynamic objects from passing through it.
 
 ----
 ### `boolean` cdStatic 
 
-Represents the state of static collision of vob. Enabling this option will prevent static objects (i.e. world mesh) from passing through it.
+Represents the state of static collision of the Vob. Enabling this option will prevent static objects (i.e. world mesh) from passing through it.
 
 ----
 ### `number` farClipZScale 
 
-Represents the max distance at which the vob will still be rendered.
+Represents the max distance at which the Vob will still be rendered.
 
 ----
 ### `string` visual 
 
-Represents the model file name used as vob visual, e.g. SPHERE.3DS.
+Represents the model file name used as Vob visual, e.g. "SPHERE.3DS".
 
 ----
 ### `number` visualAlpha 
 
-Represents the transparency of the vob visual.
+Represents the transparency of the Vob visual.
 
 ----
 
 ## Methods
 ### setPosition
 
-Set the position of the vob in the world.
+This method will set the position of the Vob in the world.
 
 ```cpp
 void setPosition(number x, number y, number z)
@@ -77,7 +78,7 @@ void setPosition(number x, number y, number z)
 ----
 ### getPosition
 
-Get the position of the vob in the world.
+This method will return the position of the Vob in the world.
 
 ```cpp
 {x, y, z} getPosition()
@@ -86,12 +87,12 @@ Get the position of the vob in the world.
   
 **Returns `{x, y, z}`:**
 
-
+Table containing x,y,z position.
 
 ----
 ### setRotation
 
-Set the euler rotation of the vob in the world.
+This method will set the euler rotation of the Vob in the world.
 
 ```cpp
 void setRotation(number x, number y, number z)
@@ -107,7 +108,7 @@ void setRotation(number x, number y, number z)
 ----
 ### getRotation
 
-Get the euler rotation of the vob in the world.
+This method will set the euler rotation of the vob in the world.
 
 ```cpp
 {x, y, z} getRotation()
@@ -116,12 +117,12 @@ Get the euler rotation of the vob in the world.
   
 **Returns `{x, y, z}`:**
 
-
+Table containing x,y,z rotation.
 
 ----
 ### addToWorld
 
-Add the vob to the currently loaded world. If the vob is not added, it won't show up.
+This method will add the vob to the currently loaded world. If the vob is not added, it won't show up.
 
 ```cpp
 void addToWorld(Vob|nil parent)
@@ -135,7 +136,7 @@ void addToWorld(Vob|nil parent)
 ----
 ### removeFromWorld
 
-Remove the vob from the currently loaded world.
+This method will remove the vob from the currently loaded world.
 
 ```cpp
 void removeFromWorld()
@@ -146,7 +147,7 @@ void removeFromWorld()
 ----
 ### floor
 
-Try to put the vob on the floor. If the difference between vob position and the floor y position is <= 1000, the method succeeds.
+This method will try to put the vob on the floor. If the difference between vob position and the floor y position is <= 1000, the method succeeds.
 
 ```cpp
 void floor()

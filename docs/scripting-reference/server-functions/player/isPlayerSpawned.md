@@ -4,7 +4,7 @@ title: 'isPlayerSpawned'
 # `function` isPlayerSpawned <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-The function is used to check whether player is spawned.
+This function will check whether player is spawned.
 
 ## Declaration
 ```cpp

@@ -4,7 +4,7 @@ title: 'onTime'
 # `event` onTime <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered each time the game time minute passes.
+This event is triggered each time the game time minute passes.
 
 ## Parameters
 ```c++

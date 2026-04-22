@@ -4,7 +4,7 @@ title: 'setWeatherType'
 # `function` setWeatherType <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set the desired weather type immediately.
+This function will set the desired weather type immediately.
 
 ## Declaration
 ```cpp
@@ -12,4 +12,4 @@ void setWeatherType(number weather_type)
 ```
 
 ## Parameters
-* `number` **weather_type**: Weather type (WEATHER_SNOW/WEATHER_RAIN or 0 to disable precipitation).
+* `number` **weather_type**: Weather type, for more information see [Weather Constants](../../shared-constants/Weather.md)

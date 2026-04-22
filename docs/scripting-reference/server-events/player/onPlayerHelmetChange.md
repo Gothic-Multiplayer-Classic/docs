@@ -4,7 +4,7 @@ title: 'onPlayerHelmetChange'
 # `event` onPlayerHelmetChange <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player's helmet changes.
+This event is triggered when a player's helmet changes.
 
 ## Parameters
 ```c++

@@ -8,7 +8,7 @@ title: 'triggerClientEvent'
 !!! note
     You may optionally provide a numeric source element id after the event name, followed by any number of additional arguments to send with the event.
 
-Triggers a custom client-side event for one or more players and optionally passes arguments.
+This function will treigger a custom client-side event for one or more players and optionally passes arguments.
 
 ## Declaration
 ```cpp

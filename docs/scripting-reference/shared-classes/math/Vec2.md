@@ -4,7 +4,7 @@ title: 'Vec2'
 # `class` Vec2 <font size="4">(shared-side)</font>
 !!! info "Available since version: 0.3.0"
 
-2D vector with basic math utilities.
+This class represents a 2d vector.
 
 ### Constructor
 ```cpp
@@ -27,19 +27,19 @@ Vec2.new(number x, number y)
 ## Properties
 ### `number` x 
 
-X component.
+Represents the X component.
 
 ----
 ### `number` y 
 
-Y component.
+Represents the Y component.
 
 ----
 
 ## Methods
 ### len
 
-Returns the vector length (magnitude).
+This method returns the vector length (magnitude).
 
 ```cpp
 number len()
@@ -53,7 +53,7 @@ Vector length.
 ----
 ### len2
 
-Returns the squared vector length.
+This method returns the squared vector length.
 
 ```cpp
 number len2()
@@ -67,7 +67,7 @@ Squared vector length.
 ----
 ### lenApprox
 
-Returns an approximate vector length.
+This method returns an approximate vector length.
 
 ```cpp
 number lenApprox()
@@ -81,7 +81,7 @@ Approximate vector length.
 ----
 ### distance
 
-Returns the distance to another vector.
+This method returns the distance to another vector.
 
 ```cpp
 number distance(Vec2 vec)
@@ -98,8 +98,7 @@ Distance between vectors.
 ----
 ### normalize
 
-Normalizes the vector in-place.
-
+This method normalizes the vector in-place.
 If the vector length is zero, no change is applied.
 
 ```cpp
@@ -114,8 +113,7 @@ This vector (normalized).
 ----
 ### normalizeSafe
 
-Normalizes the vector in-place using an epsilon check.
-
+This method normalizes the vector in-place using an epsilon check.
 If the vector length is below a small threshold, no change is applied.
 
 ```cpp
@@ -130,7 +128,7 @@ This vector (normalized).
 ----
 ### normalizeApprox
 
-Normalizes the vector in-place using an approximate inverse square root.
+This method normalizes the vector in-place using an approximate inverse square root.
 
 ```cpp
 Vec2 normalizeApprox()
@@ -144,7 +142,7 @@ This vector (normalized).
 ----
 ### set
 
-Sets both components of the vector.
+This method sets both components of the vector.
 
 ```cpp
 void set(number x, number y)
@@ -159,7 +157,7 @@ void set(number x, number y)
 ----
 ### isEqualEps
 
-Compares this vector with another vector using an epsilon tolerance.
+This method compares this vector with another vector using an epsilon tolerance.
 
 ```cpp
 boolean isEqualEps(Vec2 vec)
@@ -176,7 +174,7 @@ True if both components are equal within epsilon.
 ----
 ### abs
 
-Returns a vector with absolute component values.
+This method returns a vector with absolute component values.
 
 ```cpp
 Vec2 abs()
@@ -190,7 +188,7 @@ Vector with abs(x) and abs(y).
 ----
 ### `static` swap
 
-Swaps two vectors.
+This method swaps two vectors.
 
 ```cpp
 void swap(Vec2 vec1, Vec2 vec2)
@@ -205,7 +203,7 @@ void swap(Vec2 vec1, Vec2 vec2)
 ----
 ### `static` min
 
-Returns the component-wise minimum of two vectors.
+This method returns the component-wise minimum of two vectors.
 
 ```cpp
 Vec2 min(Vec2 vec1, Vec2 vec2)
@@ -223,7 +221,7 @@ Component-wise minimum.
 ----
 ### `static` max
 
-Returns the component-wise maximum of two vectors.
+This method returns the component-wise maximum of two vectors.
 
 ```cpp
 Vec2 max(Vec2 vec1, Vec2 vec2)
@@ -241,7 +239,7 @@ Component-wise maximum.
 ----
 ### `static` prod
 
-Returns the component-wise product of two vectors.
+This method returns the component-wise product of two vectors.
 
 ```cpp
 Vec2 prod(Vec2 vec1, Vec2 vec2)
@@ -259,7 +257,7 @@ Component-wise product.
 ----
 ### `static` dot
 
-Returns the dot product of two vectors.
+This method returns the dot product of two vectors.
 
 ```cpp
 number dot(Vec2 vec1, Vec2 vec2)
@@ -277,7 +275,7 @@ Dot product.
 ----
 ### `static` lerp
 
-Linearly interpolates between two vectors.
+This method linearly interpolates between two vectors.
 
 ```cpp
 Vec2 lerp(number t, Vec2 v1, Vec2 v2)

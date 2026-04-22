@@ -4,7 +4,7 @@ title: 'onPlayerAmuletChange'
 # `event` onPlayerAmuletChange <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player's amulet changes.
+This event is triggered when a player's amulet changes.
 
 ## Parameters
 ```c++

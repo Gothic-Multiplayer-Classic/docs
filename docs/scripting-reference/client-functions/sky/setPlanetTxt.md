@@ -12,5 +12,5 @@ void setPlanetTxt(number planetId, string texture)
 ```
 
 ## Parameters
-* `number` **planetId**: The planet id, for more information see Planet constants.
+* `number` **planetId**: The planet id, for more information see [Planet](../../client-constants/Sky.md) constants.
 * `string` **texture**: Name of the texture.

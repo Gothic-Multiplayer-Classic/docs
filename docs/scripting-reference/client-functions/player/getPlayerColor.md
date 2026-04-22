@@ -4,7 +4,7 @@ title: 'getPlayerColor'
 # `function` getPlayerColor <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get a player's name color as a table { r, g, b } or nil if unavailable.
+This function will return the player/npc current character name color, or nil if unavailable.
 
 ## Declaration
 ```cpp
@@ -15,4 +15,4 @@ Get a player's name color as a table { r, g, b } or nil if unavailable.
 * `number` **player_id**: Target player id.
   
 ## Returns `{r, g, b}|nil`
-RGB color (0-255) or nil.
+Table containing color in RGB model or nil.

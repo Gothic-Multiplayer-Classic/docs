@@ -4,7 +4,7 @@ title: 'onPlayerHit'
 # `event` onPlayerHit <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Triggered when a player is hit.
+This event is triggered when a player is hit.
 
 ## Parameters
 ```c++

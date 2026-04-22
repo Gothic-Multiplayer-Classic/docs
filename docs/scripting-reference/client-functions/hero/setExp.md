@@ -4,15 +4,12 @@ title: 'setExp'
 # `function` setExp <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Set the player's experience points.
+This function will set the hero's experience points.
 
 ## Declaration
 ```cpp
-boolean setExp(number exp)
+void setExp(number exp)
 ```
 
 ## Parameters
 * `number` **exp**: New exp value.
-  
-## Returns `boolean`
-True on success.

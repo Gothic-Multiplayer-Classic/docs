@@ -4,7 +4,7 @@ title: 'hasItem'
 # `function` hasItem <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Get the amount of a specific item in a player's inventory.
+This function will return the amount of a specific item in the player's inventory.
 
 ## Declaration
 ```cpp

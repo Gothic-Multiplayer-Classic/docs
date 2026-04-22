@@ -4,7 +4,7 @@ title: 'getCursorTxt'
 # `function` getCursorTxt <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Returns the current cursor texture.
+This function will return the current cursor texture.
 
 ## Declaration
 ```cpp

@@ -6,7 +6,7 @@ title: 'nax'
 !!! note
     Use this function only when you want to convert x position or width on the screen.
 
-Convert virtuals to pixels on screen X dimension and return it as a result.
+This function will convert virtuals to pixels on screen X dimension and return it as a result.
 
 ## Declaration
 ```cpp
