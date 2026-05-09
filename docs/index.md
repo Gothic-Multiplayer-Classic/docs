@@ -26,3 +26,6 @@ You can also browse our [GitHub Organization](https://github.com/Gothic-Multipla
 ### Useful plugins
 ##### Lua Language Server
 - [Lua Language Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)
+
+##### IntelliSense for Gothic Multiplayer
+- [IntelliSense for Gothic Multiplayer](https://github.com/Gothic-Multiplayer-Classic/vscode-gothicmultiplayer)
