@@ -5966,8 +5966,30 @@
         }
       ],
       "returns": {
-        "type": "{x, y, z}|nil",
+        "type": "{x, y, z, angle}|nil",
         "doc": "Waypoint position or nil."
+      }
+    },
+    {
+      "name": "getFreepoint",
+      "doc": "Retrieve world position of a freepoint by name.",
+      "side": "server",
+      "category": "World",
+      "params": [
+        {
+          "name": "world",
+          "type": "string",
+          "doc": "World name in which the freepoint exists."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "doc": "Freepoint name."
+        }
+      ],
+      "returns": {
+        "type": "{x, y, z, angle}|nil",
+        "doc": "Freepoint position or nil."
       }
     },
     {
@@ -6003,8 +6025,45 @@
         }
       ],
       "returns": {
-        "type": "{name, x, y, z}|nil",
+        "type": "{name, x, y, z, angle}|nil",
         "doc": "Waypoint information or nil."
+      }
+    },
+    {
+      "name": "getNearestFreepoint",
+      "doc": "Retrieve nearest freepoint for a given position.",
+      "side": "server",
+      "category": "World",
+      "params": [
+        {
+          "name": "world",
+          "type": "string",
+          "doc": "World name in which the freepoint exists."
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "doc": "Position X."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "doc": "Position Y."
+        },
+        {
+          "name": "z",
+          "type": "number",
+          "doc": "Position Z."
+        },
+        {
+          "name": "distance",
+          "type": "number|nil",
+          "doc": "Optional maximum search distance."
+        }
+      ],
+      "returns": {
+        "type": "{name, x, y, z, angle}|nil",
+        "doc": "Freepoint information or nil."
       }
     },
     {
@@ -6035,8 +6094,40 @@
         }
       ],
       "returns": {
-        "type": "{name, x, y, z}|nil",
+        "type": "{name, x, y, z, angle}|nil",
         "doc": "Waypoint information or nil."
+      }
+    },
+    {
+      "name": "getNextNearestFreepoint",
+      "doc": "Retrieve second nearest freepoint for a given position.",
+      "side": "server",
+      "category": "World",
+      "params": [
+        {
+          "name": "world",
+          "type": "string",
+          "doc": "World name in which the freepoint exists."
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "doc": "Position X."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "doc": "Position Y."
+        },
+        {
+          "name": "z",
+          "type": "number",
+          "doc": "Position Z."
+        }
+      ],
+      "returns": {
+        "type": "{name, x, y, z, angle}|nil",
+        "doc": "Freepoint information or nil."
       }
     },
     {
@@ -7813,8 +7904,25 @@
         }
       ],
       "returns": {
-        "type": "{x, y, z}|nil",
+        "type": "{x, y, z, angle}|nil",
         "doc": "Waypoint position table or nil."
+      }
+    },
+    {
+      "name": "getFreepoint",
+      "doc": "This function will return world position of a freepoint by name.",
+      "side": "client",
+      "category": "World",
+      "params": [
+        {
+          "name": "name",
+          "type": "string",
+          "doc": "Freepoint name."
+        }
+      ],
+      "returns": {
+        "type": "{x, y, z, angle}|nil",
+        "doc": "Freepoint position table or nil."
       }
     },
     {
@@ -7845,8 +7953,40 @@
         }
       ],
       "returns": {
-        "type": "{name, x, y, z}|nil",
+        "type": "{name, x, y, z, angle}|nil",
         "doc": "Waypoint information table or nil."
+      }
+    },
+    {
+      "name": "getNearestFreepoint",
+      "doc": "This function will return the nearest freepoint for a given position.",
+      "side": "client",
+      "category": "World",
+      "params": [
+        {
+          "name": "x",
+          "type": "number",
+          "doc": "Position X."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "doc": "Position Y."
+        },
+        {
+          "name": "z",
+          "type": "number",
+          "doc": "Position Z."
+        },
+        {
+          "name": "distance",
+          "type": "number|nil",
+          "doc": "Optional maximum search distance."
+        }
+      ],
+      "returns": {
+        "type": "{name, x, y, z, angle}|nil",
+        "doc": "Freepoint information table or nil."
       }
     },
     {
@@ -7872,8 +8012,35 @@
         }
       ],
       "returns": {
-        "type": "{name, x, y, z}|nil",
+        "type": "{name, x, y, z, angle}|nil",
         "doc": "Waypoint information table or nil."
+      }
+    },
+    {
+      "name": "getNextNearestFreepoint",
+      "doc": "This function will return the second nearest freepoint for a given position.",
+      "side": "client",
+      "category": "World",
+      "params": [
+        {
+          "name": "x",
+          "type": "number",
+          "doc": "Position X."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "doc": "Position Y."
+        },
+        {
+          "name": "z",
+          "type": "number",
+          "doc": "Position Z."
+        }
+      ],
+      "returns": {
+        "type": "{name, x, y, z, angle}|nil",
+        "doc": "Freepoint information table or nil."
       }
     },
     {
@@ -7884,7 +8051,7 @@
       "params": [],
       "returns": {
         "type": "table",
-        "doc": "Table of waypoints {name, x, y, z}."
+        "doc": "Table of waypoints {name, x, y, z, angle}."
       }
     },
     {
@@ -8560,8 +8727,8 @@
       "cancellable": false
     },
     {
-      "name": "onPlayerAmuletChange",
-      "doc": "This event is triggered when a player's amulet changes.",
+      "name": "onPlayerEquipAmulet",
+      "doc": "This event is triggered when a player's equipped amulet changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8573,14 +8740,14 @@
         {
           "name": "instance",
           "type": "number|nil",
-          "doc": "New amulet instance id (nil if none)."
+          "doc": "Equipped amulet instance id (nil if none)."
         }
       ],
       "cancellable": false
     },
     {
-      "name": "onPlayerArmorChange",
-      "doc": "This event is triggered when a player's armor changes.",
+      "name": "onPlayerEquipArmor",
+      "doc": "This event is triggered when a player's equipped armor changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8592,14 +8759,14 @@
         {
           "name": "instance",
           "type": "number|nil",
-          "doc": "New armor instance id (nil if none)."
+          "doc": "Equipped armor instance id (nil if none)."
         }
       ],
       "cancellable": false
     },
     {
-      "name": "onPlayerBeltChange",
-      "doc": "This event is triggered when a player's belt changes.",
+      "name": "onPlayerEquipBelt",
+      "doc": "This event is triggered when a player's equipped belt changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8611,14 +8778,14 @@
         {
           "name": "instance",
           "type": "number|nil",
-          "doc": "New belt instance id (nil if none)."
+          "doc": "Equipped belt instance id (nil if none)."
         }
       ],
       "cancellable": false
     },
     {
-      "name": "onPlayerHandItemChange",
-      "doc": "This event is triggered when a player's hand item changes.",
+      "name": "onPlayerEquipHandItem",
+      "doc": "This event is triggered when a player's equipped hand item changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8635,14 +8802,14 @@
         {
           "name": "instance",
           "type": "number|nil",
-          "doc": "New hand item instance id (nil if none)."
+          "doc": "Equipped hand item instance id (nil if none)."
         }
       ],
       "cancellable": false
     },
     {
-      "name": "onPlayerHelmetChange",
-      "doc": "This event is triggered when a player's helmet changes.",
+      "name": "onPlayerEquipHelmet",
+      "doc": "This event is triggered when a player's equipped helmet changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8654,14 +8821,14 @@
         {
           "name": "instance",
           "type": "number|nil",
-          "doc": "New helmet instance id (nil if none)."
+          "doc": "Equipped helmet instance id (nil if none)."
         }
       ],
       "cancellable": false
     },
     {
-      "name": "onPlayerMeleeWeaponChange",
-      "doc": "This event is triggered when a player's melee weapon changes.",
+      "name": "onPlayerEquipMeleeWeapon",
+      "doc": "This event is triggered when a player's equipped melee weapon changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8673,14 +8840,14 @@
         {
           "name": "instance",
           "type": "number|nil",
-          "doc": "New melee weapon instance id (nil if none)."
+          "doc": "Equipped melee weapon instance id (nil if none)."
         }
       ],
       "cancellable": false
     },
     {
-      "name": "onPlayerRangedWeaponChange",
-      "doc": "This event is triggered when a player's ranged weapon changes.",
+      "name": "onPlayerEquipRangedWeapon",
+      "doc": "This event is triggered when a player's equipped ranged weapon changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8692,14 +8859,14 @@
         {
           "name": "instance",
           "type": "number|nil",
-          "doc": "New ranged weapon instance id (nil if none)."
+          "doc": "Equipped ranged weapon instance id (nil if none)."
         }
       ],
       "cancellable": false
     },
     {
-      "name": "onPlayerRingChange",
-      "doc": "This event is triggered when a player's ring changes.",
+      "name": "onPlayerEquipRing",
+      "doc": "This event is triggered when a player's equipped ring changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8709,21 +8876,21 @@
           "doc": "Player id."
         },
         {
-          "name": "hand_id",
+          "name": "ring_slot",
           "type": "number",
-          "doc": "Hand id (0 = left, 1 = right)."
+          "doc": "Logical ring slot (0 or 1)."
         },
         {
           "name": "instance",
           "type": "number|nil",
-          "doc": "New ring instance id (nil if none)."
+          "doc": "Equipped ring instance id (nil if none)."
         }
       ],
       "cancellable": false
     },
     {
-      "name": "onPlayerShieldChange",
-      "doc": "This event is triggered when a player's shield changes.",
+      "name": "onPlayerEquipShield",
+      "doc": "This event is triggered when a player's equipped shield changes.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -8735,13 +8902,13 @@
         {
           "name": "instance",
           "type": "number|nil",
-          "doc": "New shield instance id (nil if none)."
+          "doc": "Equipped shield instance id (nil if none)."
         }
       ],
       "cancellable": false
     },
     {
-      "name": "onPlayerSpellSlotChange",
+      "name": "onPlayerEquipSpellSlot",
       "doc": "This event is triggered when a player's active spell slot changes.",
       "side": "server",
       "category": "Player",
@@ -8754,12 +8921,12 @@
         {
           "name": "slot_id",
           "type": "number",
-          "doc": "Active spell slot id."
+          "doc": "Active spell slot id (0 if none)."
         },
         {
           "name": "instance",
           "type": "number|nil",
-          "doc": "Spell instance id (nil if none)."
+          "doc": "Active spell item instance id (nil if none)."
         }
       ],
       "cancellable": false

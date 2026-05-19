@@ -8,7 +8,7 @@ This function will return the second nearest waypoint for a given position.
 
 ## Declaration
 ```cpp
-{name, x, y, z}|nil getNextNearestWaypoint(number x, number y, number z)
+{name, x, y, z, angle}|nil getNextNearestWaypoint(number x, number y, number z)
 ```
 
 ## Parameters
@@ -16,5 +16,5 @@ This function will return the second nearest waypoint for a given position.
 * `number` **y**: Position Y.
 * `number` **z**: Position Z.
   
-## Returns `{name, x, y, z}|nil`
+## Returns `{name, x, y, z, angle}|nil`
 Waypoint information table or nil.

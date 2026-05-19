@@ -8,11 +8,11 @@ This function will return world position of a waypoint by name.
 
 ## Declaration
 ```cpp
-{x, y, z}|nil getWaypoint(string name)
+{x, y, z, angle}|nil getWaypoint(string name)
 ```
 
 ## Parameters
 * `string` **name**: Waypoint name.
   
-## Returns `{x, y, z}|nil`
+## Returns `{x, y, z, angle}|nil`
 Waypoint position table or nil.

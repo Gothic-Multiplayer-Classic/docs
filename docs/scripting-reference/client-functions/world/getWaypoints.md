@@ -15,4 +15,4 @@ This function will return the list of all waypoints from current world.
 No parameters.
   
 ## Returns `{...}`
-Table of waypoints {name, x, y, z}.
+Table of waypoints {name, x, y, z, angle}.

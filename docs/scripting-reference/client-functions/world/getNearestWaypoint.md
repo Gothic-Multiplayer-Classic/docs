@@ -8,7 +8,7 @@ This function will return the nearest waypoint for a given position.
 
 ## Declaration
 ```cpp
-{name, x, y, z}|nil getNearestWaypoint(number x, number y, number z, number|nil distance)
+{name, x, y, z, angle}|nil getNearestWaypoint(number x, number y, number z, number|nil distance)
 ```
 
 ## Parameters
@@ -17,5 +17,5 @@ This function will return the nearest waypoint for a given position.
 * `number` **z**: Position Z.
 * `number|nil` **distance**: Optional maximum search distance.
   
-## Returns `{name, x, y, z}|nil`
+## Returns `{name, x, y, z, angle}|nil`
 Waypoint information table or nil.
