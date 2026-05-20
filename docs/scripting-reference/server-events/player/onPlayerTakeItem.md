@@ -8,8 +8,8 @@ This event is triggered when a player picks up an item.
 
 ## Parameters
 ```c++
-void onPlayerTakeItem(number player_id, number item_instance)
+void onPlayerTakeItem(number player_id, ItemGround item_ground)
 ```
 
 * `number` **player_id**: Player id who took the item.
-* `number` **item_instance**: Item instance id.
+* `ItemGround` **item_ground**: Ground item object.

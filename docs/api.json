@@ -2134,6 +2134,47 @@
       ],
       "callbacks": []
     },
+    "ItemGround": {
+      "name": "ItemGround",
+      "doc": "Represents a synchronized server-side ground item visible on the client.",
+      "side": "client",
+      "category": "Item",
+      "extends": null,
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "doc": "Represents the unique ground item id."
+        },
+        {
+          "name": "item",
+          "type": "string",
+          "doc": "Represents the Gothic item instance name. Alias of instance."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Represents the Gothic item instance name."
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "doc": "Represents the item amount."
+        }
+      ],
+      "methods": [],
+      "callbacks": []
+    },
+    "ItemGroundManager": {
+      "name": "ItemGroundManager",
+      "doc": "Provides client-side lookup for synchronized ground items visible in the current world.",
+      "side": "client",
+      "category": "Item",
+      "extends": null,
+      "fields": [],
+      "methods": [],
+      "callbacks": []
+    },
     "JsonFile": {
       "name": "JsonFile",
       "doc": "JSON-backed key/value file returned by JSON().",
@@ -5826,6 +5867,92 @@
       }
     },
     {
+      "name": "getById",
+      "doc": "Returns a ground item by id.",
+      "side": "server",
+      "category": "Item",
+      "params": [
+        {
+          "name": "id",
+          "type": "number",
+          "doc": "Ground item id."
+        }
+      ],
+      "returns": {
+        "type": "itemground|nil",
+        "doc": "Ground item object or nil if missing."
+      }
+    },
+    {
+      "name": "create",
+      "doc": "Creates a synchronized ground item.",
+      "side": "server",
+      "category": "Item",
+      "params": [
+        {
+          "name": "options",
+          "type": "table",
+          "doc": "Creation options."
+        },
+        {
+          "name": "options.instance",
+          "type": "string",
+          "doc": "Gothic item instance name."
+        },
+        {
+          "name": "options.amount",
+          "type": "number",
+          "doc": "Optional amount. Defaults to 1."
+        },
+        {
+          "name": "options.physicsEnabled",
+          "type": "boolean",
+          "doc": "Optional physics flag. Defaults to false."
+        },
+        {
+          "name": "options.position",
+          "type": "table",
+          "doc": "Optional world position. Defaults to 0,0,0."
+        },
+        {
+          "name": "options.rotation",
+          "type": "table",
+          "doc": "Optional Euler rotation. Defaults to 0,0,0."
+        },
+        {
+          "name": "options.world",
+          "type": "string",
+          "doc": "Optional world name. Defaults to the server world."
+        },
+        {
+          "name": "options.virtualWorld",
+          "type": "number",
+          "doc": "Optional virtual world id. Defaults to 0."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Ground item id, or 0 on failure."
+      }
+    },
+    {
+      "name": "destroy",
+      "doc": "Destroys a synchronized ground item.",
+      "side": "server",
+      "category": "Item",
+      "params": [
+        {
+          "name": "itemGround",
+          "type": "number|itemground",
+          "doc": "Ground item id or object."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if the ground item was destroyed."
+      }
+    },
+    {
       "name": "JSON",
       "doc": "Open a JSON file relative to the server data directory.",
       "side": "server",
@@ -7534,6 +7661,40 @@
       }
     },
     {
+      "name": "getById",
+      "doc": "Returns a synchronized ground item by id.",
+      "side": "client",
+      "category": "Item",
+      "params": [
+        {
+          "name": "id",
+          "type": "number",
+          "doc": "Ground item id."
+        }
+      ],
+      "returns": {
+        "type": "itemground|nil",
+        "doc": "Ground item object or nil if missing."
+      }
+    },
+    {
+      "name": "getByItem",
+      "doc": "Returns the first synchronized ground item with the given item instance.",
+      "side": "client",
+      "category": "Item",
+      "params": [
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Gothic item instance name."
+        }
+      ],
+      "returns": {
+        "type": "itemground|nil",
+        "doc": "Ground item object or nil if missing."
+      }
+    },
+    {
       "name": "anx",
       "doc": "This function will convert pixels to virtuals screen X dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
       "side": "client",
@@ -8575,14 +8736,9 @@
           "doc": "Player id who dropped the item."
         },
         {
-          "name": "item_instance",
-          "type": "number",
-          "doc": "Item instance id."
-        },
-        {
-          "name": "amount",
-          "type": "number",
-          "doc": "Amount dropped."
+          "name": "item_ground",
+          "type": "itemground",
+          "doc": "Ground item object."
         }
       ],
       "cancellable": false
@@ -8599,9 +8755,9 @@
           "doc": "Player id who took the item."
         },
         {
-          "name": "item_instance",
-          "type": "number",
-          "doc": "Item instance id."
+          "name": "item_ground",
+          "type": "itemground",
+          "doc": "Ground item object."
         }
       ],
       "cancellable": false
@@ -8679,7 +8835,7 @@
       "cancellable": false
     },
     {
-      "name": "onPlayerChangeWorld",
+      "name": "onPlayerWorldChange",
       "doc": "This event is triggered when player tries to change the played world (ZEN).",
       "side": "server",
       "category": "Player",
@@ -8698,6 +8854,25 @@
           "name": "waypoint",
           "type": "string",
           "doc": "The name of the waypoint that the player will be teleported to."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPlayerWorldEnter",
+      "doc": "This event is triggered when player entered the world and was spawned in it.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "The id of the player who entered the world."
+        },
+        {
+          "name": "world",
+          "type": "string",
+          "doc": "The filename of the world."
         }
       ],
       "cancellable": false
@@ -9046,7 +9221,12 @@
         {
           "name": "damage",
           "type": "number",
-          "doc": "Damage dealt."
+          "doc": "Damage to deal. Use eventValue(newDamage) to change it, or cancelEvent() to prevent it."
+        },
+        {
+          "name": "damageType",
+          "type": "number",
+          "doc": "Gothic damage type/mode flags."
         }
       ],
       "cancellable": false
@@ -9299,6 +9479,11 @@
           "name": "item",
           "type": "string",
           "doc": "Item instance."
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "doc": "Item amount."
         }
       ],
       "cancellable": false
@@ -9318,6 +9503,16 @@
           "name": "synchronized",
           "type": "boolean",
           "doc": "True when pickup is synchronized with the server."
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "doc": "Item amount."
+        },
+        {
+          "name": "itemGroundId",
+          "type": "number",
+          "doc": "Ground item id, or nil for non-server items."
         }
       ],
       "cancellable": false
@@ -9349,6 +9544,42 @@
           "doc": "Current interact state."
         }
       ],
+      "cancellable": false
+    },
+    {
+      "name": "onItemGroundCreate",
+      "doc": "This event is triggered when a server-side ground item is created for the client.",
+      "side": "client",
+      "category": "ItemGround",
+      "params": [
+        {
+          "name": "itemGround",
+          "type": "itemground",
+          "doc": "Ground item object."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onItemGroundDestroy",
+      "doc": "This event is triggered when a server-side ground item is destroyed for the client.",
+      "side": "client",
+      "category": "ItemGround",
+      "params": [
+        {
+          "name": "itemGround",
+          "type": "itemground",
+          "doc": "Ground item object."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onItemsGroundDestroy",
+      "doc": "This event is triggered when all server-side ground items are destroyed during world or virtual-world changes.",
+      "side": "client",
+      "category": "ItemGround",
+      "params": [],
       "cancellable": false
     },
     {

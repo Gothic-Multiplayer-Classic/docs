@@ -1,14 +1,14 @@
 ---
-title: 'onPlayerChangeWorld'
+title: 'onPlayerWorldChange'
 ---
-# `event` onPlayerChangeWorld <font size="4">(server-side)</font>
+# `event` onPlayerWorldChange <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
 This event is triggered when player tries to change the played world (ZEN).
 
 ## Parameters
 ```c++
-void onPlayerChangeWorld(number player_id, string world, string waypoint)
+void onPlayerWorldChange(number player_id, string world, string waypoint)
 ```
 
 * `number` **player_id**: The id of the player who tries to change the played world.

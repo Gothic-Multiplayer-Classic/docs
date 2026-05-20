@@ -8,9 +8,10 @@ This event is triggered when a player is hit.
 
 ## Parameters
 ```c++
-void onPlayerHit(number attacker_id, number victim_id, number damage)
+void onPlayerHit(number attacker_id, number victim_id, number damage, number damageType)
 ```
 
 * `number` **attacker_id**: Optional attacker id (nil if none).
 * `number` **victim_id**: Victim player id.
-* `number` **damage**: Damage dealt.
+* `number` **damage**: Damage to deal. Use eventValue(newDamage) to change it, or cancelEvent() to prevent it.
+* `number` **damageType**: Gothic damage type/mode flags.

@@ -8,9 +8,8 @@ This event is triggered when a player drops an item.
 
 ## Parameters
 ```c++
-void onPlayerDropItem(number player_id, number item_instance, number amount)
+void onPlayerDropItem(number player_id, ItemGround item_ground)
 ```
 
 * `number` **player_id**: Player id who dropped the item.
-* `number` **item_instance**: Item instance id.
-* `number` **amount**: Amount dropped.
+* `ItemGround` **item_ground**: Ground item object.

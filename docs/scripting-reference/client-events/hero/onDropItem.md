@@ -8,7 +8,8 @@ This event is triggered when the hero drops an item.
 
 ## Parameters
 ```c++
-void onDropItem(string item)
+void onDropItem(string item, number amount)
 ```
 
 * `string` **item**: Item instance.
+* `number` **amount**: Item amount.

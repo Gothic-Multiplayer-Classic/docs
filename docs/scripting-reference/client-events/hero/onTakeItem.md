@@ -8,8 +8,10 @@ This event is triggered when the hero takes an item from the ground.
 
 ## Parameters
 ```c++
-void onTakeItem(string item, boolean synchronized)
+void onTakeItem(string item, boolean synchronized, number amount, number itemGroundId)
 ```
 
 * `string` **item**: Item instance.
 * `boolean` **synchronized**: True when pickup is synchronized with the server.
+* `number` **amount**: Item amount.
+* `number` **itemGroundId**: Ground item id, or nil for non-server items.
