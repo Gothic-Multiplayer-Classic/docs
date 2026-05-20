@@ -1,51 +1,57 @@
 # Discord Activity
-The `Discord` class provides access to Discord Rich Presence from the game client.
-It allows Lua scripts to update the player's Discord activity, such as showing the current state, details, and images while playing.
 
-## Overview
-Using the `Discord` class, you can:
+GMPC exposes a small Discord Rich Presence API to client Lua scripts. Server creators can use it from client resources to show the current server, character state, faction, activity, or other short status text in Discord.
 
-* Display custom text in the player's Discord status
-* Show large and small images with optional tooltips
-* Update activity dynamically during gameplay
-* Clear the activity when it is no longer needed
+The API is safe to call even when Discord support is unavailable. In that case the functions simply do nothing.
 
-All methods are static and are called directly on the Discord table.
+## Requirements
 
-## Usage Example
-#### This will update the player's Discord status to show the provided text.
-```lua
-Discord.setState("Exploring the world")
-Discord.setDetails("Level 10 - Old Camp")
-```
+Discord Rich Presence is active only when the client build was compiled with a Discord application id. In the build system this is provided through the `discord_app_id` option, which defines `DISCORD_APPLICATION_ID` and includes the Discord SDK dependency.
 
-#### Updates multiple activity fields at once.
+Players also need the Discord desktop client running and logged in. Image keys must exist in the configured Discord application's Rich Presence assets, otherwise Discord will ignore those images.
+
+## API
+
+| Function | Behavior |
+| --- | --- |
+| `Discord.setActivity(table)` | Updates multiple activity fields at once. Missing fields keep their previous values. |
+| `Discord.setState(text)` | Sets the short state line. |
+| `Discord.setDetails(text)` | Sets the details line. |
+| `Discord.setLargeImage(key, text)` | Sets the large image asset key and optional tooltip text. |
+| `Discord.setSmallImage(key, text)` | Sets the small image asset key and optional tooltip text. |
+| `Discord.clearActivity()` | Clears the stored activity and removes Rich Presence from Discord. |
+
+`setActivity` accepts both lower camel-case and Pascal-case field names:
+
+| Field | Meaning |
+| --- | --- |
+| `state` or `State` | Short status text, often current role, faction, or location. |
+| `details` or `Details` | Main activity text, often the server or game mode. |
+| `largeImageKey` or `LargeImageKey` | Discord asset key for the large image. |
+| `largeImageText` or `LargeImageText` | Tooltip for the large image. |
+| `smallImageKey` or `SmallImageKey` | Discord asset key for the small image. |
+| `smallImageText` or `SmallImageText` | Tooltip for the small image. |
+
+## Example
+
 ```lua
 Discord.setActivity({
-  state = "In Combat",
-  details = "Fighting Orcs",
-  largeImageKey = "world",
-  largeImageText = "Myrtana",
-  smallImageKey = "sword",
-  smallImageText = "Armed"
+  details = "Valley of Mines RP",
+  state = "Guarding the Old Camp",
+  largeImageKey = "server_logo",
+  largeImageText = "GMP Classic",
+  smallImageKey = "guard",
+  smallImageText = "Guard"
 })
 ```
 
-#### Clears the current Discord Rich Presence and resets all stored activity values.
+For small changes, update only the field that changed:
+
 ```lua
-Discord.clearActivity()
+Discord.setState("Trading at the market")
+Discord.setDetails("Colony Survival")
 ```
 
-## Activity Fields
-Discord Rich Presence supports the following fields, all of which are optional:
+`setLargeImage` and `setSmallImage` keep the previous tooltip when the second argument is omitted. Use `clearActivity` when the player disconnects, returns to a neutral menu state, or joins a mode where you do not want presence shown.
 
-| Field            | Description                                   |
-| ---------------- | --------------------------------------------- |
-| `state`          | Short status text (shown below the game name) |
-| `details`        | Detailed description (shown above the state)  |
-| `largeImageKey`  | Asset key for the large image                 |
-| `largeImageText` | Tooltip text for the large image              |
-| `smallImageKey`  | Asset key for the small image                 |
-| `smallImageText` | Tooltip text for the small image              |
-
-Any field not explicitly set will retain its previous value.
+Keep activity text short. Discord truncates long fields, and a concise presence is easier for players to recognize at a glance.

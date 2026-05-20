@@ -1,165 +1,122 @@
-# Lua Resource System
-This document explains how Lua resources behave from the resource author's point of view. It focuses on the structure and lifecycle you can rely on, the guarantees the engine provides, and the mental model that makes resources predictable and easy to maintain - without requiring engine internals.
+# Resources
 
----
+Resources are the unit GMPC uses to group Lua code, metadata, and client downloads. A server can run several resources at once: one for core gameplay, one for chat, one for scoreboards, one for custom UI, and so on.
 
-## What a Resource Is
-A **resource** is a **versioned, self-contained Lua package** that lives on the server and is distributed to clients automatically. From the client's perspective, resources arrive as part of the connection flow: they are downloaded during the server handshake, verified for integrity, placed into an isolated Lua environment, and only then started explicitly by the engine.
+The server discovers resources from the `resources/` directory. Each immediate subdirectory is treated as a resource name.
 
-The practical takeaway is simple: you never "install" or "load" resources manually on the client. You write code that assumes the resource will begin executing only when the engine starts it.
-
----
-
-## Mandatory Structure
-Every resource is a directory that contains a `resource.toml`. That file is what makes the directory recognizable as a resource.
-
-!!! note
-    If `resource.toml` is missing, the resource is not recognized and no script is executed.
-
-A minimal valid layout looks like this:
-```yaml
-my_resource/
-  resource.toml
-  client/
-    main.lua
-
-my_resource_two/
-  resource.toml
-  server/
-    main.lua
+```text
+resources/
+  chat/
+    resource.toml
+    shared/
+      constants.lua
+    server/
+      main.lua
+    client/
+      main.lua
+      ui.lua
 ```
 
----
+`resource.toml` is optional for server-side loading, but required when the resource should ship client or shared scripts to players. Without metadata and a non-empty `version`, the server can still run the resource's server scripts, but the client packager skips it.
 
-## `resource.toml`
-`resource.toml` stores the resource metadata used for identification and validation. It describes the resource (version, author, description) and whether it should be active.
+## Metadata
+
+| Field | Default | Meaning |
+| --- | --- | --- |
+| `version` | none | Required for client resource packages. Change it when clients must download a new package. |
+| `active` | `true` | Set to `false` to keep the resource directory present but prevent server loading and client packaging. |
+| `author` | `""` | Optional descriptive metadata. |
+| `description` | `""` | Optional descriptive metadata. |
+
+A minimal client-capable metadata file looks like this:
 
 ```toml
 version = "1.0.0"
-author = "YourName"
-description = "Example resource"
 active = true
+author = "GMPC Team"
+description = "Chat and basic player messages"
 ```
 
----
+Resource directories are loaded alphabetically after inactive resources are filtered out. If two resources depend on each other, give them names that make the startup order obvious, or move shared behavior into a separate resource that starts first.
 
-## Folder Roles
-A resource can contain client-only code, server-only code, and optionally shared modules used by both sides. A typical layout looks like this:
-```yaml
-my_resource/
-  resource.toml
-  client/
-    main.lua
-    ui.lua
-    events.lua
-  shared/
-    init.lua
-  server/
-    main.lua
-```
+## Server Scripts
 
-Conceptually, `client/` holds code that will only ever run on clients, `server/` holds code that will only ever run on the server, and `shared/` holds modules that are safe and useful on both sides. On the client, the engine loads only from `client/` and `shared/`, so server-only files are never part of the client execution surface.
+On the server, GMPC executes direct `.lua` files from these directories:
 
----
+| Directory | Loaded on server | Notes |
+| --- | --- | --- |
+| `shared/` | yes | Runs before `server/`. Use it for constants and functions shared with client code. |
+| `server/` | yes | Runs after `shared/`. Use it for authoritative gameplay, persistence, validation, and server events. |
+| `client/` | no | Never executed by the server runtime. Packaged for clients when metadata allows it. |
 
-## What the Client guarantees before Lua runs
-When client-side Lua begins executing, it does so under strong guarantees. The client will not start running Lua until all resources are fully downloaded, all declared files exist, and integrity checks have passed. By the time Lua runs, the Lua environment is initialized and the engine bindings are already registered.
+Server-side loading is not recursive. Only Lua files directly inside `shared/` and `server/` are executed automatically, sorted by file name. If order matters, make it visible in file names, such as `00_config.lua`, `10_events.lua`, and `20_gameplay.lua`.
 
-This is important because it eliminates partial or "half-loaded" states. If your client Lua is running, you can assume the resource is complete and the files it depends on are present. If something is missing or corrupted, the resource won't start in the first place.
+Each resource runs in its own Lua environment. Global variables from one resource are not a reliable way to communicate with another resource. Use explicit APIs, events, or exports.
 
----
+## Client Packages
 
-## Single Client Entrypoint
-Each client-side resource has exactly one automatic entrypoint: `client/main.lua`. Everything else is opt-in and must be loaded explicitly.
+When a resource has valid metadata and a `version`, the server can package Lua files from `client/` and `shared/` for players. Client packages are written under the server's `public/` directory and downloaded through the built-in resource server.
 
-!!! note
-    If code is not reachable from `client/main.lua`, it will never be executed.
+The packager includes Lua files from `client/` and `shared/` recursively, compiles them to bytecode by default, creates a ZIP-based `.pak`, and writes a manifest with sizes and SHA-256 hashes. The client verifies both the manifest and archive before starting the resource. A missing, corrupt, or mismatched package prevents the client from joining normally.
 
-In other words, the engine does not execute files based on file order or by scanning the directory. Only `client/main.lua` is started automatically, and any additional modules run only if `client/main.lua` requires them.
+Only `client/main.lua` is used as the automatic client entry point. Additional client files should be loaded from that entry point with `require`.
 
----
+## Client `require`
 
-## The role of `client/main.lua`
-Think of client/main.lua as a bootstrap rather than "the whole resource." Its job is to establish the resource's wiring: load modules, register event handlers, and set up lifecycle hooks. The heavy lifting typically lives in separate modules.
+Client resources use a resource-local `require` cache. Module names are normalized so `require("ui.scoreboard")` looks for `ui/scoreboard` paths.
 
-A common pattern looks like this:
-```lua
-require("shared.init")
-require("client.events")
-require("client.ui")
+The client search order is:
 
-function onResourceStart()
-end
+| Order | Path pattern |
+| --- | --- |
+| 1 | `client/<module>.luac` |
+| 2 | `client/<module>.lua` |
+| 3 | `shared/<module>.luac` |
+| 4 | `shared/<module>.lua` |
+| 5 | `<module>.luac` |
+| 6 | `<module>.lua` |
 
-function onResourceStop()
-end
-```
+If a required module is missing or throws during loading, the resource startup fails and the client disconnects from the server. Keep `client/main.lua` small and make failures obvious in the log.
 
-As a rule of thumb, avoid doing significant work at file top-level in `client/main.lua`. Treat top-level code as setup, and keep actual side effects and gameplay behavior inside lifecycle hooks and event handlers.
+## Lifecycle
 
----
+After scripts are loaded, GMPC calls `onResourceStart` for that resource when the hook exists. During unload, it calls `onResourceStop`, clears resource-owned timers, and releases the Lua environment.
 
-## Lifecycle Hooks
-Resources can define lifecycle callbacks that the engine calls when the resource becomes active or stops:
-```lua
-function onResourceStart() end
-function onResourceStop() end
-```
-
-!!! note
-    Side effects belong in lifecycle hooks, not at file top level.
-
-### onResourceStart
-onResourceStart is called after the resource has been loaded and `client/main.lua` has executed. This is the point where the resource is considered live. This is where you typically register events, initialize UI, start timers, and create runtime state.
-
-### onResourceStop
-onResourceStop runs when the resource is being unloaded, replaced, or the client is disconnecting. Its purpose is cleanup. If you registered handlers, created UI, or started timers, this is where you should remove/destroy/stop them so the resource shuts down cleanly.
-
----
-
-## `require()` Behavior
-`require()` resolves modules from inside the resource package rather than the OS filesystem. For example:
-```lua
-require("client.ui")
-```
-
-This typically resolves to `client/ui.lua`, and may also resolve to shared modules depending on how paths are configured. The key behaviors to rely on are that modules load once per resource (they are cached), and a missing module prevents the resource from starting successfully.
-
----
-
-## Lua Environment Isolation
-Each resource runs in its own Lua environment. This prevents accidental cross-resource interference and makes resources behave like isolated packages.
-
-!!! note
-    Engine-provided globals remain accessible, but avoid globals as a cross-resource communication mechanism.
-
-In practice, this means globals you define belong to that resource only, they persist for the lifetime of the resource, and they do not leak into other resources.
-
----
+Client resources also receive a single `onInit` after the first client resource starts and a single `onExit` when client resources are unloaded. Use resource-level hooks for per-resource setup and cleanup, and reserve `onInit` or `onExit` for client-wide behavior.
 
 ## Exports
-Resources can optionally expose an explicit API surface through exports:
+
+A resource can expose a table named `exports`:
+
 ```lua
 exports = {
-  showUI = function() end
+  giveCoins = function(playerId, amount)
+    -- server-side implementation
+  end
 }
 ```
 
-Exports are discovered after the resource starts. They are opt-in, they are not injected into global scope, and they represent the intentional interface other resources are allowed to depend on.
+Other server resources can call exported functions through the global export proxy. If the calling resource also defines its own `exports` table, save the proxy before overwriting the name:
 
----
+```lua
+local resourceExports = exports
 
-## Event-Driven Design
-Client-side Lua should be designed as an event-driven system. Even though the resource starts in a well-defined way, the game world and gameplay state are not guaranteed to be "ready" at that exact moment. Player state may not exist yet, the world may initialize later, and visuals or UI systems may become available asynchronously.
+exports = {
+  rewardPlayer = function(playerId)
+    local economy = resourceExports.economy
+    if economy and economy.giveCoins then
+      economy.giveCoins(playerId, 10)
+    end
+  end
+}
+```
 
-A reliable client resource registers handlers and reacts to engine events. An unreliable one performs gameplay actions at file load or assumes the world is immediately available.
+If the target resource is missing, unloaded, or does not expose the function, the lookup returns `nil`.
 
----
+Exports are useful for stable cross-resource APIs. They are a poor substitute for clear ownership: validation, persistence, and authority should still live in the resource that owns that data.
 
-## Assets and Files
-A resource only starts if all required files and assets are present. Missing assets are packaging errors rather than runtime concerns.
+## Practical Structure
 
-!!! note
-    Assets are referenced by name and managed by the engine. Lua does not manually load assets.
+A maintainable resource usually has one clear responsibility. Put values shared by client and server in `shared/`, authoritative decisions in `server/`, and presentation or input handling in `client/`.
 
-Lua scripts are not expected to open files, load assets from disk, or access arbitrary paths. Instead, treat the resource as a sealed package: scripts reference known assets, and the engine handles the loading lifecycle.
+Avoid hiding required startup order in comments. If `inventory` depends on `database`, make the order clear through resource names, metadata, or one explicit bootstrap resource. The server loads alphabetically, so accidental ordering bugs are otherwise easy to introduce.

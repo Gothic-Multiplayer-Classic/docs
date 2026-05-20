@@ -1,118 +1,57 @@
 # Client Configuration
-This file explains all available options in the configuration file.
-The configuration uses **TOML** format. All settings are optional; if a setting is missing, a default value is used.
 
-## General Settings
-### `nickname`
-- **Type:** string
-- **Description:** Your in-game nickname or display name.
----
-### `language`
-- **Type:** integer
-- **Description:** Language selection index for the application interface.
----
-### `log_chat`
-- **Type:** boolean
-- **Description:** Enables or disables saving chat messages to a log file.
----
-### `watch_enabled`
-- **Type:** boolean
-- **Description:** Enables or disables the on-screen watch/clock feature.
----
-### `chat_lines`
-- **Type:** integer
-- **Description:** Number of chat lines shown on screen at the same time.
----
-### `keyboard_layout`
-- **Type:** integer
-- **Description:** Keyboard layout preset used by the application.
----
-### `window_always_on_top`
-- **Type:** boolean
-- **Description:** Keeps the application window above other windows when enabled.
----
-### `vsync_enabled`
-- **Type:** boolean
-- **Description:** Enable or disable VSync.
----
-### `mcp_pipe_enabled`
-- **Type:** boolean
-- **Description:** Enables communication with external tools via MCP pipe.
----
-### `renderer_type`
-!!! note 
-	If you plan to use modifications like [G3D11](https://github.com/SaiyansKing/GD3D11) or [LegacyAltRenderer](https://github.com/SaiyansKing/Gothic-LegacyAltRenderer), you need to use D3D7 on GMP.
+The client reads `GMP_Config.toml` from the current game working directory. If the file is missing, GMPC writes a new one with default values. If the file exists but cannot be parsed, the client logs the error and continues with defaults for that launch.
 
-- **Type:** string
-- **Allowed values:** `"D3D7"`, `"D3D9"`, `"D3D11"`
-- **Description:** Selects which graphics renderer the application uses.
+Several values are also changed by the in-game menus, so manual editing is usually needed only for troubleshooting, renderer selection, or development options.
 
-To learn more, check [Renderer article](Renderer.md).
----
-## Watch Position
-Controls where the watch/clock is displayed on screen.
+## Player And Interface
 
-```toml
-[watch_position]
-x = 7000
-y = 2500
-```
+| Setting | Default | What it controls |
+| --- | --- | --- |
+| `nickname` | `""` | Player name. An empty value marks the config as not yet set up and triggers the first-launch flow. The menu limits names to 24 characters. |
+| `language` | `0` | Index into the loaded localization list. Invalid indexes fall back to the first loaded language. |
+| `log_chat` | `false` | Writes chat messages to the client log when enabled. |
+| `chat_lines` | `6` | Number of chat history lines drawn by the client. The menu normally keeps this at `0` or between `5` and `30`. |
 
-### `watch_position.x`
-- **Type:** integer
-- **Description:** Horizontal position of the watch.
+`nickname` is the only setting regular players usually need to care about. Leave the rest to the menu unless you are fixing a broken config by hand.
 
-### `watch_position.y`
-- **Type:** integer
-- **Description:** Vertical position of the watch.
+## Watch Overlay
 
----
-## Console Position
-Controls where the console window is displayed on screen.
+| Setting | Default | What it controls |
+| --- | --- | --- |
+| `watch_enabled` | `false` | Shows the watch overlay with real time and server game time. |
+| `[watch_position].x` | `7000` | Horizontal position of the watch overlay in Gothic's UI coordinate space. |
+| `[watch_position].y` | `2500` | Vertical position of the watch overlay in Gothic's UI coordinate space. |
 
-```toml
-[console_position]
-x = 52
-y = 52
-```
+The options menu adjusts the watch position in fixed steps. Manual edits are useful when a custom resolution or renderer places the overlay somewhere awkward.
 
-### `console_position.x`
-- **Type:** integer
-- **Description:** Horizontal position of the console.
+## Window And Console
 
-### `console_position.y`
-- **Type:** integer
-- **Description:** Vertical position of the console.
+| Setting | Default | What it controls |
+| --- | --- | --- |
+| `[window_position].x` / `[window_position].y` | not written until known | Restores the game window position. The value is used only when both coordinates are positive and the game is running windowed. |
+| `window_always_on_top` | `false` | Keeps the SDL game window above other windows in windowed mode. |
+| `[console_position].x` / `[console_position].y` | not written until known | Restores the external debug console position when both coordinates are non-negative. |
+| `debug_console_enabled` | `true` | Creates the external debug console. Set to `false` for a cleaner normal-player launch. |
 
----
-## Test Mode
-Used for development and testing purposes.
+`window_position` and `console_position` are mostly state written by the client. If the window opens off-screen after a monitor change, remove the relevant table and let GMPC recreate it.
 
-```toml
-[test_mode]
-enabled = false
-level = ""
-spawn_x = 0.0
-spawn_y = 0.0
-spawn_z = 0.0
-```
+## Graphics
 
-### `test_mode.enabled`
-- **Type:** boolean
-- **Description:** Enables or disables test mode.
+| Setting | Default | Valid values | What it controls |
+| --- | --- | --- | --- |
+| `renderer_type` | `"D3D9"` | `"D3D7"`, `"D3D9"`, `"D3D11"` | Renderer backend selected during startup. |
+| `vsync_enabled` | `true` | `true`, `false` | Enables vertical synchronization in the selected renderer. |
 
-### `test_mode.level`
-- **Type:** string
-- **Description:** Name of the level/world to load when test mode is enabled.
+Use `D3D9` for normal play, `D3D7` when troubleshooting or using external renderer wrappers, and `D3D11` only for testing. Invalid renderer names leave the compiled default in place.
 
-### `test_mode.spawn_x`
-- **Type:** number
-- **Description:** X coordinate where the player will spawn in test mode.
+## Developer Options
 
-### `test_mode.spawn_y`
-- **Type:** number
-- **Description:** Y coordinate where the player will spawn in test mode.
+| Setting | Default | What it controls |
+| --- | --- | --- |
+| `mcp_pipe_enabled` | `false` | Starts the local `\\.\pipe\GothicMCP` named-pipe bridge used by development tooling. Regular players should leave this disabled. |
+| `[test_mode].enabled` | `false` | Skips the main menu and loads directly into a configured test level. |
+| `[test_mode].level` | `""` | Level path used by test mode, for example `NEWWORLD\\NEWWORLD.ZEN`. |
+| `[test_mode].spawn_x` / `spawn_y` / `spawn_z` | `0.0` | Spawn position used by test mode. |
 
-### `test_mode.spawn_z`
-- **Type:** number
-- **Description:** Z coordinate where the player will spawn in test mode.
+Test mode is for local development and quick renderer or script checks. It bypasses normal menu flow, so do not enable it in a player-facing config.

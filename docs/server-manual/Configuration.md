@@ -1,103 +1,52 @@
 # Server Configuration
-This document explains all available options in the **server configuration file**.
-The configuration uses **TOML** format. All settings are optional unless stated otherwise.
-Changes require a **server restart** to take effect.
 
-## Basic Server Information
-### `name`
-- **Type:** string
-- **Description:** Human-readable name of the server. This is shown to players in server lists.
----
-### `port`
-- **Type:** integer
-- **Description:** Network port the server listens on.
----
-### `public`
-- **Type:** boolean
-- **Description:**
-- `true` - the server is publicly visible (for example in server lists).
-- `false` - the server is private and not publicly listed.
----
-### `slots`
-- **Type:** integer
-- **Description:** Maximum number of players that can connect to the server at the same time.
----
-### `admin_passwd`
-- **Type:** string
-- **Description:** Password required for administrative access.
----
-### `auth_key`
-- **Type:** string
-- **Description:** Authentication key used for secure communication or external services.
----
-### `seconds_per_game_minute`
-- **Type:** integer
-- **Description:** Controls how fast in-game time passes.
-Lower values make game time pass faster; higher values slow it down.
-A value of `0` disables custom time scaling and uses the default behavior.
+The server reads `config.toml` from the server working directory. Missing keys fall back to compiled defaults, while the sample file shipped with the server may choose more conservative values for a public release. The notes below describe the runtime behavior in the current GMPC server code.
 
----
-## Server Identity
-### `server_identity_seed`
-!!! note 
-	**Do not share this value.** Keep a backup to preserve the server's identity when moving or reinstalling. Changing this value makes the server appear as a completely new server.
+Most settings are read during startup. Restart the server after editing this file unless you are changing behavior through a script API that explicitly supports runtime changes.
 
-- **Type:** string
-- **Description:**
-Unique secret value that defines the server's identity.
-This seed is used to generate cryptographic keys that identify the server.
+## Basic Identity And Access
 
----
-## Gameplay
-### `map`
-- **Type:** string
-- **Description:** Path to the world (`.ZEN`) file that the server loads.
----
-### `map_md5`
-- **Type:** string
-- **Description:** Optional checksum of the map file.
-Can be used to ensure players are using the correct version of the map.
----
-### `allow_modification`
-- **Type:** boolean
-- **Description:** Allows or disallows client-side modifications when connecting to the server.
----
-### `hide_map`
-- **Type:** boolean
-- **Description:** Hides map information from clients when enabled.
----
-### `respawn_time_seconds`
-- **Type:** integer
-- **Description:** Time (in seconds) before a player respawns after death.
+| Setting | Default | What it controls |
+| --- | --- | --- |
+| `name` | `"Gothic Multiplayer Server"` | Server name shown to clients and master-server listings. Values longer than 100 characters are truncated. |
+| `port` | `57005` | UDP game server port. Client resource downloads are served from the same bound port through the built-in resource server. |
+| `public` | `false` | Enables master-server heartbeats when the server build includes a master-server endpoint. Without that build-time endpoint, the setting is accepted but listing is skipped. |
+| `slots` | `12` | Maximum number of connected players accepted by the network server. |
+| `admin_passwd` | `""` | Loaded from config, but no active administration flow uses it in the current server code. Treat it as reserved. |
+| `auth_key` | `""` | Loaded and limited to 32 characters. The current code does not use it for gameplay authentication. |
 
----
+`server_identity_seed` is generated automatically when missing or invalid. It is a base64-encoded 32-byte seed used to derive the server identity keys, so back up the generated value if you need the server to keep the same identity across reinstalls.
+
+## World And Gameplay
+
+| Setting | Default | What it controls |
+| --- | --- | --- |
+| `map` | `"NEWWORLD\\NEWWORLD.ZEN"` | World path sent to clients and used as the server world name. Keep the path format Gothic expects. |
+| `map_md5` | `""` | Loaded and logged only. The current server code does not enforce this value as a map integrity check. |
+| `allow_modification` | `true` | When `false`, clients that fail the server's modification or CRC check are removed and their connection is temporarily banned. |
+| `hide_map` | `false` | Sends a hide-map flag in server game information, useful for servers that do not want the selected world advertised. |
+| `respawn_time_seconds` | `5` | Global automatic respawn delay after death. Negative disables automatic global respawn, `0` respawns immediately, positive values wait that many seconds. Player-specific script settings can override this behavior. |
+| `seconds_per_game_minute` | `4` in code, `0` in the sample config | Controls the server clock. `0` freezes time. A positive value means one in-game minute passes after that many real seconds. |
+
+For time scale, `seconds_per_game_minute = 1` makes a full in-game day last 24 real minutes. `4` makes it last 96 minutes. Use `0` only when the world time should remain fixed.
+
+`allow_modification` is not a replacement for `map_md5`. The MD5 value is currently passive metadata, while `allow_modification` acts on the modification check result reported by the client/server flow.
+
 ## Logging
-### `log_file`
-- **Type:** string
-- **Description:** File path where the server writes its log output.
----
-### `log_to_stdout`
-- **Type:** boolean
-- **Description:**
-- `true` - logs are also printed to the console.
-- `false` - logs are written only to the log file.
----
-### `log_level`
-- **Type:** string
-- **Allowed values:** `"trace"`, `"debug"`, `"info"`, `"warn"`, `"error"`, `"critical"`
-- **Description:** Controls how detailed the server logs are.
 
----
-## Performance
-### `tick_rate_ms`
-- **Type:** integer
-- **Description:** Server update interval in milliseconds.
-Lower values increase update frequency but require more CPU resources.
+| Setting | Default | What it controls |
+| --- | --- | --- |
+| `log_file` | `"log.txt"` | File sink used by the server logger. The file sink is always created. |
+| `log_to_stdout` | `true` | Adds console output in addition to the log file. |
+| `log_level` | `"trace"` in code, `"info"` in the sample config | Minimum log level. Valid names come from spdlog, such as `trace`, `debug`, `info`, `warning`, `error`, `critical`, and `off`. |
 
----
-## Process Management
-### `daemon`
-- **Type:** boolean
-- **Description:**
-- `true` - runs the server as a background (detached) process on Linux.
-- `false` - runs the server in the foreground.
+If `log_level` is missing or invalid, the server falls back to the compiled default. Prefer `info` for normal hosting, `debug` or `trace` while diagnosing scripts or connection issues, and `warning` or higher only when you intentionally want a quiet production log.
+
+## Runtime Tuning
+
+| Setting | Default | What it controls |
+| --- | --- | --- |
+| `tick_rate_ms` | `100` | Interval used for regular server update broadcasts. Lower values can feel more responsive but increase CPU and network pressure. Higher values reduce traffic at the cost of slower state updates. |
+| `daemon` | `false` on Windows, `true` on non-Windows when missing | On non-Windows builds, controls whether the server detaches into daemon mode. Windows builds ignore the daemon path. |
+
+For most public servers, start with the sample config, then change only the values that affect your actual hosting model: `name`, `port`, `public`, `slots`, `map`, respawn behavior, and logging level.

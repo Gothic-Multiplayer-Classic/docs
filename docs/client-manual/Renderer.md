@@ -1,77 +1,39 @@
 # Renderer
-Gothic Multiplayer supports multiple rendering backends. You can either keep the **original Gothic renderer** (DirectX 7) or switch to one of the renderers shipped with the Multiplayer client (DirectX 9 or DirectX 11).
 
-This is primarily a **compatibility and stability feature**: different systems and driver stacks behave differently with the original 2001-era DirectX 7 pipeline, so GMP provides newer alternatives.
+GMPC can start Gothic through three renderer paths. Choose the renderer in `GMP_Config.toml` with `renderer_type`, then restart the client.
 
----
-
-## Available renderers
-!!! note 
-	If you plan to use modifications like [G3D11](https://github.com/SaiyansKing/GD3D11) or [LegacyAltRenderer](https://github.com/SaiyansKing/Gothic-LegacyAltRenderer), you need to use DX7 on GMP.
-
-### DX7 (Vanilla / Gothic API default)
-- This is the **original renderer used by Gothic**.
-- Selecting DX7 aims to preserve the most "vanilla" behavior and visuals.
-
-Use DX7 if you want the classic rendering path or if you are troubleshooting and want the simplest baseline.
-
----
-
-### DX9 (Gothic Multiplayer renderer)
-- GMP ships its own **Direct3D 9 renderer**.
-- In the current codebase, **D3D9 is the default renderer**.
-
-Use DX9 if you want a more modern backend than DX7, especially on newer Windows versions and GPU drivers, while still staying closer to the "classic era" of DirectX.
-
----
-
-### DX11 (Gothic Multiplayer renderer)
-- GMP also ships a **Direct3D 11 renderer**.
-
-Use DX11 if you want to experiment with the newest backend and you understand it may be incomplete depending on your current GMP version.
-
----
-
-## How to change the renderer
-Renderer selection is controlled via the GMP [configuration file](Configuration.md):
-
-- **File:** `GMP_Config.toml`
-- **Key:** `renderer_type`
-- **Allowed values:** `D3D7`, `D3D9`, `D3D11`
-
-Example:
 ```toml
-# GMP_Config.toml
-renderer_type = "D3D7"   # Vanilla DX7 renderer
-# renderer_type = "D3D9"  # GMP DX9 renderer (default)
-# renderer_type = "D3D11" # GMP DX11 renderer
+renderer_type = "D3D9"
+vsync_enabled = true
 ```
 
----
+## Renderer Choices
 
-## Practical pros and cons
-### Choosing DX7 (Vanilla)
-#### Pros
-- Closest match to original Gothic behavior and visuals
-- Good baseline for troubleshooting (eliminates GMP renderer variables)
-- Is the only one which works with renderer wrapper mods made for the game
-#### Cons
-- More fragile on modern systems (OS/driver compatibility)
-- No benefits from GMP's newer rendering path
-### Choosing DX9 (GMP)
-#### Pros
-- Typically better compatibility with modern Windows + GPU drivers than DX7
-- Default GMP path (most tested in day-to-day usage)
-#### Cons
-- Marked as experimental and may show visual glitches
-### Choosing DX11 (GMP)
-#### Pros
-- Most modern backend provided by GMP
-- Best long-term direction for future renderer work
-#### Cons
-- Explicitly marked as not fully implemented
-- May be less reliable than DX9 depending on current build
-### Recommendation
-- Start with DX9 (default), unless you have a specific reason not to.
-- Switch to DX7 if you want the most vanilla baseline or to troubleshoot.
-- Try DX11 if you are testing and can tolerate incomplete implementation.
+| Value | Best use | Notes |
+| --- | --- | --- |
+| `"D3D7"` | Vanilla compatibility, troubleshooting, and external renderer wrappers | Uses Gothic's original Direct3D 7 renderer. GMPC does not replace the renderer in this mode. |
+| `"D3D9"` | Normal play | Default GMPC renderer. It supports modern resolution handling, but the client still marks it as experimental because visual glitches are possible. |
+| `"D3D11"` | Testing only | Native GMPC Direct3D 11 path. The client warns that it is not fully implemented. |
+
+For most players, start with `D3D9`. If the game fails to start, crashes during video initialization, or renders incorrectly, switch to `D3D7` and test again. Use `D3D11` only when you specifically want to test that backend.
+
+## External Renderers
+
+Third-party Gothic renderers such as GD3D11 and LegacyAltRenderer expect Gothic's original rendering path. Use `renderer_type = "D3D7"` when testing those tools with GMPC.
+
+Do not combine GMPC's native `D3D9` or `D3D11` renderer with a separate renderer wrapper unless you already know that wrapper supports this setup. Those modes replace Gothic's renderer instead of leaving the original path untouched.
+
+## VSync
+
+`vsync_enabled` is read from the same config file. The exact effect depends on the selected renderer and graphics driver. In the D3D9 path, changing VSync may require a device reset or client restart before the result is visible.
+
+## Troubleshooting
+
+| Symptom | First check |
+| --- | --- |
+| Black screen or crash on launch | Set `renderer_type = "D3D7"` and restart. |
+| External renderer wrapper does not load | Use `D3D7`; native GMPC renderers replace the original Gothic renderer path. |
+| Tearing or uneven frame pacing | Toggle `vsync_enabled` and restart the client. |
+| Visual glitches in normal play | Try `D3D7` to separate renderer bugs from server or script issues. |
+
+When reporting renderer issues, include the selected renderer, whether VSync is enabled, your Gothic version, and any external renderer or wrapper you are using.
