@@ -8,8 +8,8 @@ This event is triggered when a player's equipped melee weapon changes.
 
 ## Parameters
 ```c++
-void onPlayerEquipMeleeWeapon(number player_id, number|nil instance)
+void onPlayerEquipMeleeWeapon(number player_id, Item|nil item)
 ```
 
 * `number` **player_id**: Player id.
-* `number|nil` **instance**: Equipped melee weapon instance id (nil if none).
+* `Item|nil` **item**: Equipped melee weapon item (nil if none).

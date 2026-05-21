@@ -2134,6 +2134,212 @@
       ],
       "callbacks": []
     },
+    "Item": {
+      "name": "Item",
+      "doc": "Represents a read-only Gothic item definition from the server item registry.",
+      "side": "server",
+      "category": "Item",
+      "extends": null,
+      "fields": [
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Represents the canonical Gothic item instance name."
+        },
+        {
+          "name": "index",
+          "type": "number",
+          "doc": "Represents the Gothic parser symbol index for this item instance."
+        },
+        {
+          "name": "mainflag",
+          "type": "number",
+          "doc": "Represents the item's main category flag."
+        },
+        {
+          "name": "mainFlag",
+          "type": "number",
+          "doc": "Represents the item's main category flag."
+        },
+        {
+          "name": "flags",
+          "type": "number",
+          "doc": "Represents the item's Gothic flags."
+        },
+        {
+          "name": "visual",
+          "type": "string",
+          "doc": "Represents the item's visual model file."
+        },
+        {
+          "name": "wear",
+          "type": "number",
+          "doc": "Represents the armor wear slot value."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "doc": "Represents the item's range value."
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "doc": "Represents the item's value in currency units."
+        },
+        {
+          "name": "damage",
+          "type": "{total, types}|nil",
+          "doc": "Represents the item's damage information."
+        },
+        {
+          "name": "damageTotal",
+          "type": "number",
+          "doc": "Represents the item's total damage."
+        },
+        {
+          "name": "damageTypes",
+          "type": "number",
+          "doc": "Represents the item's Gothic damage type flags."
+        },
+        {
+          "name": "munition",
+          "type": "string",
+          "doc": "Represents the required munition item instance name."
+        },
+        {
+          "name": "munitionItem",
+          "type": "item|nil",
+          "doc": "Represents the required munition item definition."
+        },
+        {
+          "name": "spell",
+          "type": "number",
+          "doc": "Represents the spell id associated with this item."
+        },
+        {
+          "name": "scemename",
+          "type": "string",
+          "doc": "Represents the item's Gothic sceme name."
+        },
+        {
+          "name": "mag_circle",
+          "type": "number",
+          "doc": "Represents the magic circle required by this item."
+        },
+        {
+          "name": "protections",
+          "type": "table",
+          "doc": "Represents protection values exported for this item."
+        },
+        {
+          "name": "conditions",
+          "type": "table",
+          "doc": "Represents attribute conditions exported for this item."
+        }
+      ],
+      "methods": [
+        {
+          "name": "getProtection",
+          "doc": "Returns the protection value for a Gothic damage type.",
+          "params": [
+            {
+              "name": "damageType",
+              "type": "number",
+              "doc": "Gothic damage type."
+            }
+          ],
+          "returns": {
+            "type": "number",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getCondAtr",
+          "doc": "Returns the required attribute type at the given condition index.",
+          "params": [
+            {
+              "name": "index",
+              "type": "number",
+              "doc": "Zero-based condition index."
+            }
+          ],
+          "returns": {
+            "type": "number",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getCondValue",
+          "doc": "Returns the required attribute value at the given condition index.",
+          "params": [
+            {
+              "name": "index",
+              "type": "number",
+              "doc": "Zero-based condition index."
+            }
+          ],
+          "returns": {
+            "type": "number",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getByInstance",
+          "doc": "Returns an item definition by Gothic instance name.",
+          "params": [
+            {
+              "name": "instance",
+              "type": "string",
+              "doc": "Gothic item instance name."
+            }
+          ],
+          "returns": {
+            "type": "item|nil",
+            "doc": "Item definition or nil if missing."
+          }
+        },
+        {
+          "name": "getByIndex",
+          "doc": "Returns an item definition by Gothic parser symbol index.",
+          "params": [
+            {
+              "name": "index",
+              "type": "number",
+              "doc": "Gothic parser symbol index."
+            }
+          ],
+          "returns": {
+            "type": "item|nil",
+            "doc": "Item definition or nil if missing."
+          }
+        },
+        {
+          "name": "exists",
+          "doc": "Returns whether an item definition exists for the given instance name.",
+          "params": [
+            {
+              "name": "instance",
+              "type": "string",
+              "doc": "Gothic item instance name."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": ""
+          }
+        },
+        {
+          "name": "size",
+          "doc": "Returns the number of item definitions loaded by the server.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": ""
+          }
+        }
+      ],
+      "callbacks": []
+    },
     "ItemGround": {
       "name": "ItemGround",
       "doc": "Represents a synchronized server-side ground item visible on the client.",
@@ -8913,9 +9119,9 @@
           "doc": "Player id."
         },
         {
-          "name": "instance",
-          "type": "number|nil",
-          "doc": "Equipped amulet instance id (nil if none)."
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Equipped amulet item (nil if none)."
         }
       ],
       "cancellable": false
@@ -8932,9 +9138,9 @@
           "doc": "Player id."
         },
         {
-          "name": "instance",
-          "type": "number|nil",
-          "doc": "Equipped armor instance id (nil if none)."
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Equipped armor item (nil if none)."
         }
       ],
       "cancellable": false
@@ -8951,9 +9157,9 @@
           "doc": "Player id."
         },
         {
-          "name": "instance",
-          "type": "number|nil",
-          "doc": "Equipped belt instance id (nil if none)."
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Equipped belt item (nil if none)."
         }
       ],
       "cancellable": false
@@ -8975,9 +9181,9 @@
           "doc": "Hand id (0 = left, 1 = right)."
         },
         {
-          "name": "instance",
-          "type": "number|nil",
-          "doc": "Equipped hand item instance id (nil if none)."
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Equipped hand item (nil if none)."
         }
       ],
       "cancellable": false
@@ -8994,9 +9200,9 @@
           "doc": "Player id."
         },
         {
-          "name": "instance",
-          "type": "number|nil",
-          "doc": "Equipped helmet instance id (nil if none)."
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Equipped helmet item (nil if none)."
         }
       ],
       "cancellable": false
@@ -9013,9 +9219,9 @@
           "doc": "Player id."
         },
         {
-          "name": "instance",
-          "type": "number|nil",
-          "doc": "Equipped melee weapon instance id (nil if none)."
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Equipped melee weapon item (nil if none)."
         }
       ],
       "cancellable": false
@@ -9032,9 +9238,9 @@
           "doc": "Player id."
         },
         {
-          "name": "instance",
-          "type": "number|nil",
-          "doc": "Equipped ranged weapon instance id (nil if none)."
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Equipped ranged weapon item (nil if none)."
         }
       ],
       "cancellable": false
@@ -9056,9 +9262,9 @@
           "doc": "Logical ring slot (0 or 1)."
         },
         {
-          "name": "instance",
-          "type": "number|nil",
-          "doc": "Equipped ring instance id (nil if none)."
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Equipped ring item (nil if none)."
         }
       ],
       "cancellable": false
@@ -9075,9 +9281,9 @@
           "doc": "Player id."
         },
         {
-          "name": "instance",
-          "type": "number|nil",
-          "doc": "Equipped shield instance id (nil if none)."
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Equipped shield item (nil if none)."
         }
       ],
       "cancellable": false
@@ -9099,9 +9305,9 @@
           "doc": "Active spell slot id (0 if none)."
         },
         {
-          "name": "instance",
-          "type": "number|nil",
-          "doc": "Active spell item instance id (nil if none)."
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Active spell item (nil if none)."
         }
       ],
       "cancellable": false

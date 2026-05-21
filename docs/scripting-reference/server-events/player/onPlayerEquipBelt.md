@@ -8,8 +8,8 @@ This event is triggered when a player's equipped belt changes.
 
 ## Parameters
 ```c++
-void onPlayerEquipBelt(number player_id, number|nil instance)
+void onPlayerEquipBelt(number player_id, Item|nil item)
 ```
 
 * `number` **player_id**: Player id.
-* `number|nil` **instance**: Equipped belt instance id (nil if none).
+* `Item|nil` **item**: Equipped belt item (nil if none).

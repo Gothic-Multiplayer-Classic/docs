@@ -8,9 +8,9 @@ This event is triggered when a player's equipped ring changes.
 
 ## Parameters
 ```c++
-void onPlayerEquipRing(number player_id, number ring_slot, number|nil instance)
+void onPlayerEquipRing(number player_id, number ring_slot, Item|nil item)
 ```
 
 * `number` **player_id**: Player id.
 * `number` **ring_slot**: Logical ring slot (0 or 1).
-* `number|nil` **instance**: Equipped ring instance id (nil if none).
+* `Item|nil` **item**: Equipped ring item (nil if none).

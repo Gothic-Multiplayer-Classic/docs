@@ -8,8 +8,8 @@ This event is triggered when a player's equipped helmet changes.
 
 ## Parameters
 ```c++
-void onPlayerEquipHelmet(number player_id, number|nil instance)
+void onPlayerEquipHelmet(number player_id, Item|nil item)
 ```
 
 * `number` **player_id**: Player id.
-* `number|nil` **instance**: Equipped helmet instance id (nil if none).
+* `Item|nil` **item**: Equipped helmet item (nil if none).

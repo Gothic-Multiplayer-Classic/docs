@@ -8,8 +8,8 @@ This event is triggered when a player's equipped armor changes.
 
 ## Parameters
 ```c++
-void onPlayerEquipArmor(number player_id, number|nil instance)
+void onPlayerEquipArmor(number player_id, Item|nil item)
 ```
 
 * `number` **player_id**: Player id.
-* `number|nil` **instance**: Equipped armor instance id (nil if none).
+* `Item|nil` **item**: Equipped armor item (nil if none).
