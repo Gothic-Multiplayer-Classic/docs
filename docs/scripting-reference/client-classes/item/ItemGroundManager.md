@@ -13,7 +13,38 @@ No properties.
 ----
 
 ## Methods
-No methods.
+### getById
+
+Returns a synchronized ground item by id.
+
+```cpp
+ItemGround|nil getById(number id)
+```
+
+**Parameters:**
+
+* `number` **id**: Ground item id.
+  
+**Returns `ItemGround|nil`:**
+
+Ground item object or nil if missing.
+
+----
+### getByItem
+
+Returns the first synchronized ground item with the given item instance.
+
+```cpp
+ItemGround|nil getByItem(string instance)
+```
+
+**Parameters:**
+
+* `string` **instance**: Gothic item instance name.
+  
+**Returns `ItemGround|nil`:**
+
+Ground item object or nil if missing.
 
 ----
 

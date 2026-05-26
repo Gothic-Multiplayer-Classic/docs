@@ -46,7 +46,7 @@ Represents the displayed text.
 Represents the font identifier used for rendering.
 
 ----
-### `{r, g, b}` color <font size="2">(read-only)</font>
+### `{r, g, b, a}` color 
 
 Represents the draw's color.
 
@@ -198,13 +198,13 @@ void setColor(number r, number g, number b)
 This function will return the current text color.
 
 ```cpp
-{r, g, b} getColor()
+{r, g, b, a} getColor()
 ```
 
   
-**Returns `{r, g, b}`:**
+**Returns `{r, g, b, a}`:**
 
-Table containing color in RGB model.
+Table containing color in RGBA model.
 
 ----
 ### setAlpha

@@ -50,7 +50,7 @@ Represents the Texture rectangle in virtual screen units.
 Represents the Texture rectangle in pixel coordinates.
 
 ----
-### `{r, g, b}` color 
+### `{r, g, b, a}` color 
 
 Represents the Texture color.
 
@@ -271,13 +271,13 @@ void setColor(number r, number g, number b)
 This method will return the Texture color.
 
 ```cpp
-{r, g, b} getColor()
+{r, g, b, a} getColor()
 ```
 
   
-**Returns `{r, g, b}`:**
+**Returns `{r, g, b, a}`:**
 
-Table containing color in RGB model.
+Table containing color in RGBA model.
 
 ----
 ### setAlpha

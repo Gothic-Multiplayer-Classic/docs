@@ -2378,7 +2378,38 @@
       "category": "Item",
       "extends": null,
       "fields": [],
-      "methods": [],
+      "methods": [
+        {
+          "name": "getById",
+          "doc": "Returns a synchronized ground item by id.",
+          "params": [
+            {
+              "name": "id",
+              "type": "number",
+              "doc": "Ground item id."
+            }
+          ],
+          "returns": {
+            "type": "itemground|nil",
+            "doc": "Ground item object or nil if missing."
+          }
+        },
+        {
+          "name": "getByItem",
+          "doc": "Returns the first synchronized ground item with the given item instance.",
+          "params": [
+            {
+              "name": "instance",
+              "type": "string",
+              "doc": "Gothic item instance name."
+            }
+          ],
+          "returns": {
+            "type": "itemground|nil",
+            "doc": "Ground item object or nil if missing."
+          }
+        }
+      ],
       "callbacks": []
     },
     "JsonFile": {
@@ -2538,6 +2569,310 @@
           "returns": {
             "type": "number",
             "doc": "Number of waypoints."
+          }
+        }
+      ],
+      "callbacks": []
+    },
+    "Music": {
+      "name": "Music",
+      "doc": "This class represents streamed music playback on the game client. It is unrelated to Zengin's implementation of Sound and Music.",
+      "side": "client",
+      "category": "Game",
+      "extends": null,
+      "fields": [
+        {
+          "name": "file",
+          "type": "string",
+          "doc": "Represents the music file path."
+        },
+        {
+          "name": "volume",
+          "type": "number",
+          "doc": "Represents the playback volume before options volume is applied."
+        },
+        {
+          "name": "looping",
+          "type": "boolean",
+          "doc": "Represents whether playback should loop."
+        },
+        {
+          "name": "position",
+          "type": "number",
+          "doc": "Represents the current playback position in seconds."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "doc": "Represents the music duration in seconds."
+        },
+        {
+          "name": "muteGothicMusic",
+          "type": "boolean",
+          "doc": "Represents whether Gothic's original music should be muted while this music plays."
+        },
+        {
+          "name": "optionsVolume",
+          "type": "number",
+          "doc": "Represents the current Gothic music options volume multiplier."
+        },
+        {
+          "name": "useOptionsVolume",
+          "type": "boolean",
+          "doc": "Represents whether the Gothic music options volume should affect this music."
+        }
+      ],
+      "methods": [
+        {
+          "name": "new",
+          "is_constructor": true,
+          "doc": "Creates a new Music object from a file path. Available formats are `OGG`, `MP3`, `WAV` and `FLAC`.",
+          "params": [
+            {
+              "name": "file",
+              "type": "string",
+              "doc": "Music file path."
+            }
+          ],
+          "returns": {
+            "type": "Music",
+            "doc": ""
+          }
+        },
+        {
+          "name": "play",
+          "doc": "This method will start music playback using the current looping state.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "playLooped",
+          "doc": "This method will enable looping and start music playback.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "pause",
+          "doc": "This method will pause music playback.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "resume",
+          "doc": "This method will resume paused music playback.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "stop",
+          "doc": "This method will stop music playback.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "isPlaying",
+          "doc": "This method will return whether the music is currently playing.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if music is playing."
+          }
+        },
+        {
+          "name": "isPaused",
+          "doc": "This method will return whether the music is currently paused.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if music is paused."
+          }
+        }
+      ],
+      "callbacks": []
+    },
+    "Camera": {
+      "name": "Camera",
+      "doc": "Static access to the active engine camera.",
+      "side": "client",
+      "category": "Game",
+      "extends": null,
+      "fields": [
+        {
+          "name": "modeChangeEnabled",
+          "type": "boolean",
+          "doc": "Represents whether scripted camera mode changes are enabled."
+        },
+        {
+          "name": "movementEnabled",
+          "type": "boolean",
+          "doc": "Represents whether the camera is allowed to move."
+        },
+        {
+          "name": "targetVob",
+          "type": "vob|nil",
+          "doc": "Represents the active camera target Vob."
+        }
+      ],
+      "methods": [
+        {
+          "name": "setMode",
+          "doc": "Sets the active camera mode.",
+          "params": [
+            {
+              "name": "mode",
+              "type": "string",
+              "doc": "Camera mode name."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if an AI camera is available."
+          }
+        },
+        {
+          "name": "getMode",
+          "doc": "Returns the active camera mode.",
+          "params": [],
+          "returns": {
+            "type": "string",
+            "doc": "Camera mode name."
+          }
+        },
+        {
+          "name": "setPosition",
+          "doc": "Sets the active camera world position.",
+          "params": [
+            {
+              "name": "x",
+              "type": "number",
+              "doc": "X world position."
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "doc": "Y world position."
+            },
+            {
+              "name": "z",
+              "type": "number",
+              "doc": "Z world position."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getPosition",
+          "doc": "Returns the active camera world position.",
+          "params": [],
+          "returns": {
+            "type": "table",
+            "doc": "Table containing x,y,z world position."
+          }
+        },
+        {
+          "name": "setRotation",
+          "doc": "Sets the active camera Euler rotation.",
+          "params": [
+            {
+              "name": "x",
+              "type": "number",
+              "doc": "X rotation."
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "doc": "Y rotation."
+            },
+            {
+              "name": "z",
+              "type": "number",
+              "doc": "Z rotation."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getRotation",
+          "doc": "Returns the active camera Euler rotation.",
+          "params": [],
+          "returns": {
+            "type": "table",
+            "doc": "Table containing x,y,z rotation."
+          }
+        },
+        {
+          "name": "setTargetVob",
+          "doc": "Sets a Vob as the active camera target.",
+          "params": [
+            {
+              "name": "vob",
+              "type": "vob",
+              "doc": "Target Vob."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if the target was applied."
+          }
+        },
+        {
+          "name": "setTargetPlayer",
+          "doc": "Sets a player NPC as the active camera target.",
+          "params": [
+            {
+              "name": "playerId",
+              "type": "number",
+              "doc": "Player id."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if the player exists and has an NPC."
+          }
+        },
+        {
+          "name": "setFOV",
+          "doc": "Sets the active render camera field of view.",
+          "params": [
+            {
+              "name": "fov",
+              "type": "number",
+              "doc": "Field of view."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getFOV",
+          "doc": "Returns the active render camera field of view.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": "Field of view."
           }
         }
       ],
@@ -2865,7 +3200,7 @@
           "params": [],
           "returns": {
             "type": "table",
-            "doc": "Table containing color in RGB model."
+            "doc": "Table containing color in RGBA model."
           }
         },
         {
@@ -2914,6 +3249,480 @@
           "returns": {
             "type": "boolean",
             "doc": "True if visible."
+          }
+        }
+      ],
+      "callbacks": []
+    },
+    "Draw3d": {
+      "name": "Draw3d",
+      "doc": "3D text drawing helper for rendering world-space text on screen.",
+      "side": "client",
+      "category": "UI",
+      "extends": null,
+      "fields": [
+        {
+          "name": "worldPosition",
+          "type": "table",
+          "doc": "Alias for position."
+        },
+        {
+          "name": "text",
+          "type": "table",
+          "doc": "Represents the displayed text lines."
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "doc": "Represents the font identifier used for rendering."
+        },
+        {
+          "name": "color",
+          "type": "table",
+          "doc": "Represents the Draw3d color."
+        },
+        {
+          "name": "alpha",
+          "type": "number",
+          "doc": "Represents the Draw3d alpha."
+        },
+        {
+          "name": "visible",
+          "type": "boolean",
+          "doc": "Represents whether the Draw3d object is rendered."
+        },
+        {
+          "name": "distance",
+          "type": "number",
+          "doc": "Represents the max render distance from the local player."
+        }
+      ],
+      "methods": [
+        {
+          "name": "new",
+          "is_constructor": true,
+          "doc": "Creates a new Draw3d object with default settings.",
+          "params": [],
+          "returns": {
+            "type": "Draw3d",
+            "doc": ""
+          }
+        },
+        {
+          "name": "new",
+          "is_constructor": true,
+          "doc": "Creates a new Draw3d object at the provided world position.",
+          "params": [
+            {
+              "name": "x",
+              "type": "number",
+              "doc": "Initial X world position."
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "doc": "Initial Y world position."
+            },
+            {
+              "name": "z",
+              "type": "number",
+              "doc": "Initial Z world position."
+            }
+          ],
+          "returns": {
+            "type": "Draw3d",
+            "doc": ""
+          }
+        },
+        {
+          "name": "new",
+          "is_constructor": true,
+          "doc": "Creates a new Draw3d object at the provided world position with initial text.",
+          "params": [
+            {
+              "name": "x",
+              "type": "number",
+              "doc": "Initial X world position."
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "doc": "Initial Y world position."
+            },
+            {
+              "name": "z",
+              "type": "number",
+              "doc": "Initial Z world position."
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "doc": "Initial text line."
+            }
+          ],
+          "returns": {
+            "type": "Draw3d",
+            "doc": ""
+          }
+        },
+        {
+          "name": "setPosition",
+          "doc": "Sets the world position used to project this text to screen space.",
+          "params": [
+            {
+              "name": "x",
+              "type": "number",
+              "doc": "X world position."
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "doc": "Y world position."
+            },
+            {
+              "name": "z",
+              "type": "number",
+              "doc": "Z world position."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getPosition",
+          "doc": "Returns the current world position.",
+          "params": [],
+          "returns": {
+            "type": "table",
+            "doc": "Table containing x,y,z world position."
+          }
+        },
+        {
+          "name": "insertText",
+          "doc": "Appends a text line to the Draw3d object.",
+          "params": [
+            {
+              "name": "text",
+              "type": "string",
+              "doc": "Text line to append."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "removeText",
+          "doc": "Removes a text line by zero-based index.",
+          "params": [
+            {
+              "name": "index",
+              "type": "number",
+              "doc": "Zero-based text line index."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "updateText",
+          "doc": "Updates a text line by zero-based index.",
+          "params": [
+            {
+              "name": "index",
+              "type": "number",
+              "doc": "Zero-based text line index."
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "doc": "Replacement text."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "clearText",
+          "doc": "Removes all text lines.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getText",
+          "doc": "Returns all text lines.",
+          "params": [],
+          "returns": {
+            "type": "table",
+            "doc": "Array-like table of text lines."
+          }
+        },
+        {
+          "name": "setText",
+          "doc": "Replaces all text lines with one text line.",
+          "params": [
+            {
+              "name": "text",
+              "type": "string",
+              "doc": "Text to display."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "setFont",
+          "doc": "Sets the font used for rendering.",
+          "params": [
+            {
+              "name": "font",
+              "type": "string",
+              "doc": "Font file name."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getFont",
+          "doc": "Returns the current font file name.",
+          "params": [],
+          "returns": {
+            "type": "string",
+            "doc": "Font file name."
+          }
+        },
+        {
+          "name": "setColor",
+          "doc": "Sets the text color.",
+          "params": [
+            {
+              "name": "r",
+              "type": "number",
+              "doc": "Red color component."
+            },
+            {
+              "name": "g",
+              "type": "number",
+              "doc": "Green color component."
+            },
+            {
+              "name": "b",
+              "type": "number",
+              "doc": "Blue color component."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getColor",
+          "doc": "Returns the text color.",
+          "params": [],
+          "returns": {
+            "type": "table",
+            "doc": "Table containing color in RGBA model."
+          }
+        },
+        {
+          "name": "setAlpha",
+          "doc": "Sets the text alpha.",
+          "params": [
+            {
+              "name": "alpha",
+              "type": "number",
+              "doc": "Opacity value (0-255)."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getAlpha",
+          "doc": "Returns the current alpha.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": "Opacity value (0-255)."
+          }
+        },
+        {
+          "name": "setVisible",
+          "doc": "Sets whether the Draw3d object should render.",
+          "params": [
+            {
+              "name": "visible",
+              "type": "boolean",
+              "doc": "True to render, false to hide."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getVisible",
+          "doc": "Returns whether this Draw3d object is visible.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if visible."
+          }
+        },
+        {
+          "name": "setDistance",
+          "doc": "Sets the max render distance from the local player.",
+          "params": [
+            {
+              "name": "distance",
+              "type": "number",
+              "doc": "Max distance in world units. Zero disables distance culling."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getDistance",
+          "doc": "Returns the max render distance.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": "Max distance in world units."
+          }
+        },
+        {
+          "name": "top",
+          "doc": "Moves the Draw3d view to the top of the screen view stack.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "render",
+          "doc": "Forces immediate rendering of this Draw3d object.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        }
+      ],
+      "callbacks": []
+    },
+    "MusicTheme": {
+      "name": "MusicTheme",
+      "doc": "Static access to the engine music theme system.",
+      "side": "client",
+      "category": "Game",
+      "extends": null,
+      "fields": [
+        {
+          "name": "fileName",
+          "type": "string",
+          "doc": "Represents the loaded theme file name."
+        },
+        {
+          "name": "volume",
+          "type": "number",
+          "doc": "Represents the theme volume."
+        },
+        {
+          "name": "loop",
+          "type": "boolean",
+          "doc": "Represents whether the theme should loop."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "doc": "Represents whether the engine music system is disabled."
+        },
+        {
+          "name": "activeTheme",
+          "type": "string|nil",
+          "doc": "Represents the active engine music theme name or file name."
+        },
+        {
+          "name": "reverbMix",
+          "type": "number",
+          "doc": "Represents the theme reverb mix."
+        },
+        {
+          "name": "reverbTime",
+          "type": "number",
+          "doc": "Represents the theme reverb time."
+        },
+        {
+          "name": "transType",
+          "type": "number",
+          "doc": "Represents the theme transition type."
+        },
+        {
+          "name": "transSubType",
+          "type": "number",
+          "doc": "Represents the theme transition subtype."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "doc": "Represents the theme script name."
+        }
+      ],
+      "methods": [
+        {
+          "name": "loadTheme",
+          "doc": "Loads a music theme by script name, falling back to a raw file name.",
+          "params": [
+            {
+              "name": "fileName",
+              "type": "string",
+              "doc": "Theme script name or file name."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if the theme was loaded."
+          }
+        },
+        {
+          "name": "playTheme",
+          "doc": "Plays the currently loaded theme.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if playback was started."
+          }
+        },
+        {
+          "name": "stopTheme",
+          "doc": "Stops music theme playback.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
           }
         }
       ],
@@ -2994,6 +3803,160 @@
           "returns": {
             "type": "boolean",
             "doc": "True if the sound is playing."
+          }
+        }
+      ],
+      "callbacks": []
+    },
+    "Sound3d": {
+      "name": "Sound3d",
+      "doc": "This class represents a positional 3D sound attached to an engine Vob.",
+      "side": "client",
+      "category": "Game",
+      "extends": null,
+      "fields": [
+        {
+          "name": "file",
+          "type": "string",
+          "doc": "Represents the sound file path."
+        },
+        {
+          "name": "playingTime",
+          "type": "number",
+          "doc": "Represents the current playback time."
+        },
+        {
+          "name": "volume",
+          "type": "number",
+          "doc": "Represents the playback volume."
+        },
+        {
+          "name": "looping",
+          "type": "boolean",
+          "doc": "Represents whether the sound should loop."
+        },
+        {
+          "name": "balance",
+          "type": "number",
+          "doc": "Represents the stereo balance (pan)."
+        },
+        {
+          "name": "obstruction",
+          "type": "number",
+          "doc": "Represents 3D sound obstruction."
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "doc": "Represents 3D sound radius."
+        },
+        {
+          "name": "coneAngle",
+          "type": "number",
+          "doc": "Represents 3D sound cone angle in degrees."
+        },
+        {
+          "name": "reverbLevel",
+          "type": "number",
+          "doc": "Represents 3D sound reverb level."
+        },
+        {
+          "name": "ambient",
+          "type": "boolean",
+          "doc": "Represents whether the sound uses ambient 3D behavior."
+        },
+        {
+          "name": "pitchOffset",
+          "type": "number",
+          "doc": "Represents 3D sound pitch offset."
+        },
+        {
+          "name": "targetVob",
+          "type": "vob|nil",
+          "doc": "Represents the target Vob used as sound source."
+        }
+      ],
+      "methods": [
+        {
+          "name": "new",
+          "is_constructor": true,
+          "doc": "Creates a new 3D sound from a file.",
+          "params": [
+            {
+              "name": "file",
+              "type": "string",
+              "doc": "Sound file path."
+            }
+          ],
+          "returns": {
+            "type": "Sound3d",
+            "doc": ""
+          }
+        },
+        {
+          "name": "play",
+          "doc": "Starts 3D sound playback at the current target Vob.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "stop",
+          "doc": "Stops 3D sound playback.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "isPlaying",
+          "doc": "Returns whether the 3D sound is currently playing.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if the sound is playing."
+          }
+        },
+        {
+          "name": "update",
+          "doc": "Updates the active 3D sound parameters in the engine.",
+          "params": [],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "setTargetVob",
+          "doc": "Sets the Vob used as the 3D sound source.",
+          "params": [
+            {
+              "name": "vob",
+              "type": "vob",
+              "doc": "Target Vob."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "setTargetPlayer",
+          "doc": "Sets a player NPC as the 3D sound source.",
+          "params": [
+            {
+              "name": "playerId",
+              "type": "number",
+              "doc": "Player id."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if the player exists and has an NPC."
           }
         }
       ],
@@ -3319,7 +4282,7 @@
           "params": [],
           "returns": {
             "type": "table",
-            "doc": "Table containing color in RGB model."
+            "doc": "Table containing color in RGBA model."
           }
         },
         {
@@ -4436,6 +5399,23 @@
       }
     },
     {
+      "name": "unspawnPlayer",
+      "doc": "This function will unspawn the player without disconnecting him.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id to unspawn."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
       "name": "setPlayerInstance",
       "doc": "This function will set the player's character instance.",
       "side": "server",
@@ -4562,6 +5542,23 @@
       "returns": {
         "type": "string|nil",
         "doc": "Player UUID or nil."
+      }
+    },
+    {
+      "name": "getPlayerPing",
+      "doc": "This function will return the player's current network ping.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Average of all ping times read, or -1 if unavailable."
       }
     },
     {
@@ -5283,6 +6280,108 @@
       }
     },
     {
+      "name": "getPlayerAniId",
+      "doc": "This function will return the last reported player animation id.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Animation id, or -1 if unavailable."
+      }
+    },
+    {
+      "name": "getPlayerArmor",
+      "doc": "This function will return the player's equipped armor instance name.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Equipped armor instance, or nil if no armor is equipped."
+      }
+    },
+    {
+      "name": "getPlayerMeleeWeapon",
+      "doc": "This function will return the player's equipped melee weapon instance name.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Equipped melee weapon instance, or nil if none is equipped."
+      }
+    },
+    {
+      "name": "getPlayerRangedWeapon",
+      "doc": "This function will return the player's equipped ranged weapon instance name.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Equipped ranged weapon instance, or nil if none is equipped."
+      }
+    },
+    {
+      "name": "getPlayerHelmet",
+      "doc": "This function will return the player's equipped helmet instance name.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Equipped helmet instance, or nil if no helmet is equipped."
+      }
+    },
+    {
+      "name": "getPlayerShield",
+      "doc": "This function will return the player's equipped shield instance name.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Equipped shield instance, or nil if no shield is equipped."
+      }
+    },
+    {
       "name": "applyPlayerOverlay",
       "doc": "This function will apply animation overlay on the player.",
       "side": "server",
@@ -5864,6 +6963,201 @@
       }
     },
     {
+      "name": "equipArmor",
+      "doc": "This function will equip an armor item for the player.",
+      "side": "server",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Armor item instance name."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the equip packet was sent."
+      }
+    },
+    {
+      "name": "unequipArmor",
+      "doc": "This function will unequip the player's current armor.",
+      "side": "server",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when an equipped armor item was found and unequipped."
+      }
+    },
+    {
+      "name": "equipMeleeWeapon",
+      "doc": "This function will equip a melee weapon for the player.",
+      "side": "server",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Melee weapon item instance name."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the equip packet was sent."
+      }
+    },
+    {
+      "name": "unequipMeleeWeapon",
+      "doc": "This function will unequip the player's current melee weapon.",
+      "side": "server",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when an equipped melee weapon was found and unequipped."
+      }
+    },
+    {
+      "name": "equipRangedWeapon",
+      "doc": "This function will equip a ranged weapon for the player.",
+      "side": "server",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Ranged weapon item instance name."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the equip packet was sent."
+      }
+    },
+    {
+      "name": "unequipRangedWeapon",
+      "doc": "This function will unequip the player's current ranged weapon.",
+      "side": "server",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when an equipped ranged weapon was found and unequipped."
+      }
+    },
+    {
+      "name": "equipHelmet",
+      "doc": "This function will equip a helmet item for the player.",
+      "side": "server",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Helmet item instance name."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the equip packet was sent."
+      }
+    },
+    {
+      "name": "unequipHelmet",
+      "doc": "This function will unequip the player's current helmet.",
+      "side": "server",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when an equipped helmet item was found and unequipped."
+      }
+    },
+    {
+      "name": "equipShield",
+      "doc": "This function will equip a shield item for the player.",
+      "side": "server",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Shield item instance name."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the equip packet was sent."
+      }
+    },
+    {
+      "name": "unequipShield",
+      "doc": "This function will unequip the player's current shield.",
+      "side": "server",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when an equipped shield item was found and unequipped."
+      }
+    },
+    {
       "name": "hasItem",
       "doc": "This function will return the amount of a specific item in the player's inventory.",
       "side": "server",
@@ -6070,92 +7364,6 @@
       "returns": {
         "type": "number",
         "doc": "Day length in milliseconds."
-      }
-    },
-    {
-      "name": "getById",
-      "doc": "Returns a ground item by id.",
-      "side": "server",
-      "category": "Item",
-      "params": [
-        {
-          "name": "id",
-          "type": "number",
-          "doc": "Ground item id."
-        }
-      ],
-      "returns": {
-        "type": "itemground|nil",
-        "doc": "Ground item object or nil if missing."
-      }
-    },
-    {
-      "name": "create",
-      "doc": "Creates a synchronized ground item.",
-      "side": "server",
-      "category": "Item",
-      "params": [
-        {
-          "name": "options",
-          "type": "table",
-          "doc": "Creation options."
-        },
-        {
-          "name": "options.instance",
-          "type": "string",
-          "doc": "Gothic item instance name."
-        },
-        {
-          "name": "options.amount",
-          "type": "number",
-          "doc": "Optional amount. Defaults to 1."
-        },
-        {
-          "name": "options.physicsEnabled",
-          "type": "boolean",
-          "doc": "Optional physics flag. Defaults to false."
-        },
-        {
-          "name": "options.position",
-          "type": "table",
-          "doc": "Optional world position. Defaults to 0,0,0."
-        },
-        {
-          "name": "options.rotation",
-          "type": "table",
-          "doc": "Optional Euler rotation. Defaults to 0,0,0."
-        },
-        {
-          "name": "options.world",
-          "type": "string",
-          "doc": "Optional world name. Defaults to the server world."
-        },
-        {
-          "name": "options.virtualWorld",
-          "type": "number",
-          "doc": "Optional virtual world id. Defaults to 0."
-        }
-      ],
-      "returns": {
-        "type": "number",
-        "doc": "Ground item id, or 0 on failure."
-      }
-    },
-    {
-      "name": "destroy",
-      "doc": "Destroys a synchronized ground item.",
-      "side": "server",
-      "category": "Item",
-      "params": [
-        {
-          "name": "itemGround",
-          "type": "number|itemground",
-          "doc": "Ground item id or object."
-        }
-      ],
-      "returns": {
-        "type": "boolean",
-        "doc": "True if the ground item was destroyed."
       }
     },
     {
@@ -7227,6 +8435,125 @@
       }
     },
     {
+      "name": "getPlayerAni",
+      "doc": "This function will return the active animation name for a player or NPC.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Active animation name, or nil if unavailable."
+      }
+    },
+    {
+      "name": "getPlayerAniId",
+      "doc": "This function will return the active animation id for a player or NPC.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Active animation id, or -1 if unavailable."
+      }
+    },
+    {
+      "name": "getPlayerArmor",
+      "doc": "This function will return the equipped armor instance name for a player or NPC.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Equipped armor instance, or nil if no armor is equipped."
+      }
+    },
+    {
+      "name": "getPlayerMeleeWeapon",
+      "doc": "This function will return the equipped melee weapon instance name for a player or NPC.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Equipped melee weapon instance, or nil if none is equipped."
+      }
+    },
+    {
+      "name": "getPlayerRangedWeapon",
+      "doc": "This function will return the equipped ranged weapon instance name for a player or NPC.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Equipped ranged weapon instance, or nil if none is equipped."
+      }
+    },
+    {
+      "name": "getPlayerHelmet",
+      "doc": "This function will return the equipped helmet instance name for a player or NPC.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Equipped helmet instance, or nil if no helmet is equipped."
+      }
+    },
+    {
+      "name": "getPlayerShield",
+      "doc": "This function will return the equipped shield instance name for a player or NPC.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Equipped shield instance, or nil if no shield is equipped."
+      }
+    },
+    {
       "name": "applyPlayerOverlay",
       "doc": "This function will apply an animation overlay on player (eg. \"HUMANS_MILITIA.MDS\").",
       "side": "client",
@@ -7552,6 +8879,201 @@
       }
     },
     {
+      "name": "equipArmor",
+      "doc": "This function will equip an armor item for a player or NPC.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Armor item instance name."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "unequipArmor",
+      "doc": "This function will unequip the current armor from a player or NPC.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when an armor item was equipped and unequipped."
+      }
+    },
+    {
+      "name": "equipMeleeWeapon",
+      "doc": "This function will equip a melee weapon for a player or NPC.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Melee weapon item instance name."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "unequipMeleeWeapon",
+      "doc": "This function will unequip the current melee weapon from a player or NPC.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when a melee weapon was equipped and unequipped."
+      }
+    },
+    {
+      "name": "equipRangedWeapon",
+      "doc": "This function will equip a ranged weapon for a player or NPC.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Ranged weapon item instance name."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "unequipRangedWeapon",
+      "doc": "This function will unequip the current ranged weapon from a player or NPC.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when a ranged weapon was equipped and unequipped."
+      }
+    },
+    {
+      "name": "equipHelmet",
+      "doc": "This function will equip a helmet item for a player or NPC.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Helmet item instance name."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "unequipHelmet",
+      "doc": "This function will unequip the current helmet from a player or NPC.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when a helmet item was equipped and unequipped."
+      }
+    },
+    {
+      "name": "equipShield",
+      "doc": "This function will equip a shield item for a player or NPC.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        },
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Shield item instance name."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "unequipShield",
+      "doc": "This function will unequip the current shield from a player or NPC.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when a shield item was equipped and unequipped."
+      }
+    },
+    {
       "name": "hasItem",
       "doc": "This function will return the amount of a specific item in the player/npc inventory on the client.",
       "side": "client",
@@ -7609,6 +9131,39 @@
       "returns": {
         "type": "nil",
         "doc": ""
+      }
+    },
+    {
+      "name": "openInventory",
+      "doc": "This function will open the local player's inventory.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "closeInventory",
+      "doc": "This function will close the local player's inventory.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "isInventoryOpen",
+      "doc": "This function will check whether the local player's inventory is open.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the inventory is open."
       }
     },
     {
@@ -7715,6 +9270,181 @@
       "returns": {
         "type": "boolean",
         "doc": "True on success."
+      }
+    },
+    {
+      "name": "isPlayerCreated",
+      "doc": "This function will check whether a player or client NPC object exists.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the object exists."
+      }
+    },
+    {
+      "name": "isPlayerStreamed",
+      "doc": "This function will check whether a player or client NPC is spawned into the world.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean|nil",
+        "doc": "True when spawned, false when known but not spawned, nil if unknown."
+      }
+    },
+    {
+      "name": "isPlayerDead",
+      "doc": "This function will check whether a player or NPC is dead.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean|nil",
+        "doc": "Dead state, or nil if unavailable."
+      }
+    },
+    {
+      "name": "isPlayerUnconscious",
+      "doc": "This function will check whether a player or NPC is unconscious.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean|nil",
+        "doc": "Unconscious state, or nil if unavailable."
+      }
+    },
+    {
+      "name": "getPlayerPing",
+      "doc": "This function will return the local player's current network ping.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Average of all ping times read for the local player, or -1 if unavailable."
+      }
+    },
+    {
+      "name": "getPlayerFocus",
+      "doc": "This function will return the focused multiplayer player id for a player or NPC.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Focused player id, or -1 if no multiplayer player is focused."
+      }
+    },
+    {
+      "name": "getPlayerType",
+      "doc": "This function will return the multiplayer player type.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target multiplayer player id."
+        }
+      ],
+      "returns": {
+        "type": "number|nil",
+        "doc": "Player type, or nil if unavailable."
+      }
+    },
+    {
+      "name": "setPlayerOnFloor",
+      "doc": "This function will place a player or NPC on the floor at its current position.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "setPlayerCollision",
+      "doc": "This function will enable or disable collision and physics for a player or NPC.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "doc": "Collision state."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "getPlayerCollision",
+      "doc": "This function will return whether collision is enabled for a player or NPC.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or client NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean|nil",
+        "doc": "Collision state, or nil if unavailable."
       }
     },
     {
@@ -7867,40 +9597,6 @@
       }
     },
     {
-      "name": "getById",
-      "doc": "Returns a synchronized ground item by id.",
-      "side": "client",
-      "category": "Item",
-      "params": [
-        {
-          "name": "id",
-          "type": "number",
-          "doc": "Ground item id."
-        }
-      ],
-      "returns": {
-        "type": "itemground|nil",
-        "doc": "Ground item object or nil if missing."
-      }
-    },
-    {
-      "name": "getByItem",
-      "doc": "Returns the first synchronized ground item with the given item instance.",
-      "side": "client",
-      "category": "Item",
-      "params": [
-        {
-          "name": "instance",
-          "type": "string",
-          "doc": "Gothic item instance name."
-        }
-      ],
-      "returns": {
-        "type": "itemground|nil",
-        "doc": "Ground item object or nil if missing."
-      }
-    },
-    {
       "name": "anx",
       "doc": "This function will convert pixels to virtuals screen X dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
       "side": "client",
@@ -7966,6 +9662,78 @@
       "returns": {
         "type": "number",
         "doc": "The pixels after conversion."
+      }
+    },
+    {
+      "name": "getResolution",
+      "doc": "This function will return the current game resolution.",
+      "side": "client",
+      "category": "Interface",
+      "params": [],
+      "returns": {
+        "type": "table",
+        "doc": "Table containing width and height."
+      }
+    },
+    {
+      "name": "getFpsRate",
+      "doc": "This function will return the current frame rate estimate.",
+      "side": "client",
+      "category": "Interface",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "Frames per second, or 0 if unavailable."
+      }
+    },
+    {
+      "name": "enableHud",
+      "doc": "This function will enable or disable the Gothic HUD.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "hud_type",
+          "type": "number",
+          "doc": "HUD type constant."
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "doc": "New HUD state."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "isHudEnabled",
+      "doc": "This function will return whether the Gothic HUD is enabled.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "hud_type",
+          "type": "number",
+          "doc": "HUD type constant."
+        }
+      ],
+      "returns": {
+        "type": "boolean|nil",
+        "doc": "HUD state, or nil for unsupported HUD types."
+      }
+    },
+    {
+      "name": "isConsoleOpen",
+      "doc": "This function will check whether the Gothic console is open.",
+      "side": "client",
+      "category": "Interface",
+      "params": [],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the console is visible."
       }
     },
     {
@@ -10298,6 +12066,28 @@
         {
           "name": "PLANET_MOON",
           "doc": "Represents planet moon type."
+        }
+      ],
+      "HUD": [
+        {
+          "name": "HUD_ALL",
+          "doc": "Represents the whole Gothic player status HUD."
+        },
+        {
+          "name": "HUD_HEALTH_BAR",
+          "doc": "Represents the health status bar."
+        },
+        {
+          "name": "HUD_MANA_BAR",
+          "doc": "Represents the mana status bar."
+        },
+        {
+          "name": "HUD_SWIM_BAR",
+          "doc": "Represents the swim and dive breath status bar."
+        },
+        {
+          "name": "HUD_FOCUS_BAR",
+          "doc": "Represents the focused NPC health status bar."
         }
       ],
       "Key": [
