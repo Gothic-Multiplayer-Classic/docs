@@ -16,6 +16,7 @@ Represents whether scripted camera mode changes are enabled.
 ### `boolean` movementEnabled 
 
 Represents whether the camera is allowed to move.
+Setting this to true restores engine camera AI after manual position or rotation changes.
 
 ----
 ### `Vob|nil` targetVob 
@@ -59,6 +60,7 @@ Camera mode name.
 ### setPosition
 
 Sets the active camera world position.
+This puts the camera into manual movement mode until movementEnabled is set to true.
 
 ```cpp
 void setPosition(number x, number y, number z)
@@ -89,6 +91,7 @@ Table containing x,y,z world position.
 ### setRotation
 
 Sets the active camera Euler rotation.
+This puts the camera into manual movement mode until movementEnabled is set to true.
 
 ```cpp
 void setRotation(number x, number y, number z)
@@ -135,7 +138,7 @@ True if the target was applied.
 ----
 ### setTargetPlayer
 
-Sets a player NPC as the active camera target.
+Sets a player or NPC as the active camera target.
 
 ```cpp
 boolean setTargetPlayer(number playerId)
@@ -147,7 +150,7 @@ boolean setTargetPlayer(number playerId)
   
 **Returns `boolean`:**
 
-True if the player exists and has an NPC.
+True if the player or NPC exists.
 
 ----
 ### setFOV

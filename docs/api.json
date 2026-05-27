@@ -2506,6 +2506,82 @@
       ],
       "callbacks": []
     },
+    "Sky": {
+      "name": "Sky",
+      "doc": "Static sky controller for local and synchronized sky settings.",
+      "side": "client",
+      "category": "World",
+      "extends": null,
+      "fields": [
+        {
+          "name": "weatherType",
+          "type": "number",
+          "doc": "Current local weather type. Use `refresh()` to pull the authoritative value from the server."
+        },
+        {
+          "name": "rainStartTime",
+          "type": "table",
+          "doc": "Rain start time: `{hour = number, min = number}`"
+        },
+        {
+          "name": "rainStopTime",
+          "type": "table",
+          "doc": "Rain stop time: `{hour = number, min = number}`"
+        },
+        {
+          "name": "windScale",
+          "type": "number",
+          "doc": "Wind scale used during precipitation."
+        },
+        {
+          "name": "dontRain",
+          "type": "boolean",
+          "doc": "Toggles local rain and snow rendering."
+        },
+        {
+          "name": "fogColor",
+          "type": "table",
+          "doc": "Write-only fog color table: `{id = number, r = number, g = number, b = number}`"
+        },
+        {
+          "name": "cloudsColor",
+          "type": "table",
+          "doc": "Write-only cloud color table: `{r = number, g = number, b = number}`"
+        },
+        {
+          "name": "planetSize",
+          "type": "table",
+          "doc": "Write-only planet size table: `{planetId = number, size = number}`"
+        },
+        {
+          "name": "planetColor",
+          "type": "table",
+          "doc": "Write-only planet color table: `{planetId = number, r = number, g = number, b = number, a = number}`"
+        },
+        {
+          "name": "planetTxt",
+          "type": "table",
+          "doc": "Write-only planet texture table: `{planetId = number, texture = string}`"
+        },
+        {
+          "name": "lightingColor",
+          "type": "table",
+          "doc": "Write-only lighting color table: `{r = number, g = number, b = number}`"
+        }
+      ],
+      "methods": [
+        {
+          "name": "refresh",
+          "doc": "Requests authoritative time and sky settings from the server and applies them when the reply arrives.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if the refresh request was sent."
+          }
+        }
+      ],
+      "callbacks": []
+    },
     "Way": {
       "name": "Way",
       "doc": "This class represents a route between two waypoint names computed from Zengin zCRoute class.",
@@ -2626,7 +2702,7 @@
         {
           "name": "new",
           "is_constructor": true,
-          "doc": "Creates a new Music object from a file path. Available formats are `OGG`, `MP3`, `WAV` and `FLAC`.",
+          "doc": "Creates a new Music object from a file path. Available formats are `OGG`, `MP3` and `WAV`.",
           "params": [
             {
               "name": "file",
@@ -2720,7 +2796,7 @@
         {
           "name": "movementEnabled",
           "type": "boolean",
-          "doc": "Represents whether the camera is allowed to move."
+          "doc": "Represents whether the camera is allowed to move.\nSetting this to true restores engine camera AI after manual position or rotation changes."
         },
         {
           "name": "targetVob",
@@ -2755,7 +2831,7 @@
         },
         {
           "name": "setPosition",
-          "doc": "Sets the active camera world position.",
+          "doc": "Sets the active camera world position.\nThis puts the camera into manual movement mode until movementEnabled is set to true.",
           "params": [
             {
               "name": "x",
@@ -2789,7 +2865,7 @@
         },
         {
           "name": "setRotation",
-          "doc": "Sets the active camera Euler rotation.",
+          "doc": "Sets the active camera Euler rotation.\nThis puts the camera into manual movement mode until movementEnabled is set to true.",
           "params": [
             {
               "name": "x",
@@ -2838,7 +2914,7 @@
         },
         {
           "name": "setTargetPlayer",
-          "doc": "Sets a player NPC as the active camera target.",
+          "doc": "Sets a player or NPC as the active camera target.",
           "params": [
             {
               "name": "playerId",
@@ -2848,7 +2924,7 @@
           ],
           "returns": {
             "type": "boolean",
-            "doc": "True if the player exists and has an NPC."
+            "doc": "True if the player or NPC exists."
           }
         },
         {
@@ -7301,6 +7377,62 @@
       }
     },
     {
+      "name": "setStreamerRadius",
+      "doc": "This function sets the global player streaming radius.",
+      "side": "server",
+      "category": "Streamer",
+      "params": [
+        {
+          "name": "radius",
+          "type": "number",
+          "doc": "Streaming radius in world units."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if the value was accepted."
+      }
+    },
+    {
+      "name": "getStreamerRadius",
+      "doc": "This function returns the global player streaming radius.",
+      "side": "server",
+      "category": "Streamer",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "Streaming radius in world units."
+      }
+    },
+    {
+      "name": "setStreamerHeight",
+      "doc": "This function sets the global player streaming height. A value of 0 disables the vertical limit.",
+      "side": "server",
+      "category": "Streamer",
+      "params": [
+        {
+          "name": "height",
+          "type": "number",
+          "doc": "Streaming height in world units, or 0 for unlimited."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if the value was accepted."
+      }
+    },
+    {
+      "name": "getStreamerHeight",
+      "doc": "This function returns the global player streaming height.",
+      "side": "server",
+      "category": "Streamer",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "Streaming height in world units, or 0 for unlimited."
+      }
+    },
+    {
       "name": "setTime",
       "doc": "This function will set the server time (hour, minute, optional day offset).",
       "side": "server",
@@ -7381,112 +7513,6 @@
       "returns": {
         "type": "jsonfile|nil",
         "doc": "File handle or nil on error."
-      }
-    },
-    {
-      "name": "setWeatherType",
-      "doc": "This function will set the desired weather type immediately.",
-      "side": "server",
-      "category": "Weather",
-      "params": [
-        {
-          "name": "weather_type",
-          "type": "number",
-          "doc": "Weather type, for more information see [Weather Constants](../../shared-constants/Weather.md)"
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "getWeatherType",
-      "doc": "This function will return the current weather type.",
-      "side": "server",
-      "category": "Weather",
-      "params": [],
-      "returns": {
-        "type": "number",
-        "doc": "Current weather type."
-      }
-    },
-    {
-      "name": "setRainStartTime",
-      "doc": "This function will set the sky weather time when it starts raining/snowing.",
-      "side": "server",
-      "category": "Weather",
-      "params": [
-        {
-          "name": "hour",
-          "type": "number",
-          "doc": "The sky weather raining start hour."
-        },
-        {
-          "name": "min",
-          "type": "number",
-          "doc": "The sky weather raining start min."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "getRainStartTime",
-      "doc": "This function will return the sky weather time when it starts raining/snowing.",
-      "side": "server",
-      "category": "Weather",
-      "params": [],
-      "returns": {
-        "type": "table",
-        "doc": "The sky weather raining start time."
-      }
-    },
-    {
-      "name": "setWindScale",
-      "doc": "This function will change the wind scale used during raining/snowing.",
-      "side": "server",
-      "category": "Weather",
-      "params": [
-        {
-          "name": "wind_scale",
-          "type": "number",
-          "doc": "Wind scale value."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "getWindScale",
-      "doc": "This function will return the current wind scale.",
-      "side": "server",
-      "category": "Weather",
-      "params": [],
-      "returns": {
-        "type": "number",
-        "doc": "Current wind scale."
-      }
-    },
-    {
-      "name": "setDontRain",
-      "doc": "This function will enable/disable weather completely.",
-      "side": "server",
-      "category": "Weather",
-      "params": [
-        {
-          "name": "toggle",
-          "type": "boolean",
-          "doc": "True to disable weather, false to enable it."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
       }
     },
     {
@@ -9734,279 +9760,6 @@
       "returns": {
         "type": "boolean",
         "doc": "True when the console is visible."
-      }
-    },
-    {
-      "name": "setWeatherType",
-      "doc": "This function will set the desired weather type immediately.",
-      "side": "client",
-      "category": "Weather",
-      "params": [
-        {
-          "name": "weather_type",
-          "type": "number",
-          "doc": "Weather type (WEATHER_SNOW/WEATHER_RAIN or 0 to disable precipitation)."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "getWeatherType",
-      "doc": "This function will return the current weather type.",
-      "side": "client",
-      "category": "Weather",
-      "params": [],
-      "returns": {
-        "type": "number",
-        "doc": "Current weather type."
-      }
-    },
-    {
-      "name": "setRainStartTime",
-      "doc": "This function will set the sky weather time when it starts raining/snowing.",
-      "side": "client",
-      "category": "Weather",
-      "params": [
-        {
-          "name": "hour",
-          "type": "number",
-          "doc": "The sky weather raining start hour."
-        },
-        {
-          "name": "min",
-          "type": "number",
-          "doc": "The sky weather raining start min."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "getRainStartTime",
-      "doc": "This function will return the configured sky weather time when it starts raining/snowing.",
-      "side": "client",
-      "category": "Weather",
-      "params": [],
-      "returns": {
-        "type": "table",
-        "doc": "The sky weather raining start time."
-      }
-    },
-    {
-      "name": "setWindScale",
-      "doc": "This function will change the wind scale used during raining/snowing.",
-      "side": "client",
-      "category": "Weather",
-      "params": [
-        {
-          "name": "wind_scale",
-          "type": "number",
-          "doc": "Wind scale value."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "getWindScale",
-      "doc": "This function will return the current wind scale.",
-      "side": "client",
-      "category": "Weather",
-      "params": [],
-      "returns": {
-        "type": "number",
-        "doc": "Current wind scale."
-      }
-    },
-    {
-      "name": "setDontRain",
-      "doc": "This function will enable/disable weather completely.",
-      "side": "client",
-      "category": "Weather",
-      "params": [
-        {
-          "name": "toggle",
-          "type": "boolean",
-          "doc": "True to disable weather, false to enable it."
-        }
-      ],
-      "returns": {
-        "type": "boolean",
-        "doc": "True on success."
-      }
-    },
-    {
-      "name": "setFogColor",
-      "doc": "This function will set the sky fog color day variation.",
-      "side": "client",
-      "category": "Sky",
-      "params": [
-        {
-          "name": "id",
-          "type": "number",
-          "doc": "The id of fog color day variation."
-        },
-        {
-          "name": "r",
-          "type": "number",
-          "doc": "The red color component in RGB model."
-        },
-        {
-          "name": "g",
-          "type": "number",
-          "doc": "The green color component in RGB model."
-        },
-        {
-          "name": "b",
-          "type": "number",
-          "doc": "The blue color component in RGB model."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "setCloudsColor",
-      "doc": "This function will set the sky clouds color.",
-      "side": "client",
-      "category": "Sky",
-      "params": [
-        {
-          "name": "r",
-          "type": "number",
-          "doc": "The red color component in RGB model."
-        },
-        {
-          "name": "g",
-          "type": "number",
-          "doc": "The green color component in RGB model."
-        },
-        {
-          "name": "b",
-          "type": "number",
-          "doc": "The blue color component in RGB model."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "setPlanetSize",
-      "doc": "This function will set the planet size ratio.",
-      "side": "client",
-      "category": "Sky",
-      "params": [
-        {
-          "name": "planetId",
-          "type": "number",
-          "doc": "The planet id, for more information see [Planet](../../client-constants/Sky.md) constants."
-        },
-        {
-          "name": "size",
-          "type": "number",
-          "doc": "The size ratio."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "setPlanetColor",
-      "doc": "This function will set the planet color.",
-      "side": "client",
-      "category": "Sky",
-      "params": [
-        {
-          "name": "planetId",
-          "type": "number",
-          "doc": "The planet id, for more information see [Planet](../../client-constants/Sky.md) constants."
-        },
-        {
-          "name": "r",
-          "type": "number",
-          "doc": "The red color component in RGBA model."
-        },
-        {
-          "name": "g",
-          "type": "number",
-          "doc": "The green color component in RGBA model."
-        },
-        {
-          "name": "b",
-          "type": "number",
-          "doc": "The blue color component in RGBA model."
-        },
-        {
-          "name": "a",
-          "type": "number",
-          "doc": "The alpha color component in RGBA model."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "setPlanetTxt",
-      "doc": "Set the planet texture.",
-      "side": "client",
-      "category": "Sky",
-      "params": [
-        {
-          "name": "planetId",
-          "type": "number",
-          "doc": "The planet id, for more information see [Planet](../../client-constants/Sky.md) constants."
-        },
-        {
-          "name": "texture",
-          "type": "string",
-          "doc": "Name of the texture."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "setLightingColor",
-      "doc": "This function will set the sky lighting color.",
-      "side": "client",
-      "category": "Sky",
-      "params": [
-        {
-          "name": "r",
-          "type": "number",
-          "doc": "The red color component in RGB model."
-        },
-        {
-          "name": "g",
-          "type": "number",
-          "doc": "The green color component in RGB model."
-        },
-        {
-          "name": "b",
-          "type": "number",
-          "doc": "The blue color component in RGB model."
-        }
-      ],
-      "returns": {
-        "type": "nil",
-        "doc": ""
       }
     },
     {
