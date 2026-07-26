@@ -2582,6 +2582,76 @@
       ],
       "callbacks": []
     },
+    "TomlFile": {
+      "name": "TomlFile",
+      "doc": "Read-only TOML document returned by TOML(). Values can be accessed with\nnormal field or index syntax, including nested sections. Use get_or when a\nmissing value should fall back without replacing configured false.",
+      "side": "server",
+      "category": "File",
+      "extends": null,
+      "fields": [],
+      "methods": [
+        {
+          "name": "has",
+          "doc": "Return true when a key or nested path exists. A string path uses dots as\nseparators; a table path can be used for dynamic or literal key segments.",
+          "params": [
+            {
+              "name": "path",
+              "type": "string|table|number",
+              "doc": "Key, dotted path, path table, or array index."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True if the value exists."
+          }
+        },
+        {
+          "name": "get",
+          "doc": "Return a value by key or nested path. Missing keys return nil.",
+          "params": [
+            {
+              "name": "path",
+              "type": "string|table|number",
+              "doc": "Key, dotted path, path table, or array index."
+            }
+          ],
+          "returns": {
+            "type": "any|nil",
+            "doc": "Value or nil when missing."
+          }
+        },
+        {
+          "name": "get_or",
+          "doc": "Return a value by key or nested path, or the fallback only when the value is\nmissing. This preserves configured false values.",
+          "params": [
+            {
+              "name": "path",
+              "type": "string|table|number",
+              "doc": "Key, dotted path, path table, or array index."
+            },
+            {
+              "name": "fallback",
+              "type": "any",
+              "doc": "Value returned when path is missing."
+            }
+          ],
+          "returns": {
+            "type": "any",
+            "doc": "Configured value or fallback."
+          }
+        },
+        {
+          "name": "entries",
+          "doc": "Return a Lua table containing the entries of this document, section, or array.\nThe returned table is a snapshot; nested TOML sections remain read-only.",
+          "params": [],
+          "returns": {
+            "type": "table",
+            "doc": "Entries table."
+          }
+        }
+      ],
+      "callbacks": []
+    },
     "Way": {
       "name": "Way",
       "doc": "This class represents a route between two waypoint names computed from Zengin zCRoute class.",
@@ -3087,6 +3157,16 @@
           "doc": "Represents the font identifier used for rendering."
         },
         {
+          "name": "width",
+          "type": "number",
+          "doc": "Represents the rendered text width in virtual screen units."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "doc": "Represents the rendered text height in virtual screen units."
+        },
+        {
           "name": "color",
           "type": "table",
           "doc": "Represents the draw's color."
@@ -3243,6 +3323,24 @@
           "returns": {
             "type": "string",
             "doc": "Font file name."
+          }
+        },
+        {
+          "name": "getWidth",
+          "doc": "This function returns the rendered text width in virtual screen units.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": "Text width."
+          }
+        },
+        {
+          "name": "getHeight",
+          "doc": "This function returns the rendered text height in virtual screen units.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": "Text height."
           }
         },
         {
@@ -7516,6 +7614,23 @@
       }
     },
     {
+      "name": "TOML",
+      "doc": "Open a read-only TOML file relative to the server data directory.",
+      "side": "server",
+      "category": "File",
+      "params": [
+        {
+          "name": "relative_path",
+          "type": "string",
+          "doc": "Path under the data directory."
+        }
+      ],
+      "returns": {
+        "type": "tomlfile|nil",
+        "doc": "File handle or nil on error."
+      }
+    },
+    {
       "name": "getWaypoint",
       "doc": "Retrieve world position of a waypoint by name.",
       "side": "server",
@@ -8730,7 +8845,7 @@
     },
     {
       "name": "playGesticulation",
-      "doc": "This function will play a gesticulation animation on the player/npc character.",
+      "doc": "This function will play a gesticulation animation on the player/npc character.\nCalls for the same id are throttled to once every 3500 ms.",
       "side": "client",
       "category": "Player",
       "params": [
@@ -9535,6 +9650,39 @@
       }
     },
     {
+      "name": "getResolution",
+      "doc": "This function will return the current game resolution.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "table",
+        "doc": "Table containing width and height."
+      }
+    },
+    {
+      "name": "getFpsRate",
+      "doc": "This function will return the current frame rate estimate.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "Frames per second, or 0 if unavailable."
+      }
+    },
+    {
+      "name": "getNetworkStats",
+      "doc": "This function will return client network statistics.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "table",
+        "doc": "Table containing current network statistics."
+      }
+    },
+    {
       "name": "exitGame",
       "doc": "This function will close the game immediately.",
       "side": "client",
@@ -9623,6 +9771,178 @@
       }
     },
     {
+      "name": "chatInputClear",
+      "doc": "This function clears the current chat input text.",
+      "side": "client",
+      "category": "Chat",
+      "params": [],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "chatInputClose",
+      "doc": "This function closes the chat input.",
+      "side": "client",
+      "category": "Chat",
+      "params": [],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "chatInputGetCaretPosition",
+      "doc": "This function returns the current chat input caret position.",
+      "side": "client",
+      "category": "Chat",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "Zero-based caret position."
+      }
+    },
+    {
+      "name": "chatInputGetFont",
+      "doc": "This function returns the font assigned to the chat input.",
+      "side": "client",
+      "category": "Chat",
+      "params": [],
+      "returns": {
+        "type": "string",
+        "doc": "Font name."
+      }
+    },
+    {
+      "name": "chatInputGetPosition",
+      "doc": "This function returns the chat input position in virtual screen units.",
+      "side": "client",
+      "category": "Chat",
+      "params": [],
+      "returns": {
+        "type": "vec2",
+        "doc": "Position with x and y fields."
+      }
+    },
+    {
+      "name": "chatInputGetText",
+      "doc": "This function returns the current chat input text.",
+      "side": "client",
+      "category": "Chat",
+      "params": [],
+      "returns": {
+        "type": "string",
+        "doc": "Input text."
+      }
+    },
+    {
+      "name": "chatInputIsOpen",
+      "doc": "This function checks whether the chat input is open.",
+      "side": "client",
+      "category": "Chat",
+      "params": [],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the input is open."
+      }
+    },
+    {
+      "name": "chatInputOpen",
+      "doc": "This function opens the chat input.",
+      "side": "client",
+      "category": "Chat",
+      "params": [],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "chatInputSend",
+      "doc": "This function submits the current chat input text.",
+      "side": "client",
+      "category": "Chat",
+      "params": [],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "chatInputSetCaretPosition",
+      "doc": "This function changes the chat input caret position.",
+      "side": "client",
+      "category": "Chat",
+      "params": [
+        {
+          "name": "position",
+          "type": "number",
+          "doc": "Zero-based caret position."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "chatInputSetFont",
+      "doc": "This function changes the font assigned to the chat input.",
+      "side": "client",
+      "category": "Chat",
+      "params": [
+        {
+          "name": "font",
+          "type": "string",
+          "doc": "Font name."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "chatInputSetPosition",
+      "doc": "This function changes the chat input position in virtual screen units.",
+      "side": "client",
+      "category": "Chat",
+      "params": [
+        {
+          "name": "x",
+          "type": "number",
+          "doc": "X position."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "doc": "Y position."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "chatInputSetText",
+      "doc": "This function changes the current chat input text.",
+      "side": "client",
+      "category": "Chat",
+      "params": [
+        {
+          "name": "text",
+          "type": "string",
+          "doc": "New input text."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
       "name": "anx",
       "doc": "This function will convert pixels to virtuals screen X dimension and return it as a result.\nVirtuals are special type of unit used by the game to position UI elements independent from game resolution.",
       "side": "client",
@@ -9688,28 +10008,6 @@
       "returns": {
         "type": "number",
         "doc": "The pixels after conversion."
-      }
-    },
-    {
-      "name": "getResolution",
-      "doc": "This function will return the current game resolution.",
-      "side": "client",
-      "category": "Interface",
-      "params": [],
-      "returns": {
-        "type": "table",
-        "doc": "Table containing width and height."
-      }
-    },
-    {
-      "name": "getFpsRate",
-      "doc": "This function will return the current frame rate estimate.",
-      "side": "client",
-      "category": "Interface",
-      "params": [],
-      "returns": {
-        "type": "number",
-        "doc": "Frames per second, or 0 if unavailable."
       }
     },
     {
@@ -11049,6 +11347,39 @@
           "name": "key",
           "type": "number",
           "doc": "The key code released."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPaste",
+      "doc": "This event is triggered when the user presses Ctrl+V.",
+      "side": "client",
+      "category": "Input",
+      "params": [
+        {
+          "name": "text",
+          "type": "string",
+          "doc": "Current clipboard text."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onCommand",
+      "doc": "This event is triggered when a slash command is submitted through chat input.",
+      "side": "client",
+      "category": "Input",
+      "params": [
+        {
+          "name": "command",
+          "type": "string",
+          "doc": "Command name without the leading slash."
+        },
+        {
+          "name": "params",
+          "type": "string",
+          "doc": "Raw command parameters after the command name."
         }
       ],
       "cancellable": false

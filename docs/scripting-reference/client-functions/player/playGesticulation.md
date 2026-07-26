@@ -5,6 +5,7 @@ title: 'playGesticulation'
 !!! info "Available since version: 0.3.0"
 
 This function will play a gesticulation animation on the player/npc character.
+Calls for the same id are throttled to once every 3500 ms.
 
 ## Declaration
 ```cpp

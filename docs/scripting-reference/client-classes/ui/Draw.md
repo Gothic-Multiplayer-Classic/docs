@@ -46,6 +46,16 @@ Represents the displayed text.
 Represents the font identifier used for rendering.
 
 ----
+### `number` width 
+
+Represents the rendered text width in virtual screen units.
+
+----
+### `number` height 
+
+Represents the rendered text height in virtual screen units.
+
+----
 ### `{r, g, b, a}` color 
 
 Represents the draw's color.
@@ -175,6 +185,34 @@ string getFont()
 **Returns `string`:**
 
 Font file name.
+
+----
+### getWidth
+
+This function returns the rendered text width in virtual screen units.
+
+```cpp
+number getWidth()
+```
+
+  
+**Returns `number`:**
+
+Text width.
+
+----
+### getHeight
+
+This function returns the rendered text height in virtual screen units.
+
+```cpp
+number getHeight()
+```
+
+  
+**Returns `number`:**
+
+Text height.
 
 ----
 ### setColor
