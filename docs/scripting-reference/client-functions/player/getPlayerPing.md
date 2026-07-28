@@ -15,4 +15,4 @@ number getPlayerPing(number player_id)
 * `number` **player_id**: Target player id.
   
 ## Returns `number`
-Average of all ping times read for the local player, or -1 if unavailable.
+Player ping replicated by the server, or -1 if unavailable.

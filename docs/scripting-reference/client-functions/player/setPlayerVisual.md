@@ -8,12 +8,14 @@ This function will set the player/npc visual model and textures.
 
 ## Declaration
 ```cpp
-void setPlayerVisual(number player_id, string body_model, number body_texture, string head_model, number head_texture)
+void setPlayerVisual(number player_id, string bodyModel, number bodyTexture, string headModel, number headTexture, number teethTexture, number skinColor)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
-* `string` **body_model**: Body model name.
-* `number` **body_texture**: Body texture index.
-* `string` **head_model**: Head model name.
-* `number` **head_texture**: Head texture index.
+* `string` **bodyModel**: Body model name.
+* `number` **bodyTexture**: Body texture index.
+* `string` **headModel**: Head model name.
+* `number` **headTexture**: Head texture index.
+* `number` **teethTexture**: Optional teeth texture file numeric id. Defaults to 0 if omitted.
+* `number` **skinColor**: Optional color variant of head & body texture files. Defaults to 0 if omitted.

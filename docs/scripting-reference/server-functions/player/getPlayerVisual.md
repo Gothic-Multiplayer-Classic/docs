@@ -8,11 +8,11 @@ This function will return the player's visual information as a table, or nil if 
 
 ## Declaration
 ```cpp
-{bodyModel, bodyTexture, headModel, headTexture}|nil getPlayerVisual(number player_id)
+{bodyModel, bodyTexture, headModel, headTexture, teethTexture, skinColor}|nil getPlayerVisual(number player_id)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
   
-## Returns `{bodyModel, bodyTexture, headModel, headTexture}|nil`
-Table with bodyModel, bodyTexture, headModel, headTexture or nil.
+## Returns `{bodyModel, bodyTexture, headModel, headTexture, teethTexture, skinColor}|nil`
+Table with visual data or nil.

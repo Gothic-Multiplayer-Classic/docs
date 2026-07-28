@@ -8,11 +8,11 @@ This function will return the player/npc current visual model and textures, or n
 
 ## Declaration
 ```cpp
-{body_model, body_texture, head_model, head_texture}|nil getPlayerVisual(number player_id)
+{bodyModel, bodyTexture, headModel, headTexture, teethTexture, skinColor}|nil getPlayerVisual(number player_id)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
   
-## Returns `{body_model, body_texture, head_model, head_texture}|nil`
+## Returns `{bodyModel, bodyTexture, headModel, headTexture, teethTexture, skinColor}|nil`
 Player visual or nil.

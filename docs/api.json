@@ -6284,24 +6284,34 @@
           "doc": "Target player id."
         },
         {
-          "name": "body_model",
+          "name": "bodyModel",
           "type": "string",
           "doc": "Body model name."
         },
         {
-          "name": "body_texture",
+          "name": "bodyTexture",
           "type": "number",
           "doc": "Body texture index."
         },
         {
-          "name": "head_model",
+          "name": "headModel",
           "type": "string",
           "doc": "Head model name."
         },
         {
-          "name": "head_texture",
+          "name": "headTexture",
           "type": "number",
           "doc": "Head texture index."
+        },
+        {
+          "name": "teethTexture",
+          "type": "number",
+          "doc": "Optional teeth texture file numeric id. Defaults to 0 if omitted."
+        },
+        {
+          "name": "skinColor",
+          "type": "number",
+          "doc": "Optional color variant of head & body texture files. Defaults to 0 if omitted."
         }
       ],
       "returns": {
@@ -6322,8 +6332,8 @@
         }
       ],
       "returns": {
-        "type": "{bodymodel, bodytexture, headmodel, headtexture}|nil",
-        "doc": "Table with bodyModel, bodyTexture, headModel, headTexture or nil."
+        "type": "{bodymodel, bodytexture, headmodel, headtexture, teethtexture, skincolor}|nil",
+        "doc": "Table with visual data or nil."
       }
     },
     {
@@ -8406,24 +8416,34 @@
           "doc": "Target player id."
         },
         {
-          "name": "body_model",
+          "name": "bodyModel",
           "type": "string",
           "doc": "Body model name."
         },
         {
-          "name": "body_texture",
+          "name": "bodyTexture",
           "type": "number",
           "doc": "Body texture index."
         },
         {
-          "name": "head_model",
+          "name": "headModel",
           "type": "string",
           "doc": "Head model name."
         },
         {
-          "name": "head_texture",
+          "name": "headTexture",
           "type": "number",
           "doc": "Head texture index."
+        },
+        {
+          "name": "teethTexture",
+          "type": "number",
+          "doc": "Optional teeth texture file numeric id. Defaults to 0 if omitted."
+        },
+        {
+          "name": "skinColor",
+          "type": "number",
+          "doc": "Optional color variant of head & body texture files. Defaults to 0 if omitted."
         }
       ],
       "returns": {
@@ -8444,7 +8464,7 @@
         }
       ],
       "returns": {
-        "type": "{body_model, body_texture, head_model, head_texture}|nil",
+        "type": "{bodymodel, bodytexture, headmodel, headtexture, teethtexture, skincolor}|nil",
         "doc": "Player visual or nil."
       }
     },
@@ -8952,7 +8972,7 @@
       "name": "giveItem",
       "doc": "This function will give an item to the player or NPC on the client.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -8979,7 +8999,7 @@
       "name": "equipItem",
       "doc": "This function will equip an item for the player/NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9001,7 +9021,7 @@
       "name": "unequipItem",
       "doc": "This function will unequip an item from the player/NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9023,7 +9043,7 @@
       "name": "equipArmor",
       "doc": "This function will equip an armor item for a player or NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9045,7 +9065,7 @@
       "name": "unequipArmor",
       "doc": "This function will unequip the current armor from a player or NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9062,7 +9082,7 @@
       "name": "equipMeleeWeapon",
       "doc": "This function will equip a melee weapon for a player or NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9084,7 +9104,7 @@
       "name": "unequipMeleeWeapon",
       "doc": "This function will unequip the current melee weapon from a player or NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9101,7 +9121,7 @@
       "name": "equipRangedWeapon",
       "doc": "This function will equip a ranged weapon for a player or NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9123,7 +9143,7 @@
       "name": "unequipRangedWeapon",
       "doc": "This function will unequip the current ranged weapon from a player or NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9140,7 +9160,7 @@
       "name": "equipHelmet",
       "doc": "This function will equip a helmet item for a player or NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9162,7 +9182,7 @@
       "name": "unequipHelmet",
       "doc": "This function will unequip the current helmet from a player or NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9179,7 +9199,7 @@
       "name": "equipShield",
       "doc": "This function will equip a shield item for a player or NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9201,7 +9221,7 @@
       "name": "unequipShield",
       "doc": "This function will unequip the current shield from a player or NPC.",
       "side": "client",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9234,6 +9254,106 @@
       "returns": {
         "type": "number",
         "doc": "Item amount or 0 if missing."
+      }
+    },
+    {
+      "name": "getCurrentInventorySlot",
+      "doc": "This function will return the local player's currently selected inventory slot.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [],
+      "returns": {
+        "type": "number|nil",
+        "doc": "Current inventory slot, starting from 0, or nil if unavailable."
+      }
+    },
+    {
+      "name": "getInventory",
+      "doc": "This function will return the local player's inventory as item instance keys with item amounts as values.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [],
+      "returns": {
+        "type": "table",
+        "doc": "Inventory table indexed by item instance."
+      }
+    },
+    {
+      "name": "getItemBySlot",
+      "doc": "This function will return the item instance from the local player's inventory slot.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "slot",
+          "type": "number",
+          "doc": "Inventory slot, starting from 0."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Item instance, or nil if the slot is empty."
+      }
+    },
+    {
+      "name": "getLeftHand",
+      "doc": "This function will return the item instance currently held in the local player's left hand.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Item instance, or nil if the hand is empty."
+      }
+    },
+    {
+      "name": "getRightHand",
+      "doc": "This function will return the item instance currently held in the local player's right hand.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Item instance, or nil if the hand is empty."
+      }
+    },
+    {
+      "name": "dropItem",
+      "doc": "This function will drop an item from the local player's inventory.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "instance",
+          "type": "string",
+          "doc": "Item instance name."
+        },
+        {
+          "name": "amount",
+          "type": "number|nil",
+          "doc": "Optional amount to drop. Defaults to the whole stack."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "dropItemBySlot",
+      "doc": "This function will drop the item from the local player's inventory slot.",
+      "side": "client",
+      "category": "Inventory",
+      "params": [
+        {
+          "name": "slot",
+          "type": "number",
+          "doc": "Inventory slot, starting from 0."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -9495,7 +9615,7 @@
       ],
       "returns": {
         "type": "number",
-        "doc": "Average of all ping times read for the local player, or -1 if unavailable."
+        "doc": "Player ping replicated by the server, or -1 if unavailable."
       }
     },
     {
@@ -9650,14 +9770,249 @@
       }
     },
     {
-      "name": "getResolution",
-      "doc": "This function will return the current game resolution.",
+      "name": "enable_DamageAnims",
+      "doc": "This function will enable or disable Gothic damage animations for non-local NPCs.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "doc": "True to allow damage animations."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "enable_MunitionTrail",
+      "doc": "This function will enable or disable arrow and bolt trails.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "doc": "True to show munition trails."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "enable_WeaponTrail",
+      "doc": "This function will enable or disable melee weapon trails.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "doc": "True to show weapon trails."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "setBloodMode",
+      "doc": "This function will set the Gothic blood rendering mode.\n\nBlood modes: 0 none, 1 particles, 2 decals, 3 trails, 4 amplification.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "mode",
+          "type": "number",
+          "doc": "Blood mode."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "getBloodMode",
+      "doc": "This function will return the current Gothic blood rendering mode.\n\nBlood modes: 0 none, 1 particles, 2 decals, 3 trails, 4 amplification.",
       "side": "client",
       "category": "Game",
       "params": [],
       "returns": {
+        "type": "number",
+        "doc": "Blood mode."
+      }
+    },
+    {
+      "name": "setSightFactor",
+      "doc": "This function will set the Gothic view distance scalability factor.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "factor",
+          "type": "number",
+          "doc": "Sight factor, clamped to 0.02 - 5.0."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "getSightFactor",
+      "doc": "This function will return the current Gothic view distance scalability factor.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "Sight factor."
+      }
+    },
+    {
+      "name": "setLODStrengthModifier",
+      "doc": "This function will set the global progressive mesh LOD strength modifier.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "modifier",
+          "type": "number",
+          "doc": "LOD strength modifier."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "getLODStrengthModifier",
+      "doc": "This function will return the global progressive mesh LOD strength modifier.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "LOD strength modifier."
+      }
+    },
+    {
+      "name": "setLODStrengthOverride",
+      "doc": "This function will set the global progressive mesh LOD strength override.\n\nUse -1 to use mesh values. Use 0 to disable LOD.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "strength",
+          "type": "number",
+          "doc": "LOD strength override."
+        }
+      ],
+      "returns": {
+        "type": "nil",
+        "doc": ""
+      }
+    },
+    {
+      "name": "getLODStrengthOverride",
+      "doc": "This function will return the global progressive mesh LOD strength override.",
+      "side": "client",
+      "category": "Game",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "LOD strength override."
+      }
+    },
+    {
+      "name": "playVideo",
+      "doc": "This function will play a BIK video from Gothic's _Work\\Data\\Video path.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "file_name",
+          "type": "string",
+          "doc": "BIK file name, e.g. \"Intro.bik\"."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when Gothic accepted the video."
+      }
+    },
+    {
+      "name": "fileExists",
+      "doc": "This function will check whether a physical file exists.",
+      "side": "client",
+      "category": "Game",
+      "params": [
+        {
+          "name": "file_path",
+          "type": "string",
+          "doc": "File path, e.g. \"System/Gothic.ini\"."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the file exists."
+      }
+    },
+    {
+      "name": "getResolution",
+      "doc": "This function will return the current game resolution.",
+      "side": "client",
+      "category": "Interface",
+      "params": [],
+      "returns": {
         "type": "table",
         "doc": "Table containing width and height."
+      }
+    },
+    {
+      "name": "setResolution",
+      "doc": "This function will set the current game resolution.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "width",
+          "type": "number",
+          "doc": "Resolution width."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "doc": "Resolution height."
+        },
+        {
+          "name": "bpp",
+          "type": "number|nil",
+          "doc": "Optional bits per pixel. Defaults to the current renderer bpp."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "getAvailableResolutions",
+      "doc": "This function will return the available game resolutions.",
+      "side": "client",
+      "category": "Interface",
+      "params": [],
+      "returns": {
+        "type": "table",
+        "doc": "Array of resolution tables containing x, y, and bpp."
       }
     },
     {
@@ -10047,6 +10402,133 @@
       "returns": {
         "type": "boolean|nil",
         "doc": "HUD state, or nil for unsupported HUD types."
+      }
+    },
+    {
+      "name": "setHudMode",
+      "doc": "This function will set the Gothic HUD display mode.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "hud_type",
+          "type": "number",
+          "doc": "HUD type constant."
+        },
+        {
+          "name": "mode",
+          "type": "number",
+          "doc": "HUD mode constant."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "getHudMode",
+      "doc": "This function will return the Gothic HUD display mode.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "hud_type",
+          "type": "number",
+          "doc": "HUD type constant."
+        }
+      ],
+      "returns": {
+        "type": "number|nil",
+        "doc": "HUD mode constant, or nil for unsupported HUD types."
+      }
+    },
+    {
+      "name": "setBarPosition",
+      "doc": "This function will set a Gothic HUD status bar position in virtual coordinates.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "hud_type",
+          "type": "number",
+          "doc": "Status bar HUD type constant."
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "doc": "X position."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "doc": "Y position."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "getBarPosition",
+      "doc": "This function will return a Gothic HUD status bar position in virtual coordinates.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "hud_type",
+          "type": "number",
+          "doc": "Status bar HUD type constant."
+        }
+      ],
+      "returns": {
+        "type": "{x, y}|nil",
+        "doc": "Status bar position, or nil for unsupported HUD types."
+      }
+    },
+    {
+      "name": "setBarSize",
+      "doc": "This function will set a Gothic HUD status bar size in virtual coordinates.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "hud_type",
+          "type": "number",
+          "doc": "Status bar HUD type constant."
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "doc": "Width."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "doc": "Height."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
+      "name": "getBarSize",
+      "doc": "This function will return a Gothic HUD status bar size in virtual coordinates.",
+      "side": "client",
+      "category": "Interface",
+      "params": [
+        {
+          "name": "hud_type",
+          "type": "number",
+          "doc": "Status bar HUD type constant."
+        }
+      ],
+      "returns": {
+        "type": "{width, height}|nil",
+        "doc": "Status bar size, or nil for unsupported HUD types."
       }
     },
     {
@@ -12172,6 +12654,22 @@
         {
           "name": "HUD_FOCUS_BAR",
           "doc": "Represents the focused NPC health status bar."
+        },
+        {
+          "name": "HUD_FOCUS_NAME",
+          "doc": "Represents the focused object name text."
+        },
+        {
+          "name": "HUD_MODE_HIDDEN",
+          "doc": "Represents hidden HUD mode."
+        },
+        {
+          "name": "HUD_MODE_DEFAULT",
+          "doc": "Represents default HUD mode."
+        },
+        {
+          "name": "HUD_MODE_ALWAYS_VISIBLE",
+          "doc": "Represents always-visible HUD mode."
         }
       ],
       "Key": [
