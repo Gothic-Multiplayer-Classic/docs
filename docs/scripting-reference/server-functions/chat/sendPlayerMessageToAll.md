@@ -8,7 +8,7 @@ This function will send a player-sourced colored message to all players (include
 
 ## Declaration
 ```cpp
-void sendPlayerMessageToAll(number sender_id, number r, number g, number b, string text)
+boolean sendPlayerMessageToAll(number sender_id, number r, number g, number b, string text)
 ```
 
 ## Parameters
@@ -17,3 +17,6 @@ void sendPlayerMessageToAll(number sender_id, number r, number g, number b, stri
 * `number` **g**: Green component (0-255).
 * `number` **b**: Blue component (0-255).
 * `string` **text**: Message text.
+  
+## Returns `boolean`
+True on success.

@@ -8,8 +8,11 @@ This function will set the experience required for the hero's next level.
 
 ## Declaration
 ```cpp
-void setNextLevelExp(number next_level_exp)
+boolean setNextLevelExp(number next_level_exp)
 ```
 
 ## Parameters
 * `number` **next_level_exp**: Required exp for next level.
+  
+## Returns `boolean`
+True on success.

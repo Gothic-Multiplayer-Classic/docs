@@ -12,8 +12,8 @@ boolean setHudMode(number hud_type, number mode)
 ```
 
 ## Parameters
-* `number` **hud_type**: HUD type constant.
-* `number` **mode**: HUD mode constant.
+* `number` **hud_type**: HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md).
+* `number` **mode**: HUD mode constant from the same table.
   
 ## Returns `boolean`
 True on success.

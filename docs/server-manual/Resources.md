@@ -1,73 +1,85 @@
 # Resources
 
-Resources are the unit GMPC uses to group Lua code, metadata, and client downloads. A server can run several resources at once: one for core gameplay, one for chat, one for scoreboards, one for custom UI, and so on.
-
-The server discovers resources from the `resources/` directory. Each immediate subdirectory is treated as a resource name.
+Resources group server Lua scripts, shared code, client scripts, and package metadata. Current GMPC resource loading is declarative: `config.toml` chooses resources and their order, while each `resource.toml` chooses server scripts and their order.
 
 ```text
 resources/
-  chat/
+  economy/
     resource.toml
     shared/
       constants.lua
     server/
+      database.lua
       main.lua
     client/
       main.lua
       ui.lua
 ```
 
-`resource.toml` is optional for server-side loading, but required when the resource should ship client or shared scripts to players. Without metadata and a non-empty `version`, the server can still run the resource's server scripts, but the client packager skips it.
+A directory without `resource.toml` is skipped during discovery. A resource with invalid metadata is discovered as inactive and cannot be selected in the server configuration.
 
-## Metadata
+## Selecting Resources
 
-| Field | Default | Meaning |
-| --- | --- | --- |
-| `version` | none | Required for client resource packages. Change it when clients must download a new package. |
-| `active` | `true` | Set to `false` to keep the resource directory present but prevent server loading and client packaging. |
-| `author` | `""` | Optional descriptive metadata. |
-| `description` | `""` | Optional descriptive metadata. |
-
-A minimal client-capable metadata file looks like this:
+The `resources` array in the server's `config.toml` is the authoritative load order:
 
 ```toml
-version = "1.0.0"
-active = true
-author = "GMPC Team"
-description = "Chat and basic player messages"
+resources = [
+  "database",
+  "economy",
+  "gameplay"
+]
 ```
 
-Resource directories are loaded alphabetically after inactive resources are filtered out. If two resources depend on each other, give them names that make the startup order obvious, or move shared behavior into a separate resource that starts first.
+Only listed resources are packaged and loaded. Directory names do not determine startup order, and an active but unlisted resource does nothing. If a listed resource is missing, inactive, or invalid, server startup fails rather than silently continuing with a partial game mode.
 
-## Server Scripts
+## `resource.toml`
 
-On the server, GMPC executes direct `.lua` files from these directories:
-
-| Directory | Loaded on server | Notes |
+| Field | Required | Meaning |
 | --- | --- | --- |
-| `shared/` | yes | Runs before `server/`. Use it for constants and functions shared with client code. |
-| `server/` | yes | Runs after `shared/`. Use it for authoritative gameplay, persistence, validation, and server events. |
-| `client/` | no | Never executed by the server runtime. Packaged for clients when metadata allows it. |
+| `version` | yes | Non-empty package version. Change it when players must receive a changed client package. |
+| `active` | yes | Whether the resource may be selected. Selecting a resource with `active = false` prevents server startup. |
+| `scripts` | yes | Ordered list of server-side `.lua` files to execute. An empty array is valid. |
+| `author` | no | Author shown in client-resource metadata. |
+| `description` | no | Short description shown in client-resource metadata. |
 
-Server-side loading is not recursive. Only Lua files directly inside `shared/` and `server/` are executed automatically, sorted by file name. If order matters, make it visible in file names, such as `00_config.lua`, `10_events.lua`, and `20_gameplay.lua`.
+```toml
+version = "1.2.0"
+active = true
+author = "GMPC Team"
+description = "Economy and trading"
 
-Each resource runs in its own Lua environment. Global variables from one resource are not a reliable way to communicate with another resource. Use explicit APIs, events, or exports.
+scripts = [
+  "shared/constants.lua",
+  "server/database.lua",
+  "server/main.lua"
+]
+```
+
+Every script path must be relative, end in `.lua`, stay below `shared/` or `server/`, and contain no `..` segment. Files may be nested. They run exactly in array order; GMPC no longer scans either directory for server entry points.
+
+The distinction between the two directories remains important:
+
+| Directory | Server execution | Client packaging |
+| --- | --- | --- |
+| `server/` | Only when listed in `scripts` | Never packaged. Put secrets and authoritative-only code here. |
+| `shared/` | Only when listed in `scripts` | Every `.lua` file is recursively included in the client package. |
+| `client/` | Never executed by the server | Every `.lua` file is recursively included in the client package. |
+
+The `scripts` array controls only server execution. It does not restrict what the packager sends from `shared/`, so a shared file must not contain credentials or other server-only data.
 
 ## Client Packages
 
-When a resource has valid metadata and a `version`, the server can package Lua files from `client/` and `shared/` for players. Client packages are written under the server's `public/` directory and downloaded through the built-in resource server.
+For each configured resource containing Lua files under `client/` or `shared/`, the server compiles those files to stripped Lua bytecode, creates a ZIP-based `.pak`, and writes a manifest under `public/`. The manifest records archive and per-file SHA-256 hashes. The client verifies those hashes before executing code; a corrupt or mismatched package stops the connection flow.
 
-The packager includes Lua files from `client/` and `shared/` recursively, compiles them to bytecode by default, creates a ZIP-based `.pak`, and writes a manifest with sizes and SHA-256 hashes. The client verifies both the manifest and archive before starting the resource. A missing, corrupt, or mismatched package prevents the client from joining normally.
+`client/main.lua` is the only automatic client entry point. Other packaged files must be loaded from it with `require`. A package without `client/main.lua` can still be downloaded, but it executes no client entry point.
 
-Only `client/main.lua` is used as the automatic client entry point. Additional client files should be loaded from that entry point with `require`.
+Configured resource order is preserved when packages are announced and loaded by the client. This makes dependencies predictable, but a resource should still fail clearly when a required earlier resource is unavailable.
 
 ## Client `require`
 
-Client resources use a resource-local `require` cache. Module names are normalized so `require("ui.scoreboard")` looks for `ui/scoreboard` paths.
+Each client resource has an isolated module cache. `require("ui.scoreboard")` normalizes the name to `ui/scoreboard` and searches in this order:
 
-The client search order is:
-
-| Order | Path pattern |
+| Order | Path |
 | --- | --- |
 | 1 | `client/<module>.luac` |
 | 2 | `client/<module>.lua` |
@@ -76,27 +88,29 @@ The client search order is:
 | 5 | `<module>.luac` |
 | 6 | `<module>.lua` |
 
-If a required module is missing or throws during loading, the resource startup fails and the client disconnects from the server. Keep `client/main.lua` small and make failures obvious in the log.
+A missing module, syntax error, or runtime error fails resource startup and disconnects the client. Keep `client/main.lua` focused on assembling modules so the log identifies failures close to their source.
 
 ## Lifecycle
 
-After scripts are loaded, GMPC calls `onResourceStart` for that resource when the hook exists. During unload, it calls `onResourceStop`, clears resource-owned timers, and releases the Lua environment.
+Server scripts may each define `onResourceStart` and `onResourceStop`. Start hooks run in declared `scripts` order after every script has loaded. Stop hooks run in reverse order. Resource-owned timers and event handlers are removed during unload.
 
-Client resources also receive a single `onInit` after the first client resource starts and a single `onExit` when client resources are unloaded. Use resource-level hooks for per-resource setup and cleanup, and reserve `onInit` or `onExit` for client-wide behavior.
+Client entry points and required modules can also define resource lifecycle hooks. After every configured client resource has started, GMPC emits [onInit](../scripting-reference/client-events/game/onInit.md) once. During unload it emits [onExit](../scripting-reference/client-events/game/onExit.md) first, then stops resources in reverse resource order and runs each resource's stop hooks in reverse capture order.
+
+Timers created through [setTimer](../scripting-reference/shared-functions/timer/setTimer.md) are associated with the current server resource and are cleaned up when that resource unloads.
 
 ## Exports
 
-A resource can expose a table named `exports`:
+A server resource exposes functions by assigning an `exports` table:
 
 ```lua
 exports = {
   giveCoins = function(playerId, amount)
-    -- server-side implementation
+    -- authoritative implementation
   end
 }
 ```
 
-Other server resources can call exported functions through the global export proxy. If the calling resource also defines its own `exports` table, save the proxy before overwriting the name:
+The Lua state also provides a global resource-export proxy. Defining the local resource's `exports` table shadows that proxy, so retain it first when the same resource also consumes another resource:
 
 ```lua
 local resourceExports = exports
@@ -111,12 +125,4 @@ exports = {
 }
 ```
 
-If the target resource is missing, unloaded, or does not expose the function, the lookup returns `nil`.
-
-Exports are useful for stable cross-resource APIs. They are a poor substitute for clear ownership: validation, persistence, and authority should still live in the resource that owns that data.
-
-## Practical Structure
-
-A maintainable resource usually has one clear responsibility. Put values shared by client and server in `shared/`, authoritative decisions in `server/`, and presentation or input handling in `client/`.
-
-Avoid hiding required startup order in comments. If `inventory` depends on `database`, make the order clear through resource names, metadata, or one explicit bootstrap resource. The server loads alphabetically, so accidental ordering bugs are otherwise easy to introduce.
+A missing resource, export table, or exported member evaluates to `nil`. Check it before calling unless the dependency is guaranteed by your configured resource order.

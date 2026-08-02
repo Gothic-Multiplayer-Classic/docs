@@ -8,7 +8,7 @@ This function will change the player/npc character name color.
 
 ## Declaration
 ```cpp
-void setPlayerColor(number player_id, number r, number g, number b)
+boolean setPlayerColor(number player_id, number r, number g, number b)
 ```
 
 ## Parameters
@@ -16,3 +16,6 @@ void setPlayerColor(number player_id, number r, number g, number b)
 * `number` **r**: The red color component in RGB model.
 * `number` **g**: The green color component in RGB model.
 * `number` **b**: The blue color component in RGB model.
+  
+## Returns `boolean`
+True on success.

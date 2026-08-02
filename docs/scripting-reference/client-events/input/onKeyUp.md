@@ -11,4 +11,4 @@ This event is triggered when a key is released.
 void onKeyUp(number key)
 ```
 
-* `number` **key**: The key code released.
+* `number` **key**: The key code released. For more information, see [Key Constants](../../client-constants/Key.md).

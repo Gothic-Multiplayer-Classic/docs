@@ -12,7 +12,7 @@ boolean enableHud(number hud_type, boolean enabled)
 ```
 
 ## Parameters
-* `number` **hud_type**: HUD type constant.
+* `number` **hud_type**: HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md).
 * `boolean` **enabled**: New HUD state.
   
 ## Returns `boolean`

@@ -9,8 +9,11 @@ Calls for the same id are throttled to once every 3500 ms.
 
 ## Declaration
 ```cpp
-void playGesticulation(number player_id)
+boolean playGesticulation(number player_id)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
+  
+## Returns `boolean`
+True on success.

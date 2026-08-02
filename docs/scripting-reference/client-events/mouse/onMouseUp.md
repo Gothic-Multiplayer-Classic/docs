@@ -11,4 +11,4 @@ This event is triggered when a mouse button is released.
 void onMouseUp(number button)
 ```
 
-* `number` **button**: The mouse button released.
+* `number` **button**: The mouse button released. For more information, see [Mouse Constants](../../client-constants/Mouse.md).

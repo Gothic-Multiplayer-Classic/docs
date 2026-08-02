@@ -8,7 +8,7 @@ This function will send a colored chat message to a specific player.
 
 ## Declaration
 ```cpp
-void sendMessageToPlayer(number player_id, number r, number g, number b, string text)
+boolean sendMessageToPlayer(number player_id, number r, number g, number b, string text)
 ```
 
 ## Parameters
@@ -17,3 +17,6 @@ void sendMessageToPlayer(number player_id, number r, number g, number b, string 
 * `number` **g**: Green component (0-255).
 * `number` **b**: Blue component (0-255).
 * `string` **text**: Message text to send.
+  
+## Returns `boolean`
+True on success.

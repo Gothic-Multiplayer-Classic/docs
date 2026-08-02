@@ -10,7 +10,7 @@ Static sky controller for authoritative server weather.
 ## Properties
 ### `number` weatherType 
 
-Current server weather type. When automatic weather is enabled, this can be overwritten on the next server game minute.
+Current server weather type. When automatic weather is enabled, this can be overwritten on the next server game minute. For more information, see [Weather Constants](../../shared-constants/Weather.md).
 
 ----
 ### `table` rainStartTime 

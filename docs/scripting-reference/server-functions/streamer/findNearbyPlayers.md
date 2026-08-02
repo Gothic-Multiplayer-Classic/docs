@@ -8,14 +8,14 @@ This function will return player ids within a radius of a given position in a wo
 
 ## Declaration
 ```cpp
-{...} findNearbyPlayers({x, y, z} position_table, number radius, string world, number virtual_world)
+{...} findNearbyPlayers({x, y, z} position_table, number radius, string world, number|nil virtual_world)
 ```
 
 ## Parameters
 * `{x, y, z}` **position_table**: Table with x,y,z coordinates.
 * `number` **radius**: Search radius.
 * `string` **world**: World name to search in.
-* `number` **virtual_world**: Optional virtual world id.
+* `number|nil` **virtual_world**: Optional virtual world id.
   
 ## Returns `{...}`
 Array of player ids.

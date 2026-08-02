@@ -8,11 +8,11 @@ This function will return the current server time as a table {day,hour,min}.
 
 ## Declaration
 ```cpp
-{day, hour, min} getTime()
+{day, hour, minute} getTime()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `{day, hour, min}`
-Table containing day, hour, min.
+## Returns `{day, hour, minute}`
+Table containing day, hour, minute.

@@ -8,8 +8,11 @@ This function will set the hero's experience points.
 
 ## Declaration
 ```cpp
-void setExp(number exp)
+boolean setExp(number exp)
 ```
 
 ## Parameters
 * `number` **exp**: New exp value.
+  
+## Returns `boolean`
+True on success.

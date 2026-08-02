@@ -8,9 +8,12 @@ This function will stop a played animation on the player's character.
 
 ## Declaration
 ```cpp
-void stopAni(number player_id, string|nil aniName)
+boolean stopAni(number player_id, string|nil aniName)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string|nil` **aniName**: Animation name to stop. Defaults to "" for first active animation.
+  
+## Returns `boolean`
+True on success.

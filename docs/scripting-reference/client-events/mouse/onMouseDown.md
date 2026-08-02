@@ -11,4 +11,4 @@ This event is triggered when a mouse button is pressed.
 void onMouseDown(number button)
 ```
 
-* `number` **button**: The mouse button pressed.
+* `number` **button**: The mouse button pressed. For more information, see [Mouse Constants](../../client-constants/Mouse.md).

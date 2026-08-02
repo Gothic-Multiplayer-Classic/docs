@@ -8,9 +8,12 @@ This function will set the player's experience points.
 
 ## Declaration
 ```cpp
-void setPlayerExp(number player_id, number exp)
+boolean setPlayerExp(number player_id, number exp)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `number` **exp**: New exp value.
+  
+## Returns `boolean`
+True on success.

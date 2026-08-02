@@ -8,9 +8,12 @@ This function will set the in-game world time (hour, minute).
 
 ## Declaration
 ```cpp
-void setTime(number hour, number minute)
+boolean setTime(number hour, number minute)
 ```
 
 ## Parameters
 * `number` **hour**: Hour component.
 * `number` **minute**: Minute component.
+  
+## Returns `boolean`
+True on success.

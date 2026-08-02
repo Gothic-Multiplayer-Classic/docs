@@ -8,8 +8,11 @@ This function will set the hero's learn points.
 
 ## Declaration
 ```cpp
-void setLearnPoints(number learn_points)
+boolean setLearnPoints(number learn_points)
 ```
 
 ## Parameters
 * `number` **learn_points**: New learn points value.
+  
+## Returns `boolean`
+True on success.

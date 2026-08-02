@@ -8,7 +8,7 @@ This function will set the player's model scale.
 
 ## Declaration
 ```cpp
-void setPlayerScale(number player_id, number x, number y, number z)
+boolean setPlayerScale(number player_id, number x, number y, number z)
 ```
 
 ## Parameters
@@ -16,3 +16,6 @@ void setPlayerScale(number player_id, number x, number y, number z)
 * `number` **x**: Scale factor on x axis.
 * `number` **y**: Scale factor on y axis.
 * `number` **z**: Scale factor on z axis.
+  
+## Returns `boolean`
+True on success.

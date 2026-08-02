@@ -13,7 +13,7 @@ number|nil getPlayerTalent(number player_id, number talent_id)
 
 ## Parameters
 * `number` **player_id**: Target player id.
-* `number` **talent_id**: Talent identifier.
+* `number` **talent_id**: Talent identifier. For more information, see [Talent Constants](../../shared-constants/Talent.md).
   
 ## Returns `number|nil`
 Talent value or nil.

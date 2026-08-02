@@ -8,7 +8,7 @@ This function will set the player's name color in RGB format.
 
 ## Declaration
 ```cpp
-void setPlayerColor(number player_id, number r, number g, number b)
+boolean setPlayerColor(number player_id, number r, number g, number b)
 ```
 
 ## Parameters
@@ -16,3 +16,6 @@ void setPlayerColor(number player_id, number r, number g, number b)
 * `number` **r**: Red (0-255).
 * `number` **g**: Green (0-255).
 * `number` **b**: Blue (0-255).
+  
+## Returns `boolean`
+True on success.

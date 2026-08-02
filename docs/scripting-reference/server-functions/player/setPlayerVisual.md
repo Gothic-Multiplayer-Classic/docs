@@ -8,7 +8,7 @@ This function will set the player's visual model and textures.
 
 ## Declaration
 ```cpp
-void setPlayerVisual(number player_id, string bodyModel, number bodyTexture, string headModel, number headTexture, number teethTexture, number skinColor)
+boolean setPlayerVisual(number player_id, string bodyModel, number bodyTexture, string headModel, number headTexture, number|nil teethTexture, number|nil skinColor)
 ```
 
 ## Parameters
@@ -17,5 +17,8 @@ void setPlayerVisual(number player_id, string bodyModel, number bodyTexture, str
 * `number` **bodyTexture**: Body texture index.
 * `string` **headModel**: Head model name.
 * `number` **headTexture**: Head texture index.
-* `number` **teethTexture**: Optional teeth texture file numeric id. Defaults to 0 if omitted.
-* `number` **skinColor**: Optional color variant of head & body texture files. Defaults to 0 if omitted.
+* `number|nil` **teethTexture**: Optional teeth texture file numeric id. Defaults to 0 if omitted.
+* `number|nil` **skinColor**: Optional color variant of head & body texture files. Defaults to 0 if omitted.
+  
+## Returns `boolean`
+True on success.

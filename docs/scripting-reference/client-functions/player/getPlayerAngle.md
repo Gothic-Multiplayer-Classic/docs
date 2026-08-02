@@ -15,4 +15,4 @@ number|nil getPlayerAngle(number player_id)
 * `number` **player_id**: Target player id.
   
 ## Returns `number|nil`
-Angle in radians or nil.
+Angle in degrees or nil.

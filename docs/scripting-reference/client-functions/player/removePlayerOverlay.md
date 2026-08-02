@@ -8,9 +8,12 @@ This function will remove specified animation overlay from the player.
 
 ## Declaration
 ```cpp
-void removePlayerOverlay(number player_id, string overlay)
+boolean removePlayerOverlay(number player_id, string overlay)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string` **overlay**: The name of overlay.
+  
+## Returns `boolean`
+True on success.

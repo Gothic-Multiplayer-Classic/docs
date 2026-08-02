@@ -8,9 +8,12 @@ This function will set the player/npc maximum health. If the current health exce
 
 ## Declaration
 ```cpp
-void setPlayerMaxHealth(number player_id, number max_health)
+boolean setPlayerMaxHealth(number player_id, number max_health)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `number` **max_health**: New maximum health.
+  
+## Returns `boolean`
+True on success.

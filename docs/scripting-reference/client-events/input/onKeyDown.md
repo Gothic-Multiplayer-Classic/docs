@@ -11,4 +11,4 @@ This event is triggered when a key is pressed.
 void onKeyDown(number key)
 ```
 
-* `number` **key**: The key code pressed.
+* `number` **key**: The key code pressed. For more information, see [Key Constants](../../client-constants/Key.md).

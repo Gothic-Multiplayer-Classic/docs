@@ -12,7 +12,7 @@ number|nil getHudMode(number hud_type)
 ```
 
 ## Parameters
-* `number` **hud_type**: HUD type constant.
+* `number` **hud_type**: HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md).
   
 ## Returns `number|nil`
-HUD mode constant, or nil for unsupported HUD types.
+HUD mode constant from the same table, or nil for unsupported HUD types.

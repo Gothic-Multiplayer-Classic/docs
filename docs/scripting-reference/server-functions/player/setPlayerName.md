@@ -8,9 +8,12 @@ This function will set the player's character name.
 
 ## Declaration
 ```cpp
-void setPlayerName(number player_id, string name)
+boolean setPlayerName(number player_id, string name)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string` **name**: New player name.
+  
+## Returns `boolean`
+True on success.

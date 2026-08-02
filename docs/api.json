@@ -2154,17 +2154,17 @@
         {
           "name": "mainflag",
           "type": "number",
-          "doc": "Represents the item's main category flag."
+          "doc": "Represents the item's main category flag. For more information, see [Item Constants](../../shared-constants/Item.md)."
         },
         {
           "name": "mainFlag",
           "type": "number",
-          "doc": "Represents the item's main category flag."
+          "doc": "Represents the item's main category flag. For more information, see [Item Constants](../../shared-constants/Item.md)."
         },
         {
           "name": "flags",
           "type": "number",
-          "doc": "Represents the item's Gothic flags."
+          "doc": "Represents the item's Gothic flags. For more information, see [Item Constants](../../shared-constants/Item.md)."
         },
         {
           "name": "visual",
@@ -2174,7 +2174,7 @@
         {
           "name": "wear",
           "type": "number",
-          "doc": "Represents the armor wear slot value."
+          "doc": "Represents the armor wear slot value. For more information, see [Item Constants](../../shared-constants/Item.md)."
         },
         {
           "name": "range",
@@ -2189,7 +2189,7 @@
         {
           "name": "damage",
           "type": "{total, types}|nil",
-          "doc": "Represents the item's damage information."
+          "doc": "Represents the item's damage information. Its `types` field uses [Damage Constants](../../shared-constants/Damage.md)."
         },
         {
           "name": "damageTotal",
@@ -2199,7 +2199,7 @@
         {
           "name": "damageTypes",
           "type": "number",
-          "doc": "Represents the item's Gothic damage type flags."
+          "doc": "Represents the item's Gothic damage type flags. For more information, see [Damage Constants](../../shared-constants/Damage.md)."
         },
         {
           "name": "munition",
@@ -2245,7 +2245,7 @@
             {
               "name": "damageType",
               "type": "number",
-              "doc": "Gothic damage type."
+              "doc": "Gothic damage type. For more information, see [Damage Constants](../../shared-constants/Damage.md)."
             }
           ],
           "returns": {
@@ -2516,7 +2516,7 @@
         {
           "name": "weatherType",
           "type": "number",
-          "doc": "Current local weather type. Use `refresh()` to pull the authoritative value from the server."
+          "doc": "Current local weather type. Use `refresh()` to pull the authoritative value from the server. For more information, see [Weather Constants](../../shared-constants/Weather.md)."
         },
         {
           "name": "rainStartTime",
@@ -2551,17 +2551,17 @@
         {
           "name": "planetSize",
           "type": "table",
-          "doc": "Write-only planet size table: `{planetId = number, size = number}`"
+          "doc": "Write-only planet size table: `{planetId = number, size = number}`. For planet identifiers, see [Sky Constants](../../client-constants/Sky.md)."
         },
         {
           "name": "planetColor",
           "type": "table",
-          "doc": "Write-only planet color table: `{planetId = number, r = number, g = number, b = number, a = number}`"
+          "doc": "Write-only planet color table: `{planetId = number, r = number, g = number, b = number, a = number}`. For planet identifiers, see [Sky Constants](../../client-constants/Sky.md)."
         },
         {
           "name": "planetTxt",
           "type": "table",
-          "doc": "Write-only planet texture table: `{planetId = number, texture = string}`"
+          "doc": "Write-only planet texture table: `{planetId = number, texture = string}`. For planet identifiers, see [Sky Constants](../../client-constants/Sky.md)."
         },
         {
           "name": "lightingColor",
@@ -4898,6 +4898,17 @@
       }
     },
     {
+      "name": "getRealTime",
+      "doc": "This function will return the current local wall-clock time.",
+      "side": "shared",
+      "category": "Utility",
+      "params": [],
+      "returns": {
+        "type": "table",
+        "doc": "Table containing local time components."
+      }
+    },
+    {
       "name": "sha256",
       "doc": "This function will calculate the SHA-256 hash of a string and return it as hex.",
       "side": "shared",
@@ -5430,8 +5441,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5467,8 +5478,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5504,8 +5515,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5546,8 +5557,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5562,14 +5573,14 @@
           "doc": "Player id to spawn."
         },
         {
-          "name": "Optional",
-          "type": "table",
-          "doc": "position table or three numeric coords."
+          "name": "position",
+          "type": "{x, y, z}|nil",
+          "doc": "Optional position table or three numeric coords."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5607,8 +5618,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5646,8 +5657,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5763,8 +5774,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5802,8 +5813,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5841,8 +5852,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5880,8 +5891,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5919,8 +5930,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5958,8 +5969,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -5997,8 +6008,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6041,8 +6052,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6090,8 +6101,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6134,8 +6145,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6173,8 +6184,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6212,8 +6223,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6251,8 +6262,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6305,18 +6316,18 @@
         },
         {
           "name": "teethTexture",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional teeth texture file numeric id. Defaults to 0 if omitted."
         },
         {
           "name": "skinColor",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional color variant of head & body texture files. Defaults to 0 if omitted."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6354,8 +6365,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6403,8 +6414,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6438,12 +6449,12 @@
         {
           "name": "weapon_mode",
           "type": "number",
-          "doc": "Weapon mode constant."
+          "doc": "Weapon mode constant. For more information, see [Weapon Mode Constants](../../shared-constants/WeaponMode.md)."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6460,7 +6471,7 @@
       ],
       "returns": {
         "type": "number|nil",
-        "doc": "Weapon mode or nil."
+        "doc": "Weapon mode from [Weapon Mode Constants](../../shared-constants/WeaponMode.md), or nil."
       }
     },
     {
@@ -6583,8 +6594,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6622,8 +6633,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6644,8 +6655,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6666,8 +6677,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6688,8 +6699,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6710,8 +6721,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6727,8 +6738,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6759,8 +6770,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6798,8 +6809,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6837,13 +6848,13 @@
         },
         {
           "name": "start_point",
-          "type": "string",
+          "type": "string|nil",
           "doc": "Optional start point name."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6881,8 +6892,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -6915,7 +6926,7 @@
         },
         {
           "name": "reason",
-          "type": "string",
+          "type": "string|nil",
           "doc": "Optional reason why the player was banned."
         }
       ],
@@ -6937,7 +6948,7 @@
         },
         {
           "name": "reason",
-          "type": "string",
+          "type": "string|nil",
           "doc": "Optional reason why the player was kicked."
         }
       ],
@@ -6961,6 +6972,23 @@
       "returns": {
         "type": "boolean",
         "doc": "True when player is connected, otherwise false."
+      }
+    },
+    {
+      "name": "isPlayerAdmin",
+      "doc": "This function will check whether player is logged in through rcon.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when player is rcon-authenticated, otherwise false."
       }
     },
     {
@@ -7093,8 +7121,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -7115,13 +7143,13 @@
         },
         {
           "name": "slot_id",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional slot id. Defaults to -1 for first free slot."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -7142,8 +7170,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -7386,8 +7414,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -7441,7 +7469,7 @@
         },
         {
           "name": "virtual_world",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional virtual world id."
         }
       ],
@@ -7558,13 +7586,13 @@
         },
         {
           "name": "day",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional day offset."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -7575,7 +7603,7 @@
       "params": [],
       "returns": {
         "type": "table",
-        "doc": "Table containing day, hour, min."
+        "doc": "Table containing day, hour, minute."
       }
     },
     {
@@ -7591,8 +7619,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -7928,8 +7956,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -7967,8 +7995,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8006,8 +8034,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8045,8 +8073,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8084,8 +8112,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8123,8 +8151,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8162,8 +8190,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8197,7 +8225,7 @@
         {
           "name": "skill_id",
           "type": "number",
-          "doc": "Skill identifier."
+          "doc": "Skill identifier. For more information, see [Weapon Constants](../../shared-constants/Weapon.md)."
         },
         {
           "name": "percentage",
@@ -8206,8 +8234,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8224,7 +8252,7 @@
         {
           "name": "skill_id",
           "type": "number",
-          "doc": "Skill identifier."
+          "doc": "Skill identifier. For more information, see [Weapon Constants](../../shared-constants/Weapon.md)."
         }
       ],
       "returns": {
@@ -8246,7 +8274,7 @@
         {
           "name": "talent_id",
           "type": "number",
-          "doc": "Talent identifier."
+          "doc": "Talent identifier. For more information, see [Talent Constants](../../shared-constants/Talent.md)."
         },
         {
           "name": "talent_value",
@@ -8255,8 +8283,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8273,7 +8301,7 @@
         {
           "name": "talent_id",
           "type": "number",
-          "doc": "Talent identifier."
+          "doc": "Talent identifier. For more information, see [Talent Constants](../../shared-constants/Talent.md)."
         }
       ],
       "returns": {
@@ -8299,8 +8327,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8333,8 +8361,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8361,8 +8389,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8389,8 +8417,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8437,18 +8465,18 @@
         },
         {
           "name": "teethTexture",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional teeth texture file numeric id. Defaults to 0 if omitted."
         },
         {
           "name": "skinColor",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional color variant of head & body texture files. Defaults to 0 if omitted."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8486,8 +8514,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8535,8 +8563,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8570,12 +8598,12 @@
         {
           "name": "weapon_mode",
           "type": "number",
-          "doc": "Weapon mode constant."
+          "doc": "Weapon mode constant. For more information, see [Weapon Mode Constants](../../shared-constants/WeaponMode.md)."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8592,7 +8620,7 @@
       ],
       "returns": {
         "type": "number|nil",
-        "doc": "Weapon mode or nil."
+        "doc": "Weapon mode from [Weapon Mode Constants](../../shared-constants/WeaponMode.md), or nil."
       }
     },
     {
@@ -8732,8 +8760,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8771,8 +8799,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8793,8 +8821,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8815,8 +8843,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8837,8 +8865,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8859,8 +8887,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8876,8 +8904,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8908,8 +8936,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8943,12 +8971,12 @@
         {
           "name": "angle",
           "type": "number",
-          "doc": "Angle in radians."
+          "doc": "Angle in degrees."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -8965,7 +8993,7 @@
       ],
       "returns": {
         "type": "number|nil",
-        "doc": "Angle in radians or nil."
+        "doc": "Angle in degrees or nil."
       }
     },
     {
@@ -8991,8 +9019,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -9013,8 +9041,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -9035,8 +9063,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -9379,8 +9407,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -9726,8 +9754,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -9754,8 +9782,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success."
       }
     },
     {
@@ -10374,7 +10402,7 @@
         {
           "name": "hud_type",
           "type": "number",
-          "doc": "HUD type constant."
+          "doc": "HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md)."
         },
         {
           "name": "enabled",
@@ -10396,7 +10424,7 @@
         {
           "name": "hud_type",
           "type": "number",
-          "doc": "HUD type constant."
+          "doc": "HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md)."
         }
       ],
       "returns": {
@@ -10413,12 +10441,12 @@
         {
           "name": "hud_type",
           "type": "number",
-          "doc": "HUD type constant."
+          "doc": "HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md)."
         },
         {
           "name": "mode",
           "type": "number",
-          "doc": "HUD mode constant."
+          "doc": "HUD mode constant from the same table."
         }
       ],
       "returns": {
@@ -10435,12 +10463,12 @@
         {
           "name": "hud_type",
           "type": "number",
-          "doc": "HUD type constant."
+          "doc": "HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md)."
         }
       ],
       "returns": {
         "type": "number|nil",
-        "doc": "HUD mode constant, or nil for unsupported HUD types."
+        "doc": "HUD mode constant from the same table, or nil for unsupported HUD types."
       }
     },
     {
@@ -10452,7 +10480,7 @@
         {
           "name": "hud_type",
           "type": "number",
-          "doc": "Status bar HUD type constant."
+          "doc": "Status bar HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md)."
         },
         {
           "name": "x",
@@ -10479,7 +10507,7 @@
         {
           "name": "hud_type",
           "type": "number",
-          "doc": "Status bar HUD type constant."
+          "doc": "Status bar HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md)."
         }
       ],
       "returns": {
@@ -10496,7 +10524,7 @@
         {
           "name": "hud_type",
           "type": "number",
-          "doc": "Status bar HUD type constant."
+          "doc": "Status bar HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md)."
         },
         {
           "name": "width",
@@ -10523,7 +10551,7 @@
         {
           "name": "hud_type",
           "type": "number",
-          "doc": "Status bar HUD type constant."
+          "doc": "Status bar HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md)."
         }
       ],
       "returns": {
@@ -10740,6 +10768,23 @@
       }
     },
     {
+      "name": "logicalKeyPressed",
+      "doc": "This function will check whether the specified Gothic logical game action is pressed.",
+      "side": "client",
+      "category": "Input",
+      "params": [
+        {
+          "name": "key",
+          "type": "number",
+          "doc": "The logical game action code to check. For more information, see [Logical Key Constants](../../client-constants/LogicalKey.md)."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if the logical action is currently active, false otherwise."
+      }
+    },
+    {
       "name": "keyToggled",
       "doc": "This function will check whether the specified keyboard key was toggled from unpressed to pressed state.",
       "side": "client",
@@ -10753,19 +10798,36 @@
       ],
       "returns": {
         "type": "boolean",
-        "doc": "True if the key was toggled, false otherwise."
+        "doc": "True if the key became pressed this frame, false otherwise."
       }
     },
     {
-      "name": "disableControls",
-      "doc": "This functiuon will disable/enable default game actions that are bound to keys.",
+      "name": "logicalKeyToggled",
+      "doc": "This function will check whether the specified Gothic logical game action was toggled from unpressed to pressed state.",
       "side": "client",
       "category": "Input",
       "params": [
         {
-          "name": "True",
+          "name": "key",
+          "type": "number",
+          "doc": "The logical game action code to check. For more information, see [Logical Key Constants](../../client-constants/LogicalKey.md)."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if the logical action became pressed this frame, false otherwise."
+      }
+    },
+    {
+      "name": "disableControls",
+      "doc": "This function will disable/enable default game actions that are bound to keys.",
+      "side": "client",
+      "category": "Input",
+      "params": [
+        {
+          "name": "toggle",
           "type": "boolean",
-          "doc": "when you want to disable game keys, otherwise false."
+          "doc": "True when you want to disable game keys, otherwise false."
         }
       ],
       "returns": {
@@ -10807,6 +10869,28 @@
       }
     },
     {
+      "name": "disableLogicalKey",
+      "doc": "This function will disable/enable a Gothic logical game action for Lua input polling.",
+      "side": "client",
+      "category": "Input",
+      "params": [
+        {
+          "name": "key",
+          "type": "number",
+          "doc": "The logical game action code to disable. For more information about key codes, see [Logical Key Constants](../../client-constants/LogicalKey.md)."
+        },
+        {
+          "name": "toggle",
+          "type": "boolean",
+          "doc": "True to disable, false to enable."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success."
+      }
+    },
+    {
       "name": "isKeyDisabled",
       "doc": "This function will check whether the specified keyboard key is disabled.",
       "side": "client",
@@ -10816,6 +10900,23 @@
           "name": "keyId",
           "type": "number",
           "doc": "The key code to check. For more information about key codes, see [Key Constants](../../client-constants/Key.md)."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when disabled, otherwise false."
+      }
+    },
+    {
+      "name": "isLogicalKeyDisabled",
+      "doc": "This function will check whether a Gothic logical game action is disabled for Lua input polling.",
+      "side": "client",
+      "category": "Input",
+      "params": [
+        {
+          "name": "key",
+          "type": "number",
+          "doc": "The logical game action code to check. For more information about key codes, see [Logical Key Constants](../../client-constants/LogicalKey.md)."
         }
       ],
       "returns": {
@@ -11048,12 +11149,12 @@
         {
           "name": "button",
           "type": "number",
-          "doc": "Mouse button identifier."
+          "doc": "Mouse button identifier. For more information, see [Mouse Constants](../../client-constants/Mouse.md)."
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True if the button is currently pressed, otherwise false."
       }
     }
   ],
@@ -11131,7 +11232,7 @@
         {
           "name": "reason",
           "type": "number",
-          "doc": "The reason why player got disconnected. See Network constants."
+          "doc": "The reason why player got disconnected. For more information, see [Network Constants](../../server-constants/Network.md)."
         }
       ],
       "cancellable": false
@@ -11192,7 +11293,7 @@
         },
         {
           "name": "killer_id",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional id of the killer (nil if none)."
         }
       ],
@@ -11220,7 +11321,7 @@
       "params": [
         {
           "name": "attacker_id",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional attacker id (nil if none)."
         },
         {
@@ -11287,7 +11388,7 @@
         },
         {
           "name": "target_id",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional target player id (nil if none)."
         }
       ],
@@ -11398,12 +11499,12 @@
         {
           "name": "old_mode",
           "type": "number",
-          "doc": "Previous weapon mode."
+          "doc": "Previous weapon mode. For more information, see [Weapon Mode Constants](../../shared-constants/WeaponMode.md)."
         },
         {
           "name": "new_mode",
           "type": "number",
-          "doc": "New weapon mode."
+          "doc": "New weapon mode from the same table."
         }
       ],
       "cancellable": false
@@ -11717,7 +11818,7 @@
       "params": [
         {
           "name": "attacker_id",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional attacker id (nil if none)."
         },
         {
@@ -11733,7 +11834,7 @@
         {
           "name": "damageType",
           "type": "number",
-          "doc": "Gothic damage type/mode flags."
+          "doc": "Gothic damage type/mode flags. For more information, see [Damage Constants](../../shared-constants/Damage.md)."
         }
       ],
       "cancellable": false
@@ -11795,12 +11896,12 @@
         {
           "name": "old_weather_type",
           "type": "number",
-          "doc": "Previous weather type."
+          "doc": "Previous weather type. For more information, see [Weather Constants](../../shared-constants/Weather.md)."
         },
         {
           "name": "new_weather_type",
           "type": "number",
-          "doc": "New weather type."
+          "doc": "New weather type from the same table."
         }
       ],
       "cancellable": false
@@ -11814,7 +11915,7 @@
         {
           "name": "key",
           "type": "number",
-          "doc": "The key code pressed."
+          "doc": "The key code pressed. For more information, see [Key Constants](../../client-constants/Key.md)."
         }
       ],
       "cancellable": false
@@ -11828,7 +11929,7 @@
         {
           "name": "key",
           "type": "number",
-          "doc": "The key code released."
+          "doc": "The key code released. For more information, see [Key Constants](../../client-constants/Key.md)."
         }
       ],
       "cancellable": false
@@ -11875,7 +11976,7 @@
         {
           "name": "button",
           "type": "number",
-          "doc": "The mouse button pressed."
+          "doc": "The mouse button pressed. For more information, see [Mouse Constants](../../client-constants/Mouse.md)."
         }
       ],
       "cancellable": false
@@ -11889,7 +11990,7 @@
         {
           "name": "button",
           "type": "number",
-          "doc": "The mouse button released."
+          "doc": "The mouse button released. For more information, see [Mouse Constants](../../client-constants/Mouse.md)."
         }
       ],
       "cancellable": false
@@ -12051,7 +12152,7 @@
         },
         {
           "name": "itemGroundId",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Ground item id, or nil for non-server items."
         }
       ],
@@ -12172,7 +12273,7 @@
       "params": [
         {
           "name": "sender_id",
-          "type": "number",
+          "type": "number|nil",
           "doc": "Optional sender id (nil for system)."
         },
         {

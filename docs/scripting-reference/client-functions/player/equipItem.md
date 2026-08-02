@@ -8,9 +8,12 @@ This function will equip an item for the player/NPC.
 
 ## Declaration
 ```cpp
-void equipItem(number player_id, string instance)
+boolean equipItem(number player_id, string instance)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string` **instance**: Item instance name.
+  
+## Returns `boolean`
+True on success.

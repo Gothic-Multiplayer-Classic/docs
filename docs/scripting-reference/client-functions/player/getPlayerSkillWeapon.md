@@ -13,7 +13,7 @@ number|nil getPlayerSkillWeapon(number player_id, number skill_id)
 
 ## Parameters
 * `number` **player_id**: Target player id.
-* `number` **skill_id**: Skill identifier.
+* `number` **skill_id**: Skill identifier. For more information, see [Weapon Constants](../../shared-constants/Weapon.md).
   
 ## Returns `number|nil`
 Hit chance (0-100) or nil.

@@ -8,8 +8,11 @@ This function will return whether a mouse button is currently pressed.
 
 ## Declaration
 ```cpp
-void isMouseBtnPressed(number button)
+boolean isMouseBtnPressed(number button)
 ```
 
 ## Parameters
-* `number` **button**: Mouse button identifier.
+* `number` **button**: Mouse button identifier. For more information, see [Mouse Constants](../../client-constants/Mouse.md).
+  
+## Returns `boolean`
+True if the button is currently pressed, otherwise false.

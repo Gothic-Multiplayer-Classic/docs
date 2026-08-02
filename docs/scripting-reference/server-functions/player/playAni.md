@@ -8,9 +8,12 @@ This function will play an animation on the player's character.
 
 ## Declaration
 ```cpp
-void playAni(number player_id, string aniName)
+boolean playAni(number player_id, string aniName)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string` **aniName**: Animation name (e.g. "T_STAND_2_SIT").
+  
+## Returns `boolean`
+True on success.

@@ -8,7 +8,7 @@ This function will set the player's world position.
 
 ## Declaration
 ```cpp
-void setPlayerPosition(number player_id, number x, number y, number z)
+boolean setPlayerPosition(number player_id, number x, number y, number z)
 ```
 
 ## Parameters
@@ -16,3 +16,6 @@ void setPlayerPosition(number player_id, number x, number y, number z)
 * `number` **x**: X coordinate.
 * `number` **y**: Y coordinate.
 * `number` **z**: Z coordinate.
+  
+## Returns `boolean`
+True on success.

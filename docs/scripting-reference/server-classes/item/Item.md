@@ -20,17 +20,17 @@ Represents the Gothic parser symbol index for this item instance.
 ----
 ### `number` mainflag 
 
-Represents the item's main category flag.
+Represents the item's main category flag. For more information, see [Item Constants](../../shared-constants/Item.md).
 
 ----
 ### `number` mainFlag 
 
-Represents the item's main category flag.
+Represents the item's main category flag. For more information, see [Item Constants](../../shared-constants/Item.md).
 
 ----
 ### `number` flags 
 
-Represents the item's Gothic flags.
+Represents the item's Gothic flags. For more information, see [Item Constants](../../shared-constants/Item.md).
 
 ----
 ### `string` visual 
@@ -40,7 +40,7 @@ Represents the item's visual model file.
 ----
 ### `number` wear 
 
-Represents the armor wear slot value.
+Represents the armor wear slot value. For more information, see [Item Constants](../../shared-constants/Item.md).
 
 ----
 ### `number` range 
@@ -55,7 +55,7 @@ Represents the item's value in currency units.
 ----
 ### `{total, types}|nil` damage 
 
-Represents the item's damage information.
+Represents the item's damage information. Its `types` field uses [Damage Constants](../../shared-constants/Damage.md).
 
 ----
 ### `number` damageTotal 
@@ -65,7 +65,7 @@ Represents the item's total damage.
 ----
 ### `number` damageTypes 
 
-Represents the item's Gothic damage type flags.
+Represents the item's Gothic damage type flags. For more information, see [Damage Constants](../../shared-constants/Damage.md).
 
 ----
 ### `string` munition 
@@ -115,7 +115,7 @@ number getProtection(number damageType)
 
 **Parameters:**
 
-* `number` **damageType**: Gothic damage type.
+* `number` **damageType**: Gothic damage type. For more information, see [Damage Constants](../../shared-constants/Damage.md).
   
 **Returns `number`:**
 

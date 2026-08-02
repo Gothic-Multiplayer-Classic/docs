@@ -11,5 +11,5 @@ This event is triggered when weather changes.
 void onWeatherChange(number old_weather_type, number new_weather_type)
 ```
 
-* `number` **old_weather_type**: Previous weather type.
-* `number` **new_weather_type**: New weather type.
+* `number` **old_weather_type**: Previous weather type. For more information, see [Weather Constants](../../shared-constants/Weather.md).
+* `number` **new_weather_type**: New weather type from the same table.

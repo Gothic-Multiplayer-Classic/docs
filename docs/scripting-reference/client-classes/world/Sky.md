@@ -10,7 +10,7 @@ Static sky controller for local and synchronized sky settings.
 ## Properties
 ### `number` weatherType 
 
-Current local weather type. Use `refresh()` to pull the authoritative value from the server.
+Current local weather type. Use `refresh()` to pull the authoritative value from the server. For more information, see [Weather Constants](../../shared-constants/Weather.md).
 
 ----
 ### `table` rainStartTime 
@@ -45,17 +45,17 @@ Write-only cloud color table: `{r = number, g = number, b = number}`
 ----
 ### `table` planetSize 
 
-Write-only planet size table: `{planetId = number, size = number}`
+Write-only planet size table: `{planetId = number, size = number}`. For planet identifiers, see [Sky Constants](../../client-constants/Sky.md).
 
 ----
 ### `table` planetColor 
 
-Write-only planet color table: `{planetId = number, r = number, g = number, b = number, a = number}`
+Write-only planet color table: `{planetId = number, r = number, g = number, b = number, a = number}`. For planet identifiers, see [Sky Constants](../../client-constants/Sky.md).
 
 ----
 ### `table` planetTxt 
 
-Write-only planet texture table: `{planetId = number, texture = string}`
+Write-only planet texture table: `{planetId = number, texture = string}`. For planet identifiers, see [Sky Constants](../../client-constants/Sky.md).
 
 ----
 ### `table` lightingColor 

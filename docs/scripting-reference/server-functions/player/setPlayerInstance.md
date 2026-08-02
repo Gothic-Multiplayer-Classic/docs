@@ -8,9 +8,12 @@ This function will set the player's character instance.
 
 ## Declaration
 ```cpp
-void setPlayerInstance(number player_id, string instance)
+boolean setPlayerInstance(number player_id, string instance)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string` **instance**: Instance name.
+  
+## Returns `boolean`
+True on success.

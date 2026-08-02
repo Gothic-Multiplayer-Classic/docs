@@ -8,7 +8,7 @@ This function will send a colored chat message to all connected players.
 
 ## Declaration
 ```cpp
-void sendMessageToAll(number r, number g, number b, string text)
+boolean sendMessageToAll(number r, number g, number b, string text)
 ```
 
 ## Parameters
@@ -16,3 +16,6 @@ void sendMessageToAll(number r, number g, number b, string text)
 * `number` **g**: Green component (0-255).
 * `number` **b**: Blue component (0-255).
 * `string` **text**: Message text to send.
+  
+## Returns `boolean`
+True on success.

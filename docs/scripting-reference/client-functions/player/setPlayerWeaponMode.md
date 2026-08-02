@@ -8,9 +8,12 @@ This function will set the player/npc weapon mode for all players.
 
 ## Declaration
 ```cpp
-void setPlayerWeaponMode(number player_id, number weapon_mode)
+boolean setPlayerWeaponMode(number player_id, number weapon_mode)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
-* `number` **weapon_mode**: Weapon mode constant.
+* `number` **weapon_mode**: Weapon mode constant. For more information, see [Weapon Mode Constants](../../shared-constants/WeaponMode.md).
+  
+## Returns `boolean`
+True on success.

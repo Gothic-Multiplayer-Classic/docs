@@ -8,9 +8,12 @@ This function will set the experience required for the player's next level.
 
 ## Declaration
 ```cpp
-void setPlayerNextLevelExp(number player_id, number next_level_exp)
+boolean setPlayerNextLevelExp(number player_id, number next_level_exp)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `number` **next_level_exp**: Required exp for next level.
+  
+## Returns `boolean`
+True on success.

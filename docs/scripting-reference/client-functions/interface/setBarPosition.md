@@ -12,7 +12,7 @@ boolean setBarPosition(number hud_type, number x, number y)
 ```
 
 ## Parameters
-* `number` **hud_type**: Status bar HUD type constant.
+* `number` **hud_type**: Status bar HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md).
 * `number` **x**: X position.
 * `number` **y**: Y position.
   

@@ -8,9 +8,9 @@ This event is triggered when a player casts a spell.
 
 ## Parameters
 ```c++
-void onPlayerCastSpell(number caster_id, number spell_id, number target_id)
+void onPlayerCastSpell(number caster_id, number spell_id, number|nil target_id)
 ```
 
 * `number` **caster_id**: Caster player id.
 * `number` **spell_id**: Spell identifier.
-* `number` **target_id**: Optional target player id (nil if none).
+* `number|nil` **target_id**: Optional target player id (nil if none).

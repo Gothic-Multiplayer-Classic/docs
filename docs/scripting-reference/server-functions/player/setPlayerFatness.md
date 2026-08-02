@@ -8,9 +8,12 @@ This function will set the player's model fatness.
 
 ## Declaration
 ```cpp
-void setPlayerFatness(number player_id, number fatness)
+boolean setPlayerFatness(number player_id, number fatness)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `number` **fatness**: Fatness value.
+  
+## Returns `boolean`
+True on success.

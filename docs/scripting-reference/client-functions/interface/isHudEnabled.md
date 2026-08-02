@@ -12,7 +12,7 @@ boolean|nil isHudEnabled(number hud_type)
 ```
 
 ## Parameters
-* `number` **hud_type**: HUD type constant.
+* `number` **hud_type**: HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md).
   
 ## Returns `boolean|nil`
 HUD state, or nil for unsupported HUD types.

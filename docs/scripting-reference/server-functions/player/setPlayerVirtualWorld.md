@@ -8,9 +8,12 @@ This function will set the player's virtual world id.
 
 ## Declaration
 ```cpp
-void setPlayerVirtualWorld(number player_id, number virtual_world)
+boolean setPlayerVirtualWorld(number player_id, number virtual_world)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `number` **virtual_world**: Virtual world id (0-65535).
+  
+## Returns `boolean`
+True on success.

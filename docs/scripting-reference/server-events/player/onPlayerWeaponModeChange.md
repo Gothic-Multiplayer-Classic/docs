@@ -12,5 +12,5 @@ void onPlayerWeaponModeChange(number player_id, number old_mode, number new_mode
 ```
 
 * `number` **player_id**: Player id.
-* `number` **old_mode**: Previous weapon mode.
-* `number` **new_mode**: New weapon mode.
+* `number` **old_mode**: Previous weapon mode. For more information, see [Weapon Mode Constants](../../shared-constants/WeaponMode.md).
+* `number` **new_mode**: New weapon mode from the same table.

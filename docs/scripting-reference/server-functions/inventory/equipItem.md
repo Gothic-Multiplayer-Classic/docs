@@ -8,10 +8,13 @@ This function will equip an item for the player.
 
 ## Declaration
 ```cpp
-void equipItem(number player_id, string instance, number slot_id)
+boolean equipItem(number player_id, string instance, number|nil slot_id)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string` **instance**: Item instance name from scripts.
-* `number` **slot_id**: Optional slot id. Defaults to -1 for first free slot.
+* `number|nil` **slot_id**: Optional slot id. Defaults to -1 for first free slot.
+  
+## Returns `boolean`
+True on success.

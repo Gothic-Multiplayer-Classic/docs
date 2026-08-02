@@ -8,9 +8,12 @@ This function will set the player/npc dexterity attribute.
 
 ## Declaration
 ```cpp
-void setPlayerDexterity(number player_id, number dexterity)
+boolean setPlayerDexterity(number player_id, number dexterity)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `number` **dexterity**: Dexterity value.
+  
+## Returns `boolean`
+True on success.

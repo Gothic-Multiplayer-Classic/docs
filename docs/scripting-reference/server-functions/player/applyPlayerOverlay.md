@@ -8,9 +8,12 @@ This function will apply animation overlay on the player.
 
 ## Declaration
 ```cpp
-void applyPlayerOverlay(number player_id, string overlay)
+boolean applyPlayerOverlay(number player_id, string overlay)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string` **overlay**: Overlay name.
+  
+## Returns `boolean`
+True on success.

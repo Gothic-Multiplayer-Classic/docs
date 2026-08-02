@@ -8,8 +8,11 @@ This function will play gesticulation animation on the player's character.
 
 ## Declaration
 ```cpp
-void playGesticulation(number player_id)
+boolean playGesticulation(number player_id)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
+  
+## Returns `boolean`
+True on success.

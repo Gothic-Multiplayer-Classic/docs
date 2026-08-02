@@ -1,52 +1,73 @@
 # Server Configuration
 
-The server reads `config.toml` from the server working directory. Missing keys fall back to compiled defaults, while the sample file shipped with the server may choose more conservative values for a public release. The notes below describe the runtime behavior in the current GMPC server code.
+The server reads `config.toml` from its working directory. Missing keys use compiled defaults; malformed or wrongly typed values are generally ignored in favor of those defaults. Restart the server after editing the file unless a Lua API explicitly supports changing the same setting at runtime.
 
-Most settings are read during startup. Restart the server after editing this file unless you are changing behavior through a script API that explicitly supports runtime changes.
+## Identity And Access
 
-## Basic Identity And Access
-
-| Setting | Default | What it controls |
+| Setting | Default | Runtime behavior |
 | --- | --- | --- |
-| `name` | `"Gothic Multiplayer Server"` | Server name shown to clients and master-server listings. Values longer than 100 characters are truncated. |
-| `port` | `57005` | UDP game server port. Client resource downloads are served from the same bound port through the built-in resource server. |
-| `public` | `false` | Enables master-server heartbeats when the server build includes a master-server endpoint. Without that build-time endpoint, the setting is accepted but listing is skipped. |
-| `slots` | `12` | Maximum number of connected players accepted by the network server. |
-| `admin_passwd` | `""` | Loaded from config, but no active administration flow uses it in the current server code. Treat it as reserved. |
-| `auth_key` | `""` | Loaded and limited to 32 characters. The current code does not use it for gameplay authentication. |
+| `name` | `"Gothic Multiplayer Server"` | Name sent to clients and master-server listings. Values longer than 100 characters are truncated. |
+| `port` | `57005` | Game server port. The built-in client-resource server uses the same bound port. |
+| `public` | `false` | Starts master-server heartbeats when the binary was built with a master-server endpoint. Otherwise registration is skipped. |
+| `slots` | `12` | Maximum number of players accepted by the network server. |
+| `admin_passwd` | `""` | Password for `/rcon login <password>`. An empty value disables administrator login. |
+| `auth_key` | `""` | Loaded and truncated to 32 characters, but otherwise unused by the current server implementation. |
 
-`server_identity_seed` is generated automatically when missing or invalid. It is a base64-encoded 32-byte seed used to derive the server identity keys, so back up the generated value if you need the server to keep the same identity across reinstalls.
+An authenticated administrator can use `/rcon diagnostics` to write `diagnostic.txt` in the server working directory. Authentication also unlocks the client's administrator-only noclip tooling. Use a strong password: failed logins are logged, but the current command handler does not rate-limit attempts.
+
+After `config.toml` has loaded successfully, `server_identity_seed` is generated and saved automatically when the field is missing or invalid. It is a base64-encoded 32-byte seed used to derive the server's Ed25519 identity keys. Back it up to preserve the same identity after migration. If the entire configuration file is missing or cannot be parsed, the server uses defaults but skips seed generation, so restore a valid file before hosting.
+
+!!! warning
+    Treat `server_identity_seed` as sensitive. The current public-server heartbeat sends this value as `server_seed` to the configured master server, so use only a master-server endpoint you trust and do not reuse the seed for anything outside GMPC.
 
 ## World And Gameplay
 
-| Setting | Default | What it controls |
+| Setting | Default | Runtime behavior |
 | --- | --- | --- |
-| `map` | `"NEWWORLD\\NEWWORLD.ZEN"` | World path sent to clients and used as the server world name. Keep the path format Gothic expects. |
-| `map_md5` | `""` | Loaded and logged only. The current server code does not enforce this value as a map integrity check. |
-| `allow_modification` | `true` | When `false`, clients that fail the server's modification or CRC check are removed and their connection is temporarily banned. |
-| `hide_map` | `false` | Sends a hide-map flag in server game information, useful for servers that do not want the selected world advertised. |
-| `respawn_time_seconds` | `5` | Global automatic respawn delay after death. Negative disables automatic global respawn, `0` respawns immediately, positive values wait that many seconds. Player-specific script settings can override this behavior. |
-| `seconds_per_game_minute` | `4` in code, `0` in the sample config | Controls the server clock. `0` freezes time. A positive value means one in-game minute passes after that many real seconds. |
+| `map` | `"NEWWORLD\\NEWWORLD.ZEN"` | World path sent to clients and used as the server world name. |
+| `map_md5` | `""` | Loaded and logged only. The current server does not compare or enforce it. |
+| `allow_modification` | `true` | Controls admission based on the player's CRC-check state. See the warning below before disabling it. |
+| `hide_map` | `false` | Sets the hide-map flag in the game information sent to clients. |
+| `respawn_time_seconds` | `5` | Global automatic respawn delay. Negative disables automatic respawn, `0` is immediate, and positive values wait that many seconds. Per-player Lua settings can override it. |
+| `seconds_per_game_minute` | `4` | Real seconds per in-game minute. `0` freezes the authoritative server clock. Negative values are rejected and reset to `4`. |
 
-For time scale, `seconds_per_game_minute = 1` makes a full in-game day last 24 real minutes. `4` makes it last 96 minutes. Use `0` only when the world time should remain fixed.
+At the default time scale, a full in-game day lasts 96 real minutes. A value of `1` produces a 24-minute day.
 
-`allow_modification` is not a replacement for `map_md5`. The MD5 value is currently passive metadata, while `allow_modification` acts on the modification check result reported by the client/server flow.
+!!! danger
+    Do not set `allow_modification = false` in the current implementation. Every player starts with `passed_crc_test = false`, and no current code path marks that check as passed. Disabling modifications therefore rejects and temporarily bans every player who tries to join.
+
+`map_md5` does not repair that limitation: it is currently passive configuration data, not an implemented integrity check.
+
+## Resource Startup
+
+| Setting | Default | Runtime behavior |
+| --- | --- | --- |
+| `resources` | `["default", "prototype"]` | Exact resource selection and startup order. Unlisted resource directories are not loaded or sent to clients. |
+
+Empty names and duplicates are removed while the configuration is validated. Startup fails if a listed resource is missing, inactive, has invalid metadata, cannot be packaged, or fails to execute a declared server script. See [Resources](Resources.md) for the required metadata and script-order rules.
 
 ## Logging
 
-| Setting | Default | What it controls |
+| Setting | Default | Runtime behavior |
 | --- | --- | --- |
-| `log_file` | `"log.txt"` | File sink used by the server logger. The file sink is always created. |
-| `log_to_stdout` | `true` | Adds console output in addition to the log file. |
-| `log_level` | `"trace"` in code, `"info"` in the sample config | Minimum log level. Valid names come from spdlog, such as `trace`, `debug`, `info`, `warning`, `error`, `critical`, and `off`. |
+| `log_file` | `"log.txt"` | File sink created by the server logger. |
+| `log_to_stdout` | `true` | Adds terminal output alongside the file log. |
+| `log_level` | `"trace"` in code, `"info"` in the sample | Minimum spdlog level. Common values are `trace`, `debug`, `info`, `warning`, `error`, `critical`, and `off`. |
 
-If `log_level` is missing or invalid, the server falls back to the compiled default. Prefer `info` for normal hosting, `debug` or `trace` while diagnosing scripts or connection issues, and `warning` or higher only when you intentionally want a quiet production log.
+An invalid `log_level` falls back to `trace`. `info` is a practical normal-hosting value; use `debug` or `trace` when investigating resource or network behavior.
 
-## Runtime Tuning
+## Streaming And Updates
 
-| Setting | Default | What it controls |
+| Setting | Default | Runtime behavior |
 | --- | --- | --- |
-| `tick_rate_ms` | `100` | Interval used for regular server update broadcasts. Lower values can feel more responsive but increase CPU and network pressure. Higher values reduce traffic at the cost of slower state updates. |
-| `daemon` | `false` on Windows, `true` on non-Windows when missing | On non-Windows builds, controls whether the server detaches into daemon mode. Windows builds ignore the daemon path. |
+| `tick_rate_ms` | `100` | Interval between regular state-streaming passes. Lower values increase update frequency, CPU work, and network traffic. |
+| `stream_radius` | `5000` | Horizontal X/Z distance within which players in the same world and virtual world are streamed to each other. |
+| `stream_height` | `0` | Optional vertical Y-distance limit. `0` disables the vertical limit; positive values reject pairs farther apart than this height. |
 
-For most public servers, start with the sample config, then change only the values that affect your actual hosting model: `name`, `port`, `public`, `slots`, `map`, respawn behavior, and logging level.
+Negative streaming values are reset to their defaults. Scripts can change the active values through [setStreamerRadius](../scripting-reference/server-functions/streamer/setStreamerRadius.md) and [setStreamerHeight](../scripting-reference/server-functions/streamer/setStreamerHeight.md); those runtime changes are not written back to `config.toml`.
+
+## Process Management
+
+| Setting | Default | Runtime behavior |
+| --- | --- | --- |
+| `daemon` | `false` on Windows, `true` on non-Windows when omitted | Detaches the process on supported non-Windows builds. The Windows build does not execute the daemon path. |

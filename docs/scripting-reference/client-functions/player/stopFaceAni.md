@@ -8,9 +8,12 @@ This function will stop a played face animation on the player/npc character.
 
 ## Declaration
 ```cpp
-void stopFaceAni(number player_id, string|nil aniName)
+boolean stopFaceAni(number player_id, string|nil aniName)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string|nil` **aniName**: Face animation name to stop. Defaults to "" for first active animation.
+  
+## Returns `boolean`
+True on success.

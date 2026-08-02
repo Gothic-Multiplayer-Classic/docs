@@ -12,7 +12,7 @@ This function will return a Gothic HUD status bar position in virtual coordinate
 ```
 
 ## Parameters
-* `number` **hud_type**: Status bar HUD type constant.
+* `number` **hud_type**: Status bar HUD type constant. For more information, see [HUD Constants](../../client-constants/HUD.md).
   
 ## Returns `{x, y}|nil`
 Status bar position, or nil for unsupported HUD types.

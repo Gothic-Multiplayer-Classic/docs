@@ -8,9 +8,12 @@ This function will apply an animation overlay on player (eg. "HUMANS_MILITIA.MDS
 
 ## Declaration
 ```cpp
-void applyPlayerOverlay(number player_id, string overlay)
+boolean applyPlayerOverlay(number player_id, string overlay)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `string` **overlay**: The name of overlay.
+  
+## Returns `boolean`
+True on success.

@@ -8,10 +8,13 @@ This function will set the player/npc talent value.
 
 ## Declaration
 ```cpp
-void setPlayerTalent(number player_id, number talent_id, number talent_value)
+boolean setPlayerTalent(number player_id, number talent_id, number talent_value)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
-* `number` **talent_id**: Talent identifier.
+* `number` **talent_id**: Talent identifier. For more information, see [Talent Constants](../../shared-constants/Talent.md).
 * `number` **talent_value**: Talent value.
+  
+## Returns `boolean`
+True on success.

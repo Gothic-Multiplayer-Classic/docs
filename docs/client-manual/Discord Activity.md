@@ -2,6 +2,8 @@
 
 GMPC exposes a small Discord Rich Presence API to client Lua scripts. Server creators can use it from client resources to show the current server, character state, faction, activity, or other short status text in Discord.
 
+For the generated method signatures, see the [Discord scripting reference](../scripting-reference/client-classes/game/Discord.md).
+
 The API is safe to call even when Discord support is unavailable. In that case the functions simply do nothing.
 
 ## Requirements

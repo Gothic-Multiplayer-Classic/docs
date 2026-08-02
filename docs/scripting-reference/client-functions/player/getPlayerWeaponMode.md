@@ -15,4 +15,4 @@ number|nil getPlayerWeaponMode(number player_id)
 * `number` **player_id**: Target player id.
   
 ## Returns `number|nil`
-Weapon mode or nil.
+Weapon mode from [Weapon Mode Constants](../../shared-constants/WeaponMode.md), or nil.

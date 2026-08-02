@@ -12,4 +12,4 @@ void onPlayerDisconnect(number player_id, number reason)
 ```
 
 * `number` **player_id**: The id of the player that disconnected.
-* `number` **reason**: The reason why player got disconnected. See Network constants.
+* `number` **reason**: The reason why player got disconnected. For more information, see [Network Constants](../../server-constants/Network.md).

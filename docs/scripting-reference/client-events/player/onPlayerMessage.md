@@ -8,10 +8,10 @@ This event is triggered when a chat message is received locally.
 
 ## Parameters
 ```c++
-void onPlayerMessage(number sender_id, number r, number g, number b, string message)
+void onPlayerMessage(number|nil sender_id, number r, number g, number b, string message)
 ```
 
-* `number` **sender_id**: Optional sender id (nil for system).
+* `number|nil` **sender_id**: Optional sender id (nil for system).
 * `number` **r**: The red color component in RGB model.
 * `number` **g**: The green color component in RGB model.
 * `number` **b**: The blue color component in RGB model.

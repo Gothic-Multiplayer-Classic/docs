@@ -8,9 +8,12 @@ This function will set the player/npc maximum mana. If the current mana exceeds 
 
 ## Declaration
 ```cpp
-void setPlayerMaxMana(number player_id, number max_mana)
+boolean setPlayerMaxMana(number player_id, number max_mana)
 ```
 
 ## Parameters
 * `number` **player_id**: Target player id.
 * `number` **max_mana**: New maximum mana.
+  
+## Returns `boolean`
+True on success.

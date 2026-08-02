@@ -15,4 +15,4 @@ boolean keyToggled(number key)
 * `number` **key**: The key code to check. For more information about key codes, see [Key Constants](../../client-constants/Key.md).
   
 ## Returns `boolean`
-True if the key was toggled, false otherwise.
+True if the key became pressed this frame, false otherwise.
