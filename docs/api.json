@@ -2935,22 +2935,22 @@
         },
         {
           "name": "setRotation",
-          "doc": "Sets the active camera Euler rotation.\nThis puts the camera into manual movement mode until movementEnabled is set to true.",
+          "doc": "Sets the active camera Euler rotation in degrees.\nThis puts the camera into manual movement mode until movementEnabled is set to true.",
           "params": [
             {
               "name": "x",
               "type": "number",
-              "doc": "X rotation."
+              "doc": "X rotation in degrees."
             },
             {
               "name": "y",
               "type": "number",
-              "doc": "Y rotation."
+              "doc": "Y rotation in degrees."
             },
             {
               "name": "z",
               "type": "number",
-              "doc": "Z rotation."
+              "doc": "Z rotation in degrees."
             }
           ],
           "returns": {
@@ -2960,7 +2960,7 @@
         },
         {
           "name": "getRotation",
-          "doc": "Returns the active camera Euler rotation.",
+          "doc": "Returns the active camera Euler rotation in degrees.",
           "params": [],
           "returns": {
             "type": "table",
@@ -4644,22 +4644,22 @@
         },
         {
           "name": "setRotation",
-          "doc": "This method will set the euler rotation of the Vob in the world.",
+          "doc": "This method will set the euler rotation of the Vob in the world, in degrees.",
           "params": [
             {
               "name": "x",
               "type": "number",
-              "doc": "Rotation on X axis."
+              "doc": "Rotation on X axis in degrees."
             },
             {
               "name": "y",
               "type": "number",
-              "doc": "Rotation on Y axis."
+              "doc": "Rotation on Y axis in degrees."
             },
             {
               "name": "z",
               "type": "number",
-              "doc": "Rotation on Z axis."
+              "doc": "Rotation on Z axis in degrees."
             }
           ],
           "returns": {
@@ -4669,7 +4669,7 @@
         },
         {
           "name": "getRotation",
-          "doc": "This method will set the euler rotation of the vob in the world.",
+          "doc": "This method will return the euler rotation of the vob in the world, in degrees.",
           "params": [],
           "returns": {
             "type": "table",
@@ -7129,7 +7129,7 @@
       "name": "equipItem",
       "doc": "This function will equip an item for the player.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7156,7 +7156,7 @@
       "name": "unequipItem",
       "doc": "This function will unequip an item for the player.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7178,7 +7178,7 @@
       "name": "equipArmor",
       "doc": "This function will equip an armor item for the player.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7200,7 +7200,7 @@
       "name": "unequipArmor",
       "doc": "This function will unequip the player's current armor.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7217,7 +7217,7 @@
       "name": "equipMeleeWeapon",
       "doc": "This function will equip a melee weapon for the player.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7239,7 +7239,7 @@
       "name": "unequipMeleeWeapon",
       "doc": "This function will unequip the player's current melee weapon.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7256,7 +7256,7 @@
       "name": "equipRangedWeapon",
       "doc": "This function will equip a ranged weapon for the player.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7278,7 +7278,7 @@
       "name": "unequipRangedWeapon",
       "doc": "This function will unequip the player's current ranged weapon.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7295,7 +7295,7 @@
       "name": "equipHelmet",
       "doc": "This function will equip a helmet item for the player.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7317,7 +7317,7 @@
       "name": "unequipHelmet",
       "doc": "This function will unequip the player's current helmet.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7334,7 +7334,7 @@
       "name": "equipShield",
       "doc": "This function will equip a shield item for the player.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -7356,7 +7356,7 @@
       "name": "unequipShield",
       "doc": "This function will unequip the player's current shield.",
       "side": "server",
-      "category": "Inventory",
+      "category": "Player",
       "params": [
         {
           "name": "player_id",
@@ -9000,7 +9000,7 @@
       "name": "giveItem",
       "doc": "This function will give an item to the player or NPC on the client.",
       "side": "client",
-      "category": "Player",
+      "category": "Inventory",
       "params": [
         {
           "name": "player_id",

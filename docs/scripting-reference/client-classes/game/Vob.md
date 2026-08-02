@@ -92,7 +92,7 @@ Table containing x,y,z position.
 ----
 ### setRotation
 
-This method will set the euler rotation of the Vob in the world.
+This method will set the euler rotation of the Vob in the world, in degrees.
 
 ```cpp
 void setRotation(number x, number y, number z)
@@ -100,15 +100,15 @@ void setRotation(number x, number y, number z)
 
 **Parameters:**
 
-* `number` **x**: Rotation on X axis.
-* `number` **y**: Rotation on Y axis.
-* `number` **z**: Rotation on Z axis.
+* `number` **x**: Rotation on X axis in degrees.
+* `number` **y**: Rotation on Y axis in degrees.
+* `number` **z**: Rotation on Z axis in degrees.
   
 
 ----
 ### getRotation
 
-This method will set the euler rotation of the vob in the world.
+This method will return the euler rotation of the vob in the world, in degrees.
 
 ```cpp
 {x, y, z} getRotation()

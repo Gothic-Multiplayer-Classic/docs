@@ -90,7 +90,7 @@ Table containing x,y,z world position.
 ----
 ### setRotation
 
-Sets the active camera Euler rotation.
+Sets the active camera Euler rotation in degrees.
 This puts the camera into manual movement mode until movementEnabled is set to true.
 
 ```cpp
@@ -99,15 +99,15 @@ void setRotation(number x, number y, number z)
 
 **Parameters:**
 
-* `number` **x**: X rotation.
-* `number` **y**: Y rotation.
-* `number` **z**: Z rotation.
+* `number` **x**: X rotation in degrees.
+* `number` **y**: Y rotation in degrees.
+* `number` **z**: Z rotation in degrees.
   
 
 ----
 ### getRotation
 
-Returns the active camera Euler rotation.
+Returns the active camera Euler rotation in degrees.
 
 ```cpp
 {x, y, z} getRotation()
