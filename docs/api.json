@@ -4711,6 +4711,221 @@
         }
       ],
       "callbacks": []
+    },
+    "Voice": {
+      "name": "Voice",
+      "doc": "This singleton class controls native proximity voice chat for the local client.",
+      "side": "client",
+      "category": "Game",
+      "extends": null,
+      "fields": [],
+      "methods": [
+        {
+          "name": "isAvailable",
+          "doc": "This function checks whether the server offers voice chat.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True when the server has proximity voice chat enabled."
+          }
+        },
+        {
+          "name": "isEnabled",
+          "doc": "This function checks whether voice chat is effectively enabled for this client.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True when server, user, and script settings all allow voice chat."
+          }
+        },
+        {
+          "name": "setEnabled",
+          "doc": "This function changes the resource-controlled voice chat gate. Enabling it does not override a disabled user setting.",
+          "params": [
+            {
+              "name": "enabled",
+              "type": "boolean",
+              "doc": "Whether this resource permits voice chat."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "The resulting effective voice chat state."
+          }
+        },
+        {
+          "name": "getRange",
+          "doc": "This function returns the effective local proximity voice range.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": "Voice range in game units, or zero when unavailable."
+          }
+        },
+        {
+          "name": "setRange",
+          "doc": "This function limits the local client's proximity voice range. The server's\nrange remains authoritative, so this setting can only reduce the range.",
+          "params": [
+            {
+              "name": "range",
+              "type": "number",
+              "doc": "Maximum local voice range in game units."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True when the range was accepted."
+          }
+        },
+        {
+          "name": "getOutputVolume",
+          "doc": "This function returns the resource output-volume multiplier.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": "Multiplier from 0.0 to 1.0, applied after the user's volume setting."
+          }
+        },
+        {
+          "name": "setOutputVolume",
+          "doc": "This function changes the resource output-volume multiplier.",
+          "params": [
+            {
+              "name": "volume",
+              "type": "number",
+              "doc": "Multiplier from 0.0 to 1.0, clamped to that range."
+            }
+          ],
+          "returns": {
+            "type": "nil",
+            "doc": ""
+          }
+        },
+        {
+          "name": "getPushToTalkKey",
+          "doc": "This function returns the active push-to-talk key code.",
+          "params": [],
+          "returns": {
+            "type": "number",
+            "doc": "Key code used for push-to-talk."
+          }
+        },
+        {
+          "name": "setPushToTalkKey",
+          "doc": "This function sets the local client's push-to-talk key for this resource.",
+          "params": [
+            {
+              "name": "key",
+              "type": "number",
+              "doc": "Keyboard key code in the range 1-255."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True when the key was accepted."
+          }
+        },
+        {
+          "name": "getInputDevices",
+          "doc": "This function returns the available microphone device names.",
+          "params": [],
+          "returns": {
+            "type": "table",
+            "doc": "Available microphone names."
+          }
+        },
+        {
+          "name": "getInputDevice",
+          "doc": "This function returns the selected microphone name. An empty string means the system default.",
+          "params": [],
+          "returns": {
+            "type": "string",
+            "doc": "Selected microphone name."
+          }
+        },
+        {
+          "name": "setInputDevice",
+          "doc": "This function selects a microphone by name. Pass an empty string to restore the system default.",
+          "params": [
+            {
+              "name": "device_name",
+              "type": "string",
+              "doc": "Microphone name returned by getInputDevices, or an empty string."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True when the device was selected."
+          }
+        },
+        {
+          "name": "getOutputDevices",
+          "doc": "This function returns the available playback device names.",
+          "params": [],
+          "returns": {
+            "type": "table",
+            "doc": "Available playback device names."
+          }
+        },
+        {
+          "name": "getOutputDevice",
+          "doc": "This function returns the selected playback device name. An empty string means the system default.",
+          "params": [],
+          "returns": {
+            "type": "string",
+            "doc": "Selected playback device name."
+          }
+        },
+        {
+          "name": "setOutputDevice",
+          "doc": "This function selects a playback device by name. Pass an empty string to restore the system default.",
+          "params": [
+            {
+              "name": "device_name",
+              "type": "string",
+              "doc": "Device name returned by getOutputDevices, or an empty string."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True when the device was selected."
+          }
+        },
+        {
+          "name": "getChannel",
+          "doc": "This function returns the local player's current voice channel.",
+          "params": [],
+          "returns": {
+            "type": "string",
+            "doc": "Current channel name."
+          }
+        },
+        {
+          "name": "setChannel",
+          "doc": "This function changes the local player's voice channel.",
+          "params": [
+            {
+              "name": "channel",
+              "type": "string",
+              "doc": "Printable channel name, up to 32 bytes."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True when the channel change was accepted locally and sent when connected."
+          }
+        },
+        {
+          "name": "isTransmitting",
+          "doc": "This function checks whether the local player is currently transmitting voice.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True while voice frames are being captured and sent."
+          }
+        }
+      ],
+      "callbacks": []
     }
   },
   "functions": [
@@ -7566,6 +7781,101 @@
       "returns": {
         "type": "number",
         "doc": "Streaming height in world units, or 0 for unlimited."
+      }
+    },
+    {
+      "name": "setVoiceEnabled",
+      "doc": "This function enables or disables the server voice chat system for every player.",
+      "side": "server",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "doc": "Whether voice chat is enabled globally."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the setting was applied."
+      }
+    },
+    {
+      "name": "getVoiceEnabled",
+      "doc": "This function returns whether the server voice chat system is enabled.",
+      "side": "server",
+      "category": "Voice",
+      "params": [],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when voice chat is enabled globally."
+      }
+    },
+    {
+      "name": "getVoiceEnabledForPlayer",
+      "doc": "This function returns whether a player is allowed to transmit voice.",
+      "side": "server",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean|nil",
+        "doc": "True when the player may transmit, or nil when missing."
+      }
+    },
+    {
+      "name": "setVoiceEnabledForPlayer",
+      "doc": "This function enables or mutes voice transmission for one player. A disabled\nplayer can still hear other players.",
+      "side": "server",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id."
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "doc": "Whether this player may transmit voice."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the player exists and the state was applied."
+      }
+    },
+    {
+      "name": "setVoiceRange",
+      "doc": "This function changes the proximity range and assigns it to every player.",
+      "side": "server",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "range",
+          "type": "number",
+          "doc": "Voice range in game units; must be non-negative."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the range was accepted."
+      }
+    },
+    {
+      "name": "getVoiceRange",
+      "doc": "This function returns the global proximity voice range.",
+      "side": "server",
+      "category": "Voice",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "Voice range in game units."
       }
     },
     {
@@ -10560,6 +10870,101 @@
       }
     },
     {
+      "name": "isPlayerVoiceTalking",
+      "doc": "This function checks whether a remote player is currently speaking.",
+      "side": "client",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True while recent valid voice frames are being received."
+      }
+    },
+    {
+      "name": "isPlayerVoiceMuted",
+      "doc": "This function checks whether a remote player's voice is muted locally.",
+      "side": "client",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the player is muted."
+      }
+    },
+    {
+      "name": "setPlayerVoiceMuted",
+      "doc": "This function mutes or unmutes a remote player locally.",
+      "side": "client",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id."
+        },
+        {
+          "name": "muted",
+          "type": "boolean",
+          "doc": "New mute state."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the player id was valid."
+      }
+    },
+    {
+      "name": "getPlayerVoiceVolume",
+      "doc": "This function returns a remote player's local volume multiplier.",
+      "side": "client",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Multiplier from 0.0 to 1.0."
+      }
+    },
+    {
+      "name": "setPlayerVoiceVolume",
+      "doc": "This function changes a remote player's local volume multiplier.",
+      "side": "client",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id."
+        },
+        {
+          "name": "volume",
+          "type": "number",
+          "doc": "Multiplier from 0.0 to 1.0, clamped to that range."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when the player id was valid."
+      }
+    },
+    {
       "name": "toggleDrawWaynet",
       "doc": "This function will enable/disable waynet rendering.",
       "side": "client",
@@ -11829,6 +12234,58 @@
       "cancellable": false
     },
     {
+      "name": "onPlayerVoiceStart",
+      "doc": "This event is triggered when validated voice packets start arriving from a player.",
+      "side": "server",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Speaking player id."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPlayerVoiceStop",
+      "doc": "This event is triggered after a player's validated voice traffic stops.",
+      "side": "server",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPlayerVoiceChannelChange",
+      "doc": "This event is triggered when a player changes voice channels.",
+      "side": "server",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id."
+        },
+        {
+          "name": "old_channel",
+          "type": "string",
+          "doc": "Previous channel name."
+        },
+        {
+          "name": "new_channel",
+          "type": "string",
+          "doc": "New channel name."
+        }
+      ],
+      "cancellable": false
+    },
+    {
       "name": "onInit",
       "doc": "This event is triggered once when the player connects to the server.",
       "side": "client",
@@ -12345,6 +12802,88 @@
           "name": "ping",
           "type": "number",
           "doc": "The player's ping."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onVoiceChatStateChange",
+      "doc": "This event is triggered when the effective voice chat state changes.",
+      "side": "client",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "doc": "True when voice chat is available and enabled locally."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "doc": "Server-configured proximity range in game units."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onVoiceTransmitStart",
+      "doc": "This event is triggered when the local player starts transmitting voice.",
+      "side": "client",
+      "category": "Voice",
+      "params": [],
+      "cancellable": false
+    },
+    {
+      "name": "onVoiceTransmitStop",
+      "doc": "This event is triggered when the local player stops transmitting voice.",
+      "side": "client",
+      "category": "Voice",
+      "params": [],
+      "cancellable": false
+    },
+    {
+      "name": "onVoiceChannelChange",
+      "doc": "This event is triggered when the local player changes voice channels.",
+      "side": "client",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "old_channel",
+          "type": "string",
+          "doc": "Previous channel name."
+        },
+        {
+          "name": "new_channel",
+          "type": "string",
+          "doc": "New channel name."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPlayerVoiceStart",
+      "doc": "This event is triggered when a remote player starts speaking.",
+      "side": "client",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Speaking player id."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPlayerVoiceStop",
+      "doc": "This event is triggered after a remote player's voice activity ends.",
+      "side": "client",
+      "category": "Voice",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player id."
         }
       ],
       "cancellable": false
