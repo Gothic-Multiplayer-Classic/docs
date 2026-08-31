@@ -7636,14 +7636,14 @@
     },
     {
       "name": "JSON",
-      "doc": "Open a JSON file relative to the server data directory.",
+      "doc": "Open a JSON file relative to the server data/internal directory.",
       "side": "server",
       "category": "File",
       "params": [
         {
           "name": "relative_path",
           "type": "string",
-          "doc": "Path under the data directory."
+          "doc": "Path under the data/internal directory."
         }
       ],
       "returns": {
@@ -7653,14 +7653,14 @@
     },
     {
       "name": "TOML",
-      "doc": "Open a read-only TOML file relative to the server data directory.",
+      "doc": "Open a read-only TOML file relative to the server data/internal directory.",
       "side": "server",
       "category": "File",
       "params": [
         {
           "name": "relative_path",
           "type": "string",
-          "doc": "Path under the data directory."
+          "doc": "Path under the data/internal directory."
         }
       ],
       "returns": {
@@ -10068,17 +10068,6 @@
     {
       "name": "exitGame",
       "doc": "This function will close the game immediately.",
-      "side": "client",
-      "category": "Game",
-      "params": [],
-      "returns": {
-        "type": "nil",
-        "doc": ""
-      }
-    },
-    {
-      "name": "clearMultiplayerMessages",
-      "doc": "This function will clear multiplayer status messages shown while joining the server.",
       "side": "client",
       "category": "Game",
       "params": [],

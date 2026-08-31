@@ -1,6 +1,6 @@
-# Resources
+# Lua Resources
 
-Resources group server Lua scripts, shared code, client scripts, and package metadata. Current GMPC resource loading is declarative: `config.toml` chooses resources and their order, while each `resource.toml` chooses server scripts and their order.
+Lua resources group server scripts, shared code, client scripts, and package metadata. Current GMPC resource loading is declarative: `config.toml` chooses resources and their order, while each `resource.toml` chooses server scripts and their order. For ordinary Gothic assets or a modified `GOTHIC.DAT`, use [VDF Resources](VDF-Resources.md) instead; Lua packages and VDF archives are downloaded and activated through separate parts of the same connection flow.
 
 ```text
 resources/
@@ -69,7 +69,7 @@ The `scripts` array controls only server execution. It does not restrict what th
 
 ## Client Packages
 
-For each configured resource containing Lua files under `client/` or `shared/`, the server compiles those files to stripped Lua bytecode, creates a ZIP-based `.pak`, and writes a manifest under `public/`. The manifest records archive and per-file SHA-256 hashes. The client verifies those hashes before executing code; a corrupt or mismatched package stops the connection flow.
+For each configured resource containing Lua files under `client/` or `shared/`, the server compiles those files to stripped Lua bytecode, creates a ZIP-based `.pak`, and writes a manifest under `data/public/`. The manifest records archive and per-file SHA-256 hashes. The client verifies those hashes before executing code; a corrupt or mismatched package stops the connection flow.
 
 `client/main.lua` is the only automatic client entry point. Other packaged files must be loaded from it with `require`. A package without `client/main.lua` can still be downloaded, but it executes no client entry point.
 
@@ -126,3 +126,5 @@ exports = {
 ```
 
 A missing resource, export table, or exported member evaluates to `nil`. Check it before calling unless the dependency is guaranteed by your configured resource order.
+
+See [Data Layout](Data-Layout.md) for the generated public directory, internal Lua data, instance registries, and navigation files used alongside resources.
