@@ -1,91 +1,86 @@
 # Server Configuration
 
-The server reads `config.toml` from its working directory. Missing keys use compiled defaults; malformed or wrongly typed values are generally ignored in favor of those defaults. Restart the server after editing the file unless a Lua API explicitly supports changing the same setting at runtime.
+Server settings are stored in `config.toml` in the server directory. Restart the server after changing the file.
 
-## Identity And Access
+## Server
 
-| Setting | Default | Runtime behavior |
+| Setting | Default | Description |
 | --- | --- | --- |
-| `name` | `"Gothic Multiplayer Server"` | Name sent to clients and master-server listings. Values longer than 100 characters are truncated. |
-| `port` | `57005` | Game server port. The built-in client-resource and downloaded-content endpoints use the same bound port. |
-| `public` | `false` | Starts master-server heartbeats when the binary was built with a master-server endpoint. Otherwise registration is skipped. |
-| `slots` | `12` | Maximum number of players accepted by the network server. |
-| `admin_passwd` | `""` | Password for `/rcon login <password>`. An empty value disables administrator login. |
-| `auth_key` | `""` | Loaded and truncated to 32 characters, but otherwise unused by the current server implementation. |
+| `name` | `"Gothic Multiplayer Server"` | Server name. |
+| `port` | `57005` | Server port. |
+| `public` | `false` | Shows the server on the public server list. |
+| `slots` | `12` | Maximum number of players. |
+| `admin_passwd` | `""` | Password used by `/rcon login`. Empty disables RCON login. |
+| `server_identity_seed` | generated | Server identity. Keep it private and back it up when moving the server. |
 
-An authenticated administrator can use `/rcon diagnostics` to write `diagnostic.txt` in the server working directory. Authentication also unlocks the client's administrator-only noclip tooling. Use a strong password: failed logins are logged, but the current command handler does not rate-limit attempts.
+## Gameplay
 
-After `config.toml` has loaded successfully, `server_identity_seed` is generated and saved automatically when the field is missing or invalid. It is a base64-encoded 32-byte seed used to derive the server's Ed25519 identity keys. Back it up to preserve the same identity after migration. If the entire configuration file is missing or cannot be parsed, the server uses defaults but skips seed generation, so restore a valid file before hosting.
-
-!!! warning
-    Treat `server_identity_seed` as sensitive. The current public-server heartbeat sends this value as `server_seed` to the configured master server, so use only a master-server endpoint you trust and do not reuse the seed for anything outside GMPC.
-
-## World And Gameplay
-
-| Setting | Default | Runtime behavior |
+| Setting | Default | Description |
 | --- | --- | --- |
-| `map` | `"NEWWORLD\\NEWWORLD.ZEN"` | World path sent to clients and used as the server world name. |
-| `map_md5` | `""` | Loaded and logged only. The current server does not compare or enforce it. |
-| `allow_modification` | `true` | Controls admission based on the player's CRC-check state. See the warning below before disabling it. |
-| `hide_map` | `false` | Sets the hide-map flag in the game information sent to clients. |
-| `respawn_time_seconds` | `5` | Global automatic respawn delay. Negative disables automatic respawn, `0` is immediate, and positive values wait that many seconds. Per-player Lua settings can override it. |
-| `seconds_per_game_minute` | `4` | Real seconds per in-game minute. `0` freezes the authoritative server clock. Negative values are rejected and reset to `4`. |
+| `map` | `"NEWWORLD\\NEWWORLD.ZEN"` | Starting world. |
+| `hide_map` | `false` | Hides the map name from clients. |
+| `allow_modification` | `true` | Keep this enabled. |
+| `respawn_time_seconds` | `5` | Respawn delay. A negative value disables automatic respawn. |
+| `seconds_per_game_minute` | `4` | Length of one in-game minute. `0` pauses the clock. |
+| `voice_enabled` | `true` | Enables voice chat. |
+| `voice_range` | `3500` | Voice chat range. |
 
-At the default time scale, a full in-game day lasts 96 real minutes. A value of `1` produces a 24-minute day.
+## Resources
 
-Before the network server starts, GMPC loads the required instance registries from `data/instances/items.json` and `data/instances/anims.json`. Missing, malformed, or incompatible registries stop startup. The files used by this step, and the other generated server data, are described in [Data Layout](Data-Layout.md).
-
-!!! danger
-    Do not set `allow_modification = false` in the current implementation. Every player starts with `passed_crc_test = false`, and no current code path marks that check as passed. Disabling modifications therefore rejects and temporarily bans every player who tries to join.
-
-`map_md5` does not repair that limitation: it is currently passive configuration data, not an implemented integrity check.
-
-## Resource And Asset Startup
-
-| Setting | Default | Runtime behavior |
+| Setting | Default | Description |
 | --- | --- | --- |
-| `resources` | `["default", "prototype"]` | Exact resource selection and startup order. Unlisted resource directories are not loaded or sent to clients. |
-| `addon_vdfs` | `[]` | Ordered list of VDF files to validate, serve, and mount for clients. Paths are relative to the server working directory. Later archives override earlier ones. See [VDF Resources](VDF-Resources.md). |
+| `resources` | `["default", "prototype"]` | Lua resources, loaded in this order. Unlisted resources are not loaded. |
+| `addon_vdfs` | `[]` | VDF files, loaded in this order. |
+| `downloader_group` | `""` | Folder name used for downloaded server files. Empty uses the server address. |
 
-Empty names and duplicates are removed while the configuration is validated. Startup fails if a listed resource is missing, inactive, has invalid metadata, cannot be packaged, or fails to execute a declared server script. See [Resources](Resources.md) for the required metadata and script-order rules.
+See [Lua Resources](Resources.md) and [VDF Resources](VDF-Resources.md) for more.
 
-Lua resources and VDF resources solve different problems. Lua resources deliver GMPC client and shared scripts; VDF resources deliver ordinary Gothic assets such as meshes, textures, sounds, animations, or a modified `GOTHIC.DAT`.
+## Downloads
 
-## Download Settings
+These settings can normally be left at their defaults.
 
-These settings control the built-in HTTP content service on the same port as the game server. They apply to both Lua packages and the VDF bundle announced during connection.
-
-| Setting | Default | Runtime behavior |
+| Setting | Default | Description |
 | --- | --- | --- |
-| `downloader_file_max_chunk` | `4194304` (4 MiB) | Maximum bytes written in one content-provider call. Valid values are 16 KiB through 16 MiB; an invalid value falls back to 4 MiB. This is a per-write limit, not a complete-file limit. |
-| `downloader_rate_limit` | `30` | Maximum content requests from one remote address in a one-minute window. `0` disables this limit. Values above `10000` or below `0` fall back to `30`. |
-| `downloader_group` | `""` | Client-side directory name below `Multiplayer/Store`. An empty value falls back to the server `ip_port`; the client sanitizes unsafe characters. The configured value is limited to 64 characters. |
-| `downloader_download_timeout_seconds` | `300` | Maximum duration of one content request. `0` disables the timeout; values above 86400 or below `0` fall back to `300`. |
-
-Rate-limit accounting is request-based: one Lua client resource uses two requests, and the complete VDF addon set uses two additional requests. A hard 4 GiB combined limit covers the connection's manifests, Lua packages, `addons.bin`, and `addons.zip`.
+| `downloader_file_max_chunk` | `4194304` | Maximum size of one download chunk. |
+| `downloader_rate_limit` | `30` | Requests allowed per minute for one address. `0` disables the limit. |
+| `downloader_download_timeout_seconds` | `300` | Download request timeout. `0` disables it. |
 
 ## Logging
 
-| Setting | Default | Runtime behavior |
+| Setting | Default | Description |
 | --- | --- | --- |
-| `log_file` | `"log.txt"` | File sink created by the server logger. |
-| `log_to_stdout` | `true` | Adds terminal output alongside the file log. |
-| `log_level` | `"trace"` in code, `"info"` in the sample | Minimum spdlog level. Common values are `trace`, `debug`, `info`, `warning`, `error`, `critical`, and `off`. |
+| `log_file` | `"log.txt"` | Log file name. |
+| `log_to_stdout` | `true` | Prints logs in the server console. |
+| `log_level` | `"info"` | Log level, for example `"info"`, `"debug"`, or `"trace"`. |
 
-An invalid `log_level` falls back to `trace`. `info` is a practical normal-hosting value; use `debug` or `trace` when investigating resource or network behavior.
+## Streaming
 
-## Streaming And Updates
-
-| Setting | Default | Runtime behavior |
+| Setting | Default | Description |
 | --- | --- | --- |
-| `tick_rate_ms` | `100` | Interval between regular state-streaming passes. Lower values increase update frequency, CPU work, and network traffic. |
-| `stream_radius` | `5000` | Horizontal X/Z distance within which players in the same world and virtual world are streamed to each other. |
-| `stream_height` | `0` | Optional vertical Y-distance limit. `0` disables the vertical limit; positive values reject pairs farther apart than this height. |
+| `tick_rate_ms` | `100` | Delay between server update ticks. |
+| `stream_radius` | `5000` | Horizontal player visibility range. |
+| `stream_height` | `0` | Vertical player visibility range. `0` disables this limit. |
 
-Negative streaming values are reset to their defaults. Scripts can change the active values through [setStreamerRadius](../scripting-reference/server-functions/streamer/setStreamerRadius.md) and [setStreamerHeight](../scripting-reference/server-functions/streamer/setStreamerHeight.md); those runtime changes are not written back to `config.toml`.
+# Server Data Layout
 
-## Process Management
+```text
+config.toml
+resources/
+data/
+  public/
+  internal/
+  instances/
+  navigation/
+```
 
-| Setting | Default | Runtime behavior |
-| --- | --- | --- |
-| `daemon` | `false` on Windows, `true` on non-Windows when omitted | Detaches the process on supported non-Windows builds. The Windows build does not execute the daemon path. |
+| Path | Contents |
+| --- | --- |
+| `resources/` | Server, shared, and client Lua scripts. |
+| `data/public/` | Download files generated by the server. Do not edit them manually. |
+| `data/internal/` | Server-only files used by [`JSON`](../scripting-reference/server-classes/file/JSON.md), [`TOML`](../scripting-reference/server-classes/file/TOML.md), and [`SQLite`](../scripting-reference/server-classes/database/SQLite.md). |
+| `data/instances/` | Required `items.json` and `anims.json` files. |
+| `data/navigation/` | Waypoint and freepoint files for each world. |
+
+The server will not start without valid `data/instances/items.json` and `data/instances/anims.json` files. Navigation file names use the lower-case world name, for example `newworld.json`.
+
+To generate the files, use client debug console commands, eg. `generate items`.

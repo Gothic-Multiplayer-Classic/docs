@@ -2134,6 +2134,174 @@
       ],
       "callbacks": []
     },
+    "SQLite": {
+      "name": "SQLite",
+      "doc": "Synchronous SQLite database connection. SQLite.open() returns a connection\nor nil plus a structured error. query() and execute() pass the SQL statement\nunchanged to SQLite's prepared-statement API and bind positional ? parameters.\nSuccessful results contain rows, columns, affectedRows, and lastInsertId.\nErrors contain driver, code, message, and sqlState when available.",
+      "side": "server",
+      "category": "Database",
+      "extends": null,
+      "fields": [],
+      "methods": [
+        {
+          "name": "close",
+          "doc": "Close this connection. Connections are also closed during garbage collection.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True when an open connection was closed."
+          }
+        },
+        {
+          "name": "isOpen",
+          "doc": "Return whether this connection has not been closed.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": ""
+          }
+        },
+        {
+          "name": "query",
+          "doc": "Execute one SQL statement. The statement is passed unchanged to SQLite and\npositional ? markers are bound to the remaining arguments. Lua nil binds SQL\nNULL; SQL NULL is returned as nil, so use the columns array when column\npresence must be distinguished from a missing row key.",
+          "params": [
+            {
+              "name": "sql",
+              "type": "string",
+              "doc": "SQL statement."
+            },
+            {
+              "name": "parameters",
+              "type": "...",
+              "doc": "Positional nil, boolean, number, or string values."
+            }
+          ],
+          "returns": {
+            "type": "table|nil, table|nil",
+            "doc": "Result and nil, or nil and an error table."
+          }
+        },
+        {
+          "name": "execute",
+          "doc": "Alias of query(), intended for statements which do not return rows.",
+          "params": [
+            {
+              "name": "sql",
+              "type": "string",
+              "doc": "SQL statement."
+            },
+            {
+              "name": "parameters",
+              "type": "...",
+              "doc": "Positional SQL parameter values."
+            }
+          ],
+          "returns": {
+            "type": "table|nil, table|nil",
+            "doc": "Result and nil, or nil and an error table."
+          }
+        },
+        {
+          "name": "open",
+          "doc": "Open an SQLite database under the server's data/internal directory. The\ndatabase option must be relative and cannot contain parent traversal. Use\n:memory: for an in-memory database. Missing parent directories are created\nwhen create is enabled. Foreign-key enforcement is enabled by default.",
+          "params": [
+            {
+              "name": "options",
+              "type": "table",
+              "doc": "database, readOnly=false, create=true, foreignKeys=true, busyTimeout=5000."
+            }
+          ],
+          "returns": {
+            "type": "sqlite|nil, table|nil",
+            "doc": "Connection and nil, or nil and an error table."
+          }
+        }
+      ],
+      "callbacks": []
+    },
+    "MySQL": {
+      "name": "MySQL",
+      "doc": "Synchronous MySQL database connection backed by MariaDB Connector/C.\nMySQL.open() returns a connection or nil plus a structured error. query()\nand execute() pass the SQL statement unchanged to the connector's prepared-\nstatement API and bind positional ? parameters. Successful results contain\nrows, columns, affectedRows, and lastInsertId. Errors contain driver, code,\nmessage, and sqlState when available.",
+      "side": "server",
+      "category": "Database",
+      "extends": null,
+      "fields": [],
+      "methods": [
+        {
+          "name": "close",
+          "doc": "Close this connection. Connections are also closed during garbage collection.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": "True when an open connection was closed."
+          }
+        },
+        {
+          "name": "isOpen",
+          "doc": "Return whether this connection has not been closed.",
+          "params": [],
+          "returns": {
+            "type": "boolean",
+            "doc": ""
+          }
+        },
+        {
+          "name": "query",
+          "doc": "Execute one SQL statement. The statement is passed unchanged to the connector\nand positional ? markers are bound to the remaining arguments. Lua nil binds\nSQL NULL; SQL NULL is returned as nil, so use the columns array when column\npresence must be distinguished from a missing row key.",
+          "params": [
+            {
+              "name": "sql",
+              "type": "string",
+              "doc": "SQL statement."
+            },
+            {
+              "name": "parameters",
+              "type": "...",
+              "doc": "Positional nil, boolean, number, or string values."
+            }
+          ],
+          "returns": {
+            "type": "table|nil, table|nil",
+            "doc": "Result and nil, or nil and an error table."
+          }
+        },
+        {
+          "name": "execute",
+          "doc": "Alias of query(), intended for statements which do not return rows.",
+          "params": [
+            {
+              "name": "sql",
+              "type": "string",
+              "doc": "SQL statement."
+            },
+            {
+              "name": "parameters",
+              "type": "...",
+              "doc": "Positional SQL parameter values."
+            }
+          ],
+          "returns": {
+            "type": "table|nil, table|nil",
+            "doc": "Result and nil, or nil and an error table."
+          }
+        },
+        {
+          "name": "open",
+          "doc": "Open a MySQL connection. Timeouts are expressed in seconds and default to 10.",
+          "params": [
+            {
+              "name": "options",
+              "type": "table",
+              "doc": "database, username, password=\"\", host=\"127.0.0.1\", port=3306, charset=\"utf8mb4\","
+            }
+          ],
+          "returns": {
+            "type": "mysql|nil, table|nil",
+            "doc": "Connection and nil, or nil and an error table."
+          }
+        }
+      ],
+      "callbacks": []
+    },
     "Item": {
       "name": "Item",
       "doc": "Represents a read-only Gothic item definition from the server item registry.",
@@ -2412,9 +2580,9 @@
       ],
       "callbacks": []
     },
-    "JsonFile": {
-      "name": "JsonFile",
-      "doc": "JSON-backed key/value file returned by JSON().",
+    "JSON": {
+      "name": "JSON",
+      "doc": "JSON-backed key/value file returned by JSON.open().",
       "side": "server",
       "category": "File",
       "extends": null,
@@ -2456,12 +2624,12 @@
           ],
           "returns": {
             "type": "any|nil",
-            "doc": "Value or nil if missing/invalid."
+            "doc": "Value or nil if missing or invalid."
           }
         },
         {
           "name": "setItem",
-          "doc": "Set a value by key (autosaves on success).",
+          "doc": "Set a value by key and save the file.",
           "params": [
             {
               "name": "key",
@@ -2481,7 +2649,7 @@
         },
         {
           "name": "removeItem",
-          "doc": "Remove a key (autosaves on success).",
+          "doc": "Remove a key and save the file.",
           "params": [
             {
               "name": "key",
@@ -2496,11 +2664,26 @@
         },
         {
           "name": "clear",
-          "doc": "Remove all keys (autosaves on success).",
+          "doc": "Remove all keys and save the file.",
           "params": [],
           "returns": {
             "type": "nil",
             "doc": ""
+          }
+        },
+        {
+          "name": "open",
+          "doc": "Open a JSON file relative to the server data/internal directory.",
+          "params": [
+            {
+              "name": "relative_path",
+              "type": "string",
+              "doc": "Path under the data/internal directory."
+            }
+          ],
+          "returns": {
+            "type": "json|nil",
+            "doc": "File handle or nil on error."
           }
         }
       ],
@@ -2582,9 +2765,9 @@
       ],
       "callbacks": []
     },
-    "TomlFile": {
-      "name": "TomlFile",
-      "doc": "Read-only TOML document returned by TOML(). Values can be accessed with\nnormal field or index syntax, including nested sections. Use get_or when a\nmissing value should fall back without replacing configured false.",
+    "TOML": {
+      "name": "TOML",
+      "doc": "Read-only TOML document returned by TOML.open(). Nested sections and arrays\nare returned as TOML values. Use getOr() when a missing value should fall\nback without replacing configured false.",
       "side": "server",
       "category": "File",
       "extends": null,
@@ -2621,7 +2804,7 @@
           }
         },
         {
-          "name": "get_or",
+          "name": "getOr",
           "doc": "Return a value by key or nested path, or the fallback only when the value is\nmissing. This preserves configured false values.",
           "params": [
             {
@@ -2647,6 +2830,21 @@
           "returns": {
             "type": "table",
             "doc": "Entries table."
+          }
+        },
+        {
+          "name": "open",
+          "doc": "Open a read-only TOML file relative to the server data/internal directory.",
+          "params": [
+            {
+              "name": "relative_path",
+              "type": "string",
+              "doc": "Path under the data/internal directory."
+            }
+          ],
+          "returns": {
+            "type": "toml|nil",
+            "doc": "File handle or nil on error."
           }
         }
       ],
@@ -7945,40 +8143,6 @@
       }
     },
     {
-      "name": "JSON",
-      "doc": "Open a JSON file relative to the server data/internal directory.",
-      "side": "server",
-      "category": "File",
-      "params": [
-        {
-          "name": "relative_path",
-          "type": "string",
-          "doc": "Path under the data/internal directory."
-        }
-      ],
-      "returns": {
-        "type": "jsonfile|nil",
-        "doc": "File handle or nil on error."
-      }
-    },
-    {
-      "name": "TOML",
-      "doc": "Open a read-only TOML file relative to the server data/internal directory.",
-      "side": "server",
-      "category": "File",
-      "params": [
-        {
-          "name": "relative_path",
-          "type": "string",
-          "doc": "Path under the data/internal directory."
-        }
-      ],
-      "returns": {
-        "type": "tomlfile|nil",
-        "doc": "File handle or nil on error."
-      }
-    },
-    {
       "name": "getWaypoint",
       "doc": "Retrieve world position of a waypoint by name.",
       "side": "server",
@@ -10368,11 +10532,22 @@
       "name": "getNetworkStats",
       "doc": "This function will return client network statistics.",
       "side": "client",
-      "category": "Game",
+      "category": "Multiplayer",
       "params": [],
       "returns": {
         "type": "table",
         "doc": "Table containing current network statistics."
+      }
+    },
+    {
+      "name": "getLanguage",
+      "doc": "This function will return the language currently used by the client.",
+      "side": "client",
+      "category": "Multiplayer",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "doc": "Language index selected in the client settings."
       }
     },
     {
@@ -10390,7 +10565,7 @@
       "name": "enableGMPMenu",
       "doc": "This function will enable/disable opening GMP menu with ESC.",
       "side": "client",
-      "category": "Game",
+      "category": "Multiplayer",
       "params": [
         {
           "name": "enable",
@@ -10407,7 +10582,7 @@
       "name": "openGMPMenu",
       "doc": "This function will force open GMP menu.",
       "side": "client",
-      "category": "Game",
+      "category": "Multiplayer",
       "params": [],
       "returns": {
         "type": "nil",
@@ -10418,7 +10593,7 @@
       "name": "closeGMPMenu",
       "doc": "This function will force close GMP menu.",
       "side": "client",
-      "category": "Game",
+      "category": "Multiplayer",
       "params": [],
       "returns": {
         "type": "nil",
@@ -10968,7 +11143,7 @@
       "name": "toggleDrawWaynet",
       "doc": "This function will enable/disable waynet rendering.",
       "side": "client",
-      "category": "Game",
+      "category": "Render",
       "params": [
         {
           "name": "enabled",
@@ -13261,6 +13436,44 @@
         {
           "name": "PLANET_MOON",
           "doc": "Represents planet moon type."
+        }
+      ],
+      "Language": [
+        {
+          "name": "LANG_EN",
+          "doc": "English language index."
+        },
+        {
+          "name": "LANG_PL",
+          "doc": "Polish language index."
+        },
+        {
+          "name": "LANG_DE",
+          "doc": "German language index."
+        },
+        {
+          "name": "LANG_RU",
+          "doc": "Russian language index."
+        },
+        {
+          "name": "LANG_CZSK",
+          "doc": "Czech/Slovakian language index."
+        },
+        {
+          "name": "LANG_ISV",
+          "doc": "Interslavic language index."
+        },
+        {
+          "name": "LANG_UA",
+          "doc": "Ukrainian language index."
+        },
+        {
+          "name": "LANG_IT",
+          "doc": "Italian language index."
+        },
+        {
+          "name": "LANG_HU",
+          "doc": "Hungarian language index."
         }
       ],
       "HUD": [
