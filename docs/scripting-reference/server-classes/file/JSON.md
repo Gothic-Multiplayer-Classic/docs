@@ -1,10 +1,10 @@
 ---
-title: 'JsonFile'
+title: 'JSON'
 ---
-# `class` JsonFile <font size="4">(server-side)</font>
+# `class` JSON <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-JSON-backed key/value file returned by JSON().
+JSON-backed key/value file returned by JSON.open().
 
 
 ## Properties
@@ -58,12 +58,12 @@ any|nil getItem(string key)
   
 **Returns `any|nil`:**
 
-Value or nil if missing/invalid.
+Value or nil if missing or invalid.
 
 ----
 ### setItem
 
-Set a value by key (autosaves on success).
+Set a value by key and save the file.
 
 ```cpp
 void setItem(string key, any value)
@@ -78,7 +78,7 @@ void setItem(string key, any value)
 ----
 ### removeItem
 
-Remove a key (autosaves on success).
+Remove a key and save the file.
 
 ```cpp
 void removeItem(string key)
@@ -92,13 +92,30 @@ void removeItem(string key)
 ----
 ### clear
 
-Remove all keys (autosaves on success).
+Remove all keys and save the file.
 
 ```cpp
 void clear()
 ```
 
   
+
+----
+### open
+
+Open a JSON file relative to the server data/internal directory.
+
+```cpp
+JSON|nil open(string relative_path)
+```
+
+**Parameters:**
+
+* `string` **relative_path**: Path under the data/internal directory.
+  
+**Returns `JSON|nil`:**
+
+File handle or nil on error.
 
 ----
 
