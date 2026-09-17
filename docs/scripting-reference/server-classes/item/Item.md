@@ -13,11 +13,6 @@ Represents a read-only Gothic item definition from the server item registry.
 Represents the canonical Gothic item instance name.
 
 ----
-### `number` index 
-
-Represents the Gothic parser symbol index for this item instance.
-
-----
 ### `number` mainflag 
 
 Represents the item's main category flag. For more information, see [Item Constants](../../shared-constants/Item.md).
@@ -167,23 +162,6 @@ Item|nil getByInstance(string instance)
 **Parameters:**
 
 * `string` **instance**: Gothic item instance name.
-  
-**Returns `Item|nil`:**
-
-Item definition or nil if missing.
-
-----
-### getByIndex
-
-Returns an item definition by Gothic parser symbol index.
-
-```cpp
-Item|nil getByIndex(number index)
-```
-
-**Parameters:**
-
-* `number` **index**: Gothic parser symbol index.
   
 **Returns `Item|nil`:**
 

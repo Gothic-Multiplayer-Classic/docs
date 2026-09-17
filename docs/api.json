@@ -2315,11 +2315,6 @@
           "doc": "Represents the canonical Gothic item instance name."
         },
         {
-          "name": "index",
-          "type": "number",
-          "doc": "Represents the Gothic parser symbol index for this item instance."
-        },
-        {
           "name": "mainflag",
           "type": "number",
           "doc": "Represents the item's main category flag. For more information, see [Item Constants](../../shared-constants/Item.md)."
@@ -2459,21 +2454,6 @@
               "name": "instance",
               "type": "string",
               "doc": "Gothic item instance name."
-            }
-          ],
-          "returns": {
-            "type": "item|nil",
-            "doc": "Item definition or nil if missing."
-          }
-        },
-        {
-          "name": "getByIndex",
-          "doc": "Returns an item definition by Gothic parser symbol index.",
-          "params": [
-            {
-              "name": "index",
-              "type": "number",
-              "doc": "Gothic parser symbol index."
             }
           ],
           "returns": {
@@ -13456,8 +13436,12 @@
           "doc": "Russian language index."
         },
         {
-          "name": "LANG_CZSK",
-          "doc": "Czech/Slovakian language index."
+          "name": "LANG_CZ",
+          "doc": "Czech language index."
+        },
+        {
+          "name": "LANG_SK",
+          "doc": "Slovak language index."
         },
         {
           "name": "LANG_ISV",
@@ -13474,6 +13458,22 @@
         {
           "name": "LANG_HU",
           "doc": "Hungarian language index."
+        },
+        {
+          "name": "LANG_FR",
+          "doc": "French language index."
+        },
+        {
+          "name": "LANG_DA",
+          "doc": "Danish language index."
+        },
+        {
+          "name": "LANG_ES",
+          "doc": "Spanish language index."
+        },
+        {
+          "name": "LANG_SZL",
+          "doc": "Silesian language index."
         }
       ],
       "HUD": [
