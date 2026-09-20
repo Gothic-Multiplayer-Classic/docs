@@ -8123,6 +8123,301 @@
       }
     },
     {
+      "name": "createNpc",
+      "doc": "Creates an unspawned, server-owned NPC. Use spawnPlayer to stream it to clients.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "name",
+          "type": "string",
+          "doc": "Character name."
+        },
+        {
+          "name": "instance",
+          "type": "string|nil",
+          "doc": "Gothic NPC instance; defaults to PC_HERO."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "NPC id, or -1 on failure."
+      }
+    },
+    {
+      "name": "destroyNpc",
+      "doc": "Destroys an NPC and cancels its queued actions.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if the NPC was destroyed."
+      }
+    },
+    {
+      "name": "isNpc",
+      "doc": "Checks whether an id identifies an existing server-owned NPC.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Character id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True for an existing server NPC, including unspawned NPCs."
+      }
+    },
+    {
+      "name": "setNpcAnimation",
+      "doc": "Sets an NPC's persistent animation, including looping animations. All current\nand future viewers receive this state. Finite queued actions take precedence.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        },
+        {
+          "name": "animation",
+          "type": "string",
+          "doc": "Gothic animation name; an empty string clears it."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if the state was accepted; does not validate client assets."
+      }
+    },
+    {
+      "name": "getNpcAnimation",
+      "doc": "Returns the stored persistent animation, independently of the finite queue.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "Animation name, empty when cleared; nil for a missing NPC."
+      }
+    },
+    {
+      "name": "npcPlayAnimation",
+      "doc": "Queues a finite animation. Completion is reported by onNpcActionFinished.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        },
+        {
+          "name": "animation",
+          "type": "string",
+          "doc": "Gothic animation name."
+        },
+        {
+          "name": "timeout_ms",
+          "type": "number|nil",
+          "doc": "Execution timeout, 1-30000 ms; defaults to 10000."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Action id, or -1 when rejected."
+      }
+    },
+    {
+      "name": "clearNpcActions",
+      "doc": "Cancels the current action and all pending actions.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if cleared, including an empty queue; false for an invalid NPC or failed operation."
+      }
+    },
+    {
+      "name": "getNpcActionsCount",
+      "doc": "Returns the number of running and pending actions.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Queue size, or -1 for a missing NPC."
+      }
+    },
+    {
+      "name": "getNpcAction",
+      "doc": "Returns a copy of an action's metadata. Index zero is the queue head.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        },
+        {
+          "name": "index",
+          "type": "number",
+          "doc": "Zero-based queue index."
+        }
+      ],
+      "returns": {
+        "type": "{id, type, status, animation, timeout_ms}|nil",
+        "doc": "Action snapshot, or nil for an invalid NPC or index."
+      }
+    },
+    {
+      "name": "getNpcActions",
+      "doc": "Returns copies of all running and pending actions in queue order.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        }
+      ],
+      "returns": {
+        "type": "{...}|nil",
+        "doc": "One-based Lua array of action snapshots, or nil for a missing NPC."
+      }
+    },
+    {
+      "name": "getNpcLastActionId",
+      "doc": "Returns the most recently allocated action id, including completed actions.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Action id, zero before any actions, or -1 for a missing NPC."
+      }
+    },
+    {
+      "name": "isNpcActionFinished",
+      "doc": "Checks whether an allocated action has left the queue, including failure or cancellation.\nA true result does not imply success. Use onNpcActionFinished's result argument\nto distinguish successful completion from failure, timeout or cancellation.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        },
+        {
+          "name": "action_id",
+          "type": "number",
+          "doc": "Action id returned by npcPlayAnimation."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True once the action is no longer queued; false for unknown ids."
+      }
+    },
+    {
+      "name": "isNpcActionTypeQueued",
+      "doc": "Checks whether the queue contains a running or pending action of the requested type.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        },
+        {
+          "name": "action_type",
+          "type": "number",
+          "doc": "ACTION_PLAY_ANI is the only supported type."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if the type is present in the queue."
+      }
+    },
+    {
+      "name": "getNpcHostPlayer",
+      "doc": "Returns the player currently responsible for executing this NPC's actions.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        }
+      ],
+      "returns": {
+        "type": "number",
+        "doc": "Player id, or -1 when unhosted or missing."
+      }
+    },
+    {
+      "name": "setNpcHostPlayer",
+      "doc": "Assigns an eligible streaming player as host, or releases the host for automatic selection.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Server NPC id."
+        },
+        {
+          "name": "host_id",
+          "type": "number",
+          "doc": "Eligible player id; -1 releases the current host."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True if the assignment was accepted."
+      }
+    },
+    {
       "name": "getWaypoint",
       "doc": "Retrieve world position of a waypoint by name.",
       "side": "server",
@@ -11722,6 +12017,111 @@
   ],
   "events": [
     {
+      "name": "onNpcCreated",
+      "doc": "Reports NPC creation at the end of the server tick. The NPC may already be spawned or destroyed.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Created NPC id."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onNpcDestroyed",
+      "doc": "Triggered after a server-owned NPC is destroyed. The id is no longer valid.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "Destroyed NPC id."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onNpcChangeHostPlayer",
+      "doc": "Triggered when the player responsible for executing an NPC's actions changes.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "NPC id."
+        },
+        {
+          "name": "current_id",
+          "type": "number",
+          "doc": "New host id, or -1 for no host."
+        },
+        {
+          "name": "previous_id",
+          "type": "number",
+          "doc": "Previous host id, or -1 for no host."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onNpcActionSent",
+      "doc": "Triggered when the current action is dispatched to its host. A replay after host migration may emit it again.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "NPC id."
+        },
+        {
+          "name": "action_type",
+          "type": "number",
+          "doc": "ACTION_PLAY_ANI."
+        },
+        {
+          "name": "action_id",
+          "type": "number",
+          "doc": "Dispatched action id."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onNpcActionFinished",
+      "doc": "Triggered when an action leaves the queue through completion, failure, cancellation or timeout.",
+      "side": "server",
+      "category": "NPC",
+      "params": [
+        {
+          "name": "npc_id",
+          "type": "number",
+          "doc": "NPC id."
+        },
+        {
+          "name": "action_type",
+          "type": "number",
+          "doc": "ACTION_PLAY_ANI."
+        },
+        {
+          "name": "action_id",
+          "type": "number",
+          "doc": "Finished action id."
+        },
+        {
+          "name": "result",
+          "type": "boolean",
+          "doc": "True only for successful completion reported by the current host."
+        }
+      ],
+      "cancellable": false
+    },
+    {
       "name": "onTick",
       "doc": "This event is triggered in every server main loop iteration.",
       "side": "server",
@@ -13404,6 +13804,12 @@
         {
           "name": "HAS_CRASHED",
           "doc": "Represents crash player state."
+        }
+      ],
+      "NPC": [
+        {
+          "name": "ACTION_PLAY_ANI",
+          "doc": "Represents action play ani type."
         }
       ]
     },
