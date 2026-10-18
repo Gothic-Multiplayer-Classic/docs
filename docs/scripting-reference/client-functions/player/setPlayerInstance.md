@@ -16,4 +16,4 @@ boolean setPlayerInstance(number player_id, string instance)
 * `string` **instance**: Instance name.
   
 ## Returns `boolean`
-True on success, false otherwise.
+True if the change was queued for the next frame, false otherwise.

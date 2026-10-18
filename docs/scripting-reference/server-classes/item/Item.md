@@ -8,6 +8,27 @@ Represents a read-only Gothic item definition from the server item registry.
 
 
 ## Properties
+### `function|nil` onUse 
+!!! note
+    Callback receives player_id, consumed quantity and optional target_id. Set through ItemManager.
+
+The item's server-side use callback.
+
+----
+### `function|nil` onEquip 
+!!! note
+    Callback receives player_id and equipment slot. Set through ItemManager.
+
+The item's server-side equip callback.
+
+----
+### `function|nil` onUnequip 
+!!! note
+    Callback receives player_id and equipment slot. Set through ItemManager.
+
+The item's server-side unequip callback.
+
+----
 ### `string` instance 
 
 Represents the canonical Gothic item instance name.

@@ -2310,6 +2310,21 @@
       "extends": null,
       "fields": [
         {
+          "name": "onUse",
+          "type": "function|nil",
+          "doc": "The item's server-side use callback."
+        },
+        {
+          "name": "onEquip",
+          "type": "function|nil",
+          "doc": "The item's server-side equip callback."
+        },
+        {
+          "name": "onUnequip",
+          "type": "function|nil",
+          "doc": "The item's server-side unequip callback."
+        },
+        {
           "name": "instance",
           "type": "string",
           "doc": "Represents the canonical Gothic item instance name."
@@ -2483,6 +2498,77 @@
           "returns": {
             "type": "number",
             "doc": ""
+          }
+        }
+      ],
+      "callbacks": []
+    },
+    "ItemManager": {
+      "name": "ItemManager",
+      "doc": "Manages server-side item callbacks.",
+      "side": "server",
+      "category": "Item",
+      "extends": null,
+      "fields": [],
+      "methods": [
+        {
+          "name": "setOnUse",
+          "doc": "Sets the item's use callback.",
+          "params": [
+            {
+              "name": "instance",
+              "type": "string",
+              "doc": "Item instance name."
+            },
+            {
+              "name": "callback",
+              "type": "function|nil",
+              "doc": "Callback, or nil to remove it."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True on success."
+          }
+        },
+        {
+          "name": "setOnEquip",
+          "doc": "Sets the item's equip callback.",
+          "params": [
+            {
+              "name": "instance",
+              "type": "string",
+              "doc": "Item instance name."
+            },
+            {
+              "name": "callback",
+              "type": "function|nil",
+              "doc": "Callback, or nil to remove it."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True on success."
+          }
+        },
+        {
+          "name": "setOnUnequip",
+          "doc": "Sets the item's unequip callback.",
+          "params": [
+            {
+              "name": "instance",
+              "type": "string",
+              "doc": "Item instance name."
+            },
+            {
+              "name": "callback",
+              "type": "function|nil",
+              "doc": "Callback, or nil to remove it."
+            }
+          ],
+          "returns": {
+            "type": "boolean",
+            "doc": "True on success."
           }
         }
       ],
@@ -5336,6 +5422,72 @@
       }
     },
     {
+      "name": "xxh32",
+      "doc": "Return the XXH32 hash of the input string as lowercase hexadecimal text.",
+      "side": "shared",
+      "category": "Hash",
+      "params": [
+        {
+          "name": "input",
+          "type": "string",
+          "doc": "Input bytes to hash."
+        },
+        {
+          "name": "seed",
+          "type": "number",
+          "doc": "Integer seed from 0 to 4294967295. (Optional, defaults to 0.)"
+        }
+      ],
+      "returns": {
+        "type": "string",
+        "doc": "Lowercase hexadecimal hash string (8 characters, including leading zeros)."
+      }
+    },
+    {
+      "name": "xxh64",
+      "doc": "Return the XXH64 hash of the input string as lowercase hexadecimal text.",
+      "side": "shared",
+      "category": "Hash",
+      "params": [
+        {
+          "name": "input",
+          "type": "string",
+          "doc": "Input bytes to hash."
+        },
+        {
+          "name": "seed",
+          "type": "number",
+          "doc": "Integer seed from 0 to 4294967295. (Optional, defaults to 0.)"
+        }
+      ],
+      "returns": {
+        "type": "string",
+        "doc": "Lowercase hexadecimal hash string (16 characters, including leading zeros)."
+      }
+    },
+    {
+      "name": "xxh128",
+      "doc": "Return the XXH128 hash of the input string as lowercase hexadecimal text.",
+      "side": "shared",
+      "category": "Hash",
+      "params": [
+        {
+          "name": "input",
+          "type": "string",
+          "doc": "Input bytes to hash."
+        },
+        {
+          "name": "seed",
+          "type": "number",
+          "doc": "Integer seed from 0 to 4294967295. (Optional, defaults to 0.)"
+        }
+      ],
+      "returns": {
+        "type": "string",
+        "doc": "Lowercase hexadecimal hash string (32 characters, including leading zeros)."
+      }
+    },
+    {
       "name": "setTimer",
       "doc": "This function will create a new timer that calls the given function at a fixed interval.\n\nThe timer passes any additional arguments to the callback when it executes.\nIf execute_times is 0 or negative, the timer repeats indefinitely.",
       "side": "shared",
@@ -6106,8 +6258,8 @@
       }
     },
     {
-      "name": "getPlayerUUID",
-      "doc": "This function will return the player's UUID or nil if unavailable.",
+      "name": "getPlayerIdentity",
+      "doc": "Returns the player's stable OS installation identity, or nil if unavailable.\nThe 64-character lowercase hex value comes from the peer's GNS certificate.\nIt is self-asserted and can be spoofed by a modified client. OS reinstalls,\ncloned installations, or changes to the OS identifier affect this identity.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -6119,7 +6271,7 @@
       ],
       "returns": {
         "type": "string|nil",
-        "doc": "Player UUID or nil."
+        "doc": "Machine identity or nil."
       }
     },
     {
@@ -7137,14 +7289,14 @@
     },
     {
       "name": "setPlayerPosition",
-      "doc": "This function will set the player's world position.",
+      "doc": "This function will set the player/npc position.",
       "side": "server",
       "category": "Player",
       "params": [
         {
           "name": "player_id",
           "type": "number",
-          "doc": "Target player id."
+          "doc": "Target player or server NPC id."
         },
         {
           "name": "x",
@@ -7160,6 +7312,11 @@
           "name": "z",
           "type": "number",
           "doc": "Z coordinate."
+        },
+        {
+          "name": "interpolate",
+          "type": "boolean|nil",
+          "doc": "Whether to interpolate movement. Defaults to false for players and true for NPCs."
         }
       ],
       "returns": {
@@ -7454,7 +7611,7 @@
     },
     {
       "name": "setPlayerRespawnTime",
-      "doc": "This function will set the player time to respawn after death. If set to 0, respawn is disabled for selected player.",
+      "doc": "This function will set a player's automatic respawn delay in milliseconds. Zero disables automatic respawn for that player.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -7470,8 +7627,8 @@
         }
       ],
       "returns": {
-        "type": "nil",
-        "doc": ""
+        "type": "boolean",
+        "doc": "True on success; false for an unknown player or a negative duration."
       }
     },
     {
@@ -7492,15 +7649,54 @@
       }
     },
     {
+      "name": "setPlayerInvulnerable",
+      "doc": "This function will set the player/npc invulnerability.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or server NPC id."
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "doc": "Whether damage should be blocked."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True on success; false for an unknown actor."
+      }
+    },
+    {
+      "name": "isPlayerInvulnerable",
+      "doc": "This function will return the current player/npc invulnerability.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player or server NPC id."
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "doc": "True when invulnerable; false when disabled or the actor does not exist."
+      }
+    },
+    {
       "name": "giveItem",
-      "doc": "This function will give an item to the player.",
+      "doc": "This function will give an item to the player/npc.",
       "side": "server",
       "category": "Inventory",
       "params": [
         {
           "name": "player_id",
           "type": "number",
-          "doc": "Target player id."
+          "doc": "Target player or server NPC id."
         },
         {
           "name": "instance",
@@ -7520,14 +7716,14 @@
     },
     {
       "name": "equipItem",
-      "doc": "This function will equip an item for the player.",
+      "doc": "This function requests equipment for a player or server NPC. The item must exist in the actor's server inventory.",
       "side": "server",
       "category": "Player",
       "params": [
         {
           "name": "player_id",
           "type": "number",
-          "doc": "Target player id."
+          "doc": "Target player or server NPC id."
         },
         {
           "name": "instance",
@@ -7547,7 +7743,7 @@
     },
     {
       "name": "unequipItem",
-      "doc": "This function will unequip an item for the player.",
+      "doc": "This function will unequip an item for the player/npc.",
       "side": "server",
       "category": "Player",
       "params": [
@@ -7560,6 +7756,11 @@
           "name": "instance",
           "type": "string",
           "doc": "Item instance name from scripts."
+        },
+        {
+          "name": "slot_id",
+          "type": "number|nil",
+          "doc": "Equipment slot. Omit to clear all matching slots."
         }
       ],
       "returns": {
@@ -8618,7 +8819,7 @@
       ],
       "returns": {
         "type": "boolean",
-        "doc": "True on success, false otherwise."
+        "doc": "True if the change was queued for the next frame, false otherwise."
       }
     },
     {
@@ -9704,6 +9905,23 @@
       "returns": {
         "type": "{x,y,z}|nil",
         "doc": "Table with keys `x`,`y`,`z` or nil."
+      }
+    },
+    {
+      "name": "getPlayerWorld",
+      "doc": "Returns the online player's world, independently of native streaming.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Target player id."
+        }
+      ],
+      "returns": {
+        "type": "string|nil",
+        "doc": "World filename or nil."
       }
     },
     {
@@ -12320,15 +12538,44 @@
       "cancellable": false
     },
     {
+      "name": "onPlayerUseItem",
+      "doc": "This event is triggered when the player/npc attempts to use an item.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "player_id",
+          "type": "number",
+          "doc": "Player/npc using the item."
+        },
+        {
+          "name": "item",
+          "type": "item|nil",
+          "doc": "Item definition, or nil for an unknown item."
+        },
+        {
+          "name": "quantity",
+          "type": "number",
+          "doc": "Amount consumed; zero for a reusable item."
+        },
+        {
+          "name": "scheme",
+          "type": "string",
+          "doc": "Item use scheme."
+        }
+      ],
+      "cancellable": false
+    },
+    {
       "name": "onPlayerCastSpell",
-      "doc": "This event is triggered when a player casts a spell.",
+      "doc": "This event is triggered when the player/npc attempts to cast a spell.",
       "side": "server",
       "category": "Player",
       "params": [
         {
           "name": "caster_id",
           "type": "number",
-          "doc": "Caster player id."
+          "doc": "Caster player or server NPC id."
         },
         {
           "name": "spell_id",
@@ -12338,7 +12585,7 @@
         {
           "name": "target_id",
           "type": "number|nil",
-          "doc": "Optional target player id (nil if none)."
+          "doc": "Optional target player or server NPC id (nil if none)."
         }
       ],
       "cancellable": false
@@ -12473,6 +12720,11 @@
           "name": "item",
           "type": "item|nil",
           "doc": "Equipped amulet item (nil if none)."
+        },
+        {
+          "name": "previous_item",
+          "type": "item|nil",
+          "doc": "Previously equipped item."
         }
       ],
       "cancellable": false
@@ -12492,6 +12744,11 @@
           "name": "item",
           "type": "item|nil",
           "doc": "Equipped armor item (nil if none)."
+        },
+        {
+          "name": "previous_item",
+          "type": "item|nil",
+          "doc": "Previously equipped item."
         }
       ],
       "cancellable": false
@@ -12511,6 +12768,11 @@
           "name": "item",
           "type": "item|nil",
           "doc": "Equipped belt item (nil if none)."
+        },
+        {
+          "name": "previous_item",
+          "type": "item|nil",
+          "doc": "Previously equipped item."
         }
       ],
       "cancellable": false
@@ -12535,6 +12797,11 @@
           "name": "item",
           "type": "item|nil",
           "doc": "Equipped hand item (nil if none)."
+        },
+        {
+          "name": "previous_item",
+          "type": "item|nil",
+          "doc": "Previously equipped item."
         }
       ],
       "cancellable": false
@@ -12554,6 +12821,11 @@
           "name": "item",
           "type": "item|nil",
           "doc": "Equipped helmet item (nil if none)."
+        },
+        {
+          "name": "previous_item",
+          "type": "item|nil",
+          "doc": "Previously equipped item."
         }
       ],
       "cancellable": false
@@ -12573,6 +12845,11 @@
           "name": "item",
           "type": "item|nil",
           "doc": "Equipped melee weapon item (nil if none)."
+        },
+        {
+          "name": "previous_item",
+          "type": "item|nil",
+          "doc": "Previously equipped item."
         }
       ],
       "cancellable": false
@@ -12592,6 +12869,11 @@
           "name": "item",
           "type": "item|nil",
           "doc": "Equipped ranged weapon item (nil if none)."
+        },
+        {
+          "name": "previous_item",
+          "type": "item|nil",
+          "doc": "Previously equipped item."
         }
       ],
       "cancellable": false
@@ -12616,6 +12898,11 @@
           "name": "item",
           "type": "item|nil",
           "doc": "Equipped ring item (nil if none)."
+        },
+        {
+          "name": "previous_item",
+          "type": "item|nil",
+          "doc": "Previously equipped item."
         }
       ],
       "cancellable": false
@@ -12635,6 +12922,11 @@
           "name": "item",
           "type": "item|nil",
           "doc": "Equipped shield item (nil if none)."
+        },
+        {
+          "name": "previous_item",
+          "type": "item|nil",
+          "doc": "Previously equipped item."
         }
       ],
       "cancellable": false
@@ -12659,6 +12951,11 @@
           "name": "item",
           "type": "item|nil",
           "doc": "Active spell item (nil if none)."
+        },
+        {
+          "name": "previous_item",
+          "type": "item|nil",
+          "doc": "Previously equipped item."
         }
       ],
       "cancellable": false
@@ -13792,6 +14089,48 @@
       ]
     },
     "server": {
+      "Inventory": [
+        {
+          "name": "EQUIP_SLOT_GENERIC",
+          "doc": "Selects the equipment category of the item; rings use an available ring slot."
+        },
+        {
+          "name": "EQUIP_SLOT_ARMOR",
+          "doc": "Selects the armor slot."
+        },
+        {
+          "name": "EQUIP_SLOT_MELEE_WEAPON",
+          "doc": "Selects the melee weapon slot."
+        },
+        {
+          "name": "EQUIP_SLOT_RANGED_WEAPON",
+          "doc": "Selects the ranged weapon slot."
+        },
+        {
+          "name": "EQUIP_SLOT_HELMET",
+          "doc": "Selects the helmet slot."
+        },
+        {
+          "name": "EQUIP_SLOT_SHIELD",
+          "doc": "Selects the shield slot."
+        },
+        {
+          "name": "EQUIP_SLOT_AMULET",
+          "doc": "Selects the amulet slot."
+        },
+        {
+          "name": "EQUIP_SLOT_BELT",
+          "doc": "Selects the belt slot."
+        },
+        {
+          "name": "EQUIP_SLOT_RING_LEFT",
+          "doc": "Selects the first ring slot, independently of the other ring's item instance."
+        },
+        {
+          "name": "EQUIP_SLOT_RING_RIGHT",
+          "doc": "Selects the second ring slot, independently of the other ring's item instance."
+        }
+      ],
       "Network": [
         {
           "name": "DISCONNECTED",

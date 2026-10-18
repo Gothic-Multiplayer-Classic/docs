@@ -4,19 +4,19 @@ title: 'getNetworkStats'
 # `function` getNetworkStats <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 !!! note
-    Packet loss fields are ratios from 0.0 to 1.0.
+    GNS connection quality is a recent fraction from 0.0 to 1.0, or -1 when unavailable; it is not cumulative packet loss.
 !!! note
-    Send buffer fields aggregate low, medium, and high priority packets.
+    Traffic rates are recent transport estimates. Pending and unacknowledged values are bytes, queue time is microseconds.
 
 This function will return client network statistics.
 
 ## Declaration
 ```cpp
-{packetReceived, packetlossTotal, packetlossLastSecond, messagesInResendBuffer, messageInSendBuffer, bytesInResendBuffer, bytesInSendBuffer} getNetworkStats()
+{available, pingMs, localQuality, remoteQuality, outgoingPacketsPerSecond, outgoingBytesPerSecond, incomingPacketsPerSecond, incomingBytesPerSecond, sendRateBytesPerSecond, pendingUnreliableBytes, pendingReliableBytes, unacknowledgedReliableBytes, controlQueueTimeUsec, realtimeQueueTimeUsec} getNetworkStats()
 ```
 
 ## Parameters
 No parameters.
   
-## Returns `{packetReceived, packetlossTotal, packetlossLastSecond, messagesInResendBuffer, messageInSendBuffer, bytesInResendBuffer, bytesInSendBuffer}`
+## Returns `{available, pingMs, localQuality, remoteQuality, outgoingPacketsPerSecond, outgoingBytesPerSecond, incomingPacketsPerSecond, incomingBytesPerSecond, sendRateBytesPerSecond, pendingUnreliableBytes, pendingReliableBytes, unacknowledgedReliableBytes, controlQueueTimeUsec, realtimeQueueTimeUsec}`
 Table containing current network statistics.
