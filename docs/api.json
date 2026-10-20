@@ -12591,6 +12591,54 @@
       "cancellable": false
     },
     {
+      "name": "onPlayerSummon",
+      "doc": "This event is triggered when a player summons an NPC using a game's spell.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "playerId",
+          "type": "number",
+          "doc": "The id of the player who summoned the NPC."
+        },
+        {
+          "name": "spellId",
+          "type": "number",
+          "doc": "The id of the spell used to summon the NPC."
+        },
+        {
+          "name": "summonInstance",
+          "type": "string",
+          "doc": "The instance name of the summoned NPC."
+        },
+        {
+          "name": "npcId",
+          "type": "number",
+          "doc": "The id of the summoned NPC."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPlayerTeleport",
+      "doc": "This event is triggered when a player teleports using a game's spell or teleport trigger.",
+      "side": "server",
+      "category": "Player",
+      "params": [
+        {
+          "name": "playerId",
+          "type": "number",
+          "doc": "The id of the player who teleported."
+        },
+        {
+          "name": "vobName",
+          "type": "string",
+          "doc": "The name of the destination waypoint, freepoint or vob."
+        }
+      ],
+      "cancellable": false
+    },
+    {
       "name": "onPlayerChangeHealth",
       "doc": "This event is triggered when player health changes.",
       "side": "server",
@@ -13621,6 +13669,54 @@
           "name": "id",
           "type": "number",
           "doc": "The id of the spawned player."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPlayerSummon",
+      "doc": "This event is triggered when a player summons an NPC using a game's spell.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "playerId",
+          "type": "number",
+          "doc": "The id of the player who summoned the NPC."
+        },
+        {
+          "name": "spellId",
+          "type": "number",
+          "doc": "The id of the spell used to summon the NPC."
+        },
+        {
+          "name": "summonInstance",
+          "type": "string",
+          "doc": "The instance name of the summoned NPC."
+        },
+        {
+          "name": "npcId",
+          "type": "number",
+          "doc": "The id of the summoned NPC."
+        }
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "onPlayerTeleport",
+      "doc": "This event is triggered when a player teleports using a game's spell or teleport trigger.",
+      "side": "client",
+      "category": "Player",
+      "params": [
+        {
+          "name": "playerId",
+          "type": "number",
+          "doc": "The id of the player who teleported."
+        },
+        {
+          "name": "vobName",
+          "type": "string",
+          "doc": "The name of the destination waypoint, freepoint or vob."
         }
       ],
       "cancellable": false
