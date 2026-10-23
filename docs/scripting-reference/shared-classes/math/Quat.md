@@ -116,61 +116,61 @@ void fromMat4(Mat4 mat)
   
 
 ----
-### toEuler
+### toEulerRadians
 
 This method converts this quaternion to Euler angles.
 
 ```cpp
-Vec3 toEuler()
+Vec3 toEulerRadians()
 ```
 
   
 **Returns `Vec3`:**
 
-Euler angles as a 3D vector.
+Euler angles in radians as a 3D vector.
 
 ----
-### fromEuler
+### fromEulerRadians
 
 This method sets this quaternion from Euler angles.
 
 ```cpp
-void fromEuler(Vec3 vec)
+void fromEulerRadians(Vec3 vec)
 ```
 
 **Parameters:**
 
-* `Vec3` **vec**: Euler angles as a 3D vector.
+* `Vec3` **vec**: Euler angles in radians as a 3D vector.
   
 
 ----
-### toAxisAngle
+### toAxisAngleRadians
 
 This method converts this quaternion to axis-angle representation.
 The returned Vec4 contains (axis.x, axis.y, axis.z, angle).
 
 ```cpp
-Vec4 toAxisAngle()
+Vec4 toAxisAngleRadians()
 ```
 
   
 **Returns `Vec4`:**
 
-Axis-angle as (x, y, z, angle).
+Axis-angle as (x, y, z, angle), with angle in radians.
 
 ----
-### fromAxisAngle
+### fromAxisAngleRadians
 
 This method sets this quaternion from an axis and angle.
 
 ```cpp
-void fromAxisAngle(Vec3 axis, number angle)
+void fromAxisAngleRadians(Vec3 axis, number angle)
 ```
 
 **Parameters:**
 
 * `Vec3` **axis**: Rotation axis (typically normalized).
-* `number` **angle**: Rotation angle.
+* `number` **angle**: Rotation angle in radians.
   
 
 ----
@@ -305,7 +305,7 @@ void set(number x, number y, number z, number w)
 ### inverse
 
 This method returns the inverse quaternion.
-For unit quaternions, this is equivalent to conjugate().
+For unit quaternions, this is equivalent to `conjugate()`.
 
 ```cpp
 Quat inverse()
@@ -423,6 +423,63 @@ Quat lookRotation(Vec3 forward, Vec3 up)
 **Returns `Quat`:**
 
 Resulting rotation quaternion.
+
+----
+### fromEulerDegrees
+
+Converts Euler angles to this quaternion in degrees.
+
+```cpp
+void fromEulerDegrees(Vec3 angles)
+```
+
+**Parameters:**
+
+* `Vec3` **angles**: Euler angles in degrees.
+  
+
+----
+### toEulerDegrees
+
+Converts this quaternion to Euler angles in degrees.
+
+```cpp
+Vec3 toEulerDegrees()
+```
+
+  
+**Returns `Vec3`:**
+
+Converted value.
+
+----
+### fromAxisAngleDegrees
+
+Converts axis and angle to this quaternion in degrees.
+
+```cpp
+void fromAxisAngleDegrees(Vec3 axis, number degrees)
+```
+
+**Parameters:**
+
+* `Vec3` **axis**: Rotation axis.
+* `number` **degrees**: Rotation angle in degrees.
+  
+
+----
+### toAxisAngleDegrees
+
+Converts this quaternion to axis and angle in degrees.
+
+```cpp
+Vec4 toAxisAngleDegrees()
+```
+
+  
+**Returns `Vec4`:**
+
+Converted value.
 
 ----
 

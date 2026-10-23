@@ -12,7 +12,7 @@ number|nil getPlayerRespawnTime(number player_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player id; NPC ids are not supported.
   
 ## Returns `number|nil`
 The player respawn time or nil if player isn't created.

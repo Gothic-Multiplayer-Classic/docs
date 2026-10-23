@@ -12,5 +12,5 @@ void setCursorSizePx(number width, number height)
 ```
 
 ## Parameters
-* `number` **width**: Cursor width in pixels.
-* `number` **height**: Cursor height in pixels.
+* `number` **width**: cursor width in pixels.
+* `number` **height**: cursor height in pixels.

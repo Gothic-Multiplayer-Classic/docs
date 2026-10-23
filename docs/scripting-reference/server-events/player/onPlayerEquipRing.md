@@ -10,10 +10,10 @@ This event is triggered when a player's equipped ring changes.
 
 ## Parameters
 ```c++
-void onPlayerEquipRing(number player_id, number ring_slot, Item|nil item, Item|nil previous_item)
+void onPlayerEquipRing(number player_id, number ring_slot, ItemDefinition|nil item, ItemDefinition|nil previous_item)
 ```
 
 * `number` **player_id**: Player id.
 * `number` **ring_slot**: Logical ring slot (0 or 1).
-* `Item|nil` **item**: Equipped ring item (nil if none).
-* `Item|nil` **previous_item**: Previously equipped item.
+* `ItemDefinition|nil` **item**: Equipped ring item (nil if none).
+* `ItemDefinition|nil` **previous_item**: Previously equipped item.

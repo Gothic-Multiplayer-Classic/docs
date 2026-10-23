@@ -2,18 +2,18 @@
 title: 'callEvent'
 ---
 # `function` callEvent <font size="4">(shared-side)</font>
-!!! info "Available since version: 0.3.0"
 
-Call every handler bound to specified custom event.
+Dispatches a local custom event. Handlers receive (context, ...); payload arguments are never interpreted as metadata.
 
 ## Declaration
 ```cpp
-boolean callEvent(string eventName, ... arguments)
+boolean callEvent(string name, table|nil options, any... ...)
 ```
 
 ## Parameters
-* `string` **eventName**: The name of the event.
-* `...` **arguments**: Variable number of arguments.
+* `string` **name**: Custom event registered with [addEvent](addEvent.md).
+* `table|nil` **options**: Metadata {sourceId = positive integer}; pass nil for no metadata.
+* `any...` **...**: Payload arguments, passed unchanged and in order, including nil.
   
 ## Returns `boolean`
-True when event was dispatched and not cancelled, otherwise false.
+True if dispatched and not cancelled.

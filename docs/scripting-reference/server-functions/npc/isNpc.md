@@ -12,7 +12,7 @@ boolean isNpc(number npc_id)
 ```
 
 ## Parameters
-* `number` **npc_id**: Character id.
+* `number` **npc_id**: Player or NPC id to test.
   
 ## Returns `boolean`
 True for an existing server NPC, including unspawned NPCs.

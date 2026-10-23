@@ -2,18 +2,18 @@
 title: 'removeEventHandler'
 ---
 # `function` removeEventHandler <font size="4">(shared-side)</font>
-!!! info "Available since version: 0.3.0"
 
-Unbind function from specified event.
+Unsubscribes the original callback passed to [addEventHandler](addEventHandler.md).
+On the server, a resource may remove only its own subscription.
 
 ## Declaration
 ```cpp
-boolean removeEventHandler(string eventName, function func)
+boolean removeEventHandler(string event_name, function lua_callback)
 ```
 
 ## Parameters
-* `string` **eventName**: The name of the event.
-* `function` **func**: The reference to a function.
+* `string` **event_name**: Event name.
+* `function` **lua_callback**: The same function object used to subscribe.
   
 ## Returns `boolean`
-True on success, false otherwise.
+Whether a handler was removed.

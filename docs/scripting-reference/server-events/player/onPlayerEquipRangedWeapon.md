@@ -10,9 +10,9 @@ This event is triggered when a player's equipped ranged weapon changes.
 
 ## Parameters
 ```c++
-void onPlayerEquipRangedWeapon(number player_id, Item|nil item, Item|nil previous_item)
+void onPlayerEquipRangedWeapon(number player_id, ItemDefinition|nil item, ItemDefinition|nil previous_item)
 ```
 
 * `number` **player_id**: Player id.
-* `Item|nil` **item**: Equipped ranged weapon item (nil if none).
-* `Item|nil` **previous_item**: Previously equipped item.
+* `ItemDefinition|nil` **item**: Equipped ranged weapon item (nil if none).
+* `ItemDefinition|nil` **previous_item**: Previously equipped item.

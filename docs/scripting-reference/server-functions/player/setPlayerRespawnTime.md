@@ -12,7 +12,7 @@ boolean setPlayerRespawnTime(number player_id, number respawn_time)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player id; NPC ids are not supported.
 * `number` **respawn_time**: New respawn time in milliseconds.
   
 ## Returns `boolean`

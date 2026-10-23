@@ -10,19 +10,20 @@ Static sky controller for authoritative server weather.
 ## Properties
 ### `number` weatherType 
 
-Current server weather type. When automatic weather is enabled, this can be overwritten on the next server game minute. For more information, see [Weather Constants](../../shared-constants/Weather.md).
+Current server weather type. When automatic weather is enabled, this can be overwritten on the next server game minute. For more information, see
+[Weather Constants](../../shared-constants/Weather.md).
 
 ----
 ### `table` rainStartTime 
 
-Rain start time: `{hour = number, min = number}`
+Rain start time: `{hour = number, minute = number}`
 
 ----
 ### `table` rainStopTime 
 !!! note
     The stop time must be after `rainStartTime` in Gothic sky time.
 
-Rain stop time: `{hour = number, min = number}`
+Rain stop time: `{hour = number, minute = number}`
 
 ----
 ### `number` windScale 
@@ -30,14 +31,14 @@ Rain stop time: `{hour = number, min = number}`
 Wind scale used during precipitation.
 
 ----
-### `boolean` dontRain 
+### `boolean` precipitationEnabled 
 
 Disables rain and snow rendering while leaving automatic weather timing active.
 
 ----
-### `boolean` disabled 
+### `boolean` automaticWeatherEnabled 
 
-Toggles the server automatic weather state machine. Set this to true before manually controlling weather.
+Toggles the server automatic weather state machine. Set this to false before manually controlling weather.
 
 ----
 

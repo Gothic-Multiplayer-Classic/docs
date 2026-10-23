@@ -8,11 +8,11 @@ Returns the number of running and pending actions.
 
 ## Declaration
 ```cpp
-number getNpcActionsCount(number npc_id)
+number|nil getNpcActionsCount(number npc_id)
 ```
 
 ## Parameters
 * `number` **npc_id**: Server NPC id.
   
-## Returns `number`
-Queue size, or -1 for a missing NPC.
+## Returns `number|nil`
+Queue size, or nil for a missing NPC.

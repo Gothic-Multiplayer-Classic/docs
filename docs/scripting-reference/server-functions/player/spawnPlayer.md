@@ -14,7 +14,7 @@ boolean spawnPlayer(number player_id, {x, y, z}|nil position)
 ```
 
 ## Parameters
-* `number` **player_id**: Player id to spawn.
+* `number` **player_id**: Target player or NPC id.
 * `{x, y, z}|nil` **position**: Optional position table or three numeric coords.
   
 ## Returns `boolean`

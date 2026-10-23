@@ -4,7 +4,7 @@ title: 'setPlayerSkillWeapon'
 # `function` setPlayerSkillWeapon <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will set the player/npc weapon skill hit chance.
+This function will set the player/NPC weapon skill hit chance.
 
 ## Declaration
 ```cpp
@@ -12,7 +12,7 @@ boolean setPlayerSkillWeapon(number player_id, number skill_id, number percentag
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id; negative ids refer to client-local NPCs.
 * `number` **skill_id**: Skill identifier. For more information, see [Weapon Constants](../../shared-constants/Weapon.md).
 * `number` **percentage**: Hit chance (0-100).
   

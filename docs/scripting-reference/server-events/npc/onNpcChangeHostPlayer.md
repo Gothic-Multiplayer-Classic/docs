@@ -8,9 +8,9 @@ Triggered when the player responsible for executing an NPC's actions changes.
 
 ## Parameters
 ```c++
-void onNpcChangeHostPlayer(number npc_id, number current_id, number previous_id)
+void onNpcChangeHostPlayer(number npc_id, number|nil previous_id, number|nil current_id)
 ```
 
 * `number` **npc_id**: NPC id.
-* `number` **current_id**: New host id, or -1 for no host.
-* `number` **previous_id**: Previous host id, or -1 for no host.
+* `number|nil` **previous_id**: Previous host id, or nil when unhosted.
+* `number|nil` **current_id**: New host id, or nil when unhosted.

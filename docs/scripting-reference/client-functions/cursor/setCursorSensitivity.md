@@ -12,4 +12,4 @@ void setCursorSensitivity(number sensitivity)
 ```
 
 ## Parameters
-* `number` **sensitivity**: Cursor sensitivity multiplier.
+* `number` **sensitivity**: cursor sensitivity multiplier.

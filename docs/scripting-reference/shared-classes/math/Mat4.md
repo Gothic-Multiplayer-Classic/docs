@@ -298,12 +298,12 @@ Vec3 extractScaling()
 Scaling factors for x, y and z axes.
 
 ----
-### postRotateX
+### postRotateXDegrees
 
 This method post-multiplies a rotation around the X axis (degrees).
 
 ```cpp
-void postRotateX(number angle_degrees)
+void postRotateXDegrees(number angle_degrees)
 ```
 
 **Parameters:**
@@ -312,12 +312,12 @@ void postRotateX(number angle_degrees)
   
 
 ----
-### postRotateY
+### postRotateYDegrees
 
 This method post-multiplies a rotation around the Y axis (degrees).
 
 ```cpp
-void postRotateY(number angle_degrees)
+void postRotateYDegrees(number angle_degrees)
 ```
 
 **Parameters:**
@@ -326,12 +326,12 @@ void postRotateY(number angle_degrees)
   
 
 ----
-### postRotateZ
+### postRotateZDegrees
 
 This method post-multiplies a rotation around the Z axis (degrees).
 
 ```cpp
-void postRotateZ(number angle_degrees)
+void postRotateZDegrees(number angle_degrees)
 ```
 
 **Parameters:**
@@ -402,18 +402,46 @@ Mat4 lookAt(Vec3 from, Vec3 to, Vec3 up)
 Look-at matrix.
 
 ----
-### data
+### postRotateXRadians
 
-This method returns a pointer to the raw matrix data (column-major float array).
+Post-multiplies this matrix by a rotation around X in radians.
 
 ```cpp
-userdata data()
+void postRotateXRadians(number radians)
 ```
 
-  
-**Returns `userdata`:**
+**Parameters:**
 
-Pointer to matrix float data.
+* `number` **radians**: Rotation angle in radians.
+  
+
+----
+### postRotateYRadians
+
+Post-multiplies this matrix by a rotation around Y in radians.
+
+```cpp
+void postRotateYRadians(number radians)
+```
+
+**Parameters:**
+
+* `number` **radians**: Rotation angle in radians.
+  
+
+----
+### postRotateZRadians
+
+Post-multiplies this matrix by a rotation around Z in radians.
+
+```cpp
+void postRotateZRadians(number radians)
+```
+
+**Parameters:**
+
+* `number` **radians**: Rotation angle in radians.
+  
 
 ----
 

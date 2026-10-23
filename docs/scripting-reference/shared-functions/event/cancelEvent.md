@@ -2,9 +2,8 @@
 title: 'cancelEvent'
 ---
 # `function` cancelEvent <font size="4">(shared-side)</font>
-!!! info "Available since version: 0.3.0"
 
-Cancel the current event.
+Cancels the current cancellable event.
 
 ## Declaration
 ```cpp

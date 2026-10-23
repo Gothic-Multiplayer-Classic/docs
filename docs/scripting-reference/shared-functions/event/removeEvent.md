@@ -2,14 +2,13 @@
 title: 'removeEvent'
 ---
 # `function` removeEvent <font size="4">(shared-side)</font>
-!!! info "Available since version: 0.3.0"
 
-Unregister a custom event with specified name.
+Removes a custom event and its handlers. On the server, only its owning resource may remove it.
 
 ## Declaration
 ```cpp
-void removeEvent(string eventName)
+void removeEvent(string event_name)
 ```
 
 ## Parameters
-* `string` **eventName**: The name of the event.
+* `string` **event_name**: Custom event name.

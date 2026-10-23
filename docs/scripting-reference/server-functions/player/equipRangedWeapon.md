@@ -12,7 +12,7 @@ boolean equipRangedWeapon(number player_id, string instance)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id.
 * `string` **instance**: Ranged weapon item instance name.
   
 ## Returns `boolean`

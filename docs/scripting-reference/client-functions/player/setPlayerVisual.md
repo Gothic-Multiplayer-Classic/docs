@@ -4,7 +4,7 @@ title: 'setPlayerVisual'
 # `function` setPlayerVisual <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will set the player/npc visual model and textures.
+This function will set the player/NPC visual model and textures.
 
 ## Declaration
 ```cpp
@@ -12,7 +12,7 @@ boolean setPlayerVisual(number player_id, string bodyModel, number bodyTexture, 
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id; negative ids refer to client-local NPCs.
 * `string` **bodyModel**: Body model name.
 * `number` **bodyTexture**: Body texture index.
 * `string` **headModel**: Head model name.

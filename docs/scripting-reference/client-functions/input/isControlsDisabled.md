@@ -15,4 +15,4 @@ boolean isControlsDisabled()
 No parameters.
   
 ## Returns `boolean`
-True when disabled, otherwise false.
+True while the hero exists and default controls are disabled.

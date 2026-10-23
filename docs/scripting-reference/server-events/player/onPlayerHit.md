@@ -12,6 +12,6 @@ void onPlayerHit(number|nil attacker_id, number victim_id, number damage, number
 ```
 
 * `number|nil` **attacker_id**: Optional attacker id (nil if none).
-* `number` **victim_id**: Victim player id.
-* `number` **damage**: Damage to deal. Use eventValue(newDamage) to change it, or cancelEvent() to prevent it.
+* `number` **victim_id**: Victim player or NPC id.
+* `number` **damage**: Damage to deal. Use [setEventValue](../../shared-functions/event/setEventValue.md)(newDamage) to change it, or
 * `number` **damageType**: Gothic damage type/mode flags. For more information, see [Damage Constants](../../shared-constants/Damage.md).

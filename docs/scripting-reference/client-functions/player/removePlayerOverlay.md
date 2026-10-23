@@ -12,7 +12,7 @@ boolean removePlayerOverlay(number player_id, string overlay)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id; negative ids refer to client-local NPCs.
 * `string` **overlay**: The name of overlay.
   
 ## Returns `boolean`

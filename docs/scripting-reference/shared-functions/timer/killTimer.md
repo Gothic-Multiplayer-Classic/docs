@@ -12,4 +12,4 @@ void killTimer(number timer_id)
 ```
 
 ## Parameters
-* `number` **timer_id**: Timer ID returned by setTimer.
+* `number` **timer_id**: Timer ID returned by [setTimer](setTimer.md).

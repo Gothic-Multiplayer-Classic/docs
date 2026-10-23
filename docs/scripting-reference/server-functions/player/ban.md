@@ -14,5 +14,5 @@ void ban(number player_id, string|nil reason)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player id; NPC ids are not supported.
 * `string|nil` **reason**: Optional reason why the player was banned.

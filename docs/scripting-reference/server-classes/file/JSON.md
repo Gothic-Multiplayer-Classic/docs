@@ -4,7 +4,7 @@ title: 'JSON'
 # `class` JSON <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-JSON-backed key/value file returned by JSON.open().
+JSON-backed key/value store returned by `JSON.open()`.
 
 
 ## Properties
@@ -13,29 +13,29 @@ No properties.
 ----
 
 ## Methods
-### key
+### keyAt
 
-Return the key at the given 0-based index or nil if out of range.
+Return the key at the given one-based index or nil if out of range.
 
 ```cpp
-string|nil key(number index)
+string|nil keyAt(number index)
 ```
 
 **Parameters:**
 
-* `number` **index**: Zero-based entry index.
+* `number` **index**: One-based entry index.
   
 **Returns `string|nil`:**
 
 Key at index or nil.
 
 ----
-### len
+### count
 
 Return the number of entries in the file.
 
 ```cpp
-number len()
+number count()
 ```
 
   
@@ -44,12 +44,12 @@ number len()
 Entry count.
 
 ----
-### getItem
+### get
 
 Get a value by key.
 
 ```cpp
-any|nil getItem(string key)
+any|nil get(string key)
 ```
 
 **Parameters:**
@@ -61,12 +61,12 @@ any|nil getItem(string key)
 Value or nil if missing or invalid.
 
 ----
-### setItem
+### set
 
 Set a value by key and save the file.
 
 ```cpp
-void setItem(string key, any value)
+boolean, table|nil set(string key, any value)
 ```
 
 **Parameters:**
@@ -74,48 +74,57 @@ void setItem(string key, any value)
 * `string` **key**: Entry key.
 * `any` **value**: Value to store.
   
+**Returns `boolean, table|nil`:**
+
+True and nil on success; false and {message = string} on encoding or persistence failure.
 
 ----
-### removeItem
+### remove
 
-Remove a key and save the file.
+Removes a key if present and persists the store.
 
 ```cpp
-void removeItem(string key)
+boolean, table|nil remove(string key)
 ```
 
 **Parameters:**
 
 * `string` **key**: Entry key.
   
+**Returns `boolean, table|nil`:**
+
+True and nil on success; false and {message = string} on persistence failure. In-memory changes are retained on
 
 ----
 ### clear
 
-Remove all keys and save the file.
+Removes all keys and persists the store.
 
 ```cpp
-void clear()
+boolean, table|nil clear()
 ```
 
   
+**Returns `boolean, table|nil`:**
+
+True and nil on success; false and {message = string} on persistence failure. In-memory changes are retained on
 
 ----
-### open
+### `static` open
 
 Open a JSON file relative to the server data/internal directory.
 
 ```cpp
-JSON|nil open(string relative_path)
+JSON|nil, table|nil open(string relative_path)
 ```
 
 **Parameters:**
 
 * `string` **relative_path**: Path under the data/internal directory.
   
-**Returns `JSON|nil`:**
+**Returns `JSON|nil, table|nil`:**
 
-File handle or nil on error.
+Store and nil on success; nil and {message = string} on failure.
 
 ----
 

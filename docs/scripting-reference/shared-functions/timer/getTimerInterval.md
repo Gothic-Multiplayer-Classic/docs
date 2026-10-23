@@ -12,7 +12,7 @@ number|nil getTimerInterval(number timer_id)
 ```
 
 ## Parameters
-* `number` **timer_id**: Timer ID returned by setTimer.
+* `number` **timer_id**: Timer ID returned by [setTimer](setTimer.md).
   
 ## Returns `number|nil`
 Interval in milliseconds, or nil if not found.

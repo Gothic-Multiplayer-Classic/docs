@@ -11,5 +11,5 @@ This event is triggered when the mouse cursor is moved.
 void onMouseMove(number x, number y)
 ```
 
-* `number` **x**: Cursor X position.
-* `number` **y**: Cursor Y position.
+* `number` **x**: cursor X position.
+* `number` **y**: cursor Y position.

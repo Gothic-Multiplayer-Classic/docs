@@ -12,4 +12,4 @@ void onPlayerUnconscious(number|nil attacker_id, number victim_id)
 ```
 
 * `number|nil` **attacker_id**: Optional attacker id (nil if none).
-* `number` **victim_id**: Victim player id.
+* `number` **victim_id**: Victim player or NPC id.

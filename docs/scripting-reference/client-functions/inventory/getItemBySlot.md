@@ -15,4 +15,4 @@ string|nil getItemBySlot(number slot)
 * `number` **slot**: Inventory slot, starting from 0.
   
 ## Returns `string|nil`
-Item instance, or nil if the slot is empty.
+ItemDefinition instance, or nil if the slot is empty.

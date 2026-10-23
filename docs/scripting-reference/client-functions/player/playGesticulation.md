@@ -4,7 +4,7 @@ title: 'playGesticulation'
 # `function` playGesticulation <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will play a gesticulation animation on the player/npc character.
+This function will play a gesticulation animation on the player/NPC.
 Calls for the same id are throttled to once every 3500 ms.
 
 ## Declaration

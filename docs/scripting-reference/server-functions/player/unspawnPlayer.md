@@ -12,7 +12,7 @@ boolean unspawnPlayer(number player_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Player id to unspawn.
+* `number` **player_id**: Target player or NPC id.
   
 ## Returns `boolean`
 True on success.

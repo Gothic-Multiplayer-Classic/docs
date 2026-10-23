@@ -12,7 +12,7 @@ boolean setPlayerInvulnerable(number player_id, boolean enabled)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player or server NPC id.
+* `number` **player_id**: Target player or NPC id.
 * `boolean` **enabled**: Whether damage should be blocked.
   
 ## Returns `boolean`

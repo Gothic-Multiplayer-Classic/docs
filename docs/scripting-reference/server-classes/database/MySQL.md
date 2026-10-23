@@ -5,8 +5,8 @@ title: 'MySQL'
 !!! info "Available since version: 0.3.0"
 
 Synchronous MySQL database connection backed by MariaDB Connector/C.
-MySQL.open() returns a connection or nil plus a structured error. query()
-and execute() pass the SQL statement unchanged to the connector's prepared-
+`MySQL.open()` returns a connection or nil plus a structured error. `query()`
+and `execute()` pass the SQL statement unchanged to the connector's prepared-
 statement API and bind positional ? parameters. Successful results contain
 rows, columns, affectedRows, and lastInsertId. Errors contain driver, code,
 message, and sqlState when available.
@@ -69,7 +69,7 @@ Result and nil, or nil and an error table.
 ----
 ### execute
 
-Alias of query(), intended for statements which do not return rows.
+Executes a statement intended for commands which do not return rows. Uses the parameter and result contract of `query()`.
 
 ```cpp
 table|nil, table|nil execute(string sql, ... parameters)
@@ -85,7 +85,7 @@ table|nil, table|nil execute(string sql, ... parameters)
 Result and nil, or nil and an error table.
 
 ----
-### open
+### `static` open
 
 Open a MySQL connection. Timeouts are expressed in seconds and default to 10.
 

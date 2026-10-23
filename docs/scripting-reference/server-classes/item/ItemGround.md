@@ -18,7 +18,7 @@ Represents the unique ground item id.
 Represents the Gothic item instance name.
 
 ----
-### `Item|nil` item 
+### `ItemDefinition|nil` definition 
 
 Represents the read-only registry item definition for this ground item.
 
@@ -75,12 +75,12 @@ void setPosition(number x, number y, number z)
   
 
 ----
-### getRotation
+### getRotationDegrees
 
 Returns the ground item Euler rotation.
 
 ```cpp
-{x, y, z} getRotation()
+{x, y, z} getRotationDegrees()
 ```
 
   
@@ -89,12 +89,12 @@ Returns the ground item Euler rotation.
 Rotation table.
 
 ----
-### setRotation
+### setRotationDegrees
 
 Sets the ground item Euler rotation and synchronizes it to relevant players.
 
 ```cpp
-void setRotation(number x, number y, number z)
+void setRotationDegrees(number x, number y, number z)
 ```
 
 **Parameters:**
@@ -103,6 +103,20 @@ void setRotation(number x, number y, number z)
 * `number` **y**: Y rotation.
 * `number` **z**: Z rotation.
   
+
+----
+### isValid
+
+Checks whether this ground item still exists.
+
+```cpp
+boolean isValid()
+```
+
+  
+**Returns `boolean`:**
+
+True while valid.
 
 ----
 

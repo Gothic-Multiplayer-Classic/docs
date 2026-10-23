@@ -11,7 +11,7 @@ This event is triggered when the hero uses, interacts with, opens, or consumes a
 void onUseItem(string item, string scheme, number from, number to)
 ```
 
-* `string` **item**: Item instance.
+* `string` **item**: Item instance name.
 * `string` **scheme**: Item scheme name, if available.
 * `number` **from**: Previous interact state.
 * `number` **to**: Current interact state.

@@ -11,4 +11,4 @@ This event is triggered when the hero unequips an item.
 void onUnequip(string item)
 ```
 
-* `string` **item**: Item instance.
+* `string` **item**: Item instance name.

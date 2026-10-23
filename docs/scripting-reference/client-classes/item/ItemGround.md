@@ -13,11 +13,6 @@ Represents a synchronized server-side ground item visible on the client.
 Represents the unique ground item id.
 
 ----
-### `string` item 
-
-Represents the Gothic item instance name. Alias of instance.
-
-----
 ### `string` instance 
 
 Represents the Gothic item instance name.
@@ -28,9 +23,25 @@ Represents the Gothic item instance name.
 Represents the item amount.
 
 ----
+### `nil` definition 
+
+ItemDefinition definitions are currently available on the server only.
+
+----
 
 ## Methods
-No methods.
+### isValid
+
+Checks whether this handle still refers to an existing synchronized ground item.
+
+```cpp
+boolean isValid()
+```
+
+  
+**Returns `boolean`:**
+
+True while the item exists.
 
 ----
 

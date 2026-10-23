@@ -12,4 +12,4 @@ void onPlayerUnspawnFor(number player_id, number spawn_id)
 ```
 
 * `number` **player_id**: Player id losing the spawn.
-* `number` **spawn_id**: Player id removed for the receiver.
+* `number` **spawn_id**: Player or NPC id removed for the viewer.

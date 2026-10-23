@@ -12,7 +12,7 @@ boolean setPlayerWorld(number player_id, string world, string|nil start_point)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id.
 * `string` **world**: World name.
 * `string|nil` **start_point**: Optional start point name.
   

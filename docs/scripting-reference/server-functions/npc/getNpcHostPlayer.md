@@ -8,11 +8,11 @@ Returns the player currently responsible for executing this NPC's actions.
 
 ## Declaration
 ```cpp
-number getNpcHostPlayer(number npc_id)
+number|nil getNpcHostPlayer(number npc_id)
 ```
 
 ## Parameters
 * `number` **npc_id**: Server NPC id.
   
-## Returns `number`
-Player id, or -1 when unhosted or missing.
+## Returns `number|nil`
+Player id, or nil when unhosted or missing.

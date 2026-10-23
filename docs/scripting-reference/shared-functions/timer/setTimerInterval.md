@@ -12,5 +12,5 @@ void setTimerInterval(number timer_id, number interval)
 ```
 
 ## Parameters
-* `number` **timer_id**: Timer ID returned by setTimer.
+* `number` **timer_id**: Timer ID returned by [setTimer](setTimer.md).
 * `number` **interval**: New interval in milliseconds.

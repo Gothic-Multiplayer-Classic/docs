@@ -12,11 +12,8 @@ This function will return client network statistics.
 
 ## Declaration
 ```cpp
-{available, pingMs, localQuality, remoteQuality, outgoingPacketsPerSecond, outgoingBytesPerSecond, incomingPacketsPerSecond, incomingBytesPerSecond, sendRateBytesPerSecond, pendingUnreliableBytes, pendingReliableBytes, unacknowledgedReliableBytes, controlQueueTimeUsec, realtimeQueueTimeUsec} getNetworkStats()
+void getNetworkStats()
 ```
 
 ## Parameters
 No parameters.
-  
-## Returns `{available, pingMs, localQuality, remoteQuality, outgoingPacketsPerSecond, outgoingBytesPerSecond, incomingPacketsPerSecond, incomingBytesPerSecond, sendRateBytesPerSecond, pendingUnreliableBytes, pendingReliableBytes, unacknowledgedReliableBytes, controlQueueTimeUsec, realtimeQueueTimeUsec}`
-Table containing current network statistics.

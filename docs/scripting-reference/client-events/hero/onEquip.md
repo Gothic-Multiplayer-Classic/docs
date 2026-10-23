@@ -11,4 +11,4 @@ This event is triggered when the hero equips an item.
 void onEquip(string item)
 ```
 
-* `string` **item**: Item instance.
+* `string` **item**: Item instance name.

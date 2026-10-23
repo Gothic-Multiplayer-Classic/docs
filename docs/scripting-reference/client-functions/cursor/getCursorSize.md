@@ -15,4 +15,4 @@ This function will return the cursor size in virtual (screen-scaled) units.
 No parameters.
   
 ## Returns `{x, y}`
-Cursor width and height.
+cursor width and height.

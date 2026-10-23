@@ -4,7 +4,7 @@ title: 'stopAni'
 # `function` stopAni <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will stop a played animation on the player's character.
+This function will stop a played animation on the player/NPC.
 
 ## Declaration
 ```cpp
@@ -12,7 +12,7 @@ boolean stopAni(number player_id, string|nil aniName)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id.
 * `string|nil` **aniName**: Animation name to stop. Defaults to "" for first active animation.
   
 ## Returns `boolean`

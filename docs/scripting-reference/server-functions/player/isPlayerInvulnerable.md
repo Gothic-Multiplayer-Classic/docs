@@ -12,7 +12,7 @@ boolean isPlayerInvulnerable(number player_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player or server NPC id.
+* `number` **player_id**: Target player or NPC id.
   
 ## Returns `boolean`
 True when invulnerable; false when disabled or the actor does not exist.

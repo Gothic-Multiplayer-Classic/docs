@@ -4,7 +4,7 @@ title: 'setPlayerDexterity'
 # `function` setPlayerDexterity <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will set the player/npc dexterity attribute.
+This function will set the player/NPC dexterity attribute.
 
 ## Declaration
 ```cpp
@@ -12,7 +12,7 @@ boolean setPlayerDexterity(number player_id, number dexterity)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id; negative ids refer to client-local NPCs.
 * `number` **dexterity**: Dexterity value.
   
 ## Returns `boolean`

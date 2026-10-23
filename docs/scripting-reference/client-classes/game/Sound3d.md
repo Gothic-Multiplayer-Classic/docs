@@ -21,14 +21,14 @@ Sound3d.new(string file)
 Represents the sound file path.
 
 ----
-### `number` playingTime <font size="2">(read-only)</font>
+### `number` duration <font size="2">(read-only)</font>
 
-Represents the current playback time.
+Represents the total sound duration in seconds.
 
 ----
 ### `number` volume 
 
-Represents the playback volume.
+Playback volume from 0.0 to 1.0.
 
 ----
 ### `boolean` looping 
@@ -38,7 +38,7 @@ Represents whether the sound should loop.
 ----
 ### `number` balance 
 
-Represents the stereo balance (pan).
+Stereo balance from -1 (left) through 0 (center) to 1 (right).
 
 ----
 ### `number` obstruction 
@@ -48,7 +48,7 @@ Represents 3D sound obstruction.
 ----
 ### `number` radius 
 
-Represents 3D sound radius.
+3D sound radius in world units.
 
 ----
 ### `number` coneAngle 
@@ -73,7 +73,7 @@ Represents 3D sound pitch offset.
 ----
 ### `Vob|nil` targetVob 
 
-Represents the target Vob used as sound source.
+Attached Vob. Set to nil to detach the sound from its target.
 
 ----
 
@@ -141,7 +141,7 @@ void setTargetVob(Vob vob)
 ----
 ### setTargetPlayer
 
-Sets a player NPC as the 3D sound source.
+Sets a streamed player or server NPC as the 3D sound source.
 
 ```cpp
 boolean setTargetPlayer(number playerId)
@@ -149,11 +149,11 @@ boolean setTargetPlayer(number playerId)
 
 **Parameters:**
 
-* `number` **playerId**: Player id.
+* `number` **playerId**: Streamed player or server NPC id; client-local NPC ids are not supported.
   
 **Returns `boolean`:**
 
-True if the player exists and has an NPC.
+True if the target exists in the game world.
 
 ----
 

@@ -13,7 +13,7 @@ boolean setVoiceEnabledForPlayer(number player_id, boolean enabled)
 ```
 
 ## Parameters
-* `number` **player_id**: Player id.
+* `number` **player_id**: Target player id; NPC ids are not supported.
 * `boolean` **enabled**: Whether this player may transmit voice.
   
 ## Returns `boolean`

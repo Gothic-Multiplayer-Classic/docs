@@ -12,8 +12,8 @@ boolean equipItem(number player_id, string instance, number|nil slot_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player or server NPC id.
-* `string` **instance**: Item instance name from scripts.
+* `number` **player_id**: Target player or NPC id.
+* `string` **instance**: [ItemDefinition](../../server-classes/item/ItemDefinition.md) instance name from scripts.
 * `number|nil` **slot_id**: Optional slot id. Defaults to -1 for first free slot.
   
 ## Returns `boolean`

@@ -88,13 +88,13 @@ Returns the active camera world position.
 Table containing x,y,z world position.
 
 ----
-### setRotation
+### setRotationDegrees
 
 Sets the active camera Euler rotation in degrees.
 This puts the camera into manual movement mode until movementEnabled is set to true.
 
 ```cpp
-void setRotation(number x, number y, number z)
+void setRotationDegrees(number x, number y, number z)
 ```
 
 **Parameters:**
@@ -105,12 +105,12 @@ void setRotation(number x, number y, number z)
   
 
 ----
-### getRotation
+### getRotationDegrees
 
 Returns the active camera Euler rotation in degrees.
 
 ```cpp
-{x, y, z} getRotation()
+{x, y, z} getRotationDegrees()
 ```
 
   
@@ -138,7 +138,7 @@ True if the target was applied.
 ----
 ### setTargetPlayer
 
-Sets a player or NPC as the active camera target.
+Sets a streamed player or server NPC as the active camera target. Local NPC ids are not supported.
 
 ```cpp
 boolean setTargetPlayer(number playerId)
@@ -146,7 +146,7 @@ boolean setTargetPlayer(number playerId)
 
 **Parameters:**
 
-* `number` **playerId**: Player id.
+* `number` **playerId**: Streamed player or server NPC id; client-local NPC ids are not supported.
   
 **Returns `boolean`:**
 

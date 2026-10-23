@@ -11,5 +11,5 @@ This event is triggered when the hero drops an item.
 void onDropItem(string item, number amount)
 ```
 
-* `string` **item**: Item instance.
-* `number` **amount**: Item amount.
+* `string` **item**: Item instance name.
+* `number` **amount**: Item quantity.

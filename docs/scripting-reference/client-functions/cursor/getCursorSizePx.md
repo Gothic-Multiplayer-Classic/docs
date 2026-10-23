@@ -15,4 +15,4 @@ This function will return the cursor size in pixel units.
 No parameters.
   
 ## Returns `{x, y}`
-Cursor width and height in pixels.
+cursor width and height in pixels.

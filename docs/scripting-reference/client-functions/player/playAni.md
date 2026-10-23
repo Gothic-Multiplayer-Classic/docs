@@ -4,7 +4,7 @@ title: 'playAni'
 # `function` playAni <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will play an animation on the player/npc character.
+This function will play an animation on the player/NPC.
 
 ## Declaration
 ```cpp
@@ -12,7 +12,7 @@ boolean playAni(number player_id, string aniName)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id; negative ids refer to client-local NPCs.
 * `string` **aniName**: Animation name (e.g. "T_STAND_2_SIT").
   
 ## Returns `boolean`

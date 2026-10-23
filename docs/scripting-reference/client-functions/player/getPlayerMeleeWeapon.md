@@ -12,7 +12,7 @@ string|nil getPlayerMeleeWeapon(number player_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player or client NPC id.
+* `number` **player_id**: Target player or NPC id; negative ids refer to client-local NPCs.
   
 ## Returns `string|nil`
 Equipped melee weapon instance, or nil if none is equipped.

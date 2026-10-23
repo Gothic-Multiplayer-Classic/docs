@@ -2,18 +2,17 @@
 title: 'addEvent'
 ---
 # `function` addEvent <font size="4">(shared-side)</font>
-!!! info "Available since version: 0.3.0"
 
-Register a new custom event with specified name.
+Registers a custom event. On the server, the current resource owns it and its handlers.
 
 ## Declaration
 ```cpp
-boolean addEvent(string eventName, boolean allowRemoteTrigger)
+boolean addEvent(string event_name, boolean|nil allow_remote_trigger)
 ```
 
 ## Parameters
-* `string` **eventName**: The name of the event.
-* `boolean` **allowRemoteTrigger**: Whether the event can be triggered remotely. (Optional)
+* `string` **event_name**: Unique event name.
+* `boolean|nil` **allow_remote_trigger**: Whether peers may send this event; false by default.
   
 ## Returns `boolean`
-True on success, false if the event already exists.
+True if registered.

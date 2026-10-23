@@ -10,10 +10,10 @@ This event is triggered when the player/npc attempts to use an item.
 
 ## Parameters
 ```c++
-void onPlayerUseItem(number player_id, Item|nil item, number quantity, string scheme)
+void onPlayerUseItem(number player_id, ItemDefinition|nil item, number quantity, string scheme)
 ```
 
 * `number` **player_id**: Player/npc using the item.
-* `Item|nil` **item**: Item definition, or nil for an unknown item.
+* `ItemDefinition|nil` **item**: [ItemDefinition](../../server-classes/item/ItemDefinition.md) definition, or nil for an unknown item.
 * `number` **quantity**: Amount consumed; zero for a reusable item.
-* `string` **scheme**: Item use scheme.
+* `string` **scheme**: [ItemDefinition](../../server-classes/item/ItemDefinition.md) use scheme.

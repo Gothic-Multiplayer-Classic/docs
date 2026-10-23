@@ -4,7 +4,7 @@ title: 'Sound'
 # `class` Sound <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This class represents an internal sound method.
+This class controls playback of a non-positional sound.
 
 ### Constructor
 ```cpp
@@ -21,14 +21,14 @@ Sound.new(string file)
 Represents the sound file path.
 
 ----
-### `number` playingTime <font size="2">(read-only)</font>
+### `number` duration <font size="2">(read-only)</font>
 
-Represents the current playback time.
+Represents the total sound duration in seconds.
 
 ----
 ### `number` volume 
 
-Represents the playback volume.
+Playback volume from 0.0 to 1.0.
 
 ----
 ### `boolean` looping 
@@ -38,7 +38,7 @@ Represents whether the sound should loop.
 ----
 ### `number` balance 
 
-Represents the stereo balance (pan).
+Stereo balance from -1 (left) through 0 (center) to 1 (right).
 
 ----
 

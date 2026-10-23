@@ -12,7 +12,7 @@ boolean dropItem(string instance, number|nil amount)
 ```
 
 ## Parameters
-* `string` **instance**: Item instance name.
+* `string` **instance**: ItemDefinition instance name.
 * `number|nil` **amount**: Optional amount to drop. Defaults to the whole stack.
   
 ## Returns `boolean`

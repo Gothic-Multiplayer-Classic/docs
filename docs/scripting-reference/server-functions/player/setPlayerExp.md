@@ -4,7 +4,7 @@ title: 'setPlayerExp'
 # `function` setPlayerExp <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will set the player's experience points.
+This function will set the player/NPC's experience points.
 
 ## Declaration
 ```cpp
@@ -12,7 +12,7 @@ boolean setPlayerExp(number player_id, number exp)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id.
 * `number` **exp**: New exp value.
   
 ## Returns `boolean`

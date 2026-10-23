@@ -12,7 +12,7 @@ boolean isPlayerUnconscious(number player_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id.
   
 ## Returns `boolean`
 True when player is unconscious, otherwise false.

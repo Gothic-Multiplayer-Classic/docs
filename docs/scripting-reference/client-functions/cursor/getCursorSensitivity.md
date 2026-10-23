@@ -15,4 +15,4 @@ number getCursorSensitivity()
 No parameters.
   
 ## Returns `number`
-Cursor sensitivity multiplier.
+cursor sensitivity multiplier.

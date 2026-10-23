@@ -2,9 +2,8 @@
 title: 'isEventCancelled'
 ---
 # `function` isEventCancelled <font size="4">(shared-side)</font>
-!!! info "Available since version: 0.3.0"
 
-Check if the event was cancelled.
+Checks whether the current event has been cancelled.
 
 ## Declaration
 ```cpp
@@ -15,4 +14,4 @@ boolean isEventCancelled()
 No parameters.
   
 ## Returns `boolean`
-True if event was cancelled, otherwise false.
+Current cancellation state.

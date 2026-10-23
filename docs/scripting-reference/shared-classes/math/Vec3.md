@@ -351,6 +351,23 @@ Vec3 lerp(number t, Vec3 v1, Vec3 v2)
 Interpolated vector.
 
 ----
+### distanceHorizontal
+
+Returns the distance projected onto the Gothic horizontal XZ plane.
+
+```cpp
+number distanceHorizontal(Vec3 vec)
+```
+
+**Parameters:**
+
+* `Vec3` **vec**: Other point.
+  
+**Returns `number`:**
+
+Horizontal distance.
+
+----
 
 ## Callbacks
 No callbacks.

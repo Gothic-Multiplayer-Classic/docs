@@ -4,7 +4,7 @@ title: 'getPlayerInstance'
 # `function` getPlayerInstance <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will return the player's instance name, or nil if unavailable.
+This function will return the player/NPC's instance name, or nil if unavailable.
 
 ## Declaration
 ```cpp
@@ -12,7 +12,7 @@ string|nil getPlayerInstance(number player_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id.
   
 ## Returns `string|nil`
 Instance name or nil.

@@ -12,7 +12,7 @@ boolean setPlayerPosition(number player_id, number x, number y, number z, boolea
 ```
 
 ## Parameters
-* `number` **player_id**: Target player or server NPC id.
+* `number` **player_id**: Target player or NPC id.
 * `number` **x**: X coordinate.
 * `number` **y**: Y coordinate.
 * `number` **z**: Z coordinate.

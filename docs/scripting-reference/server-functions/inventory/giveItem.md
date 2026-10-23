@@ -12,8 +12,8 @@ boolean giveItem(number player_id, string instance, number amount)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player or server NPC id.
-* `string` **instance**: Item instance name from scripts.
+* `number` **player_id**: Target player or NPC id.
+* `string` **instance**: [ItemDefinition](../../server-classes/item/ItemDefinition.md) instance name from scripts.
 * `number` **amount**: Amount to give.
   
 ## Returns `boolean`

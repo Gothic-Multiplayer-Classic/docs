@@ -1,0 +1,20 @@
+---
+title: 'virtualToPixelsY'
+---
+# `function` virtualToPixelsY <font size="4">(client-side)</font>
+!!! info "Available since version: 0.3.0"
+!!! note
+    Use this function only when you want to convert y position or width on the screen.
+
+This function will convert virtuals to pixels on screen Y dimension and return it as a result.
+
+## Declaration
+```cpp
+number virtualToPixelsY(number virtuals)
+```
+
+## Parameters
+* `number` **virtuals**: The virtuals to convert.
+  
+## Returns `number`
+The pixels after conversion.

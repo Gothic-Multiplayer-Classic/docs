@@ -1,0 +1,18 @@
+---
+title: 'getPlayerNameColor'
+---
+# `function` getPlayerNameColor <font size="4">(server-side)</font>
+!!! info "Available since version: 0.3.0"
+
+This function will return the player/NPC's name color, or nil if unavailable.
+
+## Declaration
+```cpp
+{r, g, b}|nil getPlayerNameColor(number player_id)
+```
+
+## Parameters
+* `number` **player_id**: Target player or NPC id.
+  
+## Returns `{r, g, b}|nil`
+RGB color table or nil.

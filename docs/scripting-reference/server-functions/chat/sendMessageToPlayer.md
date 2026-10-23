@@ -12,7 +12,7 @@ boolean sendMessageToPlayer(number player_id, number r, number g, number b, stri
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player id; NPC ids are not supported.
 * `number` **r**: Red component (0-255).
 * `number` **g**: Green component (0-255).
 * `number` **b**: Blue component (0-255).

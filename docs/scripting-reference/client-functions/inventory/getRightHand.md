@@ -15,4 +15,4 @@ string|nil getRightHand()
 No parameters.
   
 ## Returns `string|nil`
-Item instance, or nil if the hand is empty.
+ItemDefinition instance, or nil if the hand is empty.

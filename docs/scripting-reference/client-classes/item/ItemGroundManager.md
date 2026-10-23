@@ -1,7 +1,7 @@
 ---
 title: 'ItemGroundManager'
 ---
-# `class` ItemGroundManager <font size="4">(client-side)</font>
+# `static class` ItemGroundManager <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
 Provides client-side lookup for synchronized ground items visible in the current world.
@@ -13,7 +13,7 @@ No properties.
 ----
 
 ## Methods
-### getById
+### `static` getById
 
 Returns a synchronized ground item by id.
 
@@ -30,12 +30,12 @@ ItemGround|nil getById(number id)
 Ground item object or nil if missing.
 
 ----
-### getByItem
+### `static` findByInstance
 
 Returns the first synchronized ground item with the given item instance.
 
 ```cpp
-ItemGround|nil getByItem(string instance)
+ItemGround|nil findByInstance(string instance)
 ```
 
 **Parameters:**

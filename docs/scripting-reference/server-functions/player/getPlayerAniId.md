@@ -12,7 +12,7 @@ number getPlayerAniId(number player_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id.
   
 ## Returns `number`
 Animation id, or -1 if unavailable.

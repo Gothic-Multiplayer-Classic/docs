@@ -4,7 +4,7 @@ title: 'getPlayerSkillWeapon'
 # `function` getPlayerSkillWeapon <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This function will return the player's weapon skill hit chance, or nil if unavailable.
+This function will return the player/NPC's weapon skill hit chance, or nil if unavailable.
 
 ## Declaration
 ```cpp
@@ -12,7 +12,7 @@ number|nil getPlayerSkillWeapon(number player_id, number skill_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player or NPC id.
 * `number` **skill_id**: Skill identifier, for more information check [Weapon Constants](../../shared-constants/Weapon.md).
   
 ## Returns `number|nil`

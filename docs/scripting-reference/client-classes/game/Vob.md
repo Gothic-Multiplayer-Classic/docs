@@ -21,9 +21,9 @@ Vob.new(string model)
 Represents the internal engine object name of the Vob.
 
 ----
-### `Mat4` matrix 
+### `Mat4` worldTransform 
 
-Represents the reference to the Vob matrix.
+A copy of the Vob world transform. Assign the changed matrix back to update the Vob.
 
 ----
 ### `Vob|nil` parent 
@@ -40,7 +40,8 @@ Represents the state of dynamic collision of the Vob. Enabling this option will 
 ----
 ### `boolean` cdStatic 
 
-Represents the state of static collision of the Vob. Enabling this option will prevent static objects (i.e. world mesh) from passing through it.
+Represents the state of static collision of the Vob. Enabling this option will prevent static objects (i.e. world mesh) from passing
+through it.
 
 ----
 ### `number` farClipZScale 
@@ -55,11 +56,39 @@ Represents the model file name used as Vob visual, e.g. "SPHERE.3DS".
 ----
 ### `number` visualAlpha 
 
-Represents the transparency of the Vob visual.
+Visual opacity from 0.0 (transparent) to 1.0 (opaque).
 
 ----
 
 ## Methods
+### setWorldTransform
+
+Applies a world-transform snapshot to this Vob.
+
+```cpp
+void setWorldTransform(Mat4 matrix)
+```
+
+**Parameters:**
+
+* `Mat4` **matrix**: New world transform.
+  
+
+----
+### getWorldTransform
+
+Returns a copy of the world transform. Modify the copy and assign it back using `setWorldTransform` to apply changes.
+
+```cpp
+Mat4 getWorldTransform()
+```
+
+  
+**Returns `Mat4`:**
+
+World-transform snapshot.
+
+----
 ### setPosition
 
 This method will set the position of the Vob in the world.
@@ -90,12 +119,12 @@ This method will return the position of the Vob in the world.
 Table containing x,y,z position.
 
 ----
-### setRotation
+### setRotationDegrees
 
 This method will set the euler rotation of the Vob in the world, in degrees.
 
 ```cpp
-void setRotation(number x, number y, number z)
+void setRotationDegrees(number x, number y, number z)
 ```
 
 **Parameters:**
@@ -106,12 +135,12 @@ void setRotation(number x, number y, number z)
   
 
 ----
-### getRotation
+### getRotationDegrees
 
 This method will return the euler rotation of the vob in the world, in degrees.
 
 ```cpp
-{x, y, z} getRotation()
+{x, y, z} getRotationDegrees()
 ```
 
   

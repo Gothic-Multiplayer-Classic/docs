@@ -12,7 +12,7 @@ boolean isPlayerConnected(number player_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player id.
+* `number` **player_id**: Target player id; NPC ids are not supported.
   
 ## Returns `boolean`
 True when player is connected, otherwise false.

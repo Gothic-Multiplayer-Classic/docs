@@ -10,17 +10,18 @@ Static sky controller for local and synchronized sky settings.
 ## Properties
 ### `number` weatherType 
 
-Current local weather type. Use `refresh()` to pull the authoritative value from the server. For more information, see [Weather Constants](../../shared-constants/Weather.md).
+Current local weather type. Use `requestTimeAndSkySync` to pull the authoritative value from the server. For more
+information, see [Weather Constants](../../shared-constants/Weather.md).
 
 ----
 ### `table` rainStartTime 
 
-Rain start time: `{hour = number, min = number}`
+Rain start time: `{hour = number, minute = number}`
 
 ----
 ### `table` rainStopTime 
 
-Rain stop time: `{hour = number, min = number}`
+Rain stop time: `{hour = number, minute = number}`
 
 ----
 ### `number` windScale 
@@ -28,55 +29,113 @@ Rain stop time: `{hour = number, min = number}`
 Wind scale used during precipitation.
 
 ----
-### `boolean` dontRain 
+### `boolean` precipitationEnabled 
 
 Toggles local rain and snow rendering.
 
 ----
-### `table` fogColor 
-
-Write-only fog color table: `{id = number, r = number, g = number, b = number}`
-
-----
-### `table` cloudsColor 
-
-Write-only cloud color table: `{r = number, g = number, b = number}`
-
-----
-### `table` planetSize 
-
-Write-only planet size table: `{planetId = number, size = number}`. For planet identifiers, see [Sky Constants](../../client-constants/Sky.md).
-
-----
-### `table` planetColor 
-
-Write-only planet color table: `{planetId = number, r = number, g = number, b = number, a = number}`. For planet identifiers, see [Sky Constants](../../client-constants/Sky.md).
-
-----
-### `table` planetTxt 
-
-Write-only planet texture table: `{planetId = number, texture = string}`. For planet identifiers, see [Sky Constants](../../client-constants/Sky.md).
-
-----
-### `table` lightingColor 
-
-Write-only lighting color table: `{r = number, g = number, b = number}`
-
-----
 
 ## Methods
-### refresh
+### setFogColor
 
-Requests authoritative time and sky settings from the server and applies them when the reply arrives.
+Sets one local fog color entry to the supplied RGB color.
 
 ```cpp
-boolean refresh()
+void setFogColor(number id, table value)
+```
+
+**Parameters:**
+
+* `number` **id**: Fog entry or sky planet id.
+* `table` **value**: RGB table {r, g, b}.
+  
+
+----
+### setCloudsColor
+
+Sets the local cloud RGB color.
+
+```cpp
+void setCloudsColor(table value)
+```
+
+**Parameters:**
+
+* `table` **value**: RGB table {r, g, b}.
+  
+
+----
+### setPlanetSize
+
+Sets the size of one sky planet.
+
+```cpp
+void setPlanetSize(number id, number size)
+```
+
+**Parameters:**
+
+* `number` **id**: Fog entry or sky planet id.
+* `number` **size**: Planet size.
+  
+
+----
+### setPlanetColor
+
+Sets one sky planet RGBA color.
+
+```cpp
+void setPlanetColor(number id, table value)
+```
+
+**Parameters:**
+
+* `number` **id**: Fog entry or sky planet id.
+* `table` **value**: RGBA table {r, g, b, a}.
+  
+
+----
+### setPlanetTexture
+
+Sets the texture file of one sky planet.
+
+```cpp
+void setPlanetTexture(number id, string file)
+```
+
+**Parameters:**
+
+* `number` **id**: Fog entry or sky planet id.
+* `string` **file**: Texture file name.
+  
+
+----
+### setLightingColor
+
+Sets the local sky lighting RGB color.
+
+```cpp
+void setLightingColor(table value)
+```
+
+**Parameters:**
+
+* `table` **value**: RGB table {r, g, b}.
+  
+
+----
+### requestTimeAndSkySync
+
+Requests authoritative time and sky settings; they are applied asynchronously when the reply arrives.
+
+```cpp
+boolean requestTimeAndSkySync()
 ```
 
   
 **Returns `boolean`:**
 
-True if the refresh request was sent.
+Whether the request was sent; completion is asynchronous.
 
 ----
 

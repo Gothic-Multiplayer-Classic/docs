@@ -12,5 +12,5 @@ void setCursorSize(number width, number height)
 ```
 
 ## Parameters
-* `number` **width**: Cursor width.
-* `number` **height**: Cursor height.
+* `number` **width**: cursor width.
+* `number` **height**: cursor height.

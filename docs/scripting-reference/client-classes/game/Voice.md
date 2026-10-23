@@ -41,17 +41,17 @@ boolean isEnabled()
 True when server, user, and script settings all allow voice chat.
 
 ----
-### setEnabled
+### setScriptEnabled
 
-This function changes the resource-controlled voice chat gate. Enabling it does not override a disabled user setting.
+This function changes the client-wide script voice chat gate. Enabling it does not override a disabled user setting.
 
 ```cpp
-boolean setEnabled(boolean enabled)
+boolean setScriptEnabled(boolean enabled)
 ```
 
 **Parameters:**
 
-* `boolean` **enabled**: Whether this resource permits voice chat.
+* `boolean` **enabled**: Whether scripts permit voice chat; all resources share this gate.
   
 **Returns `boolean`:**
 
@@ -72,13 +72,13 @@ number getRange()
 Voice range in game units, or zero when unavailable.
 
 ----
-### setRange
+### setLocalRangeLimit
 
 This function limits the local client's proximity voice range. The server's
 range remains authoritative, so this setting can only reduce the range.
 
 ```cpp
-boolean setRange(number range)
+boolean setLocalRangeLimit(number range)
 ```
 
 **Parameters:**
@@ -92,7 +92,7 @@ True when the range was accepted.
 ----
 ### getOutputVolume
 
-This function returns the resource output-volume multiplier.
+This function returns the script output-volume multiplier.
 
 ```cpp
 number getOutputVolume()
@@ -106,7 +106,7 @@ Multiplier from 0.0 to 1.0, applied after the user's volume setting.
 ----
 ### setOutputVolume
 
-This function changes the resource output-volume multiplier.
+This function changes the script output-volume multiplier.
 
 ```cpp
 void setOutputVolume(number volume)
@@ -187,7 +187,7 @@ boolean setInputDevice(string device_name)
 
 **Parameters:**
 
-* `string` **device_name**: Microphone name returned by getInputDevices, or an empty string.
+* `string` **device_name**: Microphone name returned by `getInputDevices`, or an empty string.
   
 **Returns `boolean`:**
 
@@ -232,7 +232,7 @@ boolean setOutputDevice(string device_name)
 
 **Parameters:**
 
-* `string` **device_name**: Device name returned by getOutputDevices, or an empty string.
+* `string` **device_name**: Device name returned by `getOutputDevices`, or an empty string.
   
 **Returns `boolean`:**
 

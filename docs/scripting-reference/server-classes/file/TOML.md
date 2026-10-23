@@ -4,9 +4,8 @@ title: 'TOML'
 # `class` TOML <font size="4">(server-side)</font>
 !!! info "Available since version: 0.3.0"
 
-Read-only TOML document returned by TOML.open(). Nested sections and arrays
-are returned as TOML values. Use getOr() when a missing value should fall
-back without replacing configured false.
+Read-only TOML document loaded from a file.
+Nested sections and arrays are returned as TOML values. Use `getOr()` when a missing value should fall back without replacing configured false.
 
 
 ## Properties
@@ -84,7 +83,7 @@ table entries()
 Entries table.
 
 ----
-### open
+### `static` open
 
 Open a read-only TOML file relative to the server data/internal directory.
 

@@ -11,7 +11,7 @@ This event is triggered when the hero takes an item from the ground.
 void onTakeItem(string item, boolean synchronized, number amount, number|nil itemGroundId)
 ```
 
-* `string` **item**: Item instance.
+* `string` **item**: Item instance name.
 * `boolean` **synchronized**: True when pickup is synchronized with the server.
-* `number` **amount**: Item amount.
+* `number` **amount**: Item quantity.
 * `number|nil` **itemGroundId**: Ground item id, or nil for non-server items.

@@ -12,7 +12,7 @@ boolean isPlayerCreated(number player_id)
 ```
 
 ## Parameters
-* `number` **player_id**: Target player or client NPC id.
+* `number` **player_id**: Target player or NPC id; negative ids refer to client-local NPCs.
   
 ## Returns `boolean`
 True when the object exists.

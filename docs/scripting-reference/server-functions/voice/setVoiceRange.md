@@ -12,7 +12,7 @@ boolean setVoiceRange(number range)
 ```
 
 ## Parameters
-* `number` **range**: Voice range in game units; must be non-negative.
+* `number` **range**: voice range in game units; must be non-negative.
   
 ## Returns `boolean`
 True when the range was accepted.

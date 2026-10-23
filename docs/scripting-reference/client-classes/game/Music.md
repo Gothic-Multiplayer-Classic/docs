@@ -4,7 +4,7 @@ title: 'Music'
 # `class` Music <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 
-This class represents streamed music playback on the game client. It is unrelated to Zengin's implementation of Sound and Music.
+This class controls streamed music playback on the client. For the native Gothic music system, use [GothicMusic](GothicMusic.md).
 
 ### Constructor
 ```cpp

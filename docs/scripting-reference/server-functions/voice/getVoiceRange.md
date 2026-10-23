@@ -15,4 +15,4 @@ number getVoiceRange()
 No parameters.
   
 ## Returns `number`
-Voice range in game units.
+voice range in game units.
