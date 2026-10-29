@@ -10,10 +10,10 @@ This event is triggered when a player's active spell slot changes.
 
 ## Parameters
 ```c++
-void onPlayerEquipSpellSlot(number player_id, number slot_id, ItemDefinition|nil item, ItemDefinition|nil previous_item)
+void onPlayerEquipSpellSlot(number player_id, number slot_id, string|nil item, string|nil previous_item)
 ```
 
 * `number` **player_id**: Player id.
 * `number` **slot_id**: Active spell slot id (0 if none).
-* `ItemDefinition|nil` **item**: Active spell item (nil if none).
-* `ItemDefinition|nil` **previous_item**: Previously equipped item.
+* `string|nil` **item**: Active spell item (nil if none).
+* `string|nil` **previous_item**: Previously equipped item.

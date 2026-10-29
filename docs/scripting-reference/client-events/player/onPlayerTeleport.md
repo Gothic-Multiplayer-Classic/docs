@@ -4,7 +4,7 @@ title: 'onPlayerTeleport'
 # `event` onPlayerTeleport <font size="4">(client-side)</font>
 !!! info "Available since version: 0.3.0"
 !!! note
-    This event is triggered after the server accepts the teleport. Calling
+    This event is triggered after the server accepts the teleport. Calling [setPlayerPosition](../../client-functions/player/setPlayerPosition.md) does not trigger this event.
 
 This event is triggered when a player teleports using a game's spell or teleport trigger.
 

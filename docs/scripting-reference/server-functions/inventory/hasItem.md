@@ -13,7 +13,7 @@ number hasItem(number player_id, string instance)
 
 ## Parameters
 * `number` **player_id**: Target player or NPC id.
-* `string` **instance**: [ItemDefinition](../../server-classes/item/ItemDefinition.md) instance name from scripts.
+* `string` **instance**: Item instance name from scripts.
   
 ## Returns `number`
 Item quantity, or 0 if missing.

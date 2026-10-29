@@ -23,11 +23,6 @@ Represents the Gothic item instance name.
 Represents the item amount.
 
 ----
-### `nil` definition 
-
-ItemDefinition definitions are currently available on the server only.
-
-----
 
 ## Methods
 ### isValid

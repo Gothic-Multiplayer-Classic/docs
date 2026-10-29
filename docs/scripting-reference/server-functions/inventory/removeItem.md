@@ -13,7 +13,7 @@ boolean removeItem(number player_id, string instance, number amount)
 
 ## Parameters
 * `number` **player_id**: Target player or NPC id.
-* `string` **instance**: [ItemDefinition](../../server-classes/item/ItemDefinition.md) instance name from scripts.
+* `string` **instance**: Item instance name from scripts.
 * `number` **amount**: Amount to remove.
   
 ## Returns `boolean`

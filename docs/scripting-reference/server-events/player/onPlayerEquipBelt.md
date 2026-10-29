@@ -10,9 +10,9 @@ This event is triggered when a player's equipped belt changes.
 
 ## Parameters
 ```c++
-void onPlayerEquipBelt(number player_id, ItemDefinition|nil item, ItemDefinition|nil previous_item)
+void onPlayerEquipBelt(number player_id, string|nil item, string|nil previous_item)
 ```
 
 * `number` **player_id**: Player id.
-* `ItemDefinition|nil` **item**: Equipped belt item (nil if none).
-* `ItemDefinition|nil` **previous_item**: Previously equipped item.
+* `string|nil` **item**: Equipped belt item (nil if none).
+* `string|nil` **previous_item**: Previously equipped item.

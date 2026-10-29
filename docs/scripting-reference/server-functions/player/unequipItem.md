@@ -13,7 +13,7 @@ boolean unequipItem(number player_id, string instance, number|nil slot_id)
 
 ## Parameters
 * `number` **player_id**: Target player or NPC id.
-* `string` **instance**: [ItemDefinition](../../server-classes/item/ItemDefinition.md) instance name from scripts.
+* `string` **instance**: Item instance name from scripts.
 * `number|nil` **slot_id**: Equipment slot. Omit to clear all matching slots.
   
 ## Returns `boolean`

@@ -2442,258 +2442,6 @@
       ],
       "callbacks": []
     },
-    "ItemDefinition": {
-      "name": "ItemDefinition",
-      "doc": "Represents a read-only Gothic item definition from the server item registry.",
-      "side": "server",
-      "category": "Item",
-      "extends": null,
-      "fields": [
-        {
-          "name": "onUse",
-          "type": "function|nil",
-          "doc": "The item's server-side use callback."
-        },
-        {
-          "name": "onEquip",
-          "type": "function|nil",
-          "doc": "The item's server-side equip callback."
-        },
-        {
-          "name": "onUnequip",
-          "type": "function|nil",
-          "doc": "The item's server-side unequip callback."
-        },
-        {
-          "name": "instance",
-          "type": "string",
-          "doc": "Represents the canonical Gothic item instance name."
-        },
-        {
-          "name": "mainFlag",
-          "type": "number",
-          "doc": "Represents the item's main category flag. For more information, see [Item Constants](../../shared-constants/Item.md)."
-        },
-        {
-          "name": "flags",
-          "type": "number",
-          "doc": "Represents the item's Gothic flags. For more information, see [Item Constants](../../shared-constants/Item.md)."
-        },
-        {
-          "name": "visual",
-          "type": "string",
-          "doc": "Represents the item's visual model file."
-        },
-        {
-          "name": "wear",
-          "type": "number",
-          "doc": "Represents the armor wear slot value. For more information, see [Item Constants](../../shared-constants/Item.md)."
-        },
-        {
-          "name": "range",
-          "type": "number",
-          "doc": "Represents the item's range value."
-        },
-        {
-          "name": "value",
-          "type": "number",
-          "doc": "Represents the item's value in currency units."
-        },
-        {
-          "name": "damage",
-          "type": "{total, types}|nil",
-          "doc": "Represents the item's damage information. Its `types` field uses [Damage Constants](../../shared-constants/Damage.md)."
-        },
-        {
-          "name": "damageTotal",
-          "type": "number",
-          "doc": "Represents the item's total damage."
-        },
-        {
-          "name": "damageTypes",
-          "type": "number",
-          "doc": "Represents the item's Gothic damage type flags. For more information, see [Damage Constants](../../shared-constants/Damage.md)."
-        },
-        {
-          "name": "munition",
-          "type": "string",
-          "doc": "Represents the required munition item instance name."
-        },
-        {
-          "name": "munitionItem",
-          "type": "itemdefinition|nil",
-          "doc": "Represents the required munition item definition."
-        },
-        {
-          "name": "spell",
-          "type": "number",
-          "doc": "Represents the spell id associated with this item."
-        },
-        {
-          "name": "schemeName",
-          "type": "string",
-          "doc": "Represents the item's Gothic scheme name."
-        },
-        {
-          "name": "magicCircle",
-          "type": "number",
-          "doc": "Represents the magic circle required by this item."
-        },
-        {
-          "name": "protections",
-          "type": "table",
-          "doc": "One-based array of protection tables with `type` and `value` fields. The type uses [Damage Constants](../../shared-constants/Damage.md)."
-        },
-        {
-          "name": "requirements",
-          "type": "table",
-          "doc": "One-based array of requirement tables with `attribute` and `value` fields."
-        }
-      ],
-      "methods": [
-        {
-          "name": "getProtection",
-          "doc": "Returns the protection value for a Gothic damage type.",
-          "params": [
-            {
-              "name": "damageType",
-              "type": "number",
-              "doc": "Gothic damage type. For more information, see [Damage Constants](../../shared-constants/Damage.md)."
-            }
-          ],
-          "returns": {
-            "type": "number",
-            "doc": ""
-          }
-        },
-        {
-          "name": "getByInstance",
-          "doc": "Returns an item definition by Gothic instance name.",
-          "params": [
-            {
-              "name": "instance",
-              "type": "string",
-              "doc": "Gothic item instance name."
-            }
-          ],
-          "returns": {
-            "type": "itemdefinition|nil",
-            "doc": "Definition or nil if missing."
-          }
-        },
-        {
-          "name": "exists",
-          "doc": "Returns whether an item definition exists for the given instance name.",
-          "params": [
-            {
-              "name": "instance",
-              "type": "string",
-              "doc": "Gothic item instance name."
-            }
-          ],
-          "returns": {
-            "type": "boolean",
-            "doc": ""
-          }
-        },
-        {
-          "name": "size",
-          "doc": "Returns the number of item definitions loaded by the server.",
-          "params": [],
-          "returns": {
-            "type": "number",
-            "doc": ""
-          }
-        },
-        {
-          "name": "getRequirement",
-          "doc": "Returns a requirement by its one-based index.",
-          "params": [
-            {
-              "name": "index",
-              "type": "number",
-              "doc": "Index starting at 1."
-            }
-          ],
-          "returns": {
-            "type": "table|nil",
-            "doc": "Requirement or nil if out of range."
-          }
-        }
-      ],
-      "callbacks": []
-    },
-    "ItemCallbacks": {
-      "name": "ItemCallbacks",
-      "doc": "Manages server-side item callbacks.",
-      "side": "server",
-      "category": "Item",
-      "extends": null,
-      "fields": [],
-      "methods": [
-        {
-          "name": "setOnUse",
-          "doc": "Sets the item's use callback.",
-          "params": [
-            {
-              "name": "instance",
-              "type": "string",
-              "doc": "[ItemDefinition](ItemDefinition.md) instance name."
-            },
-            {
-              "name": "callback",
-              "type": "function|nil",
-              "doc": "Callback, or nil to remove it."
-            }
-          ],
-          "returns": {
-            "type": "boolean",
-            "doc": "True on success."
-          }
-        },
-        {
-          "name": "setOnEquip",
-          "doc": "Sets the item's equip callback.",
-          "params": [
-            {
-              "name": "instance",
-              "type": "string",
-              "doc": "[ItemDefinition](ItemDefinition.md) instance name."
-            },
-            {
-              "name": "callback",
-              "type": "function|nil",
-              "doc": "Callback, or nil to remove it."
-            }
-          ],
-          "returns": {
-            "type": "boolean",
-            "doc": "True on success."
-          }
-        },
-        {
-          "name": "setOnUnequip",
-          "doc": "Sets the item's unequip callback.",
-          "params": [
-            {
-              "name": "instance",
-              "type": "string",
-              "doc": "[ItemDefinition](ItemDefinition.md) instance name."
-            },
-            {
-              "name": "callback",
-              "type": "function|nil",
-              "doc": "Callback, or nil to remove it."
-            }
-          ],
-          "returns": {
-            "type": "boolean",
-            "doc": "True on success."
-          }
-        }
-      ],
-      "callbacks": []
-    },
     "ItemGround": {
       "name": "ItemGround",
       "doc": "Represents a synchronized server-side ground item visible on the client.",
@@ -2715,11 +2463,6 @@
           "name": "amount",
           "type": "number",
           "doc": "Represents the item amount."
-        },
-        {
-          "name": "definition",
-          "type": "nil",
-          "doc": "ItemDefinition definitions are currently available on the server only."
         }
       ],
       "methods": [
@@ -7945,7 +7688,7 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "[ItemDefinition](../../server-classes/item/ItemDefinition.md) instance name from scripts."
+          "doc": "Item instance name from scripts."
         },
         {
           "name": "amount",
@@ -7972,7 +7715,7 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "[ItemDefinition](../../server-classes/item/ItemDefinition.md) instance name from scripts."
+          "doc": "Item instance name from scripts."
         },
         {
           "name": "slot_id",
@@ -7999,7 +7742,7 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "[ItemDefinition](../../server-classes/item/ItemDefinition.md) instance name from scripts."
+          "doc": "Item instance name from scripts."
         },
         {
           "name": "slot_id",
@@ -8221,7 +7964,7 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "[ItemDefinition](../../server-classes/item/ItemDefinition.md) instance name from scripts."
+          "doc": "Item instance name from scripts."
         }
       ],
       "returns": {
@@ -8243,7 +7986,7 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "[ItemDefinition](../../server-classes/item/ItemDefinition.md) instance name from scripts."
+          "doc": "Item instance name from scripts."
         },
         {
           "name": "amount",
@@ -8569,7 +8312,7 @@
     },
     {
       "name": "createNpc",
-      "doc": "Creates an unspawned, server-owned NPC. Use [spawnPlayer](../player/spawnPlayer.md) to stream it to clients.",
+      "doc": "Creates an unspawned, server-owned NPC.",
       "side": "server",
       "category": "NPC",
       "params": [
@@ -10221,7 +9964,7 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "ItemDefinition instance name."
+          "doc": "Item instance name."
         },
         {
           "name": "amount",
@@ -10248,7 +9991,7 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "ItemDefinition instance name."
+          "doc": "Item instance name."
         }
       ],
       "returns": {
@@ -10270,7 +10013,7 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "ItemDefinition instance name."
+          "doc": "Item instance name."
         }
       ],
       "returns": {
@@ -10487,12 +10230,12 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "ItemDefinition instance name."
+          "doc": "Item instance name."
         }
       ],
       "returns": {
         "type": "number",
-        "doc": "ItemDefinition amount or 0 if missing."
+        "doc": "Item amount or 0 if missing."
       }
     },
     {
@@ -10531,7 +10274,7 @@
       ],
       "returns": {
         "type": "string|nil",
-        "doc": "ItemDefinition instance, or nil if the slot is empty."
+        "doc": "Item instance, or nil if the slot is empty."
       }
     },
     {
@@ -10542,7 +10285,7 @@
       "params": [],
       "returns": {
         "type": "string|nil",
-        "doc": "ItemDefinition instance, or nil if the hand is empty."
+        "doc": "Item instance, or nil if the hand is empty."
       }
     },
     {
@@ -10553,7 +10296,7 @@
       "params": [],
       "returns": {
         "type": "string|nil",
-        "doc": "ItemDefinition instance, or nil if the hand is empty."
+        "doc": "Item instance, or nil if the hand is empty."
       }
     },
     {
@@ -10565,7 +10308,7 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "ItemDefinition instance name."
+          "doc": "Item instance name."
         },
         {
           "name": "amount",
@@ -10609,7 +10352,7 @@
         {
           "name": "instance",
           "type": "string",
-          "doc": "ItemDefinition instance name."
+          "doc": "Item instance name."
         },
         {
           "name": "amount",
@@ -12833,8 +12576,8 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
-          "doc": "[ItemDefinition](../../server-classes/item/ItemDefinition.md) definition, or nil for an unknown item."
+          "type": "string|nil",
+          "doc": "Item instance name, or nil for an empty slot."
         },
         {
           "name": "quantity",
@@ -12844,7 +12587,7 @@
         {
           "name": "scheme",
           "type": "string",
-          "doc": "[ItemDefinition](../../server-classes/item/ItemDefinition.md) use scheme."
+          "doc": "Native use scheme reported by the controlling client."
         }
       ],
       "cancellable": false
@@ -13049,12 +12792,12 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Equipped amulet item (nil if none)."
         },
         {
           "name": "previous_item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Previously equipped item."
         }
       ],
@@ -13073,12 +12816,12 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Equipped armor item (nil if none)."
         },
         {
           "name": "previous_item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Previously equipped item."
         }
       ],
@@ -13097,12 +12840,12 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Equipped belt item (nil if none)."
         },
         {
           "name": "previous_item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Previously equipped item."
         }
       ],
@@ -13126,12 +12869,12 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Equipped hand item (nil if none)."
         },
         {
           "name": "previous_item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Previously equipped item."
         }
       ],
@@ -13150,12 +12893,12 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Equipped helmet item (nil if none)."
         },
         {
           "name": "previous_item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Previously equipped item."
         }
       ],
@@ -13174,12 +12917,12 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Equipped melee weapon item (nil if none)."
         },
         {
           "name": "previous_item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Previously equipped item."
         }
       ],
@@ -13198,12 +12941,12 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Equipped ranged weapon item (nil if none)."
         },
         {
           "name": "previous_item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Previously equipped item."
         }
       ],
@@ -13227,12 +12970,12 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Equipped ring item (nil if none)."
         },
         {
           "name": "previous_item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Previously equipped item."
         }
       ],
@@ -13251,12 +12994,12 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Equipped shield item (nil if none)."
         },
         {
           "name": "previous_item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Previously equipped item."
         }
       ],
@@ -13280,12 +13023,12 @@
         },
         {
           "name": "item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Active spell item (nil if none)."
         },
         {
           "name": "previous_item",
-          "type": "itemdefinition|nil",
+          "type": "string|nil",
           "doc": "Previously equipped item."
         }
       ],

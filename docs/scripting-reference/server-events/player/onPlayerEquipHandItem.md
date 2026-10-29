@@ -10,10 +10,10 @@ This event is triggered when a player's equipped hand item changes.
 
 ## Parameters
 ```c++
-void onPlayerEquipHandItem(number player_id, number hand, ItemDefinition|nil item, ItemDefinition|nil previous_item)
+void onPlayerEquipHandItem(number player_id, number hand, string|nil item, string|nil previous_item)
 ```
 
 * `number` **player_id**: Player id.
 * `number` **hand**: Hand id (0 = left, 1 = right).
-* `ItemDefinition|nil` **item**: Equipped hand item (nil if none).
-* `ItemDefinition|nil` **previous_item**: Previously equipped item.
+* `string|nil` **item**: Equipped hand item (nil if none).
+* `string|nil` **previous_item**: Previously equipped item.

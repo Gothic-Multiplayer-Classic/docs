@@ -13,7 +13,7 @@ boolean equipItem(number player_id, string instance)
 
 ## Parameters
 * `number` **player_id**: Target player or NPC id; negative ids refer to client-local NPCs.
-* `string` **instance**: ItemDefinition instance name.
+* `string` **instance**: Item instance name.
   
 ## Returns `boolean`
 True on success.

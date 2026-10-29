@@ -18,11 +18,6 @@ Represents the unique ground item id.
 Represents the Gothic item instance name.
 
 ----
-### `ItemDefinition|nil` definition 
-
-Represents the read-only registry item definition for this ground item.
-
-----
 ### `number` amount 
 
 Represents the item amount.
